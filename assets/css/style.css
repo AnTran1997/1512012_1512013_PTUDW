@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/*--font face--*/
+
+@font-face {
+  font-family: 'HelvetiCaneue';
+  src: url("./../fonts/helvetica-neue-regular.ttf");
+}
+
+@font-face {
+  font-family: 'HelvetiCaneueLight';
+  src: url("./../fonts/helvetica-neue-light.ttf");
+}
+
+@font-face {
+  font-family: 'HelvetiCaneueMedium';
+  src: url("./../fonts/helvetica-neue-medium.ttf");
+}
+
+@font-face {
+  font-family: 'HelvetiCaneueBold';
+  src: url("./../fonts/helvetica-neue-bold.ttf");
+}
+
+@font-face {
+  font-family: 'AvertaBlack';
+  src: url("../fonts/Averta-Black_0.otf");
+}
+
+@font-face {
+  font-family: 'AvertaBold';
+  src: url("../fonts/Averta-Bold_1.otf");
+}
+
+@font-face {
+  font-family: 'UTMGodWordR';
+  src: url("../fonts/UTM God_s WordR.ttf");
+}
+
+@font-face {
+  font-family: 'UTMGodWordRItalic';
+  src: url("../fonts/UTM God_s WordRItalic.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerif';
+  src: url("./../fonts/NotoSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerifItalic';
+  src: url("./../fonts/NotoSerif-Italic.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerifBoldItalic';
+  src: url("./../fonts/NotoSerif-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerifBold';
+  src: url("./../fonts/NotoSerif-Bold.ttf");
+}
