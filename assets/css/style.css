@@ -61,3 +61,43 @@
   font-family: 'NotoSerifBold';
   src: url("./../fonts/NotoSerif-Bold.ttf");
 }
+
+.header > .row > .col-sm-12 {
+  background-color: green;
+  height: 20ch;
+  margin: 0;
+  padding: 0;
+}
+
+  .header > .row > .col-sm-12 > form {
+    position: relative;
+    top: 10ch;
+    left: 50ch;
+    
+  }
+
+    #searchBar {
+      width: 50ch;
+      height: 5ch;
+    }
+
+    #searchBtn {
+      height: 5ch;
+      width: 5ch;
+      border: 0;
+      padding: 0;
+
+    }
+
+.container-fluid > .row > .col-sm-3 {
+  height: 50ch;
+}
+  
+
+.container-fluid > .row > .col-sm-9 {
+  height: 100ch;
+}
+
+.menubar > .row > .col-sm-3 {
+  height: 30px;
+}
