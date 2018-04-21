@@ -68,12 +68,20 @@
   margin: 0;
   padding: 0;
 }
-
   .header > .row > .col-sm-12 > form {
     position: relative;
     top: 10ch;
     left: 50ch;
     
+  }
+  .header > .row > .col-sm-12 a {
+    color: white;
+    position: relative;
+    top: 10ch;
+    left: 150ch;
+  }
+  .header > .row > .col-sm-12 a:hover {
+    background-color: slateblue;
   }
 
     #searchBar {
