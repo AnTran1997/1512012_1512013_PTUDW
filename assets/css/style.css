@@ -109,15 +109,38 @@
     
 
 .container-fluid > .row > .col-sm-10 {
-  height: 100ch;
+  height: 500ch;
 }
 
+  .col-sm-10  .newProducts {
+    display: none;
+  }
+  .col-sm-10  .bestSellers {
+    display: none;
+  }
+  .col-sm-10  .highestView {
+    display: none;
+  }
+  .col-sm-10  .row  .col-12 {
+    height: 5ch;
+  }
   .col-sm-10  .row  .col-3 {
-    height: 30ch;
+    height:40ch;
     width: 30ch;
-    margin: 15px;
+    margin: 5px;
     padding: none;
   }
+  .col-sm-10  .row  .col-3:hover {
+    border: mediumseagreen solid 3px;
+    cursor: pointer;
+  }
+    .col-sm-10  .row  .col-3 p {
+      text-align: center;
+      margin: 0;
+      position: relative;
+      top: 3ch;
+      margin-bottom: 5px;;
+    }
 
 .menubar > .row > .col-sm-3 {
   height: 30px;
@@ -130,4 +153,12 @@
 
 #menu:hover {
   color: yellow;
+}
+
+img {
+  width: 25ch;
+  height: 25ch;;
+  position: relative;
+  top: 2ch;
+  left: 5ch;
 }
