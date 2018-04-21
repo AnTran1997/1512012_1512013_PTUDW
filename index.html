@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/bootstrap-grid.min.css" />
-
+    
 </head>
 <body>
     <div class="header">
@@ -24,7 +24,7 @@
 
     <div class="menubar">
         <div class="row">
-            <div class="col-sm-3" style="background-color:hotpink">Danh mục sản phẩm</div>
+            <div class="col-sm-3" style="background-color:hotpink" onclick="showMenu()">Danh mục sản phẩm</div>
             <div class="col-sm-3" style="background-color:blue">Sản phẩm mới về</div>
             <div class="col-sm-3" style="background-color:gray">Sản phẩm bán chạy</div>
             <div class="col-sm-3" style="background-color:indigo">Sản phẩm được xem nhiều nhất</div>
@@ -33,10 +33,26 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-3" style="background-color:greenyellow"></div>
-            <div class="col-sm-9" style="background-color:hotpink"></div>
+            <div class="col-sm-2" style="background-color:greenyellow">
+                <div id="menuListItem">
+                    <a href="#" class="menuItem">Loại sản phẩm</a><br>
+                    <a href="#" class="menuItem">Nhà sản xuất</a>
+                </div>
+            
+
+            </div>
+            <div class="col-sm-10" style="background-color:hotpink">
+                <div class="row">
+                    <div class="col-3" style="background-color: green"></div>
+                    <div class="col-3" style="background-color: purple"></div>
+                    <div class="col-3" style="background-color: brown"></div>
+                    <div class="col-3" style="background-color:cornflowerblue"></div>
+                </div>
+            </div>
         </div>
     </div>
+
+
 
 
 

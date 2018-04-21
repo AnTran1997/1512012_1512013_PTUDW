@@ -89,15 +89,45 @@
 
     }
 
-.container-fluid > .row > .col-sm-3 {
+.container-fluid > .row > .col-sm-2 {
   height: 50ch;
 }
-  
 
-.container-fluid > .row > .col-sm-9 {
+  /*.container-fluid > .row > .col-sm-2 > #menuListItem > */.menuItem {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    display: none;
+  }
+
+  .container-fluid > .row > .col-sm-2 > #menuListItem > a:hover {
+    background-color: #4CAF50; /* Add a green color to the "active/current" link */
+    color: white;
+  }
+    
+
+.container-fluid > .row > .col-sm-10 {
   height: 100ch;
 }
 
+  .col-sm-10  .row  .col-3 {
+    height: 30ch;
+    width: 30ch;
+    margin: 15px;
+    padding: none;
+  }
+
 .menubar > .row > .col-sm-3 {
   height: 30px;
+}
+
+.menubar > .row > .col-sm-3:hover{
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#menu:hover {
+  color: yellow;
 }
