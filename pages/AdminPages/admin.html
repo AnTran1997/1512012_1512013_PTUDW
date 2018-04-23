@@ -6,9 +6,8 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/bootstrap-grid.min.css" />
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin.css" />
 </head>
 <body>
     <div class="header">
@@ -40,12 +39,28 @@
     <div class="container-quanLySanPham">
        
             <input type="text" class="searchProduct" id="searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
-            <button type="submit" name="search" class="searchProduct" id="searchBtn" onclick="searchPro()"><i class="fa fa-search"></i></button>
+            <button type="submit" name="search" class="searchProduct" id="searchBtn" onclick="searchProducts()"><i class="fa fa-search"></i></button>
         
         <br><br>
         <div class="row">
-            <div class="col-sm-10" style="background-color: aquamarine;"></div>
-            <div class="col-sm-2" style="background-color:brown"></div>
+            <div class="col-sm-10" style="background-color: aquamarine;">
+                <button type="submit" name="viewProduct" id="viewProduct" onclick="showOptionToViewProduct()">Xem sản phẩm</button>
+                <button type="submit" name="addNewPro" id="addNewPro" onclick="addNewProduct()">Thêm sản phẩm</button>
+                <button></button>
+            </div>
+            <div class="col-sm-2" style="background-color:brown">
+                <div class="detailOption">
+                    <h3>Xem sản phẩm theo</h3>
+                    <table>
+                        <tr>
+                            <td><a href="#">Theo loại sản phẩm</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="">Theo nhà sản xuất</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
