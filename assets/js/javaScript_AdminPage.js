@@ -23,8 +23,15 @@ function closeFormAddNew() {
 }
 
 
+//**************************  XEM TÀI KHOẢN *********************
+function xemTaiKhoan() {
+    var account = document.getElementsByClassName("showAccount")[0];
+    //if (formToAddNew.style.display == "none") {
+     account.style.display = "none";
+}
 
-//********************************  ĐĂNG XUẤT ***************************/
+
+//********************************  ĐĂNG XUẤT ***************************
 function logout() {
     '<h2>KFEwjfoiejwf</h2>';
 }

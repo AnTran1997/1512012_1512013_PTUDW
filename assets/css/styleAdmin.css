@@ -169,3 +169,20 @@
   height: 30px;
   width: 30px;
 }
+
+.showAccount {
+  position: relative;
+  top: 1ch;
+  left: 50ch;
+}
+  .showAccount form {
+    margin: 25px;
+    font-size: 20px;
+  }
+
+  .showAccount input {
+    height: 25px;
+    font-size: 15px;
+  }
+
+
