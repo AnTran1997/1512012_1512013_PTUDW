@@ -6,83 +6,117 @@
     <title>Pirates - Chuyên cung cấp máy ảnh số chất lượng nhất</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/font-awesome.min.css" />
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/bootstrap-grid.min.css" />    
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
-    
-=======
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/jquery.fullpage.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
-    <style>
-   body{
-    background:red;
-   }
-   body{
-    background: yellow;
-   }
-    </style>
->>>>>>> 36ffa12f165f8a61fbc6d6dc1f10d6e483ea3396
 </head>
 <body>
     <div id="fullpage">
-        <header>
-            
-        </header>
         <div class="section pirate-intro">
             <div class="pirate-intro-slider">
-                <div class="pirate-intro-slider-wrapper">
-                   <div class="pirate-intro-slider-item">
-                       <div class="pirate-intro-logo">
-                           <img src="./assets/design/logo-first-ver.png" alt="">
+                <div class="pirate-intro-logo">
+                 <img src="./assets/design/logo-first-ver.png" alt="">
+             </div>
+             <div class="slider-control">
+                 <div class="slider-dot active"><span></span></div>
+                 <div class="slider-dot"><span></span></div>
+                 <div class="slider-dot"><span></span></div>
+             </div>
+             <div class="pirate-intro-slider-wrapper">
+                <div class="pirate-intro-slider-item active" style="background-image: url(./assets/images/slider/slider-1-bg.jpg);background-color: rgba(29,45,59,0.8);background-size: cover">
+                    <div class="pirate-slider-item-data">
+                       <h3>Title</h3>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque expedita qui dignissimos illum voluptate omnis similique repellendus ipsum dolor esse, quas quam assumenda aliquid quos sit, dolorem eveniet magni.</p>
+                       <a href="#">Xem thêm</a>
+                   </div>
+                   <div class="slider-item-shape">
+                       <div class="triangle-bot-big">
+                           <img src="./assets/images/slider/slider-1-bot-big.png" alt="">
                        </div>
-                       <div class="pirate-slider-item-data">
-                           <h3>Title</h3>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque expedita qui dignissimos illum voluptate omnis similique repellendus ipsum dolor esse, quas quam assumenda aliquid quos sit, dolorem eveniet magni.</p>
-                           <a href="#">Xem thêm</a>
+                       <div class="triangle-bot-small">
+                           <img src="./assets/images/slider/slider-1-bot-small.png" alt="">
+                       </div>
+                       <div class="triangle-top">
+                           <img src="./assets/images/slider/slider-1-top-small.png" alt="">
                        </div>
                    </div>
-                   <div class="pirate-intro-slider-item">
-                       <div class="pirate-intro-logo">
-                           <img src="./assets/design/logo-first-ver.png" alt="">
-                       </div>
-                       <div class="pirate-slider-item-data">
-                           <h3>Title</h3>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem eaque nam quisquam blanditiis cupiditate repellat quae in? Praesentium molestiae aliquam maxime modi similique, ab voluptatibus magnam provident laboriosam, dolorum dolore.</p>
-                           <a href="#">Xem thêm</a>
-                       </div>
+               </div>
+               <div class="pirate-intro-slider-item" style="background-image: url(./assets/images/slider/slider-2-bg.jpg);background-color: #dc6163;">
+                   <div class="pirate-slider-item-data">
+                       <h3>Title</h3>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque expedita qui dignissimos illum voluptate omnis similique repellendus ipsum dolor esse, quas quam assumenda aliquid quos sit, dolorem eveniet magni.</p>
+                       <a href="#">Xem thêm</a>
                    </div>
-                   <div class="pirate-intro-slider-item">
-                       <div class="pirate-intro-logo">
-                           <img src="./assets/design/logo-first-ver.png" alt="">
-                       </div>
-                       <div class="pirate-slider-item-data">
-                           <h3>Title</h3>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus aperiam, expedita, placeat sequi vero, veniam nulla omnis incidunt harum tempora consectetur odio laboriosam officiis beatae reprehenderit corporis reiciendis ducimus doloremque!</p>
-                           <a href="#">Xem thêm</a>
-                       </div>
+                   <div class="slider-item-shape">
+                    <div class="triangle-bot-big">
+                        <img src="./assets/images/slider/slider-2-bot-big.png" alt="">
+                    </div>
+                    <div class="triangle-bot-small">
+                       <img src="./assets/images/slider/slider-2-bot-small.png" alt="">
                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section"></div>
-        <div class="section"></div>
-    </div>
+                   <div class="triangle-top">
+                       <img src="./assets/images/slider/slider-2-top-small.png" alt="">
+                   </div>
+               </div>
+           </div>
 
-    <script src="./assets/js/jquery-3.3.1.min.js"></script>
-    <script src="./assets/js/jquery.fullpage.min.js"></script>
-    <script src="./assets/js/javaScript.js"></script>
-    <script>
-        //This plugin only used to make full page website - only one page at a time
-        jQuery(document).ready(function($) {
-            $('#fullpage').fullpage({
-                anchors: ['intro', 'product', 'contact'],
-                sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
-                navigation: true,
-                navigationPosition: 'right',
-                navigationTooltips: ['About Us', 'Products', 'Contact Us']
-            });
+
+           <div class="pirate-intro-slider-item" style="background-image: url(./assets/images/slider/slider-3-bg.jpg);background-color: #c1b5a7;">
+               <div class="pirate-slider-item-data">
+                   <h3>Title</h3>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque expedita qui dignissimos illum voluptate omnis similique repellendus ipsum dolor esse, quas quam assumenda aliquid quos sit, dolorem eveniet magni.</p>
+                   <a href="#">Xem thêm</a>
+               </div>
+               <div class="slider-item-shape">
+                   <div class="triangle-bot-big">
+                       <img src="./assets/images/slider/slider-3-bot-big.png" alt="">
+                   </div>
+                   <div class="triangle-bot-small">
+                       <img src="./assets/images/slider/slider-3-bot-small.png" alt="">
+                   </div>
+                   <div class="triangle-top">
+                       <img src="./assets/images/slider/slider-3-top-small.png" alt="">
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+<div class="section"></div>
+<div class="section"></div>
+</div>
+
+<script src="./assets/js/jquery-3.3.1.min.js"></script>
+<script src="./assets/js/jquery.fullpage.min.js"></script>
+<script>
+    jQuery(document).ready(function($) {
+            //This plugin only used to make full page website - only one page at a time
+            function transition(next,prev){
+             $('.slider-control .slider-dot').removeClass('active');
+             $('.slider-dot').eq(next).addClass('active');
+             $('.pirate-intro-slider-item').removeClass('active');
+             $('.pirate-intro-slider-item').eq(next).addClass('active');
+         }
+         $('#fullpage').fullpage({
+            anchors: ['intro', 'product', 'contact'],
+            sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+            navigation: true,
+            navigationPosition: 'right',
+            navigationTooltips: ['About Us', 'Products', 'Contact Us']
         });
-    </script>
+         $('.slider-control .slider-dot').click(function(){
+            transition($('.slider-dot').index(this));
+        });
+         setInterval(()=>{
+            var i = $('.slider-dot').index($('.slider-dot.active'));
+            console.log(i);
+            console.log($('.slider-dot').length);
+            if(i>=$('.slider-dot').length-1){
+                i=-1;
+            }
+            transition(i+1);
+         },5000);
+     });
+ </script>
 </body>
 </html>

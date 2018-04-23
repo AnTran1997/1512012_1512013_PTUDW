@@ -1,45 +1,8 @@
-@charset "UTF-8";
-
 /*--font face--*/
-
-@font-face {
-  font-family: 'HelvetiCaneue';
-  src: url("./../fonts/helvetica-neue-regular.ttf");
-}
-
-@font-face {
-  font-family: 'HelvetiCaneueLight';
-  src: url("./../fonts/helvetica-neue-light.ttf");
-}
-
-@font-face {
-  font-family: 'HelvetiCaneueMedium';
-  src: url("./../fonts/helvetica-neue-medium.ttf");
-}
-
-@font-face {
-  font-family: 'HelvetiCaneueBold';
-  src: url("./../fonts/helvetica-neue-bold.ttf");
-}
-
-@font-face {
-  font-family: 'AvertaBlack';
-  src: url("../fonts/Averta-Black_0.otf");
-}
-
-@font-face {
-  font-family: 'AvertaBold';
-  src: url("../fonts/Averta-Bold_1.otf");
-}
 
 @font-face {
   font-family: 'UTMGodWordR';
   src: url("../fonts/UTM God_s WordR.ttf");
-}
-
-@font-face {
-  font-family: 'UTMGodWordRItalic';
-  src: url("../fonts/UTM God_s WordRItalic.ttf");
 }
 
 @font-face {
@@ -60,4 +23,375 @@
 @font-face {
   font-family: 'NotoSerifBold';
   src: url("./../fonts/NotoSerif-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'AvenirBlackOblique';
+  src: url("../fonts/Avenir-BlackOblique-04_0.ttf");
+}
+
+@font-face {
+  font-family: 'AvenirNextLTProLightItalic';
+  src: url("../fonts/AvenirNextLTPro-LightItalic.otf");
+}
+
+@font-face {
+  font-family: 'AvertaLight';
+  src: url("../fonts/Averta-Light_4.otf");
+}
+
+@font-face {
+  font-family: 'ElegantIcons';
+  src: url("../fonts/ElegantIcons_3C.ttf");
+}
+
+@font-face {
+  font-family: 'GothamBold';
+  src: url("../fonts/Gotham-Bold.otf");
+}
+
+@font-face {
+  font-family: 'GothamLight';
+  src: url("../fonts/Gotham-Light.otf");
+}
+
+@font-face {
+  font-family: 'helveticaneuebold';
+  src: url("../fonts/helveticaneuebold.ttf");
+}
+
+@font-face {
+  font-family: 'helveticaneuelight';
+  src: url("../fonts/helveticaneuelight.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSansBold';
+  src: url("../fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSansItalic';
+  src: url("../fonts/OpenSans-Italic.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSansLight';
+  src: url("../fonts/OpenSans-Light.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSansLightItalic';
+  src: url("../fonts/OpenSans-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: 'OpenSansSemibold';
+  src: url("../fonts/OpenSans-Semibold.ttf");
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.woff");
+}
+
+/*Core*/
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9) translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1) translateY(0%);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: rotate(0deg) scale(1) translateY(0%);
+  }
+
+  to {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9) translateY(100%);
+  }
+}
+
+@keyframes bottomIn {
+  from {
+    opacity: 0;
+    transform: translate(-80%, 80%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes topIn {
+  from {
+    opacity: 0;
+    transform: translate(80%, -80%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes textIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateX(10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.pirate-intro .pirate-intro-slider .slider-control .slider-dot.active,
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item,
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .pirate-slider-item-data a:hover {
+  transition: all 1s ease;
+}
+
+/*Layout*/
+
+.pirate-intro .pirate-intro-slider .pirate-intro-logo {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  z-index: 9999;
+  width: 100px;
+  opacity: 0.9;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-logo img {
+  width: 100%;
+}
+
+.pirate-intro .pirate-intro-slider .slider-control {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+}
+
+.pirate-intro .pirate-intro-slider .slider-control .slider-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  border: 1px solid transparent;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.pirate-intro .pirate-intro-slider .slider-control .slider-dot:hover {
+  cursor: pointer;
+}
+
+.pirate-intro .pirate-intro-slider .slider-control .slider-dot span {
+  display: block;
+  opacity: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.pirate-intro .pirate-intro-slider .slider-control .slider-dot.active {
+  border-color: white;
+  background: transparent;
+}
+
+.pirate-intro .pirate-intro-slider .slider-control .slider-dot.active span {
+  opacity: 1;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+  animation: slideOut 0.5s cubic-bezier(0.23, 0.55, 0.83, 0.55) forwards;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item.active {
+  pointer-events: auto;
+  animation: slideIn 0.5s cubic-bezier(0.23, 0.55, 0.83, 0.55) forwards;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item.active .slider-item-shape .triangle-bot-big {
+  animation: bottomIn 1s linear forwards;
+  animation-delay: .3s;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item.active .slider-item-shape .triangle-bot-small {
+  animation: bottomIn 1s linear forwards;
+  animation-delay: .6s;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item.active .slider-item-shape .triangle-top {
+  animation: topIn 1s linear forwards;
+  animation-delay: .5s;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item.active .pirate-slider-item-data h3 {
+  animation: textIn 1s linear forwards;
+  animation-delay: 1.3s;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item.active .pirate-slider-item-data p {
+  animation: textIn 1s linear forwards;
+  animation-delay: 1.6s;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item.active .pirate-slider-item-data a {
+  animation: textIn 1s linear forwards;
+  animation-delay: 1.7s;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .pirate-slider-item-data {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  width: 20%;
+  z-index: 9;
+  color: white;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .pirate-slider-item-data h3 {
+  font: 20px 'NotoSerifBold';
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 30px;
+  opacity: 0;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .pirate-slider-item-data h3:after {
+  width: 40%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  background-color: white;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .pirate-slider-item-data p {
+  font: 14px 'AvertaLight';
+  line-height: 20px;
+  margin-top: 50px;
+  text-align: justify;
+  opacity: 0;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .pirate-slider-item-data a {
+  display: block;
+  font: 16px 'AvertaLight';
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid white;
+  width: max-content;
+  margin-top: 50px;
+  opacity: 0;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .pirate-slider-item-data a:hover {
+  background: white;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .slider-item-shape .triangle-bot-big {
+  position: absolute;
+  bottom: -10px;
+  left: -10%;
+  width: 70%;
+  opacity: 0;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .slider-item-shape .triangle-bot-big img {
+  width: 100%;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .slider-item-shape .triangle-bot-small {
+  position: absolute;
+  bottom: -10px;
+  left: -10%;
+  width: 60%;
+  opacity: 0;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .slider-item-shape .triangle-bot-small img {
+  width: 100%;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .slider-item-shape .triangle-top {
+  position: absolute;
+  top: -5%;
+  right: -5%;
+  opacity: 0;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .slider-item-shape .triangle-top img {
+  width: 100%;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.display-none {
+  opacity: 0;
 }
