@@ -3,265 +3,80 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Pirates - Chuyên cung cấp máy ảnh số chất lượng nhất</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/bootstrap-grid.min.css" />
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/jquery.fullpage.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+    <style>
+   body{
+    background:red;
+   }
+   body{
+    background: yellow;
+   }
+    </style>
 </head>
 <body>
-    <div class="header">
-        <div class="row">
-            <div class="col-sm-12">
-                <form action="#">
-                    <input type="text" placeholder="Search..." name="search" id="searchBar">
-                    <button type="submit" id="searchBtn"><i class="fa fa-search"></i></button>
-                </form>
-                <a href="./pages/Login.html">Đăng nhập</a>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="menubar">
-        <div class="row">
-            <div class="col-sm-3" style="background-color:hotpink" onclick="showMenu()">Danh mục sản phẩm</div>
-            <div class="col-sm-3" style="background-color:blue" onclick="showNewProducts()">Sản phẩm mới về</div>
-            <div class="col-sm-3" style="background-color:gray" onclick="showBestSellers()">Sản phẩm bán chạy</div>
-            <div class="col-sm-3" style="background-color:indigo" onclick="showHighestViewPro()">Sản phẩm được xem nhiều nhất</div>
-        </div>
-    </div>
-
-    <!-- ********************** Main view - show detail of products ********************-->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-2" style="background-color:greenyellow">
-                <div id="menuListItem">
-                    <a href="#" class="menuItem">Loại sản phẩm</a><br>
-                    <a href="#" class="menuItem">Nhà sản xuất</a>
-                </div>
-            </div>
-
-            <div class="col-sm-10">
-                 <!-- ********************* SHOW Detail of new products ******************** -->
-                <div class="newProducts">
-                    <div class="row">   <!-- Header bar inform that these products are new products -->
-                        <div class="col-12" style="background-color:green; color:cornsilk">Sản phẩm mới về</div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="./assets/images/Brands/Canon/Canon 6D Body.jpg"></img>
-                            <p>Máy ảnh Canon 6D Body</p>
-                            <p>26.590.000 ₫</p>
-                            <p>Canon</p>
-                        </div>
-                        <div class="col-3">
-                            <img src="./assets/images/Brands/Fujifilm/Fujifilm X-A3 + 16-50mm II.jpg"></img>
-                            <p>Máy Fujifilm X-A3 + 16-50mm II</p>
-                            <p>10.490.000 ₫</p>
-                            <p>Fujifilm</p>
-                        </div>
-                        <div class="col-3">
-                            <img src="./assets/images/Brands/Nikon/Nikon D7200 Kit 18-140mm (VIC Nikon).jpg"></img>
-                            <p>Máy ảnh Nikon D7200 Kit 18-140mm (VIC Nikon)</p>
-                            <p>25.000.000 ₫</p>
-                            <p>Nikon</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="./assets/images/Brands/Sony/Sony Alpha A6000 + 16-50mm (Trắng).jpg"></img>
-                            <p>Máy ảnh Sony Alpha A6000 + 16-50mm (Trắng)</p>
-                            <p>13.490.000 ₫</p>
-                            <p>Sony</p>
-                        </div>
-                        <div class="col-3">
-                            <img src="./assets/images/Brands/Canon/Canon M10 KIT 15-45mm .jpg"></img>
-                            <p>Máy ảnh Canon M10 KIT 15-45mm</p>
-                            <p>26.590.000 ₫</p>
-                            <p>Canon</p>
-                        </div>
-                        <div class="col-3">
-                            <img src="./assets/images/Brands/Nikon/Nikon D5600 KIT AF-P 18-55 VR.jpg"></img>
-                            <p>Máy ảnh Nikon D5600 KIT AF-P 18-55 VR</p>
-                            <p>14.990.000 ₫</p>
-                            <p>Nikon</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="./assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ.jpg"></img>
-                            <p>Máy ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</p>
-                            <p>2.690.000 ₫</p>
-                            <p>Fujifilm</p>
-                        </div>
-                        <div class="col-3">
-                            <img src="./assets/images/Brands/Canon/EOS 6D + 24-105mm f4L.jpg"></img>
-                            <p>Máy ảnh EOS 6D + 24-105mm f/4L</p>
-                            <p>37.000.000 ₫</p>
-                            <p>Canon</p>
-                        </div>
-                        <div class="col-3">
-                            <img src="./assets/images/Brands/Sony/Sony DSC W830 - 20.1 Megapixel, Zoom 8x.jpg"></img>
-                            <p>Máy ảnh Sony DSC W830 - 20.1 Megapixel, Zoom 8x</p>
-                            <p>2.490.000 ₫</p>
-                            <p>Sony</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ********************* SHOW Detail of best sellers ******************** -->
-                <div class="bestSellers">
-                        <div class="row">   <!-- Header bar inform that these products are new products -->
-                            <div class="col-12" style="background-color:green; color:cornsilk">Sản phẩm bán chạy nhất</div>
-                        </div>
-    
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Canon/Canon 6D Body.jpg"></img>
-                                <p>Máy ảnh Canon 6D Body</p>
-                                <p>26.590.000 ₫</p>
-                                <p>Canon</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Fujifilm/Fujifilm X-A3 + 16-50mm II.jpg"></img>
-                                <p>Máy Fujifilm X-A3 + 16-50mm II</p>
-                                <p>10.490.000 ₫</p>
-                                <p>Fujifilm</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Nikon/Nikon D7200 Kit 18-140mm (VIC Nikon).jpg"></img>
-                                <p>Máy ảnh Nikon D7200 Kit 18-140mm (VIC Nikon)</p>
-                                <p>25.000.000 ₫</p>
-                                <p>Nikon</p>
-                            </div>
-                        </div>
-    
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Sony/Sony Alpha A6000 + 16-50mm (Trắng).jpg"></img>
-                                <p>Máy ảnh Sony Alpha A6000 + 16-50mm (Trắng)</p>
-                                <p>13.490.000 ₫</p>
-                                <p>Sony</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Canon/Canon M10 KIT 15-45mm .jpg"></img>
-                                <p>Máy ảnh Canon M10 KIT 15-45mm</p>
-                                <p>26.590.000 ₫</p>
-                                <p>Canon</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Nikon/Nikon D5600 KIT AF-P 18-55 VR.jpg"></img>
-                                <p>Máy ảnh Nikon D5600 KIT AF-P 18-55 VR</p>
-                                <p>14.990.000 ₫</p>
-                                <p>Nikon</p>
-                            </div>
-                        </div>
-    
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ.jpg"></img>
-                                <p>Máy ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</p>
-                                <p>2.690.000 ₫</p>
-                                <p>Fujifilm</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Canon/EOS 6D + 24-105mm f4L.jpg"></img>
-                                <p>Máy ảnh EOS 6D + 24-105mm f/4L</p>
-                                <p>37.000.000 ₫</p>
-                                <p>Canon</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Sony/Sony DSC W830 - 20.1 Megapixel, Zoom 8x.jpg"></img>
-                                <p>Máy ảnh Sony DSC W830 - 20.1 Megapixel, Zoom 8x</p>
-                                <p>2.490.000 ₫</p>
-                                <p>Sony</p>
-                            </div>
-                        </div>
-                </div>
-
-                <!-- ********************* Show detail of products having highest views ******************** -->
-                <div class="highestView">
-                        <div class="row">   <!-- Header bar inform that these products are new products -->
-                            <div class="col-12" style="background-color:green; color:cornsilk">Sản phẩm được xem nhiều nhất</div>
-                        </div>
-    
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Canon/Canon 6D Body.jpg"></img>
-                                <p>Máy ảnh Canon 6D Body</p>
-                                <p>26.590.000 ₫</p>
-                                <p>Canon</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Fujifilm/Fujifilm X-A3 + 16-50mm II.jpg"></img>
-                                <p>Máy Fujifilm X-A3 + 16-50mm II</p>
-                                <p>10.490.000 ₫</p>
-                                <p>Fujifilm</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Nikon/Nikon D7200 Kit 18-140mm (VIC Nikon).jpg"></img>
-                                <p>Máy ảnh Nikon D7200 Kit 18-140mm (VIC Nikon)</p>
-                                <p>25.000.000 ₫</p>
-                                <p>Nikon</p>
-                            </div>
-                        </div>
-    
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Sony/Sony Alpha A6000 + 16-50mm (Trắng).jpg"></img>
-                                <p>Máy ảnh Sony Alpha A6000 + 16-50mm (Trắng)</p>
-                                <p>13.490.000 ₫</p>
-                                <p>Sony</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Canon/Canon M10 KIT 15-45mm .jpg"></img>
-                                <p>Máy ảnh Canon M10 KIT 15-45mm</p>
-                                <p>26.590.000 ₫</p>
-                                <p>Canon</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Nikon/Nikon D5600 KIT AF-P 18-55 VR.jpg"></img>
-                                <p>Máy ảnh Nikon D5600 KIT AF-P 18-55 VR</p>
-                                <p>14.990.000 ₫</p>
-                                <p>Nikon</p>
-                            </div>
-                        </div>
-    
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ.jpg"></img>
-                                <p>Máy ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</p>
-                                <p>2.690.000 ₫</p>
-                                <p>Fujifilm</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Canon/EOS 6D + 24-105mm f4L.jpg"></img>
-                                <p>Máy ảnh EOS 6D + 24-105mm f/4L</p>
-                                <p>37.000.000 ₫</p>
-                                <p>Canon</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="./assets/images/Brands/Sony/Sony DSC W830 - 20.1 Megapixel, Zoom 8x.jpg"></img>
-                                <p>Máy ảnh Sony DSC W830 - 20.1 Megapixel, Zoom 8x</p>
-                                <p>2.490.000 ₫</p>
-                                <p>Sony</p>
-                            </div>
-                        </div>
+    <div id="fullpage">
+        <header>
+            
+        </header>
+        <div class="section pirate-intro">
+            <div class="pirate-intro-slider">
+                <div class="pirate-intro-slider-wrapper">
+                   <div class="pirate-intro-slider-item">
+                       <div class="pirate-intro-logo">
+                           <img src="./assets/design/logo-first-ver.png" alt="">
+                       </div>
+                       <div class="pirate-slider-item-data">
+                           <h3>Title</h3>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque expedita qui dignissimos illum voluptate omnis similique repellendus ipsum dolor esse, quas quam assumenda aliquid quos sit, dolorem eveniet magni.</p>
+                           <a href="#">Xem thêm</a>
+                       </div>
+                   </div>
+                   <div class="pirate-intro-slider-item">
+                       <div class="pirate-intro-logo">
+                           <img src="./assets/design/logo-first-ver.png" alt="">
+                       </div>
+                       <div class="pirate-slider-item-data">
+                           <h3>Title</h3>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem eaque nam quisquam blanditiis cupiditate repellat quae in? Praesentium molestiae aliquam maxime modi similique, ab voluptatibus magnam provident laboriosam, dolorum dolore.</p>
+                           <a href="#">Xem thêm</a>
+                       </div>
+                   </div>
+                   <div class="pirate-intro-slider-item">
+                       <div class="pirate-intro-logo">
+                           <img src="./assets/design/logo-first-ver.png" alt="">
+                       </div>
+                       <div class="pirate-slider-item-data">
+                           <h3>Title</h3>
+                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus aperiam, expedita, placeat sequi vero, veniam nulla omnis incidunt harum tempora consectetur odio laboriosam officiis beatae reprehenderit corporis reiciendis ducimus doloremque!</p>
+                           <a href="#">Xem thêm</a>
+                       </div>
+                   </div>
                 </div>
             </div>
         </div>
+        <div class="section"></div>
+        <div class="section"></div>
     </div>
 
-
-
-
-
-
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/jquery.fullpage.min.js"></script>
     <script src="./assets/js/javaScript.js"></script>
+    <script>
+        //This plugin only used to make full page website - only one page at a time
+        jQuery(document).ready(function($) {
+            $('#fullpage').fullpage({
+                anchors: ['intro', 'product', 'contact'],
+                sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+                navigation: true,
+                navigationPosition: 'right',
+                navigationTooltips: ['About Us', 'Products', 'Contact Us']
+            });
+        });
+    </script>
 </body>
 </html>
