@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/bootstrap-grid.min.css" />
+    
+</head>
+<body>
+    <div class="header">
+        <div class="row">
+           <div class="col-sm-12" style="background-color:black">  
+                <div class="menu-bar">
+                    <div class="row">
+                        <div class="col-sm-3" style="border-right: aliceblue solid 1px; border-radius:25px 0 0 25px;">
+                            <!--<a href="#">Quản lý sản phẩm</a>-->
+                            <button onclick="quanLySanPham()" class="dropQuanLySP" style="border-radius: 25px 0 0 25px;">Quản lý sản phẩm</button>
+                        </div>
+                        <div class="col-sm-3" style="border-right: aliceblue solid 1px;">
+                            <button onclick="quanLyDonHang()" class="dropQuanLyDH">Quản lý đơn hàng</button>
+                        </div>
+                        <div class="col-sm-3" style="border-right: aliceblue solid 1px;">
+                            <button onclick="xemTaiKhoan()">Tài khoản của bạn</button>
+                        </div>
+                        <div class="col-sm-3" style=" border-radius:0 25px 25px 0;">
+                            <button onclick="logout()" style="border-radius:0 25px 25px 0;">Đăng xuất</button>
+                        </div>
+                    </div>
+                </div>
+
+           </div>
+        </div>
+
+    </div>
+
+    <div class="container-quanLySanPham">
+       
+            <input type="text" class="searchProduct" id="searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
+            <button type="submit" name="search" class="searchProduct" id="searchBtn" onclick="searchPro()"><i class="fa fa-search"></i></button>
+        
+        <br><br>
+        <div class="row">
+            <div class="col-sm-10" style="background-color: aquamarine;"></div>
+            <div class="col-sm-2" style="background-color:brown"></div>
+        </div>
+    </div>
+
+</body>
+</html>
