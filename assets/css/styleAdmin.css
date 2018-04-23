@@ -124,12 +124,12 @@ body {
 }
 
 .container-quanLySanPham .col-sm-2 {
-  display: none;
   border: azure double;
 }
 
 .detailOption {
   margin: 5px;
+  display: none;
 }
 
   .detailOption a {
