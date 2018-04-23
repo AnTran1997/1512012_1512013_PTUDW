@@ -72,7 +72,7 @@ form {
     top: 8ch;
     left: 8ch;
     width: 155ch;
-    height: 50ch;
+    height: 150ch;
     border-radius: 25px;
 }
 
@@ -109,7 +109,7 @@ form {
                 cursor: pointer;
             }
 
-.container-quanLySanPham .searchProduct {
+.container-quanLySanPham table {
     font-size: 15px;
     height: 40px;
     position: relative;
@@ -150,6 +150,11 @@ form {
             text-decoration: black underline;
             font-weight: bold;
             }
+
+.imgInTable {
+    width: 35px;
+    height: 35px;;
+}
         
 
 
