@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/bootstrap-grid.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleTest.css" />
 </head>
 <body>
-    <div class="header">
-        <div class="row">
-           <div class="col-sm-12" style="background-color:black">  
+    
+    <div class="hm">
+    <div class="row">
+        <div class="col-sm-12" style="background-color:black">  
+            <form action="">
                 <div class="menu-bar">
                     <div class="row">
                         <div class="col-sm-3" style="border-right: aliceblue solid 1px; border-radius:25px 0 0 25px;">
@@ -29,42 +31,30 @@
                             <button onclick="logout()" style="border-radius:0 25px 25px 0;">Đăng xuất</button>
                         </div>
                     </div>
+                </div>  
+                
+                <div class="container-quanLySanPham">
+                    <div class="searchProduct">
+                        <input type="text" class="searchProduct" id="searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
+                        <button type="submit" name="search" class="searchProduct" id="searchBtn" onclick="searchProducts()"><i class="fa fa-search"></i></button>
+                    </div>
+                    
+                
+                    
                 </div>
-
-           </div>
+            </form>
+                
         </div>
-
+    </div>
     </div>
 
-    <div class="container-quanLySanPham">
-       
-            <input type="text" class="searchProduct" id="searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
-            <button type="submit" name="search" class="searchProduct" id="searchBtn" onclick="searchProducts()"><i class="fa fa-search"></i></button>
         
-        <br><br>
-        <div class="row">
-            <div class="col-sm-10" style="background-color: aquamarine;">
-                <button type="submit" name="viewProduct" id="viewProduct" onclick="showOptionToViewProduct()">Xem sản phẩm</button>
-                <button type="submit" name="addNewPro" id="addNewPro" onclick="addNewProduct()">Thêm sản phẩm</button>
-                <button></button>
-                <p id="test"></p>
-            </div>
-            <div class="col-sm-2" style="background-color:brown">
-                <div class="detailOption">
-                    <h3>Xem sản phẩm theo</h3>
-                    <table>
-                        <tr>
-                            <td><a href="#">Theo loại sản phẩm</a></td>
-                        </tr>
-                        <tr>
-                            <td><a href="">Theo nhà sản xuất</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
 
     <script src="./../../assets/js/javaScript_AdminPage.js"></script>
+
+
+
 </body>
 </html>

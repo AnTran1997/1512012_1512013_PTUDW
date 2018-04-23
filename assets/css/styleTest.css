@@ -62,27 +62,36 @@
   src: url("./../fonts/NotoSerif-Bold.ttf");
 }
 
+.hm .row .col-sm-12 {
+    height: 25ch;
+}
 
+form {
+    border: green solid 1px;;
+    position: absolute;
+    top: 8ch;
+    left: 8ch;
+    width: 155ch;
+    height: 50ch;
+    border-radius: 25px;
+}
 
 .header .row .col-sm-12 {
    height: 25ch;
    width: 100%;
 }
     .menu-bar .row{
-       
         position: relative;
         height: 15ch;
-        top: 10ch;
-        left: 10ch;
-        width: 150ch;
+        top: 2ch;
+        left: 5ch;
+        width: 148ch;
         background-color: green;
         border-radius: 25px;
     }
-
         .menu-bar .row .col-sm-3 {
             text-align: center; 
         }
-
             .col-sm-3 button {
                 color: cornsilk;
                 text-decoration: none;
@@ -92,8 +101,7 @@
                 background-color: green;
                 border: none;
                 height: 100%;
-                width: 100%;
-                
+                width: 100%;  
             }
             .col-sm-3 button:hover {
                 background-color: #80ff80;
@@ -105,10 +113,9 @@
     font-size: 15px;
     height: 40px;
     position: relative;
-    top: 1ch;
-    left: 100ch;
+    top: 5ch;
+    right: 5px;
 }
-
     #searchBtn {
         width: 40px;
         border: none;
@@ -117,55 +124,33 @@
         width: 50ch;
     }
 
-.container-quanLySanPham .row {
-    height: 50ch;
-}
+    .container-quanLySanPham .row {
+        height: 50ch;
+    }
 
-.container-quanLySanPham .col-sm-2 {
-  border: green double;
-  height: 20ch;
-}
+    .container-quanLySanPham .col-sm-2 {
+        border: green double;
+        height: 20ch;
+    }
 
-.detailOption {
-  margin: 5px;
-  display: block;
-}
-  .detailOption h3 {
-    border-bottom: green double;
-    font-size: 20px;
-  }
-  .detailOption a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  .detailOption a:hover {
-    text-decoration: black underline;
-    font-weight: bold;
-  }
-       
-.addNewForm {
-  position: absolute;
-  top: 30ch;
-  left: 50ch;
-  border: green solid 2px;
-  display: none;
-}
+        .detailOption {
+            margin: 5px;
+            display: block;
+        }
+            .detailOption h3 {
+            border-bottom: green double;
+            font-size: 20px;
+            }
+            .detailOption a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            }
+            .detailOption a:hover {
+            text-decoration: black underline;
+            font-weight: bold;
+            }
+        
 
-  .addNewForm form {
-    margin: 15px;
-    font-size: 20px;
-  }
 
-  .addNewForm input {
-    height: 3ch;
-    font-size: 20px;
-  }
- 
-#closeFormBtn {
-  position: absolute;
-  left: 51ch;
-  top: 0px;
-  height: 30px;
-  width: 30px;
-}
+
