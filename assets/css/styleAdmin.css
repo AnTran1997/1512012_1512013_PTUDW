@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/*--font face--*/
+
+@font-face {
+  font-family: 'HelvetiCaneue';
+  src: url("./../fonts/helvetica-neue-regular.ttf");
+}
+
+@font-face {
+  font-family: 'HelvetiCaneueLight';
+  src: url("./../fonts/helvetica-neue-light.ttf");
+}
+
+@font-face {
+  font-family: 'HelvetiCaneueMedium';
+  src: url("./../fonts/helvetica-neue-medium.ttf");
+}
+
+@font-face {
+  font-family: 'HelvetiCaneueBold';
+  src: url("./../fonts/helvetica-neue-bold.ttf");
+}
+
+@font-face {
+  font-family: 'AvertaBlack';
+  src: url("../fonts/Averta-Black_0.otf");
+}
+
+@font-face {
+  font-family: 'AvertaBold';
+  src: url("../fonts/Averta-Bold_1.otf");
+}
+
+@font-face {
+  font-family: 'UTMGodWordR';
+  src: url("../fonts/UTM God_s WordR.ttf");
+}
+
+@font-face {
+  font-family: 'UTMGodWordRItalic';
+  src: url("../fonts/UTM God_s WordRItalic.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerif';
+  src: url("./../fonts/NotoSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerifItalic';
+  src: url("./../fonts/NotoSerif-Italic.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerifBoldItalic';
+  src: url("./../fonts/NotoSerif-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerifBold';
+  src: url("./../fonts/NotoSerif-Bold.ttf");
+}
+
+body {
+
+}
+
+.header .row .col-sm-12 {
+   height: 25ch;
+   width: 100%;
+}
+    .menu-bar .row{
+       
+        position: relative;
+        height: 15ch;
+        top: 10ch;
+        left: 10ch;
+        width: 150ch;
+        background-color: green;
+        border-radius: 25px;
+    }
+
+        .menu-bar .row .col-sm-3 {
+            text-align: center; 
+        }
+
+            .col-sm-3 button {
+                color: cornsilk;
+                text-decoration: none;
+                position: relative;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                background-color: green;
+                border: none;
+                height: 100%;
+                width: 100%;
+                
+            }
+            .col-sm-3 button:hover {
+                background-color: #80ff80;
+                color: black;
+                cursor: pointer;
+            }
+
+.container-quanLySanPham .searchProduct {
+    font-size: 15px;
+    height: 40px;
+    position: relative;
+    top: 1ch;
+    left: 100ch;
+}
+
+    #searchBtn {
+        width: 40px;
+        border: none;
+    }
+    #searchInput {
+        width: 50ch;
+    }
+
+.container-quanLySanPham .row {
+    height: 50ch;
+}
+       
+
