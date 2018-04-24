@@ -170,7 +170,7 @@
 .pirate-intro .pirate-intro-slider .slider-control .slider-dot.active,
 .pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item,
 .pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .pirate-slider-item-data a:hover {
-  transition: all 1s ease;
+  transition: all .5s ease;
 }
 
 /*Layout*/
@@ -334,6 +334,7 @@
 
 .pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .pirate-slider-item-data a:hover {
   background: white;
+  color: #d2393b;
 }
 
 .pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .slider-item-shape .triangle-bot-big {
@@ -369,6 +370,14 @@
 
 .pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item .slider-item-shape .triangle-top img {
   width: 100%;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item:first-child a:hover {
+  color: #234c6e;
+}
+
+.pirate-intro .pirate-intro-slider .pirate-intro-slider-wrapper .pirate-intro-slider-item:last-child a:hover {
+  color: #b1a390;
 }
 
 html,
