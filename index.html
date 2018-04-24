@@ -11,11 +11,27 @@
   <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
 </head>
 <body>
+  <header>
+    <div class="pirate-menu">
+      <div class="menu-button">
+        <i class="fa fa-bars"></i>
+      </div>
+      <ul class="menu">
+        <i class="fa fa-close close-menu"></i>
+        <li class="menu-item"><a href="#">Menu item</a></li>
+        <li class="menu-item"><a href="#">Menu item</a></li>
+        <li class="menu-item"><a href="#">Menu item</a></li>
+        <li class="menu-item"><a href="#">Menu item</a></li>
+        <li class="menu-item"><a href="#">Menu item</a></li>
+      </ul>
+    </div>
+  </header>
   <div id="fullpage">
     <div class="section pirate-intro">
       <div class="pirate-intro-slider">
         <div class="pirate-intro-logo">
          <img src="./assets/design/logo-first-ver.png" alt="">
+         <p>Hải Tặc</p>
        </div>
        <div class="slider-control">
          <div class="slider-dot active"><span></span></div>
@@ -122,6 +138,15 @@
             }
           });
           var repeat = setInterval(autoSlide,5000);
+          $('.menu-button').click(function(){
+            $(this).addClass('display-none');
+            $('.pirate-menu').addClass('menu-active');
+          });
+          $('.close-menu').click(function(){
+            console.log("ihi");
+            $('.pirate-menu').removeClass('menu-active');
+            $('.menu-button').removeClass('display-none');
+          });
         });
       </script>
     </body>
