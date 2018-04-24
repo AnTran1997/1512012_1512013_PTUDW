@@ -68,7 +68,7 @@
    height: 25ch;
    width: 100%;
 }
-    .menu-bar .row{
+    #menu-bar .row{
        
         position: relative;
         height: 15ch;
@@ -79,11 +79,11 @@
         border-radius: 25px;
     }
 
-        .menu-bar .row .col-sm-3 {
+        #menu-bar .row .col-sm-3 {
             text-align: center; 
         }
 
-            .col-sm-3 button {
+            .adminRole {
                 color: cornsilk;
                 text-decoration: none;
                 position: relative;
@@ -95,7 +95,7 @@
                 width: 100%;
                 
             }
-            .col-sm-3 button:hover {
+            .active, .adminRole:hover {
                 background-color: #80ff80;
                 color: black;
                 cursor: pointer;
@@ -125,6 +125,13 @@
   border: green double;
   height: 20ch;
 }
+
+  .viewPro {
+    height: 100px;
+    position: relative;
+    left: 50ch;
+    margin: 10px;
+  }
 
 .detailOption {
   margin: 5px;
@@ -174,6 +181,7 @@
   position: relative;
   top: 1ch;
   left: 50ch;
+  display: none;
 }
   .showAccount form {
     margin: 25px;

@@ -13,20 +13,20 @@
     <div class="header">
         <div class="row">
            <div class="col-sm-12" style="background-color:black">  
-                <div class="menu-bar">
+                <div id="menu-bar">
                     <div class="row">
                         <div class="col-sm-3" style="border-right: aliceblue solid 1px; border-radius:25px 0 0 25px;">
                             <!--<a href="#">Quản lý sản phẩm</a>-->
-                            <button onclick="quanLySanPham()" class="dropQuanLySP" style="border-radius: 25px 0 0 25px;">Quản lý sản phẩm</button>
+                            <button onclick="quanLySanPham()" class="adminRole active" style="border-radius: 25px 0 0 25px;">Quản lý sản phẩm</button>
                         </div>
                         <div class="col-sm-3" style="border-right: aliceblue solid 1px;">
-                            <button onclick="quanLyDonHang()" class="dropQuanLyDH">Quản lý đơn hàng</button>
+                            <button onclick="quanLyDonHang()" class="adminRole">Quản lý đơn hàng</button>
                         </div>
                         <div class="col-sm-3" style="border-right: aliceblue solid 1px;">
-                            <button onclick="xemTaiKhoan()">Tài khoản của bạn</button>
+                            <button onclick="xemTaiKhoan()" class="adminRole">Tài khoản của bạn</button>
                         </div>
                         <div class="col-sm-3" style=" border-radius:0 25px 25px 0;">
-                            <button onclick="logout()" style="border-radius:0 25px 25px 0;">Đăng xuất</button>
+                            <button onclick="logout()" class="adminRole" style="border-radius:0 25px 25px 0;">Đăng xuất</button>
                         </div>
                     </div>
                 </div>
@@ -37,16 +37,15 @@
     </div>
 
     <div class="container-quanLySanPham">
-       
             <input type="text" class="searchProduct" id="searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
             <button type="submit" name="search" class="searchProduct" id="searchBtn" onclick="searchProducts()"><i class="fa fa-search"></i></button>
-        
         <br><br>
+
         <div class="row">
             <div class="col-sm-10" style="background-color: aquamarine;">
-                <button type="submit" name="viewProduct" id="viewProduct" onclick="showOptionToViewProduct()">Xem sản phẩm</button>
-                <button type="submit" name="addNewPro" id="addNewPro" onclick="addNewProduct()">Thêm sản phẩm</button>
-                <button></button>
+                <button type="submit" name="viewProduct" class="viewPro activeViewPro" onclick="showOptionToViewProduct()">Xem sản phẩm</button>
+                <button type="submit" name="addNewPro" class="viewPro" onclick="addNewProduct()">Thêm sản phẩm</button>
+                
             
 
                 <div class="showAccount">

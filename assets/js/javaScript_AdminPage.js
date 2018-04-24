@@ -1,7 +1,20 @@
+//--------------------  Active clicked button  ---------------------
+var header = document.getElementById("menu-bar");
+var btns = header.getElementsByClassName("adminRole");
+for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+    })
+}
+
+
 //**************************  QUẢN LÝ SẢN PHẨM *********************/
 //Hiển thị menu để lựa chọn danh sách sản phẩm
 function showOptionToViewProduct() {
     var listOption = document.getElementsByClassName("detailOption")[0];
+    var button
     if (listOption.style.display == "none") {
         listOption.style.display = "block";
     } else {
@@ -26,12 +39,15 @@ function closeFormAddNew() {
 //**************************  XEM TÀI KHOẢN *********************
 function xemTaiKhoan() {
     var account = document.getElementsByClassName("showAccount")[0];
-    //if (formToAddNew.style.display == "none") {
-     account.style.display = "none";
+    if (account.style.display == "none") {
+     account.style.display = "block";
+    } else {
+        account.style.display = "none";
+    }
 }
 
 
 //********************************  ĐĂNG XUẤT ***************************
 function logout() {
-    '<h2>KFEwjfoiejwf</h2>';
+    `<h2>safda</h2>;`;
 }
