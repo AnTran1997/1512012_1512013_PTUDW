@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin.css" />
+
 </head>
 <body>
     <div class="dashboard">
@@ -28,7 +29,7 @@
                                             <li><a href="#">Máy ảnh lấy liền</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#" onclick="dropDown('productBrand')">Theo nhà sản xuất</a>
+                                    <li><a href="showProducts.html" onclick="dropDown('productBrand')">Theo nhà sản xuất</a>
                                         <ul class="productBrand">
                                             <li><a href="#">Canon</a></li>
                                             <li><a href="#">Fujifilm</a></li>
@@ -52,15 +53,19 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="#" class="adminFunctions">Đi đến trang chủ</a></li>
+                <li><a href="./../userPages/userHomePage.html" class="adminFunctions">Đi đến trang chủ</a></li>
                 <li><a href="#" class="adminFunctions">Xem tài khoản</a></li>
-                <li><a href="#" class="adminFunctions">Đăng xuất</a></li>
+                <li><a href="./../../index.html" class="adminFunctions">Đăng xuất</a></li>
             </div>
 
 
 
-            
+
             <div class="col-sm-9">
+                <div class="searchBar">
+                    <input type="text" class="searchProduct searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
+                    <button type="submit" name="search" class="searchProduct searchBtn" onclick="searchProducts()"><i class="fa fa-search"></i></button>
+                </div>
             </div>
         </div>
     </div>

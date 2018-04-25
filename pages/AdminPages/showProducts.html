@@ -7,32 +7,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/bootstrap-grid.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleTest.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin.css" />
 </head>
 <body>
-    
-    <div class="hm">
-    <div class="row">
-        <div class="col-sm-12" style="background-color:black">  
-            <form action="">
-                <div class="menu-bar">
-                    <div class="row">
-                        <div class="col-sm-3" style="border-right: aliceblue solid 1px; border-radius:25px 0 0 25px;">
-                            <!--<a href="#">Quản lý sản phẩm</a>-->
-                            <button onclick="quanLySanPham()" class="dropQuanLySP" style="border-radius: 25px 0 0 25px;">Quản lý sản phẩm</button>
-                        </div>
-                        <div class="col-sm-3" style="border-right: aliceblue solid 1px;">
-                            <button onclick="quanLyDonHang()" class="dropQuanLyDH">Quản lý đơn hàng</button>
-                        </div>
-                        <div class="col-sm-3" style="border-right: aliceblue solid 1px;">
-                            <button onclick="xemTaiKhoan()">Tài khoản của bạn</button>
-                        </div>
-                        <div class="col-sm-3" style=" border-radius:0 25px 25px 0;">
-                            <button onclick="logout()" style="border-radius:0 25px 25px 0;">Đăng xuất</button>
-                        </div>
-                    </div>
-                </div>  
-                
+    <div class="dashboard">
+        <div class="row">
+            <div class="col-sm-3" style="background-color: #000033">
+                <h2 id="adminName">Admin</h2>
+                <h3 id="dashboardTitle"><a href="#">Dashboard</a></h3>
+                    <div class=""></div>
+                    <li>
+                        <a href="#" class="adminFunctions" onclick="dropDown('productManagement')">Quản lý sản phẩm</a>
+                        <ul class="productManagement">
+                            <li><a href="#" onclick="dropDown('viewProOptions')">Xem danh sách sản phẩm</a>            
+                                <ul class="viewProOptions">
+                                    <li><a href="#" onclick="dropDown('productType')">Theo loại</a>
+                                        <ul class="productType">
+                                            <li><a href="#">Máy ảnh kỹ thuật số</a></li>
+                                            <li><a href="#">Máy ảnh cơ</a></li>
+                                            <li><a href="#">Máy ảnh lấy liền</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="showProducts.html" onclick="dropDown('productBrand')">Theo nhà sản xuất</a>
+                                        <ul class="productBrand">
+                                            <li><a href="#">Canon</a></li>
+                                            <li><a href="#">Fujifilm</a></li>
+                                            <li><a href="#">Nikon</a></li>
+                                            <li><a href="#">Sony</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="productManagement">Thêm sản phẩm</a></li>
+                        </ul>
+                    </li>
+
+                <li><a href="#" class="adminFunctions" onclick="dropDown('orderManagement')">Quản lý đơn hàng</a>
+                    <ul class="orderManagement">
+                        <li><a href="#" onclick="dropDown('viewOrder')">Xem danh sách đơn hàng</a>
+                            <ul class="viewOrder">
+                                <li><a href="#" class="viewOrder">Theo ngày</a></li>
+                                <li><a href="#" class="viewOrder">Theo trạng thái đơn hàng</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="./../userPages/userHomePage.html" class="adminFunctions">Đi đến trang chủ</a></li>
+                <li><a href="#" class="adminFunctions">Xem tài khoản</a></li>
+                <li><a href="./../../index.html" class="adminFunctions">Đăng xuất</a></li>
+            </div>
+
+            <div class="col-sm-9">
+                <div class="searchBar">
+                    <input type="text" class="searchProduct searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
+                    <button type="submit" name="search" class="searchProduct searchBtn" onclick="searchProducts()"><i class="fa fa-search"></i></button>
+                </div>
+                <h2>Xem thông tin sản phẩm</h2>
                 <div class="container-quanLySanPham">
                     <table>
                         <tr>
@@ -245,16 +275,16 @@
                             <td>6</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng.jpg" class="imgInTable"></td>
                         </tr>                                                                              
-                    </table>
-                    
-                
-                    
+                    </table>  
                 </div>
-            </form>
-                
+
+
+            </div>
         </div>
     </div>
-    </div>
+        
+
+
 
     <div class="footer">
     </div>
