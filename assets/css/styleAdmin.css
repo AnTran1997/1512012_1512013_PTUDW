@@ -62,138 +62,98 @@
   src: url("./../fonts/NotoSerif-Bold.ttf");
 }
 
-
-
-.header .row .col-sm-12 {
-   height: 25ch;
-   width: 100%;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
-  .mainForm {
-    border: green solid 1px;;
-    position: absolute;
-    top: 8ch;
-    left: 8ch;
-    width: 155ch;
-    height: 150ch;
-    border-radius: 25px;
-  }  
-    #menu-bar .row{   
-        position: relative;
-        height: 15ch;
-        top: 2ch;
-        left: 5ch;
-        width: 148ch;
-        background-color: green;
-        border-radius: 25px;
-    }
-      #menu-bar .row .col-sm-3 {
-          text-align: center; 
-      }
-        .adminRole {
-          color: cornsilk;
-          text-decoration: none;
-          position: relative;
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 20px;
-          background-color: green;
-          border: none;
-          height: 100%;
-          width: 100%; 
-        }
-          .active, .adminRole:hover {
-            background-color: #80ff80;
-            color: black;
-            cursor: pointer;
-          }
 
-.container-quanLySanPham .searchProduct {
-  font-size: 15px;
-  height: 40px;
-  position: relative;
-  top: 2ch;
-  left: 90ch;
+h2#adminName {
+  font-weight: bold;
+  font-size: 30px;
 }
-    #searchBtn {
-        width: 40px;
-        border: none;
-    }
-    #searchInput {
-        width: 50ch;
-    }
 
-
-.container-quanLySanPham .row {
-  height: 50ch;
+h3#dashboardTitle {
+  font-size: 23px;
 }
-  .container-quanLySanPham .col-sm-2 {
-    border: green double;
-    height: 20ch;
+
+/*style="background-color: #000033*/
+.dashboard .col-sm-3 {
+  height: 100ch;
+  color: #a6a6a6;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+a.funtionTitle {
+  margin-left: 25px;
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: bold;
+}
+a.funtionTitle::after {
+  display: block;
+  content: '';
+  background-color: white;
+  opacity: 0.5;
+  height: 1px;
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 40px; 
+}
+
+a {
+  color: #a6a6a6;
+  text-decoration: none;
+  width: 100%;
+}
+  a:visited {
+    color: #a6a6a6;
+    text-decoration: none;
   }
-    .viewPro {
-      height: 100px;
-      position: relative;
-      left: 50ch;
-      margin: 10px;
-    }
-    .activeViewPro, .viewPro:hover {
-      background-color: green;
-      color: white;
-    }
-  
-  .detailOption {
-    margin: 5px;
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  a:active {
+    text-decoration: none;
+  }
+
+.fa {
+  color: white;
+}
+
+.viewProOptions, .productType, .productBrand, .viewOrder {
+  display: none;
+}
+
+.link {
+  display: none;
+}
+
+ul {
+  margin: 0;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+#adminName, #dashboardTitle  {
+  text-align: center;
+}
+  h2#adminName::after, h3#dashboardTitle::after  {
     display: block;
+    content: '';
+    background-color: white;
+    opacity: 0.5;
+    height: 1px;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    margin-left: 40px;  
   }
-    .detailOption h3 {
-      border-bottom: green double;
-      font-size: 20px;
-    }
-    .detailOption a {
-      color: black;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    .detailOption a:hover {
-      text-decoration: black underline;
-      font-weight: bold;
-    }
-          
-  .addNewForm {
-    position: absolute;
-    top: 30ch;
-    left: 50ch;
-    border: green solid 2px;
-    display: none;
-  }
-    .addNewForm form {
-      margin: 15px;
-      font-size: 20px;
-    }
-    .addNewForm input {
-      height: 3ch;
-      font-size: 20px;
-    }
-    
-  #closeFormBtn {
-    position: absolute;
-    left: 51ch;
-    top: 0px;
-    height: 30px;
-    width: 30px;
-  }
-  
-  .showAccount {
-    position: relative;
-    top: 1ch;
-    left: 50ch;
-    display: none;
-  }
-    .showAccount form {
-      margin: 25px;
-      font-size: 20px;
-    }
-  
-    .showAccount input {
-      height: 25px;
-      font-size: 15px;
-    }
+

@@ -10,63 +10,60 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin.css" />
 </head>
 <body>
-        <div class="header">
-            <div class="row">
-                <div class="col-sm-12" style="background-color:black"> 
-                    <form action="#" class="mainForm">
-                    <div id="menu-bar">
-                        <div class="row">
-                            <div class="col-sm-3" style="border-right: aliceblue solid 1px; border-radius:25px 0 0 25px;">
-                                <!--<a href="#">Quản lý sản phẩm</a>-->
-                                <button onclick="quanLySanPham()" class="adminRole active" style="border-radius: 25px 0 0 25px;">Quản lý sản phẩm</button>
-                            </div>
-                            <div class="col-sm-3" style="border-right: aliceblue solid 1px;">
-                                <button onclick="quanLyDonHang()" class="adminRole">Quản lý đơn hàng</button>
-                            </div>
-                            <div class="col-sm-3" style="border-right: aliceblue solid 1px;">
-                                <button onclick="xemTaiKhoan()" class="adminRole">Tài khoản của bạn</button>
-                            </div>
-                            <div class="col-sm-3" style=" border-radius:0 25px 25px 0;">
-                                <button onclick="logout()" class="adminRole" style="border-radius:0 25px 25px 0;">Đăng xuất</button>
-                            </div>
-                        </div>
-                    </div>
+    <div class="dashboard">
+        <div class="row">
+            <div class="col-sm-3" style="background-color: #000033">
+                <h2 id="adminName">Admin</h2>
+                <h3 id="dashboardTitle"><a href="#">Dashboard</a></h3>
+                    <div class=""></div>
+                    <li>
+                        <a href="#" class="adminFunctions" onclick="dropDown('productManagement')">Quản lý sản phẩm</a>
+                        <ul class="productManagement">
+                            <li><a href="#" onclick="dropDown('viewProOptions')">Xem danh sách sản phẩm</a>            
+                               <ul class="viewProOptions">
+                                    <li><a href="#" onclick="dropDown('productType')">Theo loại</a>
+                                        <ul class="productType">
+                                            <li><a href="#">Máy ảnh kỹ thuật số</a></li>
+                                            <li><a href="#">Máy ảnh cơ</a></li>
+                                            <li><a href="#">Máy ảnh lấy liền</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" onclick="dropDown('productBrand')">Theo nhà sản xuất</a>
+                                        <ul class="productBrand">
+                                            <li><a href="#">Canon</a></li>
+                                            <li><a href="#">Fujifilm</a></li>
+                                            <li><a href="#">Nikon</a></li>
+                                            <li><a href="#">Sony</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="productManagement">Thêm sản phẩm</a></li>
+                        </ul>
+                    </li>
 
-                    <div class="container-quanLySanPham">
-                        <input type="text" class="searchProduct" id="searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
-                        <button type="submit" name="search" class="searchProduct" id="searchBtn" onclick="searchProducts()"><i class="fa fa-search"></i></button>
-                        <br><br>
-                
-                        <div class="row">
-                            <div class="col-sm-1"></div>
-                            <div class="col-sm-2">
-                                <div class="detailOption">
-                                    <h3>Xem sản phẩm theo</h3>
-                                    <table>
-                                        <tr>
-                                            <td><a href="#">Theo loại sản phẩm</a></td>
-                                        </tr >
-                                        <tr>
-                                            <td><a href="">Theo thương hiệu</a></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="col-sm-8" style="background-color: aquamarine;">
-                                <div class="optionsProduct">
-                                    <button type="submit" name="viewProduct" class="viewPro activeViewPro" onclick="showOptionToViewProduct()">Xem sản phẩm</button>
-                                    <button type="submit" name="addNewPro" class="viewPro" onclick="addNewProduct()">Thêm sản phẩm</button>
-                                </div>
-                               
-                            </div>                          
-                            <div class="col-sm-1"></div>
-                        </div>
-                    </div>
-                </form> 
-                </div>
+                <li><a href="#" class="adminFunctions" onclick="dropDown('orderManagement')">Quản lý đơn hàng</a>
+                    <ul class="orderManagement">
+                        <li><a href="#" onclick="dropDown('viewOrder')">Xem danh sách đơn hàng</a>
+                            <ul class="viewOrder">
+                                <li><a href="#" class="viewOrder">Theo ngày</a></li>
+                                <li><a href="#" class="viewOrder">Theo trạng thái đơn hàng</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#" class="adminFunctions">Đi đến trang chủ</a></li>
+                <li><a href="#" class="adminFunctions">Xem tài khoản</a></li>
+                <li><a href="#" class="adminFunctions">Đăng xuất</a></li>
+            </div>
+
+
+
+            
+            <div class="col-sm-9">
             </div>
         </div>
-   
+    </div>
 
 
     <script src="./../../assets/js/javaScript_AdminPage.js"></script>
