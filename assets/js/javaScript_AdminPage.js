@@ -1,7 +1,8 @@
-//--------------------  Active clicked button  ---------------------
 var header = document.getElementById("menu-bar");
 var btns = header.getElementsByClassName("adminRole");
+//alert("step 2");
 for (var i = 0; i < btns.length; i++) {
+    
     btns[i].addEventListener("click", function() {
         var current = document.getElementsByClassName("active");
         current[0].className = current[0].className.replace(" active", "");
@@ -9,17 +10,19 @@ for (var i = 0; i < btns.length; i++) {
     })
 }
 
-
-//**************************  QUẢN LÝ SẢN PHẨM *********************/
+/*
+//**************************  QUẢN LÝ SẢN PHẨM *********************
 //Hiển thị menu để lựa chọn danh sách sản phẩm
 function showOptionToViewProduct() {
+    var qlsp = document.getElementsByClassName("viewPro")[0];
+
     var listOption = document.getElementsByClassName("detailOption")[0];
     var button
     if (listOption.style.display == "none") {
         listOption.style.display = "block";
     } else {
         listOption.style.display = "none";
-    }    
+    }  
 }
 
 function addNewProduct() {
@@ -50,4 +53,4 @@ function xemTaiKhoan() {
 //********************************  ĐĂNG XUẤT ***************************
 function logout() {
     `<h2>safda</h2>;`;
-}
+}*/

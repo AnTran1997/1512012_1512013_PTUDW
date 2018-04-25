@@ -68,47 +68,51 @@
    height: 25ch;
    width: 100%;
 }
-    #menu-bar .row{
-       
+  .mainForm {
+    border: green solid 1px;;
+    position: absolute;
+    top: 8ch;
+    left: 8ch;
+    width: 155ch;
+    height: 150ch;
+    border-radius: 25px;
+  }  
+    #menu-bar .row{   
         position: relative;
         height: 15ch;
-        top: 10ch;
-        left: 10ch;
-        width: 150ch;
+        top: 2ch;
+        left: 5ch;
+        width: 148ch;
         background-color: green;
         border-radius: 25px;
     }
-
-        #menu-bar .row .col-sm-3 {
-            text-align: center; 
+      #menu-bar .row .col-sm-3 {
+          text-align: center; 
+      }
+        .adminRole {
+          color: cornsilk;
+          text-decoration: none;
+          position: relative;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 20px;
+          background-color: green;
+          border: none;
+          height: 100%;
+          width: 100%; 
         }
-
-            .adminRole {
-                color: cornsilk;
-                text-decoration: none;
-                position: relative;
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 20px;
-                background-color: green;
-                border: none;
-                height: 100%;
-                width: 100%;
-                
-            }
-            .active, .adminRole:hover {
-                background-color: #80ff80;
-                color: black;
-                cursor: pointer;
-            }
+          .active, .adminRole:hover {
+            background-color: #80ff80;
+            color: black;
+            cursor: pointer;
+          }
 
 .container-quanLySanPham .searchProduct {
-    font-size: 15px;
-    height: 40px;
-    position: relative;
-    top: 1ch;
-    left: 100ch;
+  font-size: 15px;
+  height: 40px;
+  position: relative;
+  top: 2ch;
+  left: 90ch;
 }
-
     #searchBtn {
         width: 40px;
         border: none;
@@ -117,80 +121,79 @@
         width: 50ch;
     }
 
+
 .container-quanLySanPham .row {
-    height: 50ch;
+  height: 50ch;
 }
-
-.container-quanLySanPham .col-sm-2 {
-  border: green double;
-  height: 20ch;
-}
-
-  .viewPro {
-    height: 100px;
-    position: relative;
+  .container-quanLySanPham .col-sm-2 {
+    border: green double;
+    height: 20ch;
+  }
+    .viewPro {
+      height: 100px;
+      position: relative;
+      left: 50ch;
+      margin: 10px;
+    }
+    .activeViewPro, .viewPro:hover {
+      background-color: green;
+      color: white;
+    }
+  
+  .detailOption {
+    margin: 5px;
+    display: block;
+  }
+    .detailOption h3 {
+      border-bottom: green double;
+      font-size: 20px;
+    }
+    .detailOption a {
+      color: black;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .detailOption a:hover {
+      text-decoration: black underline;
+      font-weight: bold;
+    }
+          
+  .addNewForm {
+    position: absolute;
+    top: 30ch;
     left: 50ch;
-    margin: 10px;
+    border: green solid 2px;
+    display: none;
   }
-
-.detailOption {
-  margin: 5px;
-  display: block;
-}
-  .detailOption h3 {
-    border-bottom: green double;
-    font-size: 20px;
+    .addNewForm form {
+      margin: 15px;
+      font-size: 20px;
+    }
+    .addNewForm input {
+      height: 3ch;
+      font-size: 20px;
+    }
+    
+  #closeFormBtn {
+    position: absolute;
+    left: 51ch;
+    top: 0px;
+    height: 30px;
+    width: 30px;
   }
-  .detailOption a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
+  
+  .showAccount {
+    position: relative;
+    top: 1ch;
+    left: 50ch;
+    display: none;
   }
-  .detailOption a:hover {
-    text-decoration: black underline;
-    font-weight: bold;
-  }
-       
-.addNewForm {
-  position: absolute;
-  top: 30ch;
-  left: 50ch;
-  border: green solid 2px;
-  display: none;
-}
-
-  .addNewForm form {
-    margin: 15px;
-    font-size: 20px;
-  }
-
-  .addNewForm input {
-    height: 3ch;
-    font-size: 20px;
-  }
- 
-#closeFormBtn {
-  position: absolute;
-  left: 51ch;
-  top: 0px;
-  height: 30px;
-  width: 30px;
-}
-
-.showAccount {
-  position: relative;
-  top: 1ch;
-  left: 50ch;
-  display: none;
-}
-  .showAccount form {
-    margin: 25px;
-    font-size: 20px;
-  }
-
-  .showAccount input {
-    height: 25px;
-    font-size: 15px;
-  }
-
-
+    .showAccount form {
+      margin: 25px;
+      font-size: 20px;
+    }
+  
+    .showAccount input {
+      height: 25px;
+      font-size: 15px;
+    }
