@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin/styleAdmin.css" />
+
+</head>
+<body>
+    <div class="dashboard">
+        <div class="row">
+            <div class="col-sm-3" style="background-color: #000033">
+                <h2 id="adminName">Admin</h2>
+                <h3 id="dashboardTitle"><a href="adminHomePage.html">Dashboard</a></h3>
+                    <div class=""></div>
+                    <li>
+                        <a href="#" class="adminFunctions" onclick="dropDown('productManagement')">Quản lý sản phẩm</a>
+                        <ul class="productManagement">
+                            <li><a href="#" onclick="dropDown('viewProOptions')">Xem danh sách sản phẩm</a>            
+                               <ul class="viewProOptions">
+                                    <li><a href="#" onclick="dropDown('productType')">Theo loại</a>
+                                        <ul class="productType">
+                                            <li><a href="showProductTypes.html">Máy ảnh kỹ thuật số</a></li>
+                                            <li><a href="showProductTypes.html">Máy ảnh cơ</a></li>
+                                            <li><a href="showProductTypes.html">Máy ảnh lấy liền</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" onclick="dropDown('productBrand')">Theo nhà sản xuất</a>
+                                        <ul class="productBrand">
+                                            <li><a href="showProductBrands.html">Canon</a></li>
+                                            <li><a href="showProductBrands.html">Fujifilm</a></li>
+                                            <li><a href="showProductBrands.html">Nikon</a></li>
+                                            <li><a href="showProductBrands.html">Sony</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="showAllProducts.html" onclick="dropDown('productBrand')">Xem tất cả</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="addNewProduct.html" class="productManagement">Thêm sản phẩm</a></li>
+                        </ul>
+                    </li>
+
+                <li><a href="#" class="adminFunctions" onclick="dropDown('orderManagement')">Quản lý đơn hàng</a>
+                    <ul class="orderManagement">
+                        <li><a href="#" onclick="dropDown('viewOrder')">Xem danh sách đơn hàng</a>
+                            <ul class="viewOrder">
+                                <li><a href="#" class="viewOrder">Theo ngày</a></li>
+                                <li><a href="#" class="viewOrder">Theo trạng thái đơn hàng</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="./../userPages/userHomePage.html" class="adminFunctions">Đi đến trang chủ</a></li>
+                <li><a href="#" class="adminFunctions">Xem tài khoản</a></li>
+                <li><a href="./../../index.html" class="adminFunctions">Đăng xuất</a></li>
+            </div>
+
+
+
+
+            <div class="col-sm-9">
+                <div class="searchBar">
+                    <input type="text" class="searchProduct searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
+                    <button type="submit" name="search" class="searchProduct searchBtn" onclick="searchProducts()"><i class="fa fa-search"></i></button>
+                </div>
+
+                <div class="listDateOrder">
+                    <div class="date">
+                        <h2>25/04/2018</h2>
+                        <table class="dateOrder">
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền (vnđ)</th>
+                                <th>User mua hàng</th>
+                                <th>Trạng thái đơn hàng</th>
+                            </tr>
+                            <tr>
+                                <td>dh100</td>
+                                <td>Sony Alpha A7 Mark II + Lens 28-70mm</td>                                </th>
+                                <td>1</td>
+                                <td>31.990.000</td>
+                                <td>doraemon_cuke</td>
+                                <td>Giao hàng thành công</td>
+                            </tr>
+                            <tr>
+                                <td>dh99</td>
+                                <td>Canon M10 KIT 15-45mm </td>
+                                <td>1</td>
+                                <td>6.950.000</td>
+                                <td>nhiep_anh_gia_97</td>
+                                <td>Đang giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh98</td>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue</td>
+                                <td>3</td>
+                                <td>5.070.000</td>
+                                <td>Studio_for_teenager</td>
+                                <td>Giao hàng thành công</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="date">
+                        <h2>24/04/2018</h2>
+                        <table class="dateOrder">
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền (vnđ)</th>
+                                <th>User mua hàng</th>
+                                <th>Trạng thái đơn hàng</th>
+                            </tr>
+                            <tr>
+                                <td>dh97</td>
+                                <td>Nikon D5300 KIT 18-55 VR (VIC Nikon)</td>                               
+                                <td>1</td>
+                                <td>12.390.000</td>
+                                <td>KingOfPirate123</td>
+                                <td>Đang giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh96</td>
+                                <td>C Sony HX350 - 20.4 Megapixel, Zoom 50xnon M10 KIT 15-45mm </td>
+                                <td>1</td>
+                                <td>7.690.000</td>
+                                <td>zoro_OnePiece</td>
+                                <td>Chưa giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng</td>
+                                <td>1</td>
+                                <td>2.690.000</td>
+                                <td>ong_mat_troi</td>
+                                <td>Đang giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</td>
+                                <td>2</td>
+                                <td>5.380.000</td>
+                                <td>ong_mat_troi</td>
+                                <td>Đang giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Lime Green</td>
+                                <td>1</td>
+                                <td>2.690.000</td>
+                                <td>ong_mat_troi</td>
+                                <td>Đang giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue</td>
+                                <td>1</td>
+                                <td>3.690.000</td>
+                                <td>ong_mat_troi</td>
+                                <td>Đang giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh94</td>
+                                <td>Nikon D7500 + Lens Nikon 18-140mm F3.5-5.6G ED VR (VIC Nikon)</td>
+                                <td>1</td>
+                                <td>33.990.000</td>
+                                <td>blackPink_Jennie</td>
+                                <td>Giao hàng thành công</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="date">
+                        <h2>04/04/2018</h2>
+                        <table class="dateOrder">
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền (vnđ)</th>
+                                <th>User mua hàng</th>
+                                <th>Trạng thái đơn hàng</th>
+                            </tr>
+                            <tr>
+                                <td>dh50</td>
+                                <td>EOS 6D + 24-105mm f/4L</td>
+                                <td>1</td>
+                                <td>37.000.000</td>
+                                <td>studio_chupHinhCuoi</td>
+                                <td>Giao hàng thành công</td>
+                            </tr>
+                            <tr>                               
+                                <td>dh50</td>
+                                <td>Nikon D5600 KIT AF-P 18-55 VR</td>
+                                <td>1</td>
+                                <td>14.990.000</td>
+                                <td>studio_chupHinhCuoi</td>
+                                <td>Giao hàng thành công</td>
+                            </tr>
+                            <tr>
+                                <td>dh49</td>
+                                <td>Sony Alpha A6000 + 16-50mm (Trắng)</td>
+                                <td>1</td>
+                                <td>2.490.000</td>
+                                <td>yeuMauTrang</td>
+                                <td>Chưa giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh48</td>
+                                <td>Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng</td>
+                                <td>1</td>
+                                <td>11.790.000</td>
+                                <td>helloWorld_python</td>
+                                <td>Đã hủy</td>
+                            </tr>
+                            <tr>
+                                <td>dh47</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</td>
+                                <td>1</td>
+                                <td>2.690.000</td>
+                                <td>park_bo_gum_fan</td>
+                                <td>Chưa giao hàng</td>
+                            </tr>
+                        </table>
+                    </div> 
+                </div>
+
+                <div class="listStatusOrder">
+                    <div class="status">
+                        <h2>Chưa giao hàng</h2>
+                        <table>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Ngày mua</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
+                                <th>User mua hàng</th>
+                            </tr>
+                            <tr>
+                                <td>dh96</td>
+                                <td>24/04/2018</td>
+                                <td>C Sony HX350 - 20.4 Megapixel, Zoom 50xnon M10 KIT 15-45mm </td>
+                                <td>1</td>
+                                <td>7.690.000</td>
+                                <td>zoro_OnePiece</td>
+                            </tr>
+                            <tr>
+                                <td>dh49</td>
+                                <td>04/04/2018</td>
+                                <td>Sony Alpha A6000 + 16-50mm (Trắng)</td>
+                                <td>1</td>
+                                <td>2.490.000</td>
+                                <td>yeuMauTrang</td>
+                            </tr>
+                            <tr>
+                                <td>dh47</td>
+                                <td>04/04/2018</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</td>
+                                <td>1</td>
+                                <td>2.690.000</td>
+                                <td>park_bo_gum_fan</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="status">
+                        <h2>Đang giao hàng</h2>
+                        <table>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Ngày mua</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
+                                <th>User mua hàng</th>
+                            </tr>
+                            <tr>
+                                <td>dh99</td>
+                                <td>25/04/2018</td>
+                                <td>Canon M10 KIT 15-45mm </td>
+                                <td>1</td>
+                                <td>6.950.000</td>
+                                <td>nhiep_anh_gia_97</td>
+                            </tr>
+                            <tr>
+                                <td>dh97</td>
+                                <td>24/04/2018</td>
+                                <td>Nikon D5300 KIT 18-55 VR (VIC Nikon)</td>                                
+                                <td>1</td>
+                                <td>12.390.000</td>
+                                <td>KingOfPirate123</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>24/04/2018</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng</td>
+                                <td>1</td>
+                                <td>2.690.000</td>
+                                <td>ong_mat_troi</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>24/04/2018</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</td>
+                                <td>2</td>
+                                <td>5.380.000</td>
+                                <td>ong_mat_troi</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>24/04/2018</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Lime Green</td>
+                                <td>1</td>
+                                <td>2.690.000</td>
+                                <td>ong_mat_troi</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>24/04/2018</td>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue</td>
+                                <td>1</td>
+                                <td>3.690.000</td>
+                                <td>ong_mat_troi</td>
+                            </tr>  
+                        </table>
+                    </div>
+
+                    <div class="status">
+                        <h2>Giao hàng thành công</h2>
+                        <table>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Ngày mua</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
+                                <th>User mua hàng</th>
+                            </tr>
+                            <tr>
+                                <td>dh100</td>
+                                <td>25/04/2018</td>
+                                <td>Sony Alpha A7 Mark II + Lens 28-70mm</td>                                </th>
+                                <td>1</td>
+                                <td>31.990.000</td>
+                                <td>doraemon_cuke</td>
+                            </tr>
+                            <tr>
+                                <td>dh98</td>
+                                <td>25/04/2018</td>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue</td>
+                                <td>3</td>
+                                <td>5.070.000</td>
+                                <td>Studio_for_teenager</td>
+                            </tr>
+                            <tr>
+                                <td>dh94</td>
+                                <td>24/04/2018</td>
+                                <td>Nikon D7500 + Lens Nikon 18-140mm F3.5-5.6G ED VR (VIC Nikon)</td>
+                                <td>1</td>
+                                <td>33.990.000</td>
+                                <td>blackPink_Jennie</td>
+                            </tr>
+                            <tr>
+                                <td>dh50</td>
+                                <td>04/04/2018</td>
+                                <td>EOS 6D + 24-105mm f/4L</td>
+                                <td>1</td>
+                                <td>37.000.000</td>
+                                <td>studio_chupHinhCuoi</td>
+                            </tr>
+                            <tr>                               
+                                <td>dh50</td>
+                                <td>04/04/2018</td>
+                                <td>Nikon D5600 KIT AF-P 18-55 VR</td>
+                                <td>1</td>
+                                <td>14.990.000</td>
+                                <td>studio_chupHinhCuoi</td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+            
+                </div>
+
+        
+            
+        </div>
+    </div>
+
+
+    <script src="./../../assets/js/javaScript_AdminPage.js"></script>
+</body>
+</html>

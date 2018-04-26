@@ -12,3 +12,15 @@ function dropDown(nameClass) {
         }
     }
 }
+
+function closeFormAddNew() {
+    alert("Thêm sản phẩm mới thành công!");
+
+    //Display addnew form thành none
+    var formToAddNew = document.getElementsByClassName("addNewForm")[0];    
+    formToAddNew.style.display = "none";
+
+    //Chuyển trang chủ dashboard
+    window.location.href = "../../pages/AdminPages/adminHomePage.html";
+
+}

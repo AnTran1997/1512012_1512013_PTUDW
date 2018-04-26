@@ -55,7 +55,7 @@
                     </ul>
                 </li>
                 <li><a href="./../userPages/userHomePage.html" class="adminFunctions">Đi đến trang chủ</a></li>
-                <li><a href="viewAccount.html" class="adminFunctions">Xem tài khoản</a></li>
+                <li><a href="#" class="adminFunctions">Xem tài khoản</a></li>
                 <li><a href="./../../index.html" class="adminFunctions">Đăng xuất</a></li>
             </div>
 
@@ -68,7 +68,33 @@
                     <button type="submit" name="search" class="searchProduct searchBtn" onclick="searchProducts()"><i class="fa fa-search"></i></button>
                 </div>
 
+                <div class="showAccount">
+                    <h2>Your profile!</h2>
+                    <form action="">
+                        <label for="fullName">Họ tên</label><br>
+                        <input type="text" value="Monkey D.Luffy" name="fullName"><br><br>
+            
+                        <label for="email">Email</label><br>
+                        <input type="text" name="email" value="luffy@gmail.com"><br><br>
+            
+                        <label for="numberPhone">Số điện thoại</label><br>
+                        <input type="text" name="numberPhone" value="0123456789"><br><br>
+            
+                        <label for="gender">Giới tính</label><br>
+                        <select name="gender">
+                            <option value="nam">Nam</option>
+                            <option value="nu">Nữ</option>
+                        </select><br><br>
+            
+                        <label for="uname">Username</label><br>
+                        <input type="text" name="uname" value="the_pirate_king"><br><br>
+            
+                        <label for="pass">Password</label><br>
+                        <input type="submit" name="pass" value="Change password"><br><br>
+                    </form>
+                </div>
 
+                </div>
             </div>
         </div>
     </div>
