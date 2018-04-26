@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pirates - Chuyên cung cấp máy ảnh số chất lượng nhất</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="./assets/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./assets/css/bootstrap-grid.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./assets/css/jquery.fullpage.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+</head>
+<body>
+	<header id="header" class="header">
+		<div class="container">
+			<div class="row">
+				<div class="header-left col-sm-6">
+					<img src="./assets/design/logo-first-ver.png" alt="">
+				</div>
+				<div class="header-right col-sm-6">
+					<div class="row">
+						<div class="col-sm-6 header-search">
+							<input type="text">
+							<input type="submit">
+							<i class="fa fa-search"></i>
+						</div>
+						<div class="col-sm-2 header-basket">
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+						<div class="col-sm-4 header-user">
+							<i class="fa fa-user"></i>
+							<div class="hello-user">Hello, <span>Guest</span>!</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="main-content">
+	</div>
+</body>
+</html>
+<script src="./assets/js/jquery-3.3.1.min.js"></script>
+<script>
+	var g =0;
+	jQuery(document).ready(function($) {
+            //This plugin only used to make full page website - only one page at a time
+            function transition(next){
+            	$('.slider-control .slider-dot').removeClass('active');
+            	$('.slider-dot').eq(next).addClass('active');
+            	$('.pirate-intro-slider-item').removeClass('active');
+            	$('.pirate-intro-slider-item').eq(next).addClass('active');
+            }
+            function autoSlide(){
+            	var i = $('.slider-dot').index($('.slider-dot.active'));
+            	if(i>=$('.slider-dot').length-1){
+            		i=-1;
+            	}
+            	transition(i+1);
+            }
+            var repeat = setInterval(autoSlide,5000);
+            $('.slider-control .slider-dot').click(function(){
+            	if(!$(this).is($('.slider-dot.active').eq(0)))
+            	{
+            		transition($('.slider-dot').index(this));
+            		clearInterval(repeat);
+            		setTimeout(()=>{
+            			repeat = setInterval(autoSlide,5000);
+            		},5000);
+            	}
+            });
+
+            $('.menu-button').click(function(){
+            	$(this).addClass('display-none');
+            	$('.pirate-menu').addClass('menu-active');
+            });
+            $('.close-menu').click(function(){
+            	console.log("ihi");
+            	$('.pirate-menu').removeClass('menu-active');
+            	$('.menu-button').removeClass('display-none');
+            });
+        });
+    </script>
+</body>
+</html>
