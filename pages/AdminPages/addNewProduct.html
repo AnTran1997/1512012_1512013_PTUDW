@@ -40,7 +40,7 @@
                                     <li><a href="showAllProducts.html" onclick="dropDown('productBrand')">Xem tất cả</a></li>
                                 </ul>
                             </li>
-                            <li><a href="addNewProduct.html" class="productManagement">Thêm sản phẩm</a></li>
+                            <li><a href="#" class="productManagement">Thêm sản phẩm</a></li>
                         </ul>
                     </li>
 
@@ -66,6 +66,35 @@
                 <div class="searchBar">
                     <input type="text" class="searchProduct searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
                     <button type="submit" name="search" class="searchProduct searchBtn" onclick="searchProducts()"><i class="fa fa-search"></i></button>
+                </div>
+                <h2>Thêm một sản phẩm vào kho hàng</h2>
+                <div class="addNewForm">
+                    <button id="closeFormBtn" onclick="closeFormAddNew()"><i class="fa fa-close"></i></button>
+                    <form action="">
+                        <label for="namePro">Tên sản phẩm</label><br>
+                        <input type="text" name="namePro"><br><br>
+            
+                        <label for="idPro">Mã sản phẩm</label><br>
+                        <input type="text" name="idPro"><br><br>
+            
+                        <label for="nxs">Thương hiệu/Nhà sản xuất</label><br>
+                        <input type="text" name="nxs"><br><br>
+            
+                        <label for="typePro">Loại sản phẩm</label><br>
+                        <input type="text" name="typePro"><br><br>
+            
+                        <label for="price">Giá tiền (giá bán lẻ)</label><br>
+                        <input type="text" name="price"><br><br>
+                        
+            
+                        <label for="numberPro">Số lượng</label><br>
+                        <input type="combobox" name="numberPro"><br><br>
+            
+                        <label for="addImage">Thêm hình ảnh</label><br>
+                        <input type="file" id="productImage"><br><br>
+            
+                        <input type="submit" name="addNewBtn" value="Add new products">
+                    </form>
                 </div>
 
 

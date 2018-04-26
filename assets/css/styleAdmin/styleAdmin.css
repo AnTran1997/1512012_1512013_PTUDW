@@ -193,7 +193,7 @@ li {
   }
 
 
-/* ----------------------------- Show products page ---------------------------- */
+/* ----------- Show products page -------------- */
 .editDeletePro {
   margin-bottom: 15px;
 }
@@ -263,3 +263,20 @@ li {
   height: 35px;;
 }
       
+
+/* ----------- Add new product form-------------- */
+.addNewForm {
+
+}
+
+  .addNewForm form {
+
+  }
+
+  .addNewForm input {
+
+  }
+ 
+#closeFormBtn {
+
+}
