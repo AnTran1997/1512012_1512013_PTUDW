@@ -1,0 +1,265 @@
+@charset "UTF-8";
+
+/*--font face--*/
+
+@font-face {
+  font-family: 'HelvetiCaneue';
+  src: url("./../fonts/helvetica-neue-regular.ttf");
+}
+
+@font-face {
+  font-family: 'HelvetiCaneueLight';
+  src: url("./../fonts/helvetica-neue-light.ttf");
+}
+
+@font-face {
+  font-family: 'HelvetiCaneueMedium';
+  src: url("./../fonts/helvetica-neue-medium.ttf");
+}
+
+@font-face {
+  font-family: 'HelvetiCaneueBold';
+  src: url("./../fonts/helvetica-neue-bold.ttf");
+}
+
+@font-face {
+  font-family: 'AvertaBlack';
+  src: url("../fonts/Averta-Black_0.otf");
+}
+
+@font-face {
+  font-family: 'AvertaBold';
+  src: url("../fonts/Averta-Bold_1.otf");
+}
+
+@font-face {
+  font-family: 'UTMGodWordR';
+  src: url("../fonts/UTM God_s WordR.ttf");
+}
+
+@font-face {
+  font-family: 'UTMGodWordRItalic';
+  src: url("../fonts/UTM God_s WordRItalic.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerif';
+  src: url("./../fonts/NotoSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerifItalic';
+  src: url("./../fonts/NotoSerif-Italic.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerifBoldItalic';
+  src: url("./../fonts/NotoSerif-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerifBold';
+  src: url("./../fonts/NotoSerif-Bold.ttf");
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* -------------------------------- Left Panel ---------------------------- */
+h2#adminName {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+h3#dashboardTitle {
+  font-size: 23px;
+}
+
+/*style="background-color: #000033*/
+.dashboard .col-sm-3 {
+  height: 100ch;
+  color: #a6a6a6;
+}
+
+li {
+  list-style-type: none;
+}
+
+li.adminFuntions {
+  margin-top: 50px;
+}
+
+a.adminFunctions {
+  margin-left: 25px;
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: bold;
+}
+a.adminFunctions::after {
+  display: block;
+  content: '';
+  background-color: white;
+  opacity: 0.5;
+  height: 1px;
+  width: 80%;
+  margin-top: 10px;
+  margin-left: 40px; 
+}
+
+a {
+  color: #a6a6a6;
+  text-decoration: none;
+  width: 100%;
+}
+  a:visited {
+    color: #a6a6a6;
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+    text-decoration: none;
+  }
+  a:active {
+    text-decoration: none;
+  }
+
+.fa {
+  color: white;
+}
+
+.viewProOptions, .productType, .productBrand, .viewOrder {
+  display: none;
+}
+
+.link {
+  display: none;
+}
+
+ul {
+  margin: 0;
+}
+
+li {
+  margin-bottom: 15px;
+  margin-top:5px;
+}
+
+#adminName, #dashboardTitle  {
+  text-align: center;
+}
+  h2#adminName::after, h3#dashboardTitle::after  {
+    display: block;
+    content: '';
+    background-color: white;
+    opacity: 0.5;
+    height: 1px;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    margin-left: 40px;  
+  }
+
+
+/* -------------------------------- Right Panel ---------------------------- */
+/* ---- search bar ------ */
+.searchBar {
+  padding: 15px;
+  border-bottom: #cccccc solid 5px;
+}
+
+.searchBar .searchProduct {
+  font-size: 15px;
+  height: 40px;
+  position: relative;
+  top: 0ch;
+}
+  .searchBtn {
+    width: 40px;
+    border: none;
+    margin: 0;
+
+  }
+  .searchInput {
+    width: 94%;
+    border: none;
+    margin-left: 10px;
+  }
+
+
+/* ----------------------------- Show products page ---------------------------- */
+.editDeletePro {
+  margin-bottom: 15px;
+}
+  .editDeletePro button {
+    height: 40px;
+    width: 100px;
+    position: relative;
+    left: 80ch;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #000033;
+    color: #a6a6a6;
+  }
+  .editDeletePro button:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+.container-quanLySanPham > table {
+  font-size: 15px;
+  height: 40px;
+  position: relative;
+  right: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: darkblue solid 4px;
+  border-collapse: collapse;
+}
+  .container-quanLySanPham th, td {
+    
+    border: darkblue solid 0.1px;
+    text-align: center;
+  }
+  .container-quanLySanPham th {
+    border-bottom: darkblue solid 4px;
+  }
+
+  .container-quanLySanPham .row {
+      height: 50ch;
+  }
+
+  .container-quanLySanPham .col-sm-2 {
+      border: green double;
+      height: 20ch;
+  }
+
+      .detailOption {
+          margin: 5px;
+          display: block;
+      }
+          .detailOption h3 {
+          border-bottom: green double;
+          font-size: 20px;
+          }
+          .detailOption a {
+          color: black;
+          text-decoration: none;
+          font-size: 18px;
+          }
+          .detailOption a:hover {
+          text-decoration: black underline;
+          font-weight: bold;
+          }
+
+.imgInTable {
+  width: 35px;
+  height: 35px;;
+}
+      

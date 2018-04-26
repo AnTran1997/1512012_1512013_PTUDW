@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/bootstrap-grid.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin/styleAdmin.css" />
 </head>
 <body>
     <div class="dashboard">
         <div class="row">
             <div class="col-sm-3" style="background-color: #000033">
                 <h2 id="adminName">Admin</h2>
-                <h3 id="dashboardTitle"><a href="#">Dashboard</a></h3>
+                <h3 id="dashboardTitle"><a href="adminHomePage.html">Dashboard</a></h3>
                     <div class=""></div>
                     <li>
                         <a href="#" class="adminFunctions" onclick="dropDown('productManagement')">Quản lý sản phẩm</a>
@@ -36,6 +36,7 @@
                                             <li><a href="#">Sony</a></li>
                                         </ul>
                                     </li>
+                                    <li><a href="showProducts.html" onclick="dropDown('productBrand')">Xem tất cả</a></li>
                                 </ul>
                             </li>
                             <li><a href="#" class="productManagement">Thêm sản phẩm</a></li>
@@ -63,6 +64,13 @@
                     <button type="submit" name="search" class="searchProduct searchBtn" onclick="searchProducts()"><i class="fa fa-search"></i></button>
                 </div>
                 <h2>Xem thông tin sản phẩm</h2>
+
+                <div class="editDeletePro">
+                    <button type="submit" name="edit" id="edit" onclick="window.location.href='adminHomePage.html'">Chỉnh sửa</button>
+                    <button type="submit" name="delete" id="delete">Xóa</button>
+                </div>
+
+
                 <div class="container-quanLySanPham">
                     <table>
                         <tr>
@@ -72,8 +80,9 @@
                             <th>Loại máy ảnh</th>
                             <th>Giá nhập (VNĐ)</th>
                             <th>Giá bán (VNĐ)</th>
-                            <th>Số lượng trong kho</th>
+                            <th>Số lượng</th>
                             <th>Hình ảnh</th>
+                            <th></th>
                         </tr>
                         <tr>
                             <td>Canon 6D Body</td>
@@ -84,6 +93,7 @@
                             <td>9.600.000</td>
                             <td>5</td>
                             <td><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Canon M6 KIT EF-M 15-45mm IS STM</td>
@@ -94,6 +104,7 @@
                             <td>16.050.000</td>
                             <td>3</td>
                             <td><img src="./../../assets/images/Brands/Canon/Canon M6 KIT EF-M 15-45mm IS STM.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Canon M10 KIT 15-45mm </td>
@@ -104,6 +115,7 @@
                             <td>26.590.000</td>
                             <td>4</td>
                             <td><img src="./../../assets/images/Brands/Canon/Canon M10 KIT 15-45mm .jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng</td>
@@ -114,6 +126,7 @@
                             <td>11.790.000</td>
                             <td>7</td>
                             <td><img src="./../../assets/images/Brands/Canon/Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>        
                         <tr>
                             <td>EOS 6D + 24-105mm f4L</td>
@@ -124,6 +137,7 @@
                             <td>37.000.000</td>
                             <td>2</td>
                             <td><img src="./../../assets/images/Brands/Canon/EOS 6D + 24-105mm f4L.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>  
                         <tr>
                             <td>EOS 3000D + Lens EF-S 18 - 55mm III</td>
@@ -134,6 +148,7 @@
                             <td>9.600.000</td>
                             <td>10</td>
                             <td><img src="./../../assets/images/Brands/Canon/EOS 3000D + Lens EF-S 18 - 55mm III.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>  
                         <tr>
                             <td>EOS M50 + Kit 15-45mm (24.1MP)</td>
@@ -144,6 +159,7 @@
                             <td>19.000.000</td>
                             <td>6</td>
                             <td><img src="./../../assets/images/Brands/Canon/EOS M50 + Kit 15-45mm (24.1MP) .jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>   
                         <tr>
                             <td>Canon 6D Body</td>
@@ -154,6 +170,7 @@
                             <td>9.600.000</td>
                             <td>5</td>
                             <td><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>       
                         <tr>
                             <td>Fujifilm Instax Mini 90 Neo</td>
@@ -164,6 +181,7 @@
                             <td>4.000.000</td>
                             <td>11</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm Instax Mini 90 Neo.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr> 
                         <tr>
                             <td>Fujifilm X-A3 + 16-50mm II</td>
@@ -174,6 +192,7 @@
                             <td>10.490.000</td>
                             <td>3</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm X-A3 + 16-50mm II.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Máy Ảnh Lấy Liền Fujifilm Instax Mini 8 - Hello Kitty Đỏ</td>
@@ -184,6 +203,7 @@
                             <td>1.900.000</td>
                             <td>15</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax Mini 8 - Hello Kitty Đỏ.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Fujifilm X-A5 + lens 15-45mm F3.5-5.6 OIS (24.2MP)</td>
@@ -194,6 +214,7 @@
                             <td>14.590.000</td>
                             <td>1</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm X-A5 + lens 15-45mm F3.5-5.6 OIS (24.2MP).jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Fujifilm X-A10 + 16-50mm II</td>
@@ -204,6 +225,7 @@
                             <td>9.490.000</td>
                             <td>5</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm X-A10 + 16-50mm II.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Máy Ảnh Lấy Liền Fujifilm Instax SQUARE SQ10</td>
@@ -214,6 +236,7 @@
                             <td>5.990.000</td>
                             <td>3</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax SQUARE SQ10.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue</td>
@@ -224,6 +247,7 @@
                             <td>1.690.000</td>
                             <td>7</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Ice Blue</td>
@@ -234,6 +258,7 @@
                             <td>1.790.000</td>
                             <td>9</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Ice Blue.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Lime Green</td>
@@ -244,6 +269,7 @@
                             <td>1.790.000</td>
                             <td>2</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Lime Green.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Trắng</td>
@@ -254,6 +280,7 @@
                             <td>2.690.000</td>
                             <td>3</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Trắng.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</td>
@@ -264,6 +291,7 @@
                             <td>2.690.000</td>
                             <td>2</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>
                         <tr>
                             <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng</td>
@@ -274,6 +302,7 @@
                             <td>2.690.000</td>
                             <td>6</td>
                             <td><img src="./../../assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng.jpg" class="imgInTable"></td>
+                            <td><input type="checkbox" class="checkProduct"></td>
                         </tr>                                                                              
                     </table>  
                 </div>
@@ -293,7 +322,8 @@
 
 
 
-    <script src="./../../assets/js/javaScript_AdminPage.js"></script>
+    <script src="./../../assets/js/javaScript_AdminPage.js">   
+    </script>
 
 
 

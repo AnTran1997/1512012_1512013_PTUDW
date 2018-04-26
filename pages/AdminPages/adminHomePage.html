@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/bootstrap-grid.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin/styleAdmin.css" />
 
 </head>
 <body>
@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-sm-3" style="background-color: #000033">
                 <h2 id="adminName">Admin</h2>
-                <h3 id="dashboardTitle"><a href="#">Dashboard</a></h3>
+                <h3 id="dashboardTitle"><a href="adminHomePage.html">Dashboard</a></h3>
                     <div class=""></div>
                     <li>
                         <a href="#" class="adminFunctions" onclick="dropDown('productManagement')">Quản lý sản phẩm</a>
@@ -29,14 +29,15 @@
                                             <li><a href="#">Máy ảnh lấy liền</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="showProducts.html" onclick="dropDown('productBrand')">Theo nhà sản xuất</a>
+                                    <li><a href="#" onclick="dropDown('productBrand')">Theo nhà sản xuất</a>
                                         <ul class="productBrand">
-                                            <li><a href="#">Canon</a></li>
+                                            <li><a href="showProductBrands.html">Canon</a></li>
                                             <li><a href="#">Fujifilm</a></li>
                                             <li><a href="#">Nikon</a></li>
                                             <li><a href="#">Sony</a></li>
                                         </ul>
                                     </li>
+                                    <li><a href="showAllProducts.html" onclick="dropDown('productBrand')">Xem tất cả</a></li>
                                 </ul>
                             </li>
                             <li><a href="#" class="productManagement">Thêm sản phẩm</a></li>
@@ -66,6 +67,8 @@
                     <input type="text" class="searchProduct searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
                     <button type="submit" name="search" class="searchProduct searchBtn" onclick="searchProducts()"><i class="fa fa-search"></i></button>
                 </div>
+
+
             </div>
         </div>
     </div>
