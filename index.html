@@ -1,147 +1,179 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Pirates - Chuyên cung cấp máy ảnh số chất lượng nhất</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/bootstrap-grid.min.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/jquery.fullpage.min.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pirates - Chuyên cung cấp máy ảnh số chất lượng nhất</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="./assets/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./assets/css/bootstrap-grid.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./assets/css/jquery.fullpage.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
 </head>
 <body>
-  <header>
-    <div class="pirate-menu">
-      <div class="pirate-intro-logo">
-       <img src="./assets/design/logo-first-ver.png" alt="">
-       <p>Hải Tặc</p>
-     </div>
-     <div class="menu-button">
-      <i class="fa fa-bars"></i>
-    </div>
-    <ul class="menu">
-      <i class="fa fa-close close-menu"></i>
-      <li class="menu-item"><a href="./pages/Login.html">Menu item</a></li>
-      <li class="menu-item"><a href="#">Menu item</a></li>
-      <li class="menu-item"><a href="#">Menu item</a></li>
-      <li class="menu-item"><a href="#">Menu item</a></li>
-      <li class="menu-item"><a href="#">Menu item</a></li>
-    </ul>
-  </div>
-</header>
-<div class="main-content">
-  <div class="section pirate-intro">
-    <div class="pirate-intro-slider">
-     <div class="slider-control">
-       <div class="slider-dot active"><span></span></div>
-       <div class="slider-dot"><span></span></div>
-       <div class="slider-dot"><span></span></div>
-     </div>
-     <div class="pirate-intro-slider-wrapper">
-      <div class="pirate-intro-slider-item active" style="background-image: url(./assets/images/slider/slider-1-bg.jpg);background-color: rgba(29,45,59,0.8);background-size: cover">
-        <div class="pirate-slider-item-data">
-         <h3>Title</h3>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque expedita qui dignissimos illum voluptate omnis similique repellendus ipsum dolor esse, quas quam assumenda aliquid quos sit, dolorem eveniet magni.</p>
-         <a href="#">Xem thêm</a>
-       </div>
-       <div class="slider-item-shape">
-         <div class="triangle-bot-big">
-           <img src="./assets/images/slider/slider-1-bot-big.png" alt="">
-         </div>
-         <div class="triangle-bot-small">
-           <img src="./assets/images/slider/slider-1-bot-small.png" alt="">
-         </div>
-         <div class="triangle-top">
-           <img src="./assets/images/slider/slider-1-top-small.png" alt="">
-         </div>
-       </div>
-     </div>
-     <div class="pirate-intro-slider-item" style="background-image: url(./assets/images/slider/slider-2-bg.jpg);background-color: #dc6163;">
-       <div class="pirate-slider-item-data">
-         <h3>Title</h3>
-         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque expedita qui dignissimos illum voluptate omnis similique repellendus ipsum dolor esse, quas quam assumenda aliquid quos sit, dolorem eveniet magni.</p>
-         <a href="#">Xem thêm</a>
-       </div>
-       <div class="slider-item-shape">
-        <div class="triangle-bot-big">
-          <img src="./assets/images/slider/slider-2-bot-big.png" alt="">
-        </div>
-        <div class="triangle-bot-small">
-         <img src="./assets/images/slider/slider-2-bot-small.png" alt="">
-       </div>
-       <div class="triangle-top">
-         <img src="./assets/images/slider/slider-2-top-small.png" alt="">
-       </div>
-     </div>
-   </div>
-
-
-   <div class="pirate-intro-slider-item" style="background-image: url(./assets/images/slider/slider-3-bg.jpg);background-color: #c1b5a7;">
-     <div class="pirate-slider-item-data">
-       <h3>Title</h3>
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque expedita qui dignissimos illum voluptate omnis similique repellendus ipsum dolor esse, quas quam assumenda aliquid quos sit, dolorem eveniet magni.</p>
-       <a href="#">Xem thêm</a>
-     </div>
-     <div class="slider-item-shape">
-       <div class="triangle-bot-big">
-         <img src="./assets/images/slider/slider-3-bot-big.png" alt="">
-       </div>
-       <div class="triangle-bot-small">
-         <img src="./assets/images/slider/slider-3-bot-small.png" alt="">
-       </div>
-       <div class="triangle-top">
-         <img src="./assets/images/slider/slider-3-top-small.png" alt="">
-       </div>
-     </div>
-   </div>
- </div>
-</div>
-</div>
-<div class="section"></div>
-<div class="section"></div>
-</div>
-
-<script src="./assets/js/jquery-3.3.1.min.js"></script>
-<script>
-  var g =0;
-  jQuery(document).ready(function($) {
+	<header id="header" class="header">
+		<div class="container">
+			<div class="row">
+				<div class="header-left col-sm-6">
+					<img src="./assets/design/logo-first-ver.png" alt="">
+				</div>
+				<div class="header-right col-sm-6">
+					<div class="row">
+						<div class="col-sm-6 header-search">
+							<input type="text">
+							<input type="submit">
+							<i class="fa fa-search"></i>
+						</div>
+						<div class="col-sm-2 header-basket">
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+						<div class="col-sm-4 header-user">
+							<i class="fa fa-user"></i>
+							<div class="hello-user">Hello, <span>Guest</span>!</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="main-content">
+		<div class="intro">
+			<div class="row">
+				<div class="col-sm-3 product-menu">
+					<div class="product-menu-title">Danh mục sản phẩm</div>
+					<div class="row">
+						<div class="col-sm-2 product-cat">
+							Loại Sản Phẩm
+						</div>
+						<div class="col-sm-10 product-cat-content">
+							<ul class="product-list">
+								<li class="product-item">máy ảnh cơ</li>
+								<li class="product-item">máy ảnh kĩ thuật số</li>
+								<li class="product-item">máy ảnh lấy liền</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-2 product-cat">
+							Nhà Sản Xuất
+						</div>
+						<div class="col-sm-10 product-cat-content">
+							<ul class="product-list">
+								<li class="product-item">Canon</li>
+								<li class="product-item">Fujifilm</li>
+								<li class="product-item">Sony</li>
+								<li class="product-item">Nikon</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-9 slider-home">
+					<div class="slider-control">
+						<div class="slider-dot active"><span></span></div>
+						<div class="slider-dot"><span></span></div>
+						<div class="slider-dot"><span></span></div>
+					</div>
+					<div class="slider-outer">
+						<div class="pirate-intro-slider-item active" style="background-image: url(./assets/images/slider/slider-1-bg.jpg);background-color: rgba(29,45,59,0.8);background-size: cover">
+							<div class="pirate-slider-item-data">
+								<h3>Title</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque expedita qui dignissimos illum voluptate omnis similique repellendus ipsum dolor esse, quas quam assumenda aliquid quos sit, dolorem eveniet magni.</p>
+							</div>
+							<div class="slider-item-shape">
+								<div class="triangle-bot-big">
+									<img src="./assets/images/slider/slider-1-bot-big.png" alt="">
+								</div>
+								<div class="triangle-bot-small">
+									<img src="./assets/images/slider/slider-1-bot-small.png" alt="">
+								</div>
+								<div class="triangle-top">
+									<img src="./assets/images/slider/slider-1-top-small.png" alt="">
+								</div>
+							</div>
+							<a href="#">Xem thêm</a>
+						</div>
+						<div class="pirate-intro-slider-item" style="background-image: url(./assets/images/slider/slider-2-bg.jpg);background-color: #dc6163;">
+							<div class="pirate-slider-item-data">
+								<h3>Title</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque expedita qui dignissimos illum voluptate omnis similique repellendus ipsum dolor esse, quas quam assumenda aliquid quos sit, dolorem eveniet magni.</p>
+							</div>
+							<div class="slider-item-shape">
+								<div class="triangle-bot-big">
+									<img src="./assets/images/slider/slider-2-bot-big.png" alt="">
+								</div>
+								<div class="triangle-bot-small">
+									<img src="./assets/images/slider/slider-2-bot-small.png" alt="">
+								</div>
+								<div class="triangle-top">
+									<img src="./assets/images/slider/slider-2-top-small.png" alt="">
+								</div>
+							</div>
+							<a href="#">Xem thêm</a>
+						</div>
+						<div class="pirate-intro-slider-item" style="background-image: url(./assets/images/slider/slider-3-bg.jpg);background-color: #c1b5a7;">
+							<div class="pirate-slider-item-data">
+								<h3>Title</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque expedita qui dignissimos illum voluptate omnis similique repellendus ipsum dolor esse, quas quam assumenda aliquid quos sit, dolorem eveniet magni.</p>
+							</div>
+							<div class="slider-item-shape">
+								<div class="triangle-bot-big">
+									<img src="./assets/images/slider/slider-3-bot-big.png" alt="">
+								</div>
+								<div class="triangle-bot-small">
+									<img src="./assets/images/slider/slider-3-bot-small.png" alt="">
+								</div>
+								<div class="triangle-top">
+									<img src="./assets/images/slider/slider-3-top-small.png" alt="">
+								</div>
+							</div>
+							<a href="#">Xem thêm</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>
+	<script src="./assets/js/jquery-3.3.1.min.js"></script>
+	<script>
+		var g =0;
+		jQuery(document).ready(function($) {
             //This plugin only used to make full page website - only one page at a time
             function transition(next){
-             $('.slider-control .slider-dot').removeClass('active');
-             $('.slider-dot').eq(next).addClass('active');
-             $('.pirate-intro-slider-item').removeClass('active');
-             $('.pirate-intro-slider-item').eq(next).addClass('active');
-           }
-           function autoSlide(){
-            var i = $('.slider-dot').index($('.slider-dot.active'));
-            if(i>=$('.slider-dot').length-1){
-              i=-1;
+            	$('.slider-control .slider-dot').removeClass('active');
+            	$('.slider-dot').eq(next).addClass('active');
+            	$('.pirate-intro-slider-item').removeClass('active');
+            	$('.pirate-intro-slider-item').eq(next).addClass('active');
             }
-            transition(i+1);
-          }
-          var repeat = setInterval(autoSlide,5000);
-          $('.slider-control .slider-dot').click(function(){
-            if(!$(this).is($('.slider-dot.active').eq(0)))
-            {
-              transition($('.slider-dot').index(this));
-              clearInterval(repeat);
-              setTimeout(()=>{
-                repeat = setInterval(autoSlide,5000);
-              },5000);
+            function autoSlide(){
+            	var i = $('.slider-dot').index($('.slider-dot.active'));
+            	if(i>=$('.slider-dot').length-1){
+            		i=-1;
+            	}
+            	transition(i+1);
             }
-          });
-          
-          $('.menu-button').click(function(){
-            $(this).addClass('display-none');
-            $('.pirate-menu').addClass('menu-active');
-          });
-          $('.close-menu').click(function(){
-            console.log("ihi");
-            $('.pirate-menu').removeClass('menu-active');
-            $('.menu-button').removeClass('display-none');
-          });
+            var repeat = setInterval(autoSlide,5000);
+            $('.slider-control .slider-dot').click(function(){
+            	if(!$(this).is($('.slider-dot.active').eq(0)))
+            	{
+            		transition($('.slider-dot').index(this));
+            		clearInterval(repeat);
+            		setTimeout(()=>{
+            			repeat = setInterval(autoSlide,5000);
+            		},5000);
+            	}
+            });
+
+            $('.menu-button').click(function(){
+            	$(this).addClass('display-none');
+            	$('.pirate-menu').addClass('menu-active');
+            });
+            $('.close-menu').click(function(){
+            	console.log("ihi");
+            	$('.pirate-menu').removeClass('menu-active');
+            	$('.menu-button').removeClass('display-none');
+            });
         });
-      </script>
-    </body>
-    </html>
+    </script>
+</body>
+</html>
