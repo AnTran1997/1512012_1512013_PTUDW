@@ -184,11 +184,15 @@
 .intro .product-menu .row .product-cat-content .product-list-content.active,
 .intro .slider-home .slider-outer .pirate-intro-slider-item,
 .intro .slider-home .slider-outer .pirate-intro-slider-item > a:hover,
-.intro .slider-home .slider-control .slider-dot.active {
+.intro .slider-home .slider-control .slider-dot.active,
+.sale .sale-list .sale-slider .slider-item .sale-item:hover .sale-hover {
   transition: all .5s ease;
 }
 
-.intro .product-menu .row .product-cat ul li:hover span {
+.intro .product-menu .row .product-cat ul li:hover span,
+.sale .sale-list .sale-slider,
+.sale-slide-next,
+.sale-slide-prev {
   transition: all 1s ease;
 }
 
@@ -219,6 +223,7 @@ a:hover {
 
 .header {
   padding: 20px 0;
+  background: white;
   position: fixed;
   top: 0;
   left: 0;
@@ -639,6 +644,170 @@ a:hover {
 
 .intro .slider-home .slider-control .slider-dot.active span {
   opacity: 1;
+}
+
+.sale {
+  position: relative;
+  padding: 50px 0 0;
+}
+
+.sale:before {
+  content: '';
+  width: 77%;
+  height: 70%;
+  position: absolute;
+  top: 50px;
+  left: -5%;
+  background: linear-gradient(to right, #0191C4, #2CDBB0);
+  border-top-right-radius: 5px;
+  transform: skew(-10deg);
+  box-shadow: 0px 0px 60px -15px rgba(0, 0, 0, 0.5);
+}
+
+.sale .sale-list {
+  overflow: hidden;
+}
+
+.sale .sale-list .sale-slider {
+  width: 300%;
+  display: flex;
+  padding: 80px 0 30px 0;
+}
+
+.sale .sale-list .sale-slider .slider-item {
+  width: 8.333333%;
+  float: left;
+  padding: 0 5px;
+  position: relative;
+}
+
+.sale .sale-list .sale-slider .slider-item .sale-item {
+  position: relative;
+  background: white;
+  padding: 27px 0;
+  box-shadow: 0px 0px 50px -8px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.sale .sale-list .sale-slider .slider-item .sale-item .thumbnail {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  background: #cecece;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+.sale .sale-list .sale-slider .slider-item .sale-item .thumbnail img {
+  width: 100%;
+}
+
+.sale .sale-list .sale-slider .slider-item .sale-item .sale-name {
+  background: linear-gradient(to right, #F37021, #FBB040);
+  background-clip: text;
+  -webkit-background-clip: text;
+  font: 18px 'OpenSans';
+  color: transparent;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sale .sale-list .sale-slider .slider-item .sale-item .sale-price {
+  margin-top: 20px;
+}
+
+.sale .sale-list .sale-slider .slider-item .sale-item .sale-price > span {
+  display: block;
+  text-align: center;
+}
+
+.sale .sale-list .sale-slider .slider-item .sale-item .sale-price .old {
+  text-decoration: line-through;
+  color: #666;
+  font: 15px 'OpenSansLight';
+}
+
+.sale .sale-list .sale-slider .slider-item .sale-item .sale-price .new {
+  font: 18px 'OpenSansSemibold';
+  color: #f44242;
+  margin-top: 10px;
+}
+
+.sale .sale-list .sale-slider .slider-item .sale-item .sale-hover {
+  display: block;
+  opacity: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 46px;
+  background: linear-gradient(to right, #F37021, #FBB040);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  text-align: center;
+}
+
+.sale .sale-list .sale-slider .slider-item .sale-item .sale-hover i {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  line-height: 46px;
+}
+
+.sale .sale-list .sale-slider .slider-item .sale-item:hover .sale-hover {
+  opacity: 1;
+}
+
+.sale .sale-title {
+  padding: 10% 0 0;
+}
+
+.sale .sale-title h2 {
+  font: 30px 'GothamLight';
+  text-transform: uppercase;
+  background: linear-gradient(to right, #F37021, #FBB040);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: right;
+}
+
+.sale .sale-title span {
+  display: block;
+  width: 100%;
+  margin: 23px 0 40px;
+  padding-left: 20%;
+  font: 14px 'OpenSansLight';
+  color: #808080;
+  text-align: right;
+}
+
+.sale .sale-title .sale-slider-control {
+  padding-left: 50%;
+}
+
+.sale .sale-title .sale-slider-control > div {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.sale .sale-title .sale-slider-control > div i {
+  font-size: 30px;
+  background: linear-gradient(to right, #0191C4, #2CDBB0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.sale .sale-title .sale-slider-control > div:hover {
+  cursor: pointer;
+}
+
+.sale-slide-next {
+  transform: translateX(-33.33333%);
+}
+
+.sale-slide-prev {
+  transform: translateX(33.33333%);
 }
 
 html,
