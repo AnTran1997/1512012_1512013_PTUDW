@@ -219,7 +219,6 @@ a:hover {
 
 .header {
   padding: 20px 0;
-  background: linear-gradient(to right, #F37021, #FBB040);
   position: fixed;
   top: 0;
   left: 0;
@@ -256,7 +255,7 @@ a:hover {
   background: transparent;
   width: 100%;
   height: 100%;
-  border: 1px solid white;
+  border: 1px solid #F36F21;
   border-radius: 100px;
 }
 
@@ -278,7 +277,7 @@ a:hover {
   top: 50%;
   right: 15px;
   font-size: 20px;
-  color: white;
+  color: #F36F21;
   transform: translateY(-50%);
 }
 
@@ -288,10 +287,10 @@ a:hover {
   width: 50px;
   height: 50px;
   border-radius: 50px;
-  border: 1px solid white;
+  border: 1px solid #F36F21;
   line-height: 50px;
   text-align: center;
-  color: white;
+  color: #F36F21;
   margin: 0 auto;
 }
 
@@ -301,15 +300,15 @@ a:hover {
   width: 50px;
   height: 50px;
   border-radius: 50px;
-  border: 1px solid white;
+  border: 1px solid #F36F21;
   line-height: 50px;
   text-align: center;
-  color: white;
+  color: #F36F21;
 }
 
 .header .header-right .header-user .hello-user {
   font: 16px 'OpenSans';
-  color: white;
+  color: #F36F21;
   display: inline-block;
   vertical-align: middle;
 }
@@ -335,14 +334,11 @@ a:hover {
   height: 10%;
   background: linear-gradient(to right, #0191C4, #2CDBB0);
   padding-top: 13px;
-  border: 2px solid white;
-  border-bottom: none;
 }
 
 .intro .product-menu .product-menu-title:before {
   content: '\f0c9';
   font: 20px 'FontAwesome';
-  color: white;
   margin-right: 20px;
 }
 
@@ -363,29 +359,29 @@ a:hover {
 }
 
 .intro .product-menu .row .product-cat ul li {
-  border: 2px solid white;
-  border-bottom: none;
-  background: linear-gradient(to right, #0191C4, #2CDBB0);
+  border: 2px solid #0FAAD9;
   width: 100%;
   height: 50%;
   position: relative;
 }
 
+.intro .product-menu .row .product-cat ul li:first-child {
+  border-top: none;
+  border-bottom: none;
+}
+
 .intro .product-menu .row .product-cat ul li:hover {
   cursor: pointer;
-  background: white;
+  background: linear-gradient(to right, #0191C4, #2CDBB0);
 }
 
 .intro .product-menu .row .product-cat ul li:hover span {
-  color: transparent;
-  background: linear-gradient(to right, #0191C4, #2CDBB0);
-  background-clip: text;
-  -webkit-background-clip: text;
+  color: white;
 }
 
 .intro .product-menu .row .product-cat ul li span {
   font: 18px 'OpenSansSemibold';
-  color: white;
+  color: #0FAAD9;
   display: block;
   width: max-content;
   height: max-content;
@@ -405,7 +401,7 @@ a:hover {
   width: 100%;
   height: 100%;
   margin: 0;
-  padding: 3px 30px 0;
+  padding: 3px 20px 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -418,7 +414,7 @@ a:hover {
 
 .intro .product-menu .row .product-cat-content .product-list-content .product-item {
   width: 100%;
-  height: 70px;
+  height: 60px;
   border-top: 2px solid transparent;
   border-image: linear-gradient(to right, #0191C4, #2CDBB0);
   border-image-slice: 1;
