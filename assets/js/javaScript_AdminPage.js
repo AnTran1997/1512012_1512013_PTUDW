@@ -24,3 +24,14 @@ function closeFormAddNew() {
     window.location.href = "../../pages/AdminPages/adminHomePage.html";
 
 }
+
+function displayContent(nameClass) {
+    var items = document.getElementsByClassName("isDisplayed");
+    for (var i = 0; i < items.length; i++) {
+        if (items[i].className == nameClass + " isDisplayed") {
+            items[i].style.display = "block";
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+}

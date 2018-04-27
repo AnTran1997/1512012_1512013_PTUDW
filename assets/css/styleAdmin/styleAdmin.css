@@ -210,6 +210,7 @@ li {
   }
   .editDeletePro button:hover {
     color: white;
+    background-color: darkblue;
     cursor: pointer;
   }
 
@@ -262,6 +263,10 @@ li {
 .imgInTable {
   width: 35px;
   height: 35px;;
+}
+
+.isDisplayed {
+  display: none;
 }
       
 
@@ -327,8 +332,10 @@ table {
   font-size: 15px;
   height: 40px;
   position: relative;
+  margin-top: 0;
+  padding: 0;
   margin-left: 25px;
-  margin-bottom: 15px;
+  margin-bottom: 70px;
   border: darkblue solid 4px;
   border-collapse: collapse;
   width: 95%;
@@ -365,5 +372,28 @@ h2 {
     height: 25px;
     font-size: 15px;
   }
+
+
+.backgroundTitle {
+  width: 60%;
+  height: 50px;
+}
+  .backgroundTitle h1 {
+    position: relative;
+    top: 8px;
+    text-align:  center;
+  }
+
+
+.triangle-right {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  position: relative;
+  top: -50px;
+  left: 60%;
+  bottom: 0;
+}
 
 
