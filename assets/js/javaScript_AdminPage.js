@@ -13,17 +13,6 @@ function dropDown(nameClass) {
     }
 }
 
-function closeFormAddNew() {
-    alert("Thêm sản phẩm mới thành công!");
-
-    //Display addnew form thành none
-    var formToAddNew = document.getElementsByClassName("addNewForm")[0];    
-    formToAddNew.style.display = "none";
-
-    //Chuyển trang chủ dashboard
-    window.location.href = "../../pages/AdminPages/adminHomePage.html";
-
-}
 
 function displayContent(nameClass) {
     var items = document.getElementsByClassName("isDisplayed");
@@ -32,6 +21,28 @@ function displayContent(nameClass) {
             items[i].style.display = "block";
         } else {
             items[i].style.display = "none";
+        }
+    }
+}
+
+function addNewProduct() {
+    var modal = document.getElementById('myModal');
+    var icon = document.getElementsByClassName("fa-close")[0];
+    var addbtn = document.getElementById("addBtn");
+    modal.style.display = "block";
+    icon.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    addbtn.onclick = function() {
+        alert("Adding new product successfully");
+        //modal.style.display = "none";
+        window.location.href = "../../pages/AdminPages/addNewProduct.html";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
     }
 }
