@@ -172,7 +172,7 @@ p {
 }
   .payment .orderDetail {
     margin-right: 10px;
-    height: 80ch;
+    height: 100ch;
     border: rgba(0, 0, 0, 0.6) solid 2px;
     border-radius: 10px;
     padding-left: 20px;
@@ -308,5 +308,72 @@ p {
 }
 
 
+/***************************************   Style for page editOrder.html *************************/
+orderDetail {
+  background-color: violet;
+}
+
+.orders {
+  margin: 10px 10px 0 0;
+}
+
+.editOrder {
+}
+  .editOrder img {
+    width: 15ch;
+    height: 15ch;
+    position: relative;
+    left: 35px;
+  }
+  .editOrder h3 {
+    margin-left: 10px;
+  }
+  .editOrder h3::after {
+    display: block;
+      content: '';
+      background-color: black;
+      height: 1px;
+      opacity: 0.3;
+      width: 30%;
+      margin: 5px 5px 5px 5px;  
+  }
+
+.productDetail {
+  margin: 0 0 0 0;
+}
+  .productDetail p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+.item {
+  height: 20ch;
+}
+  .item button {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border: none;
+    background-color: white;
+  }
+  .infoDelete {
+    margin-top: 20px;
+  }
+
+.changeNumber {
+  width: 30px;
+  height: 30px;
+}
+  .changeNumber input {
+    margin:0;
+    padding: 0;
+    border: none;
+    text-align: center;
+  }
+
+  input[type=text], input[type=submit] {
+    text-align: center;
+    font-size: 15px;
+  }
 
 
