@@ -1024,24 +1024,24 @@ a:hover {
 
 .most .most-slider-control {
   position: absolute;
-  width: 92%;
+  width: 98%;
   top: 70%;
   left: 50%;
-  transform: translate(-49%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .most .most-slider-control > div {
   display: block;
   background: linear-gradient(to right, #0191C4, #2CDBB0);
-  width: 46px;
-  height: 46px;
-  border-radius: 46px;
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
   text-align: center;
 }
 
 .most .most-slider-control > div i {
-  font-size: 30px;
-  line-height: 46px;
+  font-size: 25px;
+  line-height: 36px;
   color: white;
 }
 
@@ -1065,7 +1065,7 @@ a:hover {
 .most .most-list .most-slider {
   width: 201%;
   display: flex;
-  padding: 30px 20px;
+  padding: 30px 0;
 }
 
 .most .most-list .most-slider .slider-item {
@@ -1170,24 +1170,24 @@ a:hover {
 
 .new .new-slider-control {
   position: absolute;
-  width: 92%;
+  width: 98%;
   top: 70%;
   left: 50%;
-  transform: translate(-49%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .new .new-slider-control > div {
   display: block;
   background: linear-gradient(to right, #F37021, #FBB040);
-  width: 46px;
-  height: 46px;
-  border-radius: 46px;
+  width: 36px;
+  height: 36px;
+  border-radius: 36px;
   text-align: center;
 }
 
 .new .new-slider-control > div i {
-  font-size: 30px;
-  line-height: 46px;
+  font-size: 25px;
+  line-height: 36px;
   color: white;
 }
 
@@ -1211,7 +1211,7 @@ a:hover {
 .new .new-list .new-slider {
   width: 201%;
   display: flex;
-  padding: 30px 20px;
+  padding: 30px 0;
 }
 
 .new .new-list .new-slider .slider-item {
