@@ -372,12 +372,13 @@ orderDetail {
     text-align: center;
   }
 
-  input[type=text], input[type=submit] {
+  .changeNumber input[type=text], input[type=submit] {
     text-align: center;
     font-size: 15px;
   }
 
-  table {
+/*************************** STYLE FOR historyShopping.html ***********************/
+table {
     width: 100%;
   }
 
@@ -397,3 +398,20 @@ td#sum-namePanel {
 td#sum-numberPanel {
   border-left: none;
 }
+
+
+
+/***************************************   Style for page editOrder.html *************************/
+.userAccount {
+  margin-top: 30ch;
+  background-color: aquamarine;
+}
+
+form {
+  margin-left: 50ch;
+}
+
+label {
+  width: 50px;;
+}
+
