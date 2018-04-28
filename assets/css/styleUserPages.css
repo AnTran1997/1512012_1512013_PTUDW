@@ -318,6 +318,7 @@ orderDetail {
 }
 
 .editOrder {
+  display:block;
 }
   .editOrder img {
     width: 15ch;
