@@ -848,7 +848,17 @@
       $('.view-cat-item').removeClass('active');
       $(this).addClass('active');
     });
-
+    $(window).scroll(function() {
+      var height = $(window).scrollTop();
+      if(height>500){
+        $('.header').addClass('header-small');
+        $('.main-content').css('margin-top','70px');
+      }
+      else{
+        $('.header').removeClass('header-small');
+        $('.main-content').css('margin-top','170px');
+      }
+    });
   });
 </script>
 </body>
