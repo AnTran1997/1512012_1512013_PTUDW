@@ -79,35 +79,6 @@
 
 <div class="main-content">
   <div class="payment">
-      <div class="payment-process">
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-7 orderDetail"> 
-              <h2>Thông tin đơn hàng</h2>
-              <div class="row orders">
-                <div class="col-sm-12 editOrder">
-                  <h3>Fujifilm</h3>
-                  <div class="row productDetail">
-                    <div class="col-sm-3 item">
-                        <img src="../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax 25.jpg" alt="">
-                    </div>
-                    <div class="col-sm-5 item">
-                      <div class="infoDelete">
-                        <p>Máy Ảnh Lấy Liền Fujifilm Instax 25</p><br>
-                        <button id="deleteBtn" onclick="deleteOrder(0)"><i class="fa fa-trash-o"></i> </button>
-                      </div>
-
-                    </div>
-                    <div class="col-sm-2 item">
-                      <div class="infoDelete"><p>2.600.000 đ</p></div>   
-                    </div>
-                    <div class="col-sm-2 item">
-                      <div class="infoDelete">
-                        <input type="submit" class="changeNumber" id="subtract" onclick="" value="-">
-                        <input type="text" class="changeNumber" value="1">
-                        <input type="submit" class="changeNumber" id="add" onclick="increaseNumProduct('2')" value="+">
-                      </div>
-                    </div>
     <div class="container payment-process">
       <div class="row">
         <div class="col-sm-1"></div>
@@ -138,28 +109,6 @@
                   </div>
                   <p class="price">2.600.000 đ</p>
                 </div>
-                <div class="col-sm-12 editOrder">
-                  <h3>Nikon</h3>
-                  <div class="row productDetail">
-                    <div class="col-sm-3 item">
-                        <img src="../../assets/images/Brands/Nikon/Nikon D3400 KIT 18-55 VR (24.2MP).jpg" alt="">
-                    </div>
-                    <div class="col-sm-5 item">
-                      <div class="infoDelete">
-                        <p>Nikon D3400 KIT 18-55 VR (24.2MP)</p><br>
-                        <button id="deleteBtn" onclick="deleteOrder(1)"><i class="fa fa-trash-o"></i> </button>
-                      </div>
-                    </div>
-                    <div class="col-sm-2 item">
-                      <div class="infoDelete"><p>9.400.000 đ</p></div>   
-                    </div>
-                    <div class="col-sm-2 item">
-                      <div class="infoDelete">
-                        <input type="submit" class="changeNumber" id="subtract" onclick="" value="-">
-                        <input type="text" class="changeNumber" value="1">
-                        <input type="submit" class="changeNumber" id="add" onclick="" value="+">
-                      </div>
-                    </div>
               </div>
             </div>
             <div class="col-sm-12 editOrder">
@@ -186,17 +135,6 @@
                   </div>
                   <p class="price">9.400.000 đ</p>
                 </div>
-                <div class="col-sm-12 editOrder">
-                  <h3>Canon</h3>
-                  <div class="row productDetail">
-                    <div class="col-sm-3 item">
-                        <img src="../../assets/images/Brands/Canon/Canon M10 KIT 15-45mm .jpg" alt="">
-                    </div>
-                    <div class="col-sm-5 item">
-                      <div class="infoDelete">
-                        <p>Canon M10 KIT 15-45mm</p><br>
-                        <button id="deleteBtn" onclick="deleteOrder(2)"><i class="fa fa-trash-o"></i> </button>
-                      </div>
               </div>
             </div>
             <div class="col-sm-12 editOrder">
@@ -271,56 +209,6 @@
                       <h5>1x</h5>
                       <p><a href="../DetailPages/detailProduct1.html">Nikon D3400 KIT 18-55 VR (24.2MP)</a></p>
                     </div>
-                    <div class="productsInfo">
-                      <div class="row">
-                        <div class="col-sm-7 nameProduct">
-                            <h5>1x</h5>
-                            <p><a href="../DetailPages/detailProduct1.html">Máy Ảnh Lấy Liền Fujifilm Instax 25</a></p>
-                        </div>
-                        <div class="col-sm-5 priceProduct">
-                          <p class="unitPrice">2.600.000</p><p> đ</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="productsInfo">
-                      <div class="row">
-                        <div class="col-sm-7 nameProduct">
-                            <h5>1x</h5>
-                            <p><a href="../DetailPages/detailProduct1.html">Nikon D3400 KIT 18-55 VR (24.2MP)</a></p>
-                        </div>
-                        <div class="col-sm-5 priceProduct">
-                          <p class="unitPrice">9.400.000</p><p> đ</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="productsInfo">
-                      <div class="row">
-                        <div class="col-sm-7 nameProduct">
-                            <h5>1x</h5>
-                            <p><a href="../DetailPages/detailProduct1.html">Canon M10 KIT 15-45mm </a></p>
-                        </div>
-                        <div class="col-sm-5 priceProduct">
-                          <p class="unitPrice">6.950.000</p><p> đ</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="productsInfo">
-                      <div class="row">
-                        <div class="col-sm-7 nameProduct">
-                            <p>Tạm tính</p>
-                        </div>
-                        <div class="col-sm-5 priceProduct">
-                          <p id="totalPrice">18.950.000</p><p> đ</p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-7 nameProduct">
-                            <p>Phí vận chuyển</p>
-                        </div>
-                        <div class="col-sm-5 priceProduct">
-                          <p>0</p><p> đ</p>
-                        </div>
-                      </div>
                     <div class="col-sm-5 priceProduct">
                       <p>9.400.000 đ</p>
                     </div>
