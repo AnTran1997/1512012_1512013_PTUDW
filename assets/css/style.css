@@ -2267,6 +2267,239 @@ footer .footer-right .address span i {
   color: #F36F21;
 }
 
+.order .main-content {
+  margin-top: 80px;
+  padding: 0 0 80px;
+}
+
+.order .title-orderInfo {
+  position: relative;
+  padding: 15px 20px;
+}
+
+.order .title-orderInfo:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.order #editInfoProduct,
+.order #editAddress {
+  display: block;
+  position: absolute;
+  right: 10px;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(to right, #0191C4, #2CDBB0);
+  color: white;
+  font-family: 'OpenSansLight';
+}
+
+.order .payment .orderDetail {
+  border-color: #F36F21;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.order .resumeOrder .col-sm-12 {
+  border-color: #0FAAD9;
+}
+
+.order .detail-title {
+  font: 30px 'OpenSansBold';
+  color: #F36F21;
+  text-transform: uppercase;
+}
+
+.order .detail-title span {
+  display: block;
+  position: relative;
+}
+
+.order .detail-title span:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 5px;
+  background: linear-gradient(to right, #F37021, #FBB040);
+}
+
+.order .editOrder h3 {
+  font-family: 'OpenSansBold';
+  color: #666;
+}
+
+.order .item {
+  height: 18ch;
+}
+
+.order .editOrder img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  left: 0;
+}
+
+.order .info h5,
+.order p {
+  display: block;
+}
+
+.order .productDetail p {
+  margin-left: 20px;
+  font-family: 'OpenSansSemibold';
+  color: transparent;
+  background: linear-gradient(to right, #F37021, #FBB040);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.order .item button {
+  margin-left: 10px;
+  color: #333;
+}
+
+.order .item .price {
+  color: #f44242;
+  margin-left: 0;
+  margin-top: 70px;
+  background: transparent;
+}
+
+.order .changeNumber input[type=text],
+.order input[type=submit] {
+  line-height: 30px;
+  color: white;
+  background: linear-gradient(to right, #F37021, #FBB040);
+  outline: none;
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.order .changeNumber {
+  text-align: center;
+  color: #666;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.order .title-orderInfo h4 {
+  font-family: 'OpenSansSemibold';
+  color: transparent;
+  background: linear-gradient(to right, #0191C4, #2CDBB0);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.order .addrContent h3 {
+  font-family: 'OpenSansBold';
+  color: #f44242;
+  display: block;
+  margin-left: 20px;
+}
+
+.order .addrContent ul {
+  padding: 0 0 0 20px;
+  margin: 0;
+}
+
+.order .addrContent ul li {
+  color: #666;
+  font-family: 'OpenSans';
+}
+
+.order .addrContent ul li:before {
+  content: '\f111';
+  font: 10px 'FontAwesome';
+  color: transparent;
+  background: linear-gradient(to right, #0191C4, #2CDBB0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-right: 10px;
+}
+
+.order .address,
+.order .info {
+  height: auto;
+}
+
+.order .nameProduct {
+  height: auto;
+}
+
+.order .nameProduct h5 {
+  display: inline-block;
+  width: 20%;
+  vertical-align: middle;
+  font-family: 'OpenSansLightItalic';
+  color: #f44242;
+}
+
+.order .nameProduct p {
+  display: inline-block;
+  width: 65%;
+  vertical-align: middle;
+  color: #333;
+  font-family: 'OpenSansBold';
+}
+
+.order .nameProduct p a {
+  color: #F36F21;
+  font-family: 'OpenSansSemibold';
+}
+
+.order .productsInfo {
+  padding: 0 30px;
+}
+
+.order .productsInfo:after {
+  background: linear-gradient(to right, #0191C4, #2CDBB0);
+}
+
+.order .productsInfo:last-child:after {
+  display: none;
+}
+
+.order .productsInfo .priceProduct p {
+  color: #666;
+  font-family: 'OpenSans';
+}
+
+.order .totalPay {
+  margin-top: 20px;
+  padding: 30px 0;
+  position: relative;
+}
+
+.order .totalPay:before {
+  content: '';
+  height: 1px;
+  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+}
+
+.order .totalPay .col-sm-6 p {
+  font-family: 'OpenSansBold';
+  color: #666;
+}
+
+.order .totalPay .col-sm-6.totalPrice p {
+  font-family: 'OpenSansSemibold';
+  font-style: italic;
+  color: #f44242;
+}
+
 html,
 body {
   width: 100%;
