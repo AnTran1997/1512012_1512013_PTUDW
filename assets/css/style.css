@@ -195,7 +195,10 @@
 .best .best-list .best-slider,
 .most .most-list .most-slider,
 .new .new-list .new-slider,
-.sale-view .sale-view-content .sale-view-col > div:hover .sale-view-hover {
+.sale-view .sale-view-content .sale-view-col > div:hover .sale-view-hover,
+.view-all .view-content .view-cat .view-cat-list .view-cat-item.active > h3,
+.view-all .view-content .view-cat .view-cat-list .view-cat-item.active .view-cat-sub-list,
+.view-all .view-content .view-cat .view-cat-list .view-cat-item .view-cat-sub-list {
   transition: all 1s ease;
 }
 
@@ -1274,6 +1277,101 @@ a:hover {
   width: 85%;
   height: 5px;
   background: linear-gradient(to right, #F37021, #FBB040);
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item {
+  border-top: 1px solid #666;
+  position: relative;
+  cursor: pointer;
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item.active > h3 {
+  background: linear-gradient(to right, #F37021, #FBB040);
+  color: white;
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item.active > h3 i {
+  color: white;
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item.active .expand {
+  display: none;
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item.active .shrink {
+  display: block;
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item.active .view-cat-sub-list {
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 {
+  margin: 0;
+  padding: 20px 0 20px 25px;
+  font: 20px 'OpenSans';
+  color: #666666;
+  position: relative;
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 .expand {
+  font: 40px 'OpenSansBold';
+  background: linear-gradient(to right, #F37021, #FBB040);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  visibility: visible;
+  transform: translateY(-50%);
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 .shrink {
+  display: none;
+  content: '-';
+  font: 50px 'OpenSansBold';
+  color: white;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  visibility: visible;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 i {
+  color: transparent;
+  background: linear-gradient(to right, #F37021, #FBB040);
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 40px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 30px;
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item .view-cat-sub-list {
+  height: 0;
+  overflow: hidden;
+  padding: 20px 0 0 70px;
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item .view-cat-sub-list .view-cat-sub-item {
+  font: 14px 'OpenSansLight';
+  line-height: 30px;
+  color: #666666;
+}
+
+.view-all .view-content .view-cat .view-cat-list .view-cat-item .view-cat-sub-list .view-cat-sub-item input[type=checkbox] {
+  display: inline-block;
+  margin-right: 20px;
 }
 
 html,

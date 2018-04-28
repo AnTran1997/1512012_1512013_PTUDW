@@ -606,10 +606,15 @@
   <div class="container">
     <h2 class="view-title">Xem <span>tất cả</span></h2>
     <div class="view-content row">
-      <div class="col-sm-2 view-cat">
+      <div class="col-sm-4 view-cat">
         <ul class="view-cat-list">
           <li class="view-cat-item">
-            <h3>Loại Sản Phẩm</h3>
+            <h3>
+              <i class="fa fa-camera-retro"></i>
+              <span>Loại Sản Phẩm</span>
+              <div class="expand">+</div>
+              <div class="shrink">-</div>
+            </h3>
             <ul class="view-cat-sub-list">
               <li class="view-cat-sub-item"><input type="checkbox"><span>Máy ảnh cơ</span></li>
               <li class="view-cat-sub-item"><input type="checkbox"><span>Máy ảnh kĩ thuật số</span></li>
@@ -617,7 +622,12 @@
             </ul>
           </li>
           <li class="view-cat-item">
-            <h3>Nhà Sản Xuất</h3>
+            <h3>
+              <i class="fa fa-cogs"></i>
+              <span>Nhà Sản Xuất</span>
+              <div class="expand">+</div>
+              <div class="shrink">-</div>
+            </h3>
             <ul class="view-cat-sub-list">
               <li class="view-cat-sub-item"><input type="checkbox"><span>Canon</span></li>
               <li class="view-cat-sub-item"><input type="checkbox"><span>Fujifilm</span></li>
@@ -625,19 +635,21 @@
               <li class="view-cat-sub-item"><input type="checkbox"><span>Nikon</span></li>
             </ul>
           </li>
-          <li class="view-cat-item">
-            <h3>Tất Cả</h3>
+          <li class="view-cat-item active">
+            <h3>
+              <i class="fa fa-cubes"></i>
+              <span>Tất Cả</span>
+            </h3>
           </li>
         </ul>
       </div>
-      <div class="col-sm-10 view-list">
-
+      <div class="col-sm-8 view-list">
+        
       </div>
     </div>
   </div>
 </div>
-</body>
-</html>
+</div>
 <script src="./assets/js/jquery-3.3.1.min.js"></script>
 <script>
   jQuery(document).ready(function($) {
@@ -727,6 +739,10 @@
         i_most++;
       }
       $('.most-slider').css('transform',`translateX(-${50*i_most}%)`);
+    });
+    $('.view-cat-item').click(function(){
+      $('.view-cat-item').removeClass('active');
+      $(this).addClass('active');
     });
 
   });
