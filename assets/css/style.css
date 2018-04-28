@@ -2500,6 +2500,70 @@ footer .footer-right .address span i {
   color: #f44242;
 }
 
+.history .main-content {
+  margin-top: 80px;
+  padding: 0 0 80px;
+}
+
+.history .detail-title {
+  font: 30px 'OpenSansBold';
+  color: #F36F21;
+  text-transform: uppercase;
+}
+
+.history .detail-title span {
+  display: block;
+  position: relative;
+}
+
+.history .detail-title span:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 5px;
+  background: linear-gradient(to right, #F37021, #FBB040);
+}
+
+.history .payment .orderDetail {
+  padding: 50px;
+  height: auto;
+}
+
+.history table,
+.history th,
+.history td,
+.history tr {
+  border: none !important;
+}
+
+.history th {
+  background: linear-gradient(to right, #0191C4, #2CDBB0);
+  font-family: 'OpenSansBold';
+  padding: 10px 0;
+}
+
+.history td {
+  font-family: 'OpenSans';
+  padding: 10px;
+}
+
+.history .editOrder h3 {
+  font-family: 'OpenSansLightItalic';
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(to right, #F37021, #FBB040);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.history .payment .orderDetail {
+  border-image: linear-gradient(to right, #F37021, #FBB040);
+  border-image-slice: 1;
+  border-color: transparent;
+}
+
 html,
 body {
   width: 100%;
