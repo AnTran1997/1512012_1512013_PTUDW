@@ -1660,6 +1660,11 @@ a:hover {
   opacity: 1;
 }
 
+.row .ads img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
 html,
 body {
   width: 100%;

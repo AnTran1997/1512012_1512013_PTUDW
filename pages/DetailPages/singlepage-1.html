@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pirates - Chuyên cung cấp máy ảnh số chất lượng nhất</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../../assets/images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/bootstrap-grid.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/jquery.fullpage.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/style.css" />
+</head>
+<body>
+  <header id="header" class="header">
+    <div class="container header-top">
+      <div class="row">
+        <div class="header-left col-sm-6">
+          <img src="../../assets/images/logo.png" alt="">
+        </div>
+        <div class="header-right col-sm-6">
+          <div class="row">
+            <div class="col-sm-6 header-search">
+              <input type="text">
+              <input type="submit">
+              <i class="fa fa-search"></i>
+            </div>
+            <div class="col-sm-2 header-basket">
+              <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="col-sm-4 header-user">
+              <i class="fa fa-user"></i>
+              <div class="hello-user">Hello, <span>Guest</span>!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header-bottom row">
+      <div class="col-sm-3">
+        <div class="product-menu-title">Danh mục sản phẩm
+          <div class="row sub-menu">
+            <div class="col-sm-2 product-cat">
+             <ul class="product-cat-list">
+               <li><span>Loại Sản Phẩm</span></li>
+               <li><span>Nhà Sản Xuất</span></li>
+             </ul>
+           </div>
+           <div class="col-sm-10 product-cat-content">
+            <ul class="product-list-content active">
+              <li class="product-item"><a href="../../index.html#all">máy ảnh cơ</a></li>
+              <li class="product-item"><a href="../../index.html#all">máy ảnh kĩ thuật số</a></li>
+              <li class="product-item"><a href="../../index.html#all">máy ảnh lấy liền</a></li>
+              <li class="product-item"><a href="../../index.html#all">tất cả</a></li>
+            </ul>
+            <ul class="product-list-content">
+              <li class="product-item"><a href="../../index.html#all">Canon</a></li>
+              <li class="product-item"><a href="../../index.html#all">Fujifilm</a></li>
+              <li class="product-item"><a href="../../index.html#all">Sony</a></li>
+              <li class="product-item"><a href="../../index.html#all">Nikon</a></li>
+              <li class="product-item"><a href="../../index.html#all">tất cả</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="main-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 item-detail">
+        <div class="item">
+          <div class="thumbnail">
+            <img src="../../assets/images/Brands/Fujifilm/Máy%20Ảnh%20Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%209%20-%20Ice%20Blue.jpg" alt="">
+          </div>
+          <div class="detail">
+            <div class="name"></div>
+            <div class="price"></div>
+            <div class="view"></div>
+            <div class="sale"></div>
+          </div>
+          <div class="info">
+            <div class="des"></div>
+            <div class="place"></div>
+            <div class="type"></div>
+            <div class="producer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 ads">
+        <img src="../../assets/images/ads/1.jpg" alt="">
+        <img src="../../assets/images/ads/2.jpg" alt="">
+        <img src="../../assets/images/ads/3.jpg" alt="">
+        <img src="../../assets/images/ads/4.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+<script>
+  jQuery(document).ready(function($) {
+    $('.header .product-cat-list li').click(function(){
+      var i =$('.header .product-cat-list li').index($(this));
+      $('.header .product-list-content').removeClass('active');
+      $('.header .product-list-content').eq(i).addClass('active');
+    });
+    $('.intro .product-cat-list li').click(function(){
+      var i =$('.intro .product-cat-list li').index($(this));
+      $('.intro .product-list-content').removeClass('active');
+      $('.intro .product-list-content').eq(i).addClass('active');
+    });
+    var i_best=0;
+    $('.best-slider-control .best-prev').click(function(){
+      if(!i_best){
+        i_best=2;
+      }
+      else{
+        i_best--;
+      }
+      $('.best-slider').css('transform',`translateX(-${33.333333*i_best}%)`);
+    });
+    $('.best-slider-control .best-next').click(function(){
+      if(i_best==2){
+        i_best=0;
+      }
+      else{
+        i_best++;
+      }
+      $('.best-slider').css('transform',`translateX(-${33.333333*i_best}%)`);
+    });
+    var i_new=0;
+    $('.new-slider-control .new-prev').click(function(){
+      if(!i_new){
+        i_new=1;
+      }
+      else{
+        i_new--;
+      }
+      $('.new-slider').css('transform',`translateX(-${50*i_new}%)`);
+    });
+    $('.new-slider-control .new-next').click(function(){
+      if(i_new==1){
+        i_new=0;
+      }
+      else{
+        i_new++;
+      }
+      $('.new-slider').css('transform',`translateX(-${50*i_new}%)`);
+    });
+
+    var i_most=0;
+    $('.most-slider-control .most-prev').click(function(){
+      if(!i_most){
+        i_most=1;
+      }
+      else{
+        i_most--;
+      }
+      $('.most-slider').css('transform',`translateX(-${50*i_most}%)`);
+    });
+    $('.most-slider-control .most-next').click(function(){
+      if(i_most==1){
+        i_most=0;
+      }
+      else{
+        i_most++;
+      }
+      $('.most-slider').css('transform',`translateX(-${50*i_most}%)`);
+    });
+    $('.view-cat-item').click(function(){
+      $('.view-cat-item').removeClass('active');
+      $(this).addClass('active');
+    });
+    $(window).scroll(function() {
+      var height = $(window).scrollTop();
+      if(height>500){
+        $('.header').addClass('header-small');
+        $('.main-content').css('margin-top','70px');
+      }
+      else{
+        $('.header').removeClass('header-small');
+        $('.main-content').css('margin-top','170px');
+      }
+    });
+  });
+</script>
+</body>
+</html>
