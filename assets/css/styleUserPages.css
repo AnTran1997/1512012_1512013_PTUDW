@@ -242,6 +242,7 @@ p {
   }
   .productsInfo {
     padding: 0 20px 0 20px;
+    display: block;
   }
     .productsInfo .nameProduct {
       height: 5ch;
@@ -376,6 +377,16 @@ orderDetail {
     text-align: center;
     font-size: 15px;
   }
+
+#deleteBtn {
+  margin-top: 10px; 
+}
+
+#deleteBtn:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+  border-radius: 50%;
+}
 
 /*************************** STYLE FOR historyShopping.html ***********************/
 table {

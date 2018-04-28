@@ -54,7 +54,7 @@
                     <div class="col-sm-5 item">
                       <div class="infoDelete">
                         <p>Máy Ảnh Lấy Liền Fujifilm Instax 25</p><br>
-                        <button id="deleteBtn"><i class="fa fa-trash-o"></i> </button>
+                        <button id="deleteBtn" onclick="deleteOrder(0)"><i class="fa fa-trash-o"></i> </button>
                       </div>
 
                     </div>
@@ -65,7 +65,7 @@
                       <div class="infoDelete">
                         <input type="submit" class="changeNumber" id="subtract" onclick="" value="-">
                         <input type="text" class="changeNumber" value="1">
-                        <input type="submit" class="changeNumber" id="add" onclick="" value="+">
+                        <input type="submit" class="changeNumber" id="add" onclick="increaseNumProduct('2')" value="+">
                       </div>
                     </div>
                   </div>
@@ -79,9 +79,8 @@
                     <div class="col-sm-5 item">
                       <div class="infoDelete">
                         <p>Nikon D3400 KIT 18-55 VR (24.2MP)</p><br>
-                        <button id="deleteBtn"><i class="fa fa-trash-o"></i> </button>
+                        <button id="deleteBtn" onclick="deleteOrder(1)"><i class="fa fa-trash-o"></i> </button>
                       </div>
-
                     </div>
                     <div class="col-sm-2 item">
                       <div class="infoDelete"><p>9.400.000 đ</p></div>   
@@ -104,7 +103,7 @@
                     <div class="col-sm-5 item">
                       <div class="infoDelete">
                         <p>Canon M10 KIT 15-45mm</p><br>
-                        <button id="deleteBtn"><i class="fa fa-trash-o"></i> </button>
+                        <button id="deleteBtn" onclick="deleteOrder(2)"><i class="fa fa-trash-o"></i> </button>
                       </div>
 
                     </div>
@@ -154,7 +153,7 @@
                             <p><a href="../DetailPages/detailProduct1.html">Máy Ảnh Lấy Liền Fujifilm Instax 25</a></p>
                         </div>
                         <div class="col-sm-5 priceProduct">
-                          <p>2.600.000 đ</p>
+                          <p class="unitPrice">2.600.000</p><p> đ</p>
                         </div>
                       </div>
                     </div>
@@ -165,7 +164,7 @@
                             <p><a href="../DetailPages/detailProduct1.html">Nikon D3400 KIT 18-55 VR (24.2MP)</a></p>
                         </div>
                         <div class="col-sm-5 priceProduct">
-                          <p>9.400.000 đ</p>
+                          <p class="unitPrice">9.400.000</p><p> đ</p>
                         </div>
                       </div>
                     </div>
@@ -176,7 +175,7 @@
                             <p><a href="../DetailPages/detailProduct1.html">Canon M10 KIT 15-45mm </a></p>
                         </div>
                         <div class="col-sm-5 priceProduct">
-                          <p>6.950.000 đ</p>
+                          <p class="unitPrice">6.950.000</p><p> đ</p>
                         </div>
                       </div>
                     </div>
@@ -186,7 +185,7 @@
                             <p>Tạm tính</p>
                         </div>
                         <div class="col-sm-5 priceProduct">
-                          <p>18.950.000 đ</p>
+                          <p id="totalPrice">18.950.000</p><p> đ</p>
                         </div>
                       </div>
                       <div class="row">
@@ -194,7 +193,7 @@
                             <p>Phí vận chuyển</p>
                         </div>
                         <div class="col-sm-5 priceProduct">
-                          <p>0 đ</p>
+                          <p>0</p><p> đ</p>
                         </div>
                       </div>
                     </div>

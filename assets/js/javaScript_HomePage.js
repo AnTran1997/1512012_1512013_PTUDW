@@ -73,6 +73,31 @@ function bookingCamera() {
     window.location.href = "../Userpages/userHomePage.html";
 }
 
+function convertStrToInt(str) {
+    alert("true");
+    var result;
+    var pos = str.indexOf(".");
+    while (pos != -1) {
+        result = str.substr(pos, 1);
+        alert(result);
+    }
+    alert(result);
+}
+
 function deleteOrder(num) {
-    var item = document.getElementsByClassName('editOrder');
+    var item1 = document.getElementsByClassName('editOrder')[num];
+    var item2 = document.getElementsByClassName('productsInfo')[num];
+    var total = document.getElementById('totalPrice').textContent;
+    
+
+    item1.style.display = "none";
+    item2.style.display = "none";
+}
+
+function increaseNumProduct(num) {
+    var item = document.getElementsByClassName("changeNumber")[num].value;
+    result = parseInt(item);
+    result += 1 ;
+    alert(item);
+    document.getElementsByClassName("changeNumber")[num].value = item;
 }
