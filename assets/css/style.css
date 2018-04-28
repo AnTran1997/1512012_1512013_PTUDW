@@ -1180,9 +1180,25 @@ a:hover {
 }
 
 .sale-view .sale-view-content .sale-view-col > div .sale-view-hover .sale-view-hover-content .sale-view-price {
-  font: 18px 'OpenSansSemibold';
-  color: white;
+  margin-top: 20px;
+}
+
+.sale-view .sale-view-content .sale-view-col > div .sale-view-hover .sale-view-hover-content .sale-view-price > span {
+  display: block;
   text-align: center;
+}
+
+.sale-view .sale-view-content .sale-view-col > div .sale-view-hover .sale-view-hover-content .sale-view-price .price-old {
+  text-decoration: line-through;
+  color: white;
+  font: 15px 'OpenSansLight';
+}
+
+.sale-view .sale-view-content .sale-view-col > div .sale-view-hover .sale-view-hover-content .sale-view-price .price-new {
+  font: 18px 'OpenSansSemibold';
+  color: #f44242;
+  margin-top: 10px;
+  text-shadow: 2px 2px 5px white;
 }
 
 .sale-view .sale-view-content .sale-view-col > div .sale-view-hover .sale-view-hover-content > a {
