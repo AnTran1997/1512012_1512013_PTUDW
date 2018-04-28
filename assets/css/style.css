@@ -285,7 +285,7 @@ a:hover {
   background: white;
   margin: 0;
   position: absolute;
-  top: 51px;
+  top: 50px;
   left: 0;
   width: 100%;
   height: 0;
@@ -311,7 +311,7 @@ a:hover {
 }
 
 .header .header-bottom .row .product-cat ul li:first-child {
-  border-top: none;
+  border-top-color: transparent;
   border-bottom: none;
 }
 
@@ -413,6 +413,13 @@ a:hover {
   height: 100%;
   border: 1px solid #F36F21;
   border-radius: 100px;
+  font: 25px 'OpensSan';
+  color: #999;
+  padding: 0 20px;
+}
+
+.header .header-right .header-search input[type=text]:focus {
+  outline: none;
 }
 
 .header .header-right .header-search input[type=submit] {
@@ -471,6 +478,54 @@ a:hover {
 
 .header .header-right .header-user .hello-user span {
   font-family: 'OpenSansSemibold';
+}
+
+.header-small {
+  padding: 0 !important;
+  height: 70px !important;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.header-small .header-left {
+  padding: 0;
+}
+
+.header-small .header-left img {
+  width: 70px !important;
+}
+
+.header-small .header-user i,
+.header-small .header-basket i {
+  width: 35px !important;
+  height: 35px !important;
+  border-radius: 35px !important;
+  line-height: 35px !important;
+}
+
+.header-small .header-bottom {
+  position: absolute !important;
+  top: 16.5% !important;
+  right: 5% !important;
+}
+
+.header-small .header-bottom .product-menu-title {
+  font-size: 0 !important;
+  width: max-content !important;
+}
+
+.header-small .header-bottom .product-menu-title:before {
+  margin: 0 !important;
+}
+
+.header-small .header-bottom .product-menu-title .row {
+  width: 360px !important;
+  left: auto !important;
+  right: 0 !important;
+  top: 50px !important;
+}
+
+.header-small .header-bottom .product-menu-title .row .product-cat-list > li:first-child {
+  border-top-color: #0FAAD9 !important;
 }
 
 .main-content {
@@ -1419,6 +1474,7 @@ a:hover {
 }
 
 .view-all .view-content .view-cat .view-cat-list .view-cat-item.active > h3 {
+  font-family: 'OpenSansBold';
   background: linear-gradient(to right, #F37021, #FBB040);
   color: white;
 }
@@ -1607,7 +1663,6 @@ a:hover {
 html,
 body {
   width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
