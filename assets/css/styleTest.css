@@ -259,8 +259,67 @@ form {
   }
 
 .payment {
-    margin-top: 10px;
+    margin-top: 130px;
 }
+  .payment .orderDetail {
+    margin-right: 10px;
+    height: 100ch;
+  }
+  .payment .orderInfo {
+    height: 50ch;
+  }
+
+.resumeOrder {
+  padding-left: 20px;
+}
+
+.address {
+  
+  height:25ch;
+  margin-bottom: 10px;
+}
+  .title-orderInfo {
+    margin: 5px;
+  }
+    .title-orderInfo::after {
+      display: block;
+      content: '';
+      background-color: black;
+      height: 2px;
+      width: 95%;
+      margin-left: 5px;
+      margin-top: 10px;
+    }
+    .title-orderInfo button,.title-orderInfo h4 {
+      display: inline;
+    }
+    .title-orderInfo button {
+      height: 30px;
+      width: 50px;
+    }
+    .title-orderInfo button:hover {
+      cursor: pointer;
+      font-weight: bold;
+      border: none; 
+    }
+      #editAddress {
+        position: relative;
+        left: 21ch;
+      }
+      #editInfoProduct {
+        position: relative;
+        left: 15ch;
+      }
+
+  .addrContent {
+    margin: 15px;
+  }
+    .addrContent h3 {
+      margin-bottom: 10px;
+    }
+    .addrContent p {
+      margin:0;
+    }
   
         
 
