@@ -381,9 +381,9 @@
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
             <div class="sale-view-price">
-                  <span class="price-new">10 VND</span>
-                  <span class="price-old">0 VND</span>
-                </div>
+              <span class="price-new">10 VND</span>
+              <span class="price-old">0 VND</span>
+            </div>
             <a href="">Xem thêm</a>
           </div>
         </div>
@@ -393,9 +393,9 @@
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
             <div class="sale-view-price">
-                  <span class="price-new">10 VND</span>
-                  <span class="price-old">0 VND</span>
-                </div>
+              <span class="price-new">10 VND</span>
+              <span class="price-old">0 VND</span>
+            </div>
             <a href="">Xem thêm</a>
           </div>
         </div>
@@ -405,9 +405,9 @@
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
             <div class="sale-view-price">
-                  <span class="price-new">10 VND</span>
-                  <span class="price-old">0 VND</span>
-                </div>
+              <span class="price-new">10 VND</span>
+              <span class="price-old">0 VND</span>
+            </div>
             <a href="">Xem thêm</a>
           </div>
         </div>
@@ -419,9 +419,9 @@
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
             <div class="sale-view-price">
-                  <span class="price-new">10 VND</span>
-                  <span class="price-old">0 VND</span>
-                </div>
+              <span class="price-new">10 VND</span>
+              <span class="price-old">0 VND</span>
+            </div>
             <a href="">Xem thêm</a>
           </div>
         </div>
@@ -431,9 +431,9 @@
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
             <div class="sale-view-price">
-                  <span class="price-new">10 VND</span>
-                  <span class="price-old">0 VND</span>
-                </div>
+              <span class="price-new">10 VND</span>
+              <span class="price-old">0 VND</span>
+            </div>
             <a href="">Xem thêm</a>
           </div>
         </div>
@@ -445,9 +445,9 @@
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
             <div class="sale-view-price">
-                  <span class="price-new">10 VND</span>
-                  <span class="price-old">0 VND</span>
-                </div>
+              <span class="price-new">10 VND</span>
+              <span class="price-old">0 VND</span>
+            </div>
             <a href="">Xem thêm</a>
           </div>
         </div>
@@ -457,9 +457,9 @@
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
             <div class="sale-view-price">
-                  <span class="price-new">10 VND</span>
-                  <span class="price-old">0 VND</span>
-                </div>
+              <span class="price-new">10 VND</span>
+              <span class="price-old">0 VND</span>
+            </div>
             <a href="">Xem thêm</a>
           </div>
         </div>
@@ -469,9 +469,9 @@
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
             <div class="sale-view-price">
-                  <span class="price-new">10 VND</span>
-                  <span class="price-old">0 VND</span>
-                </div>
+              <span class="price-new">10 VND</span>
+              <span class="price-old">0 VND</span>
+            </div>
             <a href="">Xem thêm</a>
           </div>
         </div>
@@ -483,9 +483,9 @@
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
             <div class="sale-view-price">
-                  <span class="price-new">10 VND</span>
-                  <span class="price-old">0 VND</span>
-                </div>
+              <span class="price-new">10 VND</span>
+              <span class="price-old">0 VND</span>
+            </div>
             <a href="">Xem thêm</a>
           </div>
         </div>
@@ -495,9 +495,9 @@
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
             <div class="sale-view-price">
-                  <span class="price-new">10 VND</span>
-                  <span class="price-old">0 VND</span>
-                </div>
+              <span class="price-new">10 VND</span>
+              <span class="price-old">0 VND</span>
+            </div>
             <a href="">Xem thêm</a>
           </div>
         </div>
@@ -707,6 +707,26 @@
         i_new++;
       }
       $('.new-slider').css('transform',`translateX(-${50*i_new}%)`);
+    });
+
+    var i_most=0;
+    $('.most-slider-control .most-prev').click(function(){
+      if(!i_most){
+        i_most=1;
+      }
+      else{
+        i_most--;
+      }
+      $('.most-slider').css('transform',`translateX(-${50*i_most}%)`);
+    });
+    $('.most-slider-control .most-next').click(function(){
+      if(i_most==1){
+        i_most=0;
+      }
+      else{
+        i_most++;
+      }
+      $('.most-slider').css('transform',`translateX(-${50*i_most}%)`);
     });
 
   });
