@@ -12,165 +12,299 @@
   <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/style.css" />
 </head>
 <body>
+  <div class="form">
+    
+    <div class="login active">
+      <button class="close">
+      <i class="fa fa-close"></i>
+    </button>
+      <h2>Đăng nhập</h2>
+      <div>
+        <label>Tên đăng nhập</label>
+        <input type="text">
+      </div>
+      <div>
+        <label>Mật khẩu</label>
+        <input type="password">
+      </div>
+      <button class="done">Đăng nhập</button>
+    </div>
+    <div class="signup">
+      <button class="close">
+      <i class="fa fa-close"></i>
+    </button>
+      <h2>Đăng kí</h2>
+      <div>
+        <label>Tên tài khoản</label>
+        <input type="text">
+      </div>
+      <div>
+        <label>Mật khẩu</label>
+        <input type="password">
+      </div>
+      <div>
+        <label>Nhập lại mật khẩu</label>
+        <input type="password">
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="text">
+      </div>
+      <button class="done">Đăng kí</button>
+    </div>
+  </div>
   <header id="header" class="header">
     <div class="container header-top">
       <div class="row">
         <div class="header-left col-sm-6">
-          <img src="../../assets/images/logo.png" alt="">
-        </div>
-        <div class="header-right col-sm-6">
-          <div class="row">
-            <div class="col-sm-6 header-search">
-              <input type="text">
-              <input type="submit">
-              <i class="fa fa-search"></i>
-            </div>
-            <div class="col-sm-2 header-basket">
-              <i class="fa fa-shopping-cart"></i>
-            </div>
-            <div class="col-sm-4 header-user">
-              <i class="fa fa-user"></i>
-              <div class="hello-user">Hello, <span>Guest</span>!</div>
-            </div>
+         <a href="../../index.html"><img src="../../assets/images/logo.png" alt=""></a>
+       </div>
+       <div class="header-right col-sm-6">
+        <div class="row">
+          <div class="col-sm-6 header-search">
+            <input type="text">
+            <input type="submit">
+            <i class="fa fa-search"></i>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="header-bottom row">
-      <div class="col-sm-3">
-        <div class="product-menu-title">Danh mục sản phẩm
-          <div class="row sub-menu">
-            <div class="col-sm-2 product-cat">
-             <ul class="product-cat-list">
-               <li><span>Loại Sản Phẩm</span></li>
-               <li><span>Nhà Sản Xuất</span></li>
-             </ul>
-           </div>
-           <div class="col-sm-10 product-cat-content">
-            <ul class="product-list-content active">
-              <li class="product-item"><a href="../../index.html#all">máy ảnh cơ</a></li>
-              <li class="product-item"><a href="../../index.html#all">máy ảnh kĩ thuật số</a></li>
-              <li class="product-item"><a href="../../index.html#all">máy ảnh lấy liền</a></li>
-              <li class="product-item"><a href="../../index.html#all">tất cả</a></li>
+          <div class="col-sm-2 header-basket">
+            <i class="fa fa-shopping-cart"></i>
+          </div>
+          <div class="col-sm-4 header-user">
+            <i class="fa fa-user"></i>
+            <div class="hello-user">Hello, <span>Guest</span>!</div>
+            <ul class="sub-menu-none active">
+              <li><a id="login">Đăng nhập</a></li>
+              <li><a id="signup">Đăng kí</a></li>
             </ul>
-            <ul class="product-list-content">
-              <li class="product-item"><a href="../../index.html#all">Canon</a></li>
-              <li class="product-item"><a href="../../index.html#all">Fujifilm</a></li>
-              <li class="product-item"><a href="../../index.html#all">Sony</a></li>
-              <li class="product-item"><a href="../../index.html#all">Nikon</a></li>
-              <li class="product-item"><a href="../../index.html#all">tất cả</a></li>
+            <ul class="sub-menu-user">
+              <li><a href="">Cập nhật thông tin</a></li>
+              <li><a href="">Điều chỉnh đơn hàng</a></li>
+              <li><a href="">Lịch sử mua hàng</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-</header>
-<div class="main-content">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-9 item-detail">
-        <div class="item">
-          <div class="thumbnail">
-            <img src="../../assets/images/Brands/Fujifilm/Máy%20Ảnh%20Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%209%20-%20Ice%20Blue.jpg" alt="">
-          </div>
-          <div class="detail">
-            <div class="name"></div>
-            <div class="price"></div>
-            <div class="view"></div>
-            <div class="sale"></div>
-          </div>
-          <div class="info">
-            <div class="des"></div>
-            <div class="place"></div>
-            <div class="type"></div>
-            <div class="producer"></div>
-          </div>
+  <div class="header-bottom row">
+    <div class="col-sm-3">
+      <div class="product-menu-title">Danh mục sản phẩm
+        <div class="row sub-menu">
+          <div class="col-sm-2 product-cat">
+           <ul class="product-cat-list">
+             <li><span>Loại Sản Phẩm</span></li>
+             <li><span>Nhà Sản Xuất</span></li>
+           </ul>
+         </div>
+         <div class="col-sm-10 product-cat-content">
+          <ul class="product-list-content active">
+            <li class="product-item"><a href="../../index.html#all">máy ảnh cơ</a></li>
+            <li class="product-item"><a href="../../index.html#all">máy ảnh kĩ thuật số</a></li>
+            <li class="product-item"><a href="../../index.html#all">máy ảnh lấy liền</a></li>
+            <li class="product-item"><a href="../../index.html#all">tất cả</a></li>
+          </ul>
+          <ul class="product-list-content">
+            <li class="product-item"><a href="../../index.html#all">Canon</a></li>
+            <li class="product-item"><a href="../../index.html#all">Fujifilm</a></li>
+            <li class="product-item"><a href="../../index.html#all">Sony</a></li>
+            <li class="product-item"><a href="../../index.html#all">Nikon</a></li>
+            <li class="product-item"><a href="../../index.html#all">tất cả</a></li>
+          </ul>
         </div>
-      </div>
-      <div class="col-sm-3 ads">
-        <img src="../../assets/images/ads/1.jpg" alt="">
-        <img src="../../assets/images/ads/2.jpg" alt="">
-        <img src="../../assets/images/ads/3.jpg" alt="">
-        <img src="../../assets/images/ads/4.jpg" alt="">
       </div>
     </div>
   </div>
 </div>
+</header>
+<div class="main-content singlepage">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 item-detail">
+        <div class="item-top">
+          <div class="thumbnail">
+            <img src="../../assets/images/Brands/Fujifilm/Máy%20Ảnh%20Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%209%20-%20Ice%20Blue.jpg" alt="">
+          </div>
+          <div class="detail">
+            <div class="name">
+             Máy ảnh fujifilm nhạt
+           </div>
+           <div class="price">
+            <span class="title">
+              <i class="fa fa-tag"></i>
+              <span>Giá</span>
+            </span>
+            <span class="des-info">20.000.000 VND</span>
+          </div>
+          <div class="view">
+            <span class="title">
+              <i class="fa fa-eye"></i>
+              <span>Lượt xem</span>
+            </span>
+            <span class="des-info">1500 lượt</span>
+          </div>
+          <div class="sale">
+            <span class="title">
+              <i class="fa fa-history"></i>
+              <span>Đã bán</span>
+            </span>
+            <span class="des-info">20 chiếc</span>
+          </div>
+        </div>
+        <button class="checkout">Thêm vào giỏ hàng</button>
+      </div>
+      <div class="item-bottom">
+        <h2 class="detail-title">Chi tiết <span>sản phẩm</span></h2>
+        <div class="info">
+          <div class="des">
+            <span class="title">Mô tả</span>
+            <span class="des-info">Máy ảnh fujifilm màu sắc tươi sáng, độ phân giải cao, pin sử dụng lâu</span>
+          </div>
+          <div class="place">
+            <span class="title">Xuất xứ</span>
+            <span class="des-info">Nhật Bản</span>
+          </div>
+          <div class="type">
+            <span class="title">Loại</span>
+            <span class="des-info">Máy ảnh kĩ thuật số</span>
+          </div>
+          <div class="producer">
+            <span class="title">Nhà sản xuất</span>
+            <span class="des-info">Fujifilm</span>
+          </div>
+        </div>
+      </div>
+      <div class="most">
+        <h2 class="detail-title">Sản phẩm <span>cùng loại</span></h2>
+        <div class="container">
+          <div class="most-list">
+            <div class="most-slider">
+              <div class="slider-item">
+                <div class="most-item">
+                 <div class="thumbnail"><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+                 <div class="most-name">Máy Ảnh ABC</div>
+                 <div class="most-price">0 VND</div>
+                 <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+               </div>
+             </div>
+             <div class="slider-item">
+              <div class="most-item">
+               <div class="thumbnail"><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+               <div class="most-name">Máy Ảnh ABC</div>
+               <div class="most-price">0 VND</div>
+               <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+             </div>
+           </div>
+           <div class="slider-item">
+            <div class="most-item">
+             <div class="thumbnail"><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+             <div class="most-name">Máy Ảnh ABC</div>
+             <div class="most-price">0 VND</div>
+             <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+           </div>
+         </div>
+         <div class="slider-item">
+          <div class="most-item">
+           <div class="thumbnail"><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+           <div class="most-name">Máy Ảnh ABC</div>
+           <div class="most-price">0 VND</div>
+           <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+         </div>
+       </div>
+       <div class="slider-item">
+        <div class="most-item">
+         <div class="thumbnail"><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+         <div class="most-name">Máy Ảnh ABC</div>
+         <div class="most-price">0 VND</div>
+         <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+<div class="most">
+  <h2 class="detail-title">Sản phẩm <span>cùng nhà sản xuất</span></h2>
+  <div class="container">
+    <div class="most-list">
+      <div class="most-slider">
+        <div class="slider-item">
+          <div class="most-item">
+           <div class="thumbnail"><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+           <div class="most-name">Máy Ảnh ABC</div>
+           <div class="most-price">0 VND</div>
+           <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+         </div>
+       </div>
+       <div class="slider-item">
+        <div class="most-item">
+         <div class="thumbnail"><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+         <div class="most-name">Máy Ảnh ABC</div>
+         <div class="most-price">0 VND</div>
+         <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+       </div>
+     </div>
+     <div class="slider-item">
+      <div class="most-item">
+       <div class="thumbnail"><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+       <div class="most-name">Máy Ảnh ABC</div>
+       <div class="most-price">0 VND</div>
+       <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+     </div>
+   </div>
+   <div class="slider-item">
+    <div class="most-item">
+     <div class="thumbnail"><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+     <div class="most-name">Máy Ảnh ABC</div>
+     <div class="most-price">0 VND</div>
+     <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+   </div>
+ </div>
+ <div class="slider-item">
+  <div class="most-item">
+   <div class="thumbnail"><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+   <div class="most-name">Máy Ảnh ABC</div>
+   <div class="most-price">0 VND</div>
+   <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+ </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-3 ads">
+  <img src="../../assets/images/ads/1.jpg" alt="">
+  <img src="../../assets/images/ads/2.jpg" alt="">
+  <img src="../../assets/images/ads/3.jpg" alt="">
+  <img src="../../assets/images/ads/4.jpg" alt="">
+</div>
+</div>
+
+</div>
+</div>
+</div>
 <script src="../../assets/js/jquery-3.3.1.min.js"></script>
 <script>
   jQuery(document).ready(function($) {
-    $('.header .product-cat-list li').click(function(){
-      var i =$('.header .product-cat-list li').index($(this));
-      $('.header .product-list-content').removeClass('active');
-      $('.header .product-list-content').eq(i).addClass('active');
+    $('#login').click(function(){
+      $('.form').addClass('active');
+      $('.form >div').removeClass('active');
+      $('.form .login').addClass('active');
     });
-    $('.intro .product-cat-list li').click(function(){
-      var i =$('.intro .product-cat-list li').index($(this));
-      $('.intro .product-list-content').removeClass('active');
-      $('.intro .product-list-content').eq(i).addClass('active');
+    $('#signup').click(function(){
+      $('.form').addClass('active');
+      $('.form >div').removeClass('active');
+      $('.form .signup').addClass('active');
     });
-    var i_best=0;
-    $('.best-slider-control .best-prev').click(function(){
-      if(!i_best){
-        i_best=2;
-      }
-      else{
-        i_best--;
-      }
-      $('.best-slider').css('transform',`translateX(-${33.333333*i_best}%)`);
+    $('.close').click(function(){
+      $('.form').removeClass('active');
     });
-    $('.best-slider-control .best-next').click(function(){
-      if(i_best==2){
-        i_best=0;
-      }
-      else{
-        i_best++;
-      }
-      $('.best-slider').css('transform',`translateX(-${33.333333*i_best}%)`);
-    });
-    var i_new=0;
-    $('.new-slider-control .new-prev').click(function(){
-      if(!i_new){
-        i_new=1;
-      }
-      else{
-        i_new--;
-      }
-      $('.new-slider').css('transform',`translateX(-${50*i_new}%)`);
-    });
-    $('.new-slider-control .new-next').click(function(){
-      if(i_new==1){
-        i_new=0;
-      }
-      else{
-        i_new++;
-      }
-      $('.new-slider').css('transform',`translateX(-${50*i_new}%)`);
-    });
-
-    var i_most=0;
-    $('.most-slider-control .most-prev').click(function(){
-      if(!i_most){
-        i_most=1;
-      }
-      else{
-        i_most--;
-      }
-      $('.most-slider').css('transform',`translateX(-${50*i_most}%)`);
-    });
-    $('.most-slider-control .most-next').click(function(){
-      if(i_most==1){
-        i_most=0;
-      }
-      else{
-        i_most++;
-      }
-      $('.most-slider').css('transform',`translateX(-${50*i_most}%)`);
-    });
-    $('.view-cat-item').click(function(){
-      $('.view-cat-item').removeClass('active');
-      $(this).addClass('active');
+    $('.done').click(function(){
+      $('.sub-menu-none').removeClass('active');
+      $('.sub-menu-user').addClass('active');
+      $('.form').removeClass('active');
+      alert("Đã đăng nhập");
+      $('.hello-user span').text('User');
     });
     $(window).scroll(function() {
       var height = $(window).scrollTop();

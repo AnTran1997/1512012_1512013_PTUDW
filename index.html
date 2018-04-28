@@ -12,11 +12,52 @@
   <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
 </head>
 <body>
+  <div class="form">
+
+    <div class="login active">
+      <button class="close">
+        <i class="fa fa-close"></i>
+      </button>
+      <h2>Đăng nhập</h2>
+      <div>
+        <label>Tên đăng nhập</label>
+        <input type="text">
+      </div>
+      <div>
+        <label>Mật khẩu</label>
+        <input type="password">
+      </div>
+      <button class="done">Đăng nhập</button>
+    </div>
+    <div class="signup">
+      <button class="close">
+        <i class="fa fa-close"></i>
+      </button>
+      <h2>Đăng kí</h2>
+      <div>
+        <label>Tên tài khoản</label>
+        <input type="text">
+      </div>
+      <div>
+        <label>Mật khẩu</label>
+        <input type="password">
+      </div>
+      <div>
+        <label>Nhập lại mật khẩu</label>
+        <input type="password">
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="text">
+      </div>
+      <button class="done">Đăng kí</button>
+    </div>
+  </div>
   <header id="header" class="header">
     <div class="container header-top">
       <div class="row">
         <div class="header-left col-sm-6">
-          <img src="./assets/images/logo.png" alt="">
+          <a href="./index.html"><img src="./assets/images/logo.png" alt=""></a>
         </div>
         <div class="header-right col-sm-6">
           <div class="row">
@@ -31,6 +72,15 @@
             <div class="col-sm-4 header-user">
               <i class="fa fa-user"></i>
               <div class="hello-user">Hello, <span>Guest</span>!</div>
+              <ul class="sub-menu-none active">
+                <li><a id="login">Đăng nhập</a></li>
+                <li><a id="signup">Đăng kí</a></li>
+              </ul>
+              <ul class="sub-menu-user">
+                <li><a href="">Cập nhật thông tin</a></li>
+                <li><a href="">Điều chỉnh đơn hàng</a></li>
+                <li><a href="">Lịch sử mua hàng</a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -171,7 +221,10 @@
               <div class="best-price">
                 <span class="price-new">10 VND</span>
               </div>
-              <a href="" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
             </div>
           </div>
           <div class="slider-item">
@@ -181,7 +234,13 @@
               <div class="best-price">
                 <span class="price-new">10 VND</span>
               </div>
-              <a href="" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
             </div>
           </div>
           <div class="slider-item">
@@ -191,7 +250,10 @@
               <div class="best-price">
                 <span class="price-new">10 VND</span>
               </div>
-              <a href="" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
             </div>
           </div>
           <div class="slider-item">
@@ -201,7 +263,10 @@
               <div class="best-price">
                 <span class="price-new">10 VND</span>
               </div>
-              <a href="" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
             </div>
           </div>
           <div class="slider-item">
@@ -211,7 +276,10 @@
               <div class="best-price">
                 <span class="price-new">10 VND</span>
               </div>
-              <a href="" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
             </div>
           </div>
           <div class="slider-item">
@@ -221,7 +289,10 @@
               <div class="best-price">
                 <span class="price-new">10 VND</span>
               </div>
-              <a href="" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
             </div>
           </div>
           <div class="slider-item">
@@ -231,7 +302,10 @@
               <div class="best-price">
                 <span class="price-new">10 VND</span>
               </div>
-              <a href="" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
             </div>
           </div>
           <div class="slider-item">
@@ -241,7 +315,10 @@
               <div class="best-price">
                 <span class="price-new">10 VND</span>
               </div>
-              <a href="" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
             </div>
           </div>
           <div class="slider-item">
@@ -251,7 +328,10 @@
               <div class="best-price">
                 <span class="price-new">10 VND</span>
               </div>
-              <a href="" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
             </div>
           </div>
           <div class="slider-item">
@@ -261,7 +341,10 @@
               <div class="best-price">
                 <span class="price-new">10 VND</span>
               </div>
-              <a href="" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
             </div>
           </div>
           <div class="slider-item">
@@ -271,7 +354,10 @@
               <div class="best-price">
                 <span class="price-new">10 VND</span>
               </div>
-              <a href="" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
             </div>
           </div>
           <div class="slider-item">
@@ -281,7 +367,10 @@
               <div class="best-price">
                 <span class="price-new">10 VND</span>
               </div>
-              <a href="" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -320,80 +409,110 @@
          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
          <div class="most-name">Máy Ảnh ABC</div>
          <div class="most-price">0 VND</div>
-         <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-       </div>
-     </div>
-     <div class="slider-item">
+         <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+         <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+      </div>
+    </div>
+    <div class="slider-item">
       <div class="most-item">
        <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
        <div class="most-name">Máy Ảnh ABC</div>
        <div class="most-price">0 VND</div>
-       <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-     </div>
-   </div>
-   <div class="slider-item">
+       <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+       <button class="add">
+        <i class="fa fa-shopping-cart"></i>
+      </button>
+    </div>
+  </div>
+  <div class="slider-item">
     <div class="most-item">
      <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
      <div class="most-name">Máy Ảnh ABC</div>
      <div class="most-price">0 VND</div>
-     <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-   </div>
- </div>
- <div class="slider-item">
-  <div class="most-item">
-   <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-   <div class="most-name">Máy Ảnh ABC</div>
-   <div class="most-price">0 VND</div>
-   <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+     <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+     <button class="add">
+      <i class="fa fa-shopping-cart"></i>
+    </button>
+  </div>
 </div>
 <div class="slider-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
    <div class="most-price">0 VND</div>
-   <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+   <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
 </div>
 <div class="slider-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
    <div class="most-price">0 VND</div>
-   <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+   <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
 </div>
 <div class="slider-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
    <div class="most-price">0 VND</div>
-   <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+   <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
 </div>
 <div class="slider-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
    <div class="most-price">0 VND</div>
-   <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+   <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
 </div>
 <div class="slider-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
    <div class="most-price">0 VND</div>
-   <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+   <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
 </div>
 <div class="slider-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
    <div class="most-price">0 VND</div>
-   <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+   <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
+</div>
+<div class="slider-item">
+  <div class="most-item">
+   <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+   <div class="most-name">Máy Ảnh ABC</div>
+   <div class="most-price">0 VND</div>
+   <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
 </div>
 </div>
 </div>
@@ -413,7 +532,10 @@
               <span class="price-new">10 VND</span>
               <span class="price-old">0 VND</span>
             </div>
-            <a href="">Xem thêm</a>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -425,7 +547,10 @@
               <span class="price-new">10 VND</span>
               <span class="price-old">0 VND</span>
             </div>
-            <a href="">Xem thêm</a>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -437,7 +562,10 @@
               <span class="price-new">10 VND</span>
               <span class="price-old">0 VND</span>
             </div>
-            <a href="">Xem thêm</a>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -451,7 +579,10 @@
               <span class="price-new">10 VND</span>
               <span class="price-old">0 VND</span>
             </div>
-            <a href="">Xem thêm</a>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -463,7 +594,10 @@
               <span class="price-new">10 VND</span>
               <span class="price-old">0 VND</span>
             </div>
-            <a href="">Xem thêm</a>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -477,7 +611,10 @@
               <span class="price-new">10 VND</span>
               <span class="price-old">0 VND</span>
             </div>
-            <a href="">Xem thêm</a>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -489,7 +626,10 @@
               <span class="price-new">10 VND</span>
               <span class="price-old">0 VND</span>
             </div>
-            <a href="">Xem thêm</a>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -501,7 +641,10 @@
               <span class="price-new">10 VND</span>
               <span class="price-old">0 VND</span>
             </div>
-            <a href="">Xem thêm</a>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -515,7 +658,10 @@
               <span class="price-new">10 VND</span>
               <span class="price-old">0 VND</span>
             </div>
-            <a href="">Xem thêm</a>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -527,7 +673,10 @@
               <span class="price-new">10 VND</span>
               <span class="price-old">0 VND</span>
             </div>
-            <a href="">Xem thêm</a>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -552,80 +701,110 @@
          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
          <div class="new-name">Máy Ảnh ABC</div>
          <div class="new-price">0 VND</div>
-         <a href="" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-       </div>
-     </div>
-     <div class="slider-item">
+         <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
+         <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+      </div>
+    </div>
+    <div class="slider-item">
       <div class="new-item">
        <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
        <div class="new-name">Máy Ảnh ABC</div>
        <div class="new-price">0 VND</div>
-       <a href="" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-     </div>
-   </div>
-   <div class="slider-item">
+       <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
+       <button class="add">
+        <i class="fa fa-shopping-cart"></i>
+      </button>
+    </div>
+  </div>
+  <div class="slider-item">
     <div class="new-item">
      <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
      <div class="new-name">Máy Ảnh ABC</div>
      <div class="new-price">0 VND</div>
-     <a href="" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-   </div>
- </div>
- <div class="slider-item">
-  <div class="new-item">
-   <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-   <div class="new-name">Máy Ảnh ABC</div>
-   <div class="new-price">0 VND</div>
-   <a href="" class="new-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+     <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
+     <button class="add">
+      <i class="fa fa-shopping-cart"></i>
+    </button>
+  </div>
 </div>
 <div class="slider-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
    <div class="new-price">0 VND</div>
-   <a href="" class="new-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+   <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
 </div>
 <div class="slider-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
    <div class="new-price">0 VND</div>
-   <a href="" class="new-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+   <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
 </div>
 <div class="slider-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
    <div class="new-price">0 VND</div>
-   <a href="" class="new-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+   <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
 </div>
 <div class="slider-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
    <div class="new-price">0 VND</div>
-   <a href="" class="new-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+   <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
 </div>
 <div class="slider-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
    <div class="new-price">0 VND</div>
-   <a href="" class="new-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+   <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
 </div>
 <div class="slider-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
    <div class="new-price">0 VND</div>
-   <a href="" class="new-hover"><i class="fa fa-arrow-right"></i></a>
- </div>
+   <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
+</div>
+<div class="slider-item">
+  <div class="new-item">
+   <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+   <div class="new-name">Máy Ảnh ABC</div>
+   <div class="new-price">0 VND</div>
+   <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
 </div>
 </div>
 </div>
@@ -680,73 +859,100 @@
           <div class="dot">4</div>
         </div>
         <div class="view-item">
-          <a href="" class="view-all-item">
-           <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-           <div class="view-all-name">Máy Ảnh ABC</div>
-           <div class="view-all-price">0 VND</div>
-         </a>
-       </div>
-       <div class="view-item">
-        <a href="" class="view-all-item">
-         <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-         <div class="view-all-name">Máy Ảnh ABC</div>
-         <div class="view-all-price">0 VND</div>
-       </a>
-     </div>
-     <div class="view-item">
-      <a href="" class="view-all-item">
-       <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-       <div class="view-all-name">Máy Ảnh ABC</div>
-       <div class="view-all-price">0 VND</div>
-     </a>
-   </div>
-   <div class="view-item">
-    <a href="" class="view-all-item">
-     <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-     <div class="view-all-name">Máy Ảnh ABC</div>
-     <div class="view-all-price">0 VND</div>
-   </a>
- </div>
- <div class="view-item">
-  <a href="" class="view-all-item">
-   <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-   <div class="view-all-name">Máy Ảnh ABC</div>
-   <div class="view-all-price">0 VND</div>
- </a>
-</div>
-<div class="view-item">
-  <a href="" class="view-all-item">
-   <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-   <div class="view-all-name">Máy Ảnh ABC</div>
-   <div class="view-all-price">0 VND</div>
- </a>
-</div>
-<div class="view-item">
-  <a href="" class="view-all-item">
-   <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-   <div class="view-all-name">Máy Ảnh ABC</div>
-   <div class="view-all-price">0 VND</div>
- </a>
-</div>
-<div class="view-item">
-  <a href="" class="view-all-item">
-   <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-   <div class="view-all-name">Máy Ảnh ABC</div>
-   <div class="view-all-price">0 VND</div>
- </a>
-</div>
-<div class="view-item">
-  <a href="" class="view-all-item">
-   <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-   <div class="view-all-name">Máy Ảnh ABC</div>
-   <div class="view-all-price">0 VND</div>
- </a>
-</div>
+          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
+            <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+            <div class="view-all-name">Máy Ảnh ABC</div>
+            <div class="view-all-price">0 VND</div>
+          </a>
+          <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
+        <div class="view-item">
+          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
+            <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+            <div class="view-all-name">Máy Ảnh ABC</div>
+            <div class="view-all-price">0 VND</div>
+          </a>
+          <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
+        <div class="view-item">
+          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
+            <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+            <div class="view-all-name">Máy Ảnh ABC</div>
+            <div class="view-all-price">0 VND</div>
+          </a>
+          <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
+        <div class="view-item">
+          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
+            <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+            <div class="view-all-name">Máy Ảnh ABC</div>
+            <div class="view-all-price">0 VND</div>
+          </a>
+          <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
+        <div class="view-item">
+          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
+            <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+            <div class="view-all-name">Máy Ảnh ABC</div>
+            <div class="view-all-price">0 VND</div>
+          </a>
+          <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
+        <div class="view-item">
+          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
+            <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+            <div class="view-all-name">Máy Ảnh ABC</div>
+            <div class="view-all-price">0 VND</div>
+          </a>
+          <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
+        <div class="view-item">
+          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
+            <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+            <div class="view-all-name">Máy Ảnh ABC</div>
+            <div class="view-all-price">0 VND</div>
+          </a>
+          <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
+        <div class="view-item">
+          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
+            <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+            <div class="view-all-name">Máy Ảnh ABC</div>
+            <div class="view-all-price">0 VND</div>
+          </a>
+          <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
+        <div class="view-item">
+          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
+            <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+            <div class="view-all-name">Máy Ảnh ABC</div>
+            <div class="view-all-price">0 VND</div>
+          </a>
+          <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
 
 
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 <script src="./assets/js/jquery-3.3.1.min.js"></script>
@@ -858,6 +1064,26 @@
         $('.header').removeClass('header-small');
         $('.main-content').css('margin-top','170px');
       }
+    });
+    $('#login').click(function(){
+      $('.form').addClass('active');
+      $('.form >div').removeClass('active');
+      $('.form .login').addClass('active');
+    });
+    $('#signup').click(function(){
+      $('.form').addClass('active');
+      $('.form >div').removeClass('active');
+      $('.form .signup').addClass('active');
+    });
+    $('.close').click(function(){
+      $('.form').removeClass('active');
+    });
+    $('.done').click(function(){
+      $('.sub-menu-none').removeClass('active');
+      $('.sub-menu-user').addClass('active');
+      $('.form').removeClass('active');
+      alert("Đã đăng nhập");
+      $('.hello-user span').text('User');
     });
   });
 </script>
