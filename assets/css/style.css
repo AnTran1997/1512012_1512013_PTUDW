@@ -447,6 +447,11 @@ a:hover {
   border: none;
   background: transparent;
   color: transparent;
+  cursor: pointer;
+}
+
+.header .header-right .header-search input[type=submit]:focus {
+  outline: none;
 }
 
 .header .header-right .header-search i {
@@ -457,6 +462,7 @@ a:hover {
   font-size: 20px;
   color: #F36F21;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .header .header-right .header-basket i {
