@@ -61,7 +61,7 @@
   font-family: 'NotoSerifBold';
   src: url("./../fonts/NotoSerif-Bold.ttf");
 }
-
+/*
 .hm .row .col-sm-12 {
     height: 25ch;
 }
@@ -76,10 +76,10 @@ form {
     border-radius: 25px;
 }
 
-/*.header .row .col-sm-12 {
+.header .row .col-sm-12 {
    height: 25ch;
    width: 100%;
-}*/
+}
     .menu-bar .row{
         position: relative;
         height: 15ch;
@@ -154,7 +154,114 @@ form {
 .imgInTable {
     width: 35px;
     height: 35px;;
+}*/
+
+
+.header {
+    padding: 20px 0;
+    background: #000033;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 9999999;
+  }
+  
+  .header .header-left img {
+    width: 90px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 9;
+  }
+  
+  .header .header-left p {
+    font: 18px 'UTMGodWordR';
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px 10px 30px;
+    transform: translateX(-30px);
+    background: rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .header .header-right {
+    padding: 1.5% 0 0 0;
+  }
+  
+  .header .header-right .header-search input[type=text] {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #F36F21;
+    border-radius: 100px;
+  }
+  
+  .header .header-right .header-search input[type=submit] {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 9px;
+    height: 100%;
+    width: 30px;
+    border: none;
+    background: transparent;
+    color: transparent;
+  }
+  
+  .header .header-right .header-search i {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    font-size: 20px;
+    color: #F36F21;
+    transform: translateY(-50%);
+  }
+  
+  .header .header-right .header-basket i {
+    display: block;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #F36F21;
+    line-height: 50px;
+    text-align: center;
+    color: #F36F21;
+    margin: 0 auto;
+  }
+  
+  .header .header-right .header-user i {
+    vertical-align: middle;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #F36F21;
+    line-height: 50px;
+    text-align: center;
+    color: #F36F21;
+  }
+  
+  .header .header-right .header-user .hello-user {
+    font: 16px 'OpenSans';
+    color: #F36F21;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .header .header-right .header-user .hello-user span {
+    font-family: 'OpenSansSemibold';
+  }
+
+.payment {
+    margin-top: 10px;
 }
+  
         
 
 
