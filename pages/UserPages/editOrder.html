@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pirates - Chuyên cung cấp máy ảnh số chất lượng nhất</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/bootstrap-grid.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/jquery.fullpage.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styleUserPages.css" />
+</head>
+<body>
+    
+  <header id="header" class="header">
+    <div class="container">
+      <div class="row">
+        <div class="header-left col-sm-6">
+          <img src="../../assets/design/logo-first-ver.png" alt="">
+        </div>
+        <div class="header-right col-sm-6">
+          <div class="row">
+            <div class="col-sm-6 header-search">
+              <input type="text">
+              <input type="submit">
+              <i class="fa fa-search"></i>
+            </div>
+            <div class="col-sm-2 header-basket">
+              <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="col-sm-4 header-user">
+              <i class="fa fa-user"></i>
+              <div class="hello-user">Hello, <span>Bảo</span>!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="payment">
+      <div class="payment-process">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-7 orderDetail"> 
+              <h2>Thông tin đơn hàng</h2>
+              <div class="row orders">
+                <div class="col-sm-12 editOrder">
+                  <h3>Fujifilm</h3>
+                  <div class="row productDetail">
+                    <div class="col-sm-3 item">
+                        <img src="../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax 25.jpg" alt="">
+                    </div>
+                    <div class="col-sm-5 item">
+                      <div class="infoDelete">
+                        <p>Máy Ảnh Lấy Liền Fujifilm Instax 25</p><br>
+                        <button id="deleteBtn"><i class="fa fa-trash-o"></i> </button>
+                      </div>
+
+                    </div>
+                    <div class="col-sm-2 item">
+                      <div class="infoDelete"><p>2.600.000 đ</p></div>   
+                    </div>
+                    <div class="col-sm-2 item">
+                      <div class="infoDelete">
+                        <input type="submit" class="changeNumber" id="subtract" onclick="" value="-">
+                        <input type="text" class="changeNumber" value="1">
+                        <input type="submit" class="changeNumber" id="add" onclick="" value="+">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 editOrder">
+                  <h3>Nikon</h3>
+                  <div class="row productDetail">
+                    <div class="col-sm-3 item">
+                        <img src="../../assets/images/Brands/Nikon/Nikon D3400 KIT 18-55 VR (24.2MP).jpg" alt="">
+                    </div>
+                    <div class="col-sm-5 item">
+                      <div class="infoDelete">
+                        <p>Nikon D3400 KIT 18-55 VR (24.2MP)</p><br>
+                        <button id="deleteBtn"><i class="fa fa-trash-o"></i> </button>
+                      </div>
+
+                    </div>
+                    <div class="col-sm-2 item">
+                      <div class="infoDelete"><p>9.400.000 đ</p></div>   
+                    </div>
+                    <div class="col-sm-2 item">
+                      <div class="infoDelete">
+                        <input type="submit" class="changeNumber" id="subtract" onclick="" value="-">
+                        <input type="text" class="changeNumber" value="1">
+                        <input type="submit" class="changeNumber" id="add" onclick="" value="+">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 editOrder">
+                  <h3>Canon</h3>
+                  <div class="row productDetail">
+                    <div class="col-sm-3 item">
+                        <img src="../../assets/images/Brands/Canon/Canon M10 KIT 15-45mm .jpg" alt="">
+                    </div>
+                    <div class="col-sm-5 item">
+                      <div class="infoDelete">
+                        <p>Canon M10 KIT 15-45mm</p><br>
+                        <button id="deleteBtn"><i class="fa fa-trash-o"></i> </button>
+                      </div>
+
+                    </div>
+                    <div class="col-sm-2 item">
+                      <div class="infoDelete"><p>6.950.000 đ</p></div>   
+                    </div>
+                    <div class="col-sm-2 item">
+                      <div class="infoDelete">
+                        <input type="submit" class="changeNumber" id="subtract" onclick="" value="-">
+                        <input type="text" class="changeNumber" value="1">
+                        <input type="submit" class="changeNumber" id="add" onclick="" value="+">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+
+            <div class="col-sm-3 orderInfo">
+              <div class="resumeOrder">
+                <div class="row">
+                  <div class="col-sm-12 address">
+                    <div class="title-orderInfo">
+                      <h4>Địa chỉ giao hàng</h4>
+                      <button id="editAddress">Sửa</button>
+                    </div>
+                    <div class="addrContent">
+                      <h3>Lương Thái Bảo</h3>
+                      <li>1a Hoàng Diệu, phường 1, huyện Dầu Giây, Đồng Nai</li>
+                      <li>SĐT: 0973967387</li>
+                      <li>Viet Nam</li>
+                     </div>
+                  </div>
+                </div>
+            
+                <div class="row">
+                  <div class="col-sm-12 info">
+                    <div class="title-orderInfo">
+                      <h4>Đơn hàng - 3 sản phẩm</h4>
+                      <button id="editInfoProduct">Sửa</button>
+                    </div>
+                    <div class="productsInfo">
+                      <div class="row">
+                        <div class="col-sm-7 nameProduct">
+                            <h5>1x</h5>
+                            <p><a href="../DetailPages/detailProduct1.html">Máy Ảnh Lấy Liền Fujifilm Instax 25</a></p>
+                        </div>
+                        <div class="col-sm-5 priceProduct">
+                          <p>2.600.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="productsInfo">
+                      <div class="row">
+                        <div class="col-sm-7 nameProduct">
+                            <h5>1x</h5>
+                            <p><a href="../DetailPages/detailProduct1.html">Nikon D3400 KIT 18-55 VR (24.2MP)</a></p>
+                        </div>
+                        <div class="col-sm-5 priceProduct">
+                          <p>9.400.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="productsInfo">
+                      <div class="row">
+                        <div class="col-sm-7 nameProduct">
+                            <h5>1x</h5>
+                            <p><a href="../DetailPages/detailProduct1.html">Canon M10 KIT 15-45mm </a></p>
+                        </div>
+                        <div class="col-sm-5 priceProduct">
+                          <p>6.950.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="productsInfo">
+                      <div class="row">
+                        <div class="col-sm-7 nameProduct">
+                            <p>Tạm tính</p>
+                        </div>
+                        <div class="col-sm-5 priceProduct">
+                          <p>18.950.000 đ</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-7 nameProduct">
+                            <p>Phí vận chuyển</p>
+                        </div>
+                        <div class="col-sm-5 priceProduct">
+                          <p>0 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="totalPay">
+                      <div class="row">
+                        <div class="col-sm-7">
+                            <p style="font-weight: bold;">Thành tiền</p>
+                        </div>
+                        <div class="col-sm-5 totalPrice">
+                          <p style="font-size: 20px; color: red; font-weight: bold;">18.950.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+              
+                    
+                    
+
+                  
+                 
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+      </div>
+
+  </div>
+
+<script src="../../assets/js/javaScript_HomePage.js"></script>
+
+<script>
+</script>
+</body>
+</html>

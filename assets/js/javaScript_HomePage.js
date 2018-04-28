@@ -72,3 +72,7 @@ function bookingCamera() {
     alert("Đặt hàng thành công!");
     window.location.href = "../Userpages/userHomePage.html";
 }
+
+function deleteOrder(num) {
+    var item = document.getElementsByClassName('editOrder');
+}
