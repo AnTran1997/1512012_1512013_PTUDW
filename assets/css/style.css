@@ -199,7 +199,8 @@
 .new .new-list .new-slider .slider-item .new-item:hover .new-hover,
 .view-all .view-content .view-list .view-item .view-all-item:hover .view-all-hover,
 .user-add:hover .add,
-.add:hover i {
+.add:hover i,
+.singlepage .row .item-detail .item-top .checkout:hover {
   transition: all .5s ease;
 }
 
@@ -1997,7 +1998,7 @@ footer .footer-right .address span i {
 }
 
 .singlepage .main-content {
-  margin-top: 220px;
+  margin-top: 220px !important;
 }
 
 .singlepage h2.detail-title {
@@ -2027,7 +2028,7 @@ footer .footer-right .address span i {
 }
 
 .singlepage .row .item-detail .item-top .checkout {
-  display: block;
+  display: none;
   padding: 10px 50px;
   font: 20px 'OpenSansLight';
   color: white;
@@ -2035,6 +2036,13 @@ footer .footer-right .address span i {
   position: absolute;
   bottom: 50px;
   left: 50%;
+  border: 1px solid transparent;
+}
+
+.singlepage .row .item-detail .item-top .checkout:hover {
+  background: white;
+  border-color: #F36F21;
+  color: #F36F21;
 }
 
 .singlepage .row .item-detail .item-top .thumbnail {
@@ -2158,6 +2166,15 @@ footer .footer-right .address span i {
 
 .singlepage .most {
   background: none;
+}
+
+.singlepage .most .thumbnail {
+  width: 130px !important;
+  height: 130px !important;
+}
+
+.singlepage .producer .detail-title span:before {
+  width: 60%;
 }
 
 html,
