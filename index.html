@@ -13,7 +13,6 @@
 </head>
 <body>
   <div class="form">
-
     <div class="login active">
       <button class="close">
         <i class="fa fa-close"></i>
@@ -58,6 +57,7 @@
       <div class="row">
         <div class="header-left col-sm-6">
           <a href="./index.html"><img src="./assets/images/logo.png" alt=""></a>
+          <a href="./index.html" style="width: max-content;"><p>Hải Tặc</p></a>
         </div>
         <div class="header-right col-sm-6">
           <div class="row">
@@ -67,7 +67,10 @@
               <i class="fa fa-search"></i>
             </div>
             <div class="col-sm-2 header-basket">
-              <i class="fa fa-shopping-cart"></i>
+              <i class="fa fa-shopping-cart">
+                <div class="buying-items"></div>
+              </i>
+
             </div>
             <div class="col-sm-4 header-user">
               <i class="fa fa-user"></i>
@@ -117,7 +120,7 @@
   </div>
 </header>
 <div class="main-content">
-  <div class="intro">
+  <div class="intro" id="intro">
     <div class="row">
       <div class="col-sm-3 product-menu">
         <div class="row">
@@ -209,12 +212,54 @@
     </div>
   </div>
 </div>
-<div class="best">
+<div class="best" id="best">
   <div class="container">
     <div class="row">
       <div class="col-sm-9 best-list">
         <div class="best-slider">
-          <div class="slider-item">
+          <div class="slider-item product-item">
+            <div class="best-item">
+              <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+              <div class="best-name">Máy Ảnh ABC</div>
+              <div class="best-price">
+                <span class="price-new">10 VND</span>
+              </div>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+             <!--  <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button> -->
+              <div class="sold-out">Hết hàng</div>
+            </div>
+          </div>
+          <div class="slider-item product-item">
+            <div class="best-item">
+              <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+              <div class="best-name">Máy Ảnh ABC</div>
+              <div class="best-price">
+                <span class="price-new">10 VND</span>
+              </div>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <!-- <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button> -->
+              <div class="sold-out">Hết hàng</div>
+            </div>
+          </div>
+          <div class="slider-item product-item">
+            <div class="best-item">
+              <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+              <div class="best-name">Máy Ảnh ABC</div>
+              <div class="best-price">
+                <span class="price-new">10 VND</span>
+              </div>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <!-- <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button> -->
+              <div class="sold-out">Hết hàng</div>
+            </div>
+          </div>
+          <div class="slider-item product-item">
             <div class="best-item">
               <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
               <div class="best-name">Máy Ảnh ABC</div>
@@ -227,7 +272,7 @@
               </button>
             </div>
           </div>
-          <div class="slider-item">
+          <div class="slider-item product-item">
             <div class="best-item">
               <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
               <div class="best-name">Máy Ảnh ABC</div>
@@ -235,28 +280,13 @@
                 <span class="price-new">10 VND</span>
               </div>
               <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
-              <button class="add">
+              <!-- <button class="add">
                 <i class="fa fa-shopping-cart"></i>
-              </button>
-              <button class="add">
-                <i class="fa fa-shopping-cart"></i>
-              </button>
+              </button> -->
+              <div class="sold-out">Hết hàng</div>
             </div>
           </div>
-          <div class="slider-item">
-            <div class="best-item">
-              <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-              <div class="best-name">Máy Ảnh ABC</div>
-              <div class="best-price">
-                <span class="price-new">10 VND</span>
-              </div>
-              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
-              <button class="add">
-                <i class="fa fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-          <div class="slider-item">
+          <div class="slider-item product-item">
             <div class="best-item">
               <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
               <div class="best-name">Máy Ảnh ABC</div>
@@ -269,7 +299,7 @@
               </button>
             </div>
           </div>
-          <div class="slider-item">
+          <div class="slider-item product-item">
             <div class="best-item">
               <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
               <div class="best-name">Máy Ảnh ABC</div>
@@ -282,7 +312,21 @@
               </button>
             </div>
           </div>
-          <div class="slider-item">
+          <div class="slider-item product-item">
+            <div class="best-item">
+              <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
+              <div class="best-name">Máy Ảnh ABC</div>
+              <div class="best-price">
+                <span class="price-new">10 VND</span>
+              </div>
+              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <!-- <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button> -->
+              <div class="sold-out">Hết hàng</div>
+            </div>
+          </div>
+          <div class="slider-item product-item">
             <div class="best-item">
               <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
               <div class="best-name">Máy Ảnh ABC</div>
@@ -295,7 +339,7 @@
               </button>
             </div>
           </div>
-          <div class="slider-item">
+          <div class="slider-item product-item">
             <div class="best-item">
               <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
               <div class="best-name">Máy Ảnh ABC</div>
@@ -308,7 +352,7 @@
               </button>
             </div>
           </div>
-          <div class="slider-item">
+          <div class="slider-item product-item">
             <div class="best-item">
               <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
               <div class="best-name">Máy Ảnh ABC</div>
@@ -321,46 +365,7 @@
               </button>
             </div>
           </div>
-          <div class="slider-item">
-            <div class="best-item">
-              <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-              <div class="best-name">Máy Ảnh ABC</div>
-              <div class="best-price">
-                <span class="price-new">10 VND</span>
-              </div>
-              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
-              <button class="add">
-                <i class="fa fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-          <div class="slider-item">
-            <div class="best-item">
-              <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-              <div class="best-name">Máy Ảnh ABC</div>
-              <div class="best-price">
-                <span class="price-new">10 VND</span>
-              </div>
-              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
-              <button class="add">
-                <i class="fa fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-          <div class="slider-item">
-            <div class="best-item">
-              <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-              <div class="best-name">Máy Ảnh ABC</div>
-              <div class="best-price">
-                <span class="price-new">10 VND</span>
-              </div>
-              <a href="pages/DetailPages/singlepage-1.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
-              <button class="add">
-                <i class="fa fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-          <div class="slider-item">
+          <div class="slider-item product-item">
             <div class="best-item">
               <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
               <div class="best-name">Máy Ảnh ABC</div>
@@ -404,7 +409,7 @@
   </div>
   <div class="most-list">
     <div class="most-slider">
-      <div class="slider-item">
+      <div class="slider-item product-item">
         <div class="most-item">
          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
          <div class="most-name">Máy Ảnh ABC</div>
@@ -415,7 +420,7 @@
         </button>
       </div>
     </div>
-    <div class="slider-item">
+    <div class="slider-item product-item">
       <div class="most-item">
        <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
        <div class="most-name">Máy Ảnh ABC</div>
@@ -426,7 +431,7 @@
       </button>
     </div>
   </div>
-  <div class="slider-item">
+  <div class="slider-item product-item">
     <div class="most-item">
      <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
      <div class="most-name">Máy Ảnh ABC</div>
@@ -437,7 +442,7 @@
     </button>
   </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
@@ -448,7 +453,7 @@
   </button>
 </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
@@ -459,7 +464,7 @@
   </button>
 </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
@@ -470,7 +475,7 @@
   </button>
 </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
@@ -481,7 +486,7 @@
   </button>
 </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
@@ -492,7 +497,7 @@
   </button>
 </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
@@ -503,7 +508,7 @@
   </button>
 </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="most-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="most-name">Máy Ảnh ABC</div>
@@ -518,13 +523,16 @@
 </div>
 </div>
 </div>
-<div class="sale-view">
+<div class="sale-view" id="sale">
   <div class="container">
     <h2 class="sale-view-title">Sản phẩm <span>đang khuyến mãi</span></h2>
   </div>
   <div class="sale-view-content">
     <div class="sale-view-col sale-view-col-1">
-      <div class="sale-view-cell-1" style="background-image: url(assets/images/Brands/Fujifilm/Máy%20Ảnh%20Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%209%20-%20Cobalt%20Blue.jpg);">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Brands/Fujifilm/Máy%20Ảnh%20Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%209%20-%20Cobalt%20Blue.jpg);">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
@@ -533,13 +541,13 @@
               <span class="price-old">0 VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
-            <button class="add">
-              <i class="fa fa-shopping-cart"></i>
-            </button>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-2" style="background-image: url(assets/images/Brands/Fujifilm/Máy%20Ảnh%20Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%209%20-%20Ice%20Blue.jpg);">
+      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Brands/Fujifilm/Máy%20Ảnh%20Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%209%20-%20Ice%20Blue.jpg);">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
@@ -548,13 +556,13 @@
               <span class="price-old">0 VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
-            <button class="add">
-              <i class="fa fa-shopping-cart"></i>
-            </button>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-3" style="background-image: url(assets/images/Brands/Fujifilm/Máy%20Ảnh%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%208%20-%20Hello%20Kitty%20Đỏ.jpg);">
+      <div class="sale-view-cell-3 product-item" style="background-image: url(assets/images/Brands/Fujifilm/Máy%20Ảnh%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%208%20-%20Hello%20Kitty%20Đỏ.jpg);">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
@@ -563,15 +571,15 @@
               <span class="price-old">0 VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
-            <button class="add">
-              <i class="fa fa-shopping-cart"></i>
-            </button>
           </div>
         </div>
       </div>
     </div>
     <div class="sale-view-col sale-view-col-2">
-      <div class="sale-view-cell-1" style="background-image: url(assets/images/Brands/Fujifilm/Máy%20Ảnh%20Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%209%20-%20Lime%20Green.jpg);">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Brands/Fujifilm/Máy%20Ảnh%20Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%209%20-%20Lime%20Green.jpg);">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
@@ -580,13 +588,13 @@
               <span class="price-old">0 VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
-            <button class="add">
-              <i class="fa fa-shopping-cart"></i>
-            </button>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-2" style="background-image: url(assets/images/Brands/Fujifilm/Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%2070%20-%20Đỏ.jpg);">
+      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Brands/Fujifilm/Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%2070%20-%20Đỏ.jpg);">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
@@ -595,15 +603,15 @@
               <span class="price-old">0 VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
-            <button class="add">
-              <i class="fa fa-shopping-cart"></i>
-            </button>
           </div>
         </div>
       </div>
     </div>
     <div class="sale-view-col sale-view-col-3">
-      <div class="sale-view-cell-1" style="background-image: url(assets/images/Brands/Fujifilm/Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%2070%20-%20Vàng.jpg);">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Brands/Fujifilm/Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%2070%20-%20Vàng.jpg);">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
@@ -612,13 +620,13 @@
               <span class="price-old">0 VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
-            <button class="add">
-              <i class="fa fa-shopping-cart"></i>
-            </button>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-2" style="background-image: url(assets/images/Brands/Canon/EOS%203000D%20+%20Lens%20EF-S%2018%20-%2055mm%20III.jpg);">
+      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Brands/Canon/EOS%203000D%20+%20Lens%20EF-S%2018%20-%2055mm%20III.jpg);">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
@@ -627,13 +635,13 @@
               <span class="price-old">0 VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
-            <button class="add">
-              <i class="fa fa-shopping-cart"></i>
-            </button>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-3" style="background-image: url(assets/images/Brands/Canon/EOS%206D%20+%2024-105mm%20f4L.jpg);">
+      <div class="sale-view-cell-3 product-item" style="background-image: url(assets/images/Brands/Canon/EOS%206D%20+%2024-105mm%20f4L.jpg);">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
@@ -642,15 +650,15 @@
               <span class="price-old">0 VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
-            <button class="add">
-              <i class="fa fa-shopping-cart"></i>
-            </button>
           </div>
         </div>
       </div>
     </div>
     <div class="sale-view-col sale-view-col-4">
-      <div class="sale-view-cell-1" style="background-image: url(assets/images/Brands/Sony/Sony%20Alpha%20A6000%20+%2016-50mm%20Trắng.jpg);">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Brands/Sony/Sony%20Alpha%20A6000%20+%2016-50mm%20Trắng.jpg);">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
@@ -659,13 +667,13 @@
               <span class="price-old">0 VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
-            <button class="add">
-              <i class="fa fa-shopping-cart"></i>
-            </button>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-2" style="background-image: url(assets/images/Brands/Sony/Sony%20HX350%20-%2020.4%20Megapixel,%20Zoom%2050x.jpg);">
+      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Brands/Sony/Sony%20HX350%20-%2020.4%20Megapixel,%20Zoom%2050x.jpg);">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
             <h2>Máy ảnh ABC</h2>
@@ -674,16 +682,13 @@
               <span class="price-old">0 VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
-            <button class="add">
-              <i class="fa fa-shopping-cart"></i>
-            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="new">
+<div class="new" id="new">
  <div class="container">
   <h2 class="new-title">Sản phẩm <span>mới</span></h2>
   <div class="new-slider-control">
@@ -696,7 +701,7 @@
   </div>
   <div class="new-list">
     <div class="new-slider">
-      <div class="slider-item">
+      <div class="slider-item product-item">
         <div class="new-item">
          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
          <div class="new-name">Máy Ảnh ABC</div>
@@ -707,7 +712,7 @@
         </button>
       </div>
     </div>
-    <div class="slider-item">
+    <div class="slider-item product-item">
       <div class="new-item">
        <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
        <div class="new-name">Máy Ảnh ABC</div>
@@ -718,7 +723,7 @@
       </button>
     </div>
   </div>
-  <div class="slider-item">
+  <div class="slider-item product-item">
     <div class="new-item">
      <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
      <div class="new-name">Máy Ảnh ABC</div>
@@ -729,7 +734,7 @@
     </button>
   </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
@@ -740,7 +745,7 @@
   </button>
 </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
@@ -751,7 +756,7 @@
   </button>
 </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
@@ -762,7 +767,7 @@
   </button>
 </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
@@ -773,7 +778,7 @@
   </button>
 </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
@@ -784,7 +789,7 @@
   </button>
 </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
@@ -795,7 +800,7 @@
   </button>
 </div>
 </div>
-<div class="slider-item">
+<div class="slider-item product-item">
   <div class="new-item">
    <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
    <div class="new-name">Máy Ảnh ABC</div>
@@ -858,7 +863,7 @@
           <div class="dot">3</div>
           <div class="dot">4</div>
         </div>
-        <div class="view-item">
+        <div class="view-item product-item">
           <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
             <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
             <div class="view-all-name">Máy Ảnh ABC</div>
@@ -868,7 +873,7 @@
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
-        <div class="view-item">
+        <div class="view-item product-item">
           <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
             <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
             <div class="view-all-name">Máy Ảnh ABC</div>
@@ -878,7 +883,7 @@
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
-        <div class="view-item">
+        <div class="view-item product-item">
           <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
             <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
             <div class="view-all-name">Máy Ảnh ABC</div>
@@ -888,7 +893,7 @@
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
-        <div class="view-item">
+        <div class="view-item product-item">
           <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
             <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
             <div class="view-all-name">Máy Ảnh ABC</div>
@@ -898,7 +903,7 @@
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
-        <div class="view-item">
+        <div class="view-item product-item">
           <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
             <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
             <div class="view-all-name">Máy Ảnh ABC</div>
@@ -908,7 +913,7 @@
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
-        <div class="view-item">
+        <div class="view-item product-item">
           <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
             <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
             <div class="view-all-name">Máy Ảnh ABC</div>
@@ -918,7 +923,7 @@
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
-        <div class="view-item">
+        <div class="view-item product-item">
           <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
             <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
             <div class="view-all-name">Máy Ảnh ABC</div>
@@ -928,7 +933,7 @@
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
-        <div class="view-item">
+        <div class="view-item product-item">
           <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
             <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
             <div class="view-all-name">Máy Ảnh ABC</div>
@@ -938,7 +943,7 @@
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
-        <div class="view-item">
+        <div class="view-item product-item">
           <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
             <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
             <div class="view-all-name">Máy Ảnh ABC</div>
@@ -955,6 +960,37 @@
   </div>
 </div>
 </div>
+<footer>
+  <div class="row" style="margin:0;">
+    <div class="footer-left col-sm-8">
+      <div class="row" style="margin:0;">
+        <div class="col-sm-6 footer-menu">
+          <ul>
+            <li><a href="#intro">Home</a></li>
+            <li><a href="#sale">Khuyến mãi</a></li>
+            <li><a href="#new">Hàng mới về</a></li>
+            <li><a href="#best">Bán chạy nhất</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 footer-contact">
+          <div class="phone">
+            <span><i class="fa fa-phone"></i>028 3835 3193</span>
+          </div>
+          <ul class="contact-company">
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-youtube"></i></a></li>
+            <li><a href=""><i class="fa fa-skype"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-right col-sm-4">
+      <div class="address">
+        <span><i class="fa fa-map-marker"></i>227 Đường Nguyễn Văn Cừ, Phường 4, Quận 5, Hồ Chí Minh</span>
+      </div>
+    </div>
+  </div>
+</footer>
 <script src="./assets/js/jquery-3.3.1.min.js"></script>
 <script>
   jQuery(document).ready(function($) {
@@ -991,6 +1027,20 @@
       var i =$('.intro .product-cat-list li').index($(this));
       $('.intro .product-list-content').removeClass('active');
       $('.intro .product-list-content').eq(i).addClass('active');
+    });
+    $('.product-list-content .product-item').click(function(){
+      var i_cat = $(this).parent().parent().find('.product-list-content').index($(this).parent());
+      var i_cat_item = $(this).parent().find('.product-item').index($(this));
+      if(i_cat_item<($(this).parent().find('.product-item').length-1)){
+        $('.view-cat-item').removeClass('active');
+        $('.view-cat-item').eq(i_cat).addClass('active');
+        $('.view-cat-item').eq(i_cat).find('.view-cat-sub-item').find('input[type=checkbox]').prop('checked', false);
+        $('.view-cat-item').eq(i_cat).find('.view-cat-sub-item').eq(i_cat_item).find('input[type=checkbox]').prop('checked', true);
+      }
+      else{
+        $('.view-cat-item').removeClass('active');
+        $('.view-cat-item').eq(2).addClass('active');
+      }
     });
     var i_best=0;
     $('.best-slider-control .best-prev').click(function(){
@@ -1082,8 +1132,15 @@
       $('.sub-menu-none').removeClass('active');
       $('.sub-menu-user').addClass('active');
       $('.form').removeClass('active');
-      alert("Đã đăng nhập");
+      alert('Chuyển qua chế độ user');
       $('.hello-user span').text('User');
+      $('.product-item').addClass('user-add');
+    });
+    var n_item=0;
+    $('.add').click(function(){
+      n_item++;
+      $('.buying-items').css('display','block');
+      $('.buying-items').text(n_item);
     });
   });
 </script>
