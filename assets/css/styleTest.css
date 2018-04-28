@@ -162,7 +162,7 @@ p {
 
 .header {
     padding: 20px 0;
-    background: #000033;
+    background:	 #00004d;
     position: fixed;
     top: 0;
     left: 0;
@@ -266,9 +266,10 @@ p {
 }
   .payment .orderDetail {
     margin-right: 10px;
-    height: 100ch;
+    height: 80ch;
     border: rgba(0, 0, 0, 0.6) solid 2px;
     border-radius: 10px;
+    padding-left: 20px;
   }
   .payment .orderInfo {
     height: 50ch;
@@ -364,8 +365,42 @@ p {
     .totalPay .totalPrice {
       text-align: right;
     }
+
   
-        
+.orderDetail .typeDelivery {
+  margin-left: 20px;
+}
+  .typeDelivery li {
+    list-style: none;
+    margin-left: 15ch;
+  }
+
+.typePayment {
+  margin-left: 20px;
+}
+  .typePayment input {
+    margin-bottom: 20px;
+  }
+
+#booking {
+  width:50%;
+  position: relative;
+  top: 8ch;
+  left: 20ch;
+  height: 4ch;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background-color: #00004d;
+  color: white;
+}
+
+#booking:hover {
+  background-color: #0000cc;
+  cursor: pointer;
+}
+
 
 
 

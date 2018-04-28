@@ -67,3 +67,8 @@ function showHighestViewPro() {
         listPro[i].style.display = (listPro[i].style.display == "none") ? "block" : "none";
     }
 }
+
+function bookingCamera() {
+    alert("Đặt hàng thành công!");
+    window.location.href = "../Userpages/userHomePage.html";
+}
