@@ -200,7 +200,8 @@
 .view-all .view-content .view-list .view-item .view-all-item:hover .view-all-hover,
 .user-add:hover .add,
 .add:hover i,
-.singlepage .row .item-detail .item-top .checkout:hover {
+.singlepage .row .item-detail .item-top .checkout:hover,
+.user .done:hover {
   transition: all .5s ease;
 }
 
@@ -618,6 +619,10 @@ a:hover {
 
 .header-small .header-bottom .product-menu-title .row .product-cat-list > li:first-child {
   border-top-color: #0FAAD9 !important;
+}
+
+footer {
+  overflow: hidden;
 }
 
 footer .footer-left {
@@ -2177,12 +2182,96 @@ footer .footer-right .address span i {
   width: 60%;
 }
 
+.user .main-content {
+  margin-top: 80px;
+  padding: 30px 0 80px;
+}
+
+.user .detail-title {
+  font: 40px 'OpenSansBold';
+  color: #F36F21;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.user .detail-title span {
+  display: block;
+  position: relative;
+}
+
+.user .detail-title span:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50px;
+  width: 70%;
+  height: 5px;
+  background: linear-gradient(to right, #F37021, #FBB040);
+}
+
+.user .user-info form > div {
+  margin: 30px 0;
+}
+
+.user .user-info form > div label {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30%;
+  font: 30px 'OpenSansBold';
+  color: transparent;
+  background: linear-gradient(to right, #0191C4, #2CDBB0);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.user .user-info form > div input[type=text],
+.user .user-info form > div input[type=date] {
+  width: 300px;
+  height: 40px;
+  padding: 0 20px;
+  color: #666;
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #F37021, #FBB040);
+  border-image-slice: 1;
+  border-radius: 5px;
+  font: 18px 'OpenSans';
+}
+
+.user .user-info form > div input[type="radio"] {
+  margin-right: 30px;
+}
+
+.user .user-info form > div span {
+  font: 18px 'OpenSans';
+  color: #666;
+  margin-right: 30px;
+}
+
+.user .user-avatar img {
+  width: 100%;
+}
+
+.user .done {
+  display: block;
+  padding: 10px 50px;
+  font: 20px 'OpenSansLight';
+  color: white;
+  background: linear-gradient(to right, #F37021, #FBB040);
+  margin: 50px auto 0;
+  border: 1px solid transparent;
+}
+
+.user .done:hover {
+  background: white;
+  border-color: #F36F21;
+  color: #F36F21;
+}
+
 html,
 body {
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 button {
