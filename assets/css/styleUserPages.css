@@ -376,4 +376,23 @@ orderDetail {
     font-size: 15px;
   }
 
+  table {
+    width: 100%;
+  }
 
+table,th,td {
+  border: black solid 1px;
+}
+
+th {
+  background-color: #00004d;
+  color: white;
+}
+
+td#sum-namePanel {
+  border-right: none;
+}
+
+td#sum-numberPanel {
+  border-left: none;
+}
