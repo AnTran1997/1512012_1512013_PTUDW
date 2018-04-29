@@ -2596,10 +2596,10 @@ ul {
 
 
 /***************************************   Style for page searchResult.html *************************/
-.searchResult {
+.searchResult, .searchFailed {
   margin-top: 30ch;
   margin-bottom: 5ch;
-  height: 50ch;;
+  height: 50ch;
   border: black solid 2px;
 }
   .searchResult h1, h2 {
@@ -2648,4 +2648,14 @@ ul {
   position: relative;
   left: 6ch;
   top: 2ch;
+}
+
+.searchFailed {
+  height: 70ch;
+}
+.searchFailed img {
+  height: 85%;
+  width: 80%;
+  position: relative;
+  left: 15ch;
 }
