@@ -393,7 +393,6 @@ h2 {
   .showAccount form {
     margin: 25px;
     font-size: 20px;
-    border: #000033 solid 1px;
   }
 
   .showAccount input {
@@ -443,4 +442,6 @@ canvas {
 .orderChart {
   margin-top: 50px;
 }
+
+
 

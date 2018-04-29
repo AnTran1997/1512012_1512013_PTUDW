@@ -59,8 +59,8 @@
                 </li>
                 <li><a href="./../../index.html" class="adminFunctions">
                     <i class="fa fa-bank" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Đi đến trang chủ</a></li>
-                <li><a href="viewAccount.html" class="adminFunctions">
-                    <i class="fa fa-vcard" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Xem tài khoản</a></li>
+                <li><a href="#" onclick="displayContent('showAccount')" class="adminFunctions">
+                        <i class="fa fa-cogs" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Xem tài khoản</a></li>
                 <li><a href="./../../index.html" class="adminFunctions">
                     <i class="fa fa-hourglass-2" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Đăng xuất</a></li>
             </div>
@@ -1824,6 +1824,35 @@
 
                     </script>
                 </div>
+
+                
+                <!-- **************************  SHOW ACCOUNT  ********************** -->
+                <div class="showAccount isDisplayed">
+                    <h1>Your profile!</h1>
+                    <form action="">
+                        <label for="fullName">Họ tên</label><br>
+                        <input type="text" value="Monkey D.Luffy" name="fullName"><br><br>
+            
+                        <label for="email">Email</label><br>
+                        <input type="text" name="email" value="luffy@gmail.com"><br><br>
+            
+                        <label for="numberPhone">Số điện thoại</label><br>
+                        <input type="text" name="numberPhone" value="0123456789"><br><br>
+            
+                        <label for="gender">Giới tính</label><br>
+                        <select name="gender">
+                            <option value="nam">Nam</option>
+                            <option value="nu">Nữ</option>
+                        </select><br><br>
+            
+                        <label for="uname">Username</label><br>
+                        <input type="text" name="uname" value="the_pirate_king"><br><br>
+            
+                        <label for="pass">Password</label><br>
+                        <input type="submit" name="pass" value="Change password"><br><br>
+                    </form>
+                </div>
+    
 
                 </div>
             </div>
