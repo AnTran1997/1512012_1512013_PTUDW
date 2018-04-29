@@ -94,7 +94,7 @@
                 <div class="col-sm-5 item">
                   <div class="infoDelete">
                     <p>Máy Ảnh Lấy Liền Fujifilm Instax 25</p><br>
-                    <button id="deleteBtn"><i class="fa fa-trash-o"></i> </button>
+                    <button id="deleteBtn" onclick="deleteOrder(0)"><i class="fa fa-trash-o"></i> </button>
                   </div>
 
                 </div>
@@ -103,9 +103,9 @@
                 </div>
                 <div class="col-sm-2 item">
                   <div class="infoDelete">
-                    <input type="submit" class="changeNumber" id="subtract" onclick="" value="-">
-                    <input type="text" class="changeNumber" value="1">
-                    <input type="submit" class="changeNumber" id="add" onclick="" value="+">
+                    <input type="submit" class="changeNumber" id="subtract" onclick="decreaseNumProduct(0)" value="-">
+                    <input type="text" class="changeNumber numProduct" value="1">
+                    <input type="submit" class="changeNumber" id="add" onclick="increaseNumProduct(0)" value="+">
                   </div>
                   <p class="price">2.600.000 đ</p>
                 </div>
@@ -120,7 +120,7 @@
                 <div class="col-sm-5 item">
                   <div class="infoDelete">
                     <p>Nikon D3400 KIT 18-55 VR (24.2MP)</p><br>
-                    <button id="deleteBtn"><i class="fa fa-trash-o"></i> </button>
+                    <button id="deleteBtn" onclick="deleteOrder(1)"><i class="fa fa-trash-o"></i> </button>
                   </div>
 
                 </div>
@@ -129,9 +129,9 @@
                 </div>
                 <div class="col-sm-2 item">
                   <div class="infoDelete">
-                    <input type="submit" class="changeNumber" id="subtract" onclick="" value="-">
-                    <input type="text" class="changeNumber" value="1">
-                    <input type="submit" class="changeNumber" id="add" onclick="" value="+">
+                    <input type="submit" class="changeNumber" id="subtract" onclick="decreaseNumProduct(1)" value="-">
+                    <input type="text" class="changeNumber numProduct" value="1">
+                    <input type="submit" class="changeNumber" id="add" onclick="increaseNumProduct(1)" value="+">
                   </div>
                   <p class="price">9.400.000 đ</p>
                 </div>
@@ -146,7 +146,7 @@
                 <div class="col-sm-5 item">
                   <div class="infoDelete">
                     <p>Canon M10 KIT 15-45mm</p><br>
-                    <button id="deleteBtn"><i class="fa fa-trash-o"></i> </button>
+                    <button id="deleteBtn" onclick="deleteOrder(2)"><i class="fa fa-trash-o"></i> </button>
                   </div>
 
                 </div>
@@ -155,9 +155,9 @@
                 </div>
                 <div class="col-sm-2 item">
                   <div class="infoDelete">
-                    <input type="submit" class="changeNumber" id="subtract" onclick="" value="-">
-                    <input type="text" class="changeNumber" value="1">
-                    <input type="submit" class="changeNumber" id="add" onclick="" value="+">
+                    <input type="submit" class="changeNumber" id="subtract" onclick="decreaseNumProduct(2)" value="-">
+                    <input type="text" class="changeNumber numProduct" value="1">
+                    <input type="submit" class="changeNumber" id="add" onclick="increaseNumProduct(2)" value="+">
                   </div>
                   <p class="price">6.950.000 đ</p>
                 </div>

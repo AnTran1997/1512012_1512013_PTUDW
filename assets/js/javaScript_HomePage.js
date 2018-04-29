@@ -85,19 +85,34 @@ function convertStrToInt(str) {
 }
 
 function deleteOrder(num) {
-    var item1 = document.getElementsByClassName('editOrder')[num];
-    var item2 = document.getElementsByClassName('productsInfo')[num];
-    var total = document.getElementById('totalPrice').textContent;
-    
-
+    var item1 = document.getElementsByClassName("editOrder")[num];
     item1.style.display = "none";
+
+    var item2 = document.getElementsByClassName("productsInfo")[num];
     item2.style.display = "none";
 }
 
 function increaseNumProduct(num) {
-    var item = document.getElementsByClassName("changeNumber")[num].value;
-    result = parseInt(item);
-    result += 1 ;
-    alert(item);
-    document.getElementsByClassName("changeNumber")[num].value = item;
+    var item = document.getElementsByClassName("numProduct")[num].value;
+    var currentPrice = document.getElementsByClassName("price")[num].textContent;
+
+    item = parseInt(item);
+    var unitPrice = currentPrice / item;
+
+    //show changement of number of products
+    item += 1;
+    document.getElementsByClassName("numProduct")[num].value = item;
+
+    //change price of product
+    document.getElementsByClassName("price")[num].textContent = unitPrice*item;
+}
+
+function decreaseNumProduct(num) {
+    var item = document.getElementsByClassName("numProduct")[num].value;
+    item = parseInt(item);
+    if (item < 1) {
+        return;
+    }
+    item -= 1;
+    document.getElementsByClassName("numProduct")[num].value = item; 
 }
