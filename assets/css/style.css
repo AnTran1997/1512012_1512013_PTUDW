@@ -2593,3 +2593,59 @@ ul {
 .display-none {
   visibility: hidden;
 }
+
+
+/***************************************   Style for page searchResult.html *************************/
+.searchResult {
+  margin-top: 30ch;
+  margin-bottom: 5ch;
+  height: 50ch;;
+  border: black solid 2px;
+}
+  .searchResult h1, h2 {
+    display: inline-block;
+  }
+
+.result {
+  width: 20%;
+  position: relative;
+  top: 30px;
+  left: 5ch;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+}
+.result:hover {
+  border-right: #e6e6e6 solid 2px;
+  border-top: #e6e6e6  solid 2px;
+  border-left: #e6e6e6  solid 0.5px;
+  border-bottom: #e6e6e6  solid 0.5px;
+}
+.result img{
+  width:100px;
+  height: 100px;
+  position: relative;
+  top: 3ch;
+  left: 8ch;
+}
+
+.result-name, .result-price {
+  position: relative;
+  top: 3ch;
+  margin-top: 2ch;
+  margin-bottom: 2ch;
+  font-weight: bold;
+}
+
+.result-hover {
+  
+  background-color: #ff751a;
+  color: white;
+  height: 50px;
+  width: 50px;
+  font-size: 25px;
+  padding: 7px;
+  border-radius: 50%;
+  position: relative;
+  left: 6ch;
+  top: 2ch;
+}
