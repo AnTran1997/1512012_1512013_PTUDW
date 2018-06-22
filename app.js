@@ -3,6 +3,9 @@ var exp_hbs = require('express-handlebars');
 var exp_hbs_sections = require('express-handlebars-sections');
 var bodyParse = require('body-parser');
 var path = require('path');
+
+var handleLayoutMDW = require('./middle-wares/handleLayout');
+
 var homeControllers = require('./controllers/homeController');
 
 var app = express();
@@ -21,6 +24,8 @@ app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({
     extended: false
 }));
+
+app.use(handleLayoutMDW);
 
 app.get('/', (req, res) => {
     res.redirect('/home');
