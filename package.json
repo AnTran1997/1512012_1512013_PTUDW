@@ -1,0 +1,27 @@
+{
+  "name": "1512012_1512013_finalproject_webapplication",
+  "version": "1.0.0",
+  "description": "Camera Online Store",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnTran1997/1512012_1512013_FinalProject_WebApplication.git"
+  },
+  "author": "1512012_1512013",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnTran1997/1512012_1512013_FinalProject_WebApplication/issues"
+  },
+  "homepage": "https://github.com/AnTran1997/1512012_1512013_FinalProject_WebApplication#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-handlebars-sections": "^1.0.1",
+    "mysql": "^2.15.0"
+  }
+}

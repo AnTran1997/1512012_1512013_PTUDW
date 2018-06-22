@@ -1,0 +1,316 @@
+@charset "UTF-8";
+
+/*--font face--*/
+
+@font-face {
+  font-family: 'HelvetiCaneue';
+  src: url("./../fonts/helvetica-neue-regular.ttf");
+}
+
+@font-face {
+  font-family: 'HelvetiCaneueLight';
+  src: url("./../fonts/helvetica-neue-light.ttf");
+}
+
+@font-face {
+  font-family: 'HelvetiCaneueMedium';
+  src: url("./../fonts/helvetica-neue-medium.ttf");
+}
+
+@font-face {
+  font-family: 'HelvetiCaneueBold';
+  src: url("./../fonts/helvetica-neue-bold.ttf");
+}
+
+@font-face {
+  font-family: 'AvertaBlack';
+  src: url("../fonts/Averta-Black_0.otf");
+}
+
+@font-face {
+  font-family: 'AvertaBold';
+  src: url("../fonts/Averta-Bold_1.otf");
+}
+
+@font-face {
+  font-family: 'UTMGodWordR';
+  src: url("../fonts/UTM God_s WordR.ttf");
+}
+
+@font-face {
+  font-family: 'UTMGodWordRItalic';
+  src: url("../fonts/UTM God_s WordRItalic.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerif';
+  src: url("./../fonts/NotoSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerifItalic';
+  src: url("./../fonts/NotoSerif-Italic.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerifBoldItalic';
+  src: url("./../fonts/NotoSerif-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: 'NotoSerifBold';
+  src: url("./../fonts/NotoSerif-Bold.ttf");
+}
+
+p {
+  margin: 0;
+}
+
+
+.payment {
+    margin-top: 130px;
+}
+  .payment .orderDetail {
+    margin-right: 10px;
+    height: 100ch;
+    border: rgba(0, 0, 0, 0.6) solid 2px;
+    border-radius: 10px;
+    padding-left: 20px;
+  }
+  .payment .orderInfo {
+    height: 50ch;
+  }
+
+.resumeOrder {
+  padding-left: 20px;
+}
+  .resumeOrder .col-sm-12 {
+    border: rgba(0, 0, 0, 0.6) solid 2px;
+    border-radius: 10px; 
+  }
+
+.address {
+  height:25ch;
+  margin-bottom: 10px;
+}
+  .title-orderInfo {
+    margin: 5px;
+  }
+    .title-orderInfo::after {
+      display: block;
+      content: '';
+      background-color: black;
+      height: 1px;
+      opacity: 0.5;
+      width: 95%;
+      margin: 10px 0 15px 5px;
+    }
+    .title-orderInfo button,.title-orderInfo h4 {
+      display: inline;
+    }
+    .title-orderInfo button {
+      height: 30px;
+      width: 50px;
+    }
+    .title-orderInfo button:hover {
+      cursor: pointer;
+      font-weight: bold;
+      border: none; 
+    }
+      #editAddress {
+        position: relative;
+        left: 21ch;
+      }
+      #editInfoProduct {
+        position: relative;
+        left: 15ch;
+      }
+
+  .addrContent {
+    margin: 15px;
+  }
+    .addrContent h3 {
+      margin-bottom: 10px;
+    }
+
+
+.info {
+  height: 50ch;
+}
+  .info h5, p {
+    display: inline;
+  }
+  .productsInfo {
+    padding: 0 20px 0 20px;
+    display: block;
+  }
+    .productsInfo .nameProduct {
+      height: 5ch;
+    }
+      .nameProduct p {
+        margin-left: 10px;
+      }
+
+    .productsInfo .priceProduct {
+      height: 5ch;
+      text-align: right;
+      padding-right: 12px;
+    }
+    .productsInfo::after {
+      display: block;
+      content: '';
+      background-color: black;
+      height: 1px;
+      opacity: 0.5;
+      width: 100%;
+      margin: 10px 0 15px 5px;  
+    }
+
+  .totalPay {
+    padding: 0 20px 0 20px;
+  }
+    .totalPay .totalPrice {
+      text-align: right;
+    }
+
+  
+.orderDetail .typeDelivery {
+  margin-left: 20px;
+}
+  .typeDelivery li {
+    list-style: none;
+    margin-left: 15ch;
+  }
+
+.typePayment {
+  margin-left: 20px;
+}
+  .typePayment input {
+    margin-bottom: 20px;
+  }
+
+#booking {
+  width:50%;
+  position: relative;
+  top: 8ch;
+  left: 20ch;
+  height: 4ch;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background-color: #00004d;
+  color: white;
+}
+
+#booking:hover {
+  background-color: #0000cc;
+  cursor: pointer;
+}
+
+
+/***************************************   Style for page editOrder.html *************************/
+orderDetail {
+  background-color: violet;
+}
+
+.orders {
+  margin: 10px 10px 0 0;
+}
+
+.editOrder {
+  display:block;
+}
+  .editOrder img {
+    width: 15ch;
+    height: 15ch;
+    position: relative;
+    left: 35px;
+  }
+  .editOrder h3 {
+    margin-left: 10px;
+  }
+  .editOrder h3::after {
+    display: block;
+      content: '';
+      background-color: black;
+      height: 1px;
+      opacity: 0.3;
+      width: 30%;
+      margin: 5px 5px 5px 5px;  
+  }
+
+.productDetail {
+  margin: 0 0 0 0;
+}
+  .productDetail p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+.item {
+  height: 20ch;
+}
+  .item button {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border: none;
+    background-color: white;
+  }
+  .infoDelete {
+    margin-top: 20px;
+  }
+
+.changeNumber {
+  width: 30px;
+  height: 30px;
+}
+  .changeNumber input {
+    margin:0;
+    padding: 0;
+    border: none;
+    text-align: center;
+  }
+
+  .changeNumber input[type=text], input[type=submit] {
+    text-align: center;
+    font-size: 15px;
+  }
+
+#deleteBtn {
+  margin-top: 10px; 
+}
+
+#deleteBtn:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+  border-radius: 50%;
+}
+
+/*************************** STYLE FOR historyShopping.html ***********************/
+table {
+    width: 100%;
+  }
+
+table,th,td {
+  border: black solid 1px;
+}
+
+th {
+  background-color: #00004d;
+  color: white;
+}
+
+td#sum-namePanel {
+  border-right: none;
+}
+
+td#sum-numberPanel {
+  border-left: none;
+}
+
+
+
+
+
