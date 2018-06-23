@@ -16,14 +16,13 @@ app.engine('hbs', exp_hbs({
         section: exp_hbs_sections(),
         numberFormat: (number)=>{
         	var rs = number.toString();
-console.log(rs);
         	for(var i = rs.length-3; i>0; i-=3){
         		rs = rs.slice(0,i)+'.'+rs.slice(i);
-        		console.log(rs);
         	}
-        	console.log(rs);
         	return rs;
-        }
+        },
+        saleCal: (number, percent)=> Math.round(number*100/percent),
+        slice: (array,start,end)=>array.slice(start,end)
     }
 }));
 

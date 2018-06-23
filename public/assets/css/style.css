@@ -428,7 +428,7 @@ a:hover {
   height: 50px;
   border: 1px solid #F36F21;
   border-radius: 100px;
-  font: 25px 'OpensSan';
+  font: 20px 'OpensSan';
   color: #999;
   padding: 0 20px;
 }
@@ -1200,6 +1200,7 @@ footer .footer-right .address span i {
   font: 55.37px 'OpenSansBold';
   color: white;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .most h2.most-title span {
@@ -1346,6 +1347,7 @@ footer .footer-right .address span i {
   font: 55.37px 'OpenSansBold';
   color: white;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .new h2.new-title span {
@@ -1358,7 +1360,7 @@ footer .footer-right .address span i {
   position: absolute;
   top: 0;
   right: 0;
-  width: 75%;
+  width: 90%;
   height: 5px;
   background: white;
 }
@@ -1490,6 +1492,7 @@ footer .footer-right .address span i {
   font: 50px 'OpenSansBold';
   color: #F36F21;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .sale-view h2.sale-view-title span {
@@ -1502,7 +1505,7 @@ footer .footer-right .address span i {
   position: absolute;
   top: 0;
   right: 0;
-  width: 60%;
+  width: 75%;
   height: 5px;
   background: linear-gradient(to right, #F37021, #FBB040);
 }
@@ -1655,6 +1658,7 @@ footer .footer-right .address span i {
   font: 50px 'OpenSansBold';
   color: #F36F21;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .view-all h2.view-title span {
@@ -1667,7 +1671,7 @@ footer .footer-right .address span i {
   position: absolute;
   top: 0;
   right: 0;
-  width: 85%;
+  width: 90%;
   height: 5px;
   background: linear-gradient(to right, #F37021, #FBB040);
 }
@@ -1796,10 +1800,13 @@ footer .footer-right .address span i {
   margin: 0 5px;
   cursor: pointer;
 }
+.view-all .view-content .view-list .view-list-content{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
 
 .view-all .view-content .view-list .view-item {
   padding: 0 10px;
-  width: 32%;
   display: inline-grid;
   margin: 10px 0;
   position: relative;
@@ -2603,9 +2610,9 @@ ul {
   height: 50ch;
   border: black solid 2px;
 }
-  .searchResult h1, h2 {
-    display: inline-block;
-  }
+.searchResult h1, h2 {
+  display: inline-block;
+}
 
 .result {
   width: 20%;
@@ -2638,7 +2645,7 @@ ul {
 }
 
 .result-hover {
-  
+
   background-color: #ff751a;
   color: white;
   height: 50px;

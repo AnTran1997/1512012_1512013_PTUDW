@@ -276,7 +276,7 @@
           </button>
         </div>
       </div>
-        {{/each}}
+      {{/each}}
     </div>
   </div>
 </div>
@@ -296,7 +296,7 @@
             <h2>{{layoutVM.sale.0.productName}}</h2>
             <div class="sale-view-price">
               <span class="price-new">{{numberFormat layoutVM.sale.0.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat layoutVM.sale.0.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.0.productPrice layoutVM.sale.2.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-2.html">Xem thêm</a>
           </div>
@@ -311,7 +311,7 @@
             <h2>{{layoutVM.sale.1.productName}}</h2>
             <div class="sale-view-price">
               <span class="price-new">{{numberFormat layoutVM.sale.1.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat layoutVM.sale.1.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.1.productPrice layoutVM.sale.1.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -326,7 +326,7 @@
             <h2>{{layoutVM.sale.2.productName}}</h2>
             <div class="sale-view-price">
               <span class="price-new">{{numberFormat layoutVM.sale.2.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat layoutVM.sale.2.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.2.productPrice layoutVM.sale.2.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -343,7 +343,7 @@
             <h2>{{layoutVM.sale.3.productName}}</h2>
             <div class="sale-view-price">
               <span class="price-new">{{numberFormat layoutVM.sale.3.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat layoutVM.sale.3.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.3.productPrice layoutVM.sale.3.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -358,7 +358,7 @@
             <h2>{{layoutVM.sale.4.productName}}</h2>
             <div class="sale-view-price">
               <span class="price-new">{{numberFormat layoutVM.sale.4.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat layoutVM.sale.4.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.4.productPrice layoutVM.sale.4.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -375,7 +375,7 @@
             <h2>{{layoutVM.sale.5.productName}}</h2>
             <div class="sale-view-price">
               <span class="price-new">{{numberFormat layoutVM.sale.5.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat layoutVM.sale.5.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.5.productPrice layoutVM.sale.5.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -390,7 +390,7 @@
             <h2>{{layoutVM.sale.6.productName}}</h2>
             <div class="sale-view-price">
               <span class="price-new">{{numberFormat layoutVM.sale.6.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat layoutVM.sale.6.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.6.productPrice layoutVM.sale.6.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -405,7 +405,7 @@
             <h2>{{layoutVM.sale.7.productName}}</h2>
             <div class="sale-view-price">
               <span class="price-new">{{numberFormat layoutVM.sale.7.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat layoutVM.sale.7.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.7.productPrice layoutVM.sale.7.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -422,7 +422,7 @@
             <h2>{{layoutVM.sale.8.productName}}</h2>
             <div class="sale-view-price">
               <span class="price-new">{{numberFormat layoutVM.sale.8.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat layoutVM.sale.8.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.8.productPrice layoutVM.sale.8.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -437,7 +437,7 @@
             <h2>{{layoutVM.sale.9.productName}}</h2>
             <div class="sale-view-price">
               <span class="price-new">{{numberFormat layoutVM.sale.9.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat layoutVM.sale.9.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.9.productPrice layoutVM.sale.9.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -459,116 +459,19 @@
   </div>
   <div class="new-list">
     <div class="new-slider">
+      {{#each layoutVM.new}}
       <div class="slider-item product-item">
         <div class="new-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon M6 KIT EF-M 15-45mm IS STM.jpg" alt=""></div>
-          <div class="new-name">Canon M6 KIT EF-M 15-45mm IS STM</div>
-          <div class="new-price">16.050.000 VND</div>
+          <div class="thumbnail"><img src="./assets/images/Products/{{productImg}}" alt=""></div>
+          <div class="new-name">{{productName}}</div>
+          <div class="new-price">{{numberFormat productPrice}} VND</div>
           <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
           <button class="add">
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
       </div>
-      <div class="slider-item product-item">
-        <div class="new-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon 6D Body.jpg" alt=""></div>
-          <div class="new-name">Canon 6D Body - Hàng chính hãng</div>
-          <div class="new-price">11.550.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="new-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng.jpg" alt=""></div>
-          <div class="new-name">Canon Powershot G9X Mark II - Đen</div>
-          <div class="new-price">11.790.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="new-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/EOS 6D + 24-105mm f4L.jpg" alt=""></div>
-          <div class="new-name">EOS 6D + 24-105mm f/4 - L</div>
-          <div class="new-price">37.000.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="new-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/EOS 3000D + Lens EF-S 18 - 55mm III.jpg" alt=""></div>
-          <div class="new-name">EOS 3000D + Lens EF-S 18 - 55mm III</div>
-          <div class="new-price">23.690.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="new-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/EOS M50 + Kit 15-45mm (24.1MP) .jpg" alt=""></div>
-          <div class="new-name">EOS M50 + Kit 15-45mm (24.1MP) </div>
-          <div class="new-price">19.000.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="new-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Máy Ảnh Canon 80D + Lens 18-55mm.jpg" alt=""></div>
-          <div class="new-name">Máy Ảnh Canon 80D + Lens 18-55mm</div>
-          <div class="new-price">23.690.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="new-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Nikon/Máy Ảnh Nikon D7500 Body (VIC Nikon).jpg" alt=""></div>
-          <div class="new-name">Máy Ảnh Nikon D7500 Body (VIC Nikon)</div>
-          <div class="new-price">33.990.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="new-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Sony/Sony Alpha A6300 + Kit 16-50mm - Bạc.jpg" alt=""></div>
-          <div class="new-name">Sony Alpha A6300 + Kit 16-50mm - Bạc</div>
-          <div class="new-price">20.490.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="new-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Nikon/Nikon D7200 Kit 18-140mm (VIC Nikon).jpg" alt=""></div>
-          <div class="new-name">Nikon D7200 Kit 18-140mm (VIC Nikon)</div>
-          <div class="new-price">25.000.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
+      {{/each}}
     </div>
   </div>
 </div>
@@ -621,95 +524,19 @@
           <div class="dot">3</div>
           <div class="dot">4</div>
         </div>
-        <div class="view-item product-item">
-          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
-            <div class="thumbnail"><img src="./assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax 25.jpg" alt=""></div>
-            <div class="view-all-name">Máy Ảnh Lấy Liền Fujifilm Instax 25</div>
-            <div class="view-all-price">2.600.000 VND</div>
-          </a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="view-item product-item">
-          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
-            <div class="thumbnail"><img src="./assets/images/Brands/Fujifilm/Fujifilm X-A5 + lens 15-45mm F3.5-5.6 OIS (24.2MP).jpg" alt=""></div>
-            <div class="view-all-name">Fujifilm X-A5 + lens 15-45mm F3.5-5.6 OIS</div>
-            <div class="view-all-price">14.590.000 VND</div>
-          </a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="view-item product-item">
-          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
-            <div class="thumbnail"><img src="./assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng Đồng.jpg" alt=""></div>
-            <div class="view-all-name">Fujifilm Instax Mini 70 - Vàng Đồng</div>
-            <div class="view-all-price">2.690.000 VND</div>
-          </a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="view-item product-item">
-          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
-            <div class="thumbnail"><img src="./assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Xanh.jpg" alt=""></div>
-            <div class="view-all-name">Fujifilm Instax Mini 70 - Xanh</div>
-            <div class="view-all-price">2.690.000 VND</div>
-          </a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="view-item product-item">
-          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
-            <div class="thumbnail"><img src="./assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax SQUARE SQ10.jpg" alt=""></div>
-            <div class="view-all-name">Fujifilm Instax SQUARE SQ10</div>
-            <div class="view-all-price">5.990.000 VND</div>
-          </a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="view-item product-item">
-          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
-            <div class="thumbnail"><img src="./assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Lime Green.jpg" alt=""></div>
-            <div class="view-all-name">Fujifilm Instax Mini 9 - Lime Green</div>
-            <div class="view-all-price">2.690.000 VND</div>
-          </a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="view-item product-item">
-          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
-            <div class="thumbnail"><img src="./assets/images/Brands/Nikon/Nikon D7200 Kit 18-140mm (VIC Nikon).jpg" alt=""></div>
-            <div class="view-all-name">Nikon D7200 Kit 18-140mm (VIC Nikon)</div>
-            <div class="view-all-price">25.000.000 VND</div>
-          </a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="view-item product-item">
-          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
-            <div class="thumbnail"><img src="./assets/images/Brands/Nikon/Nikon D3400 KIT 18-55 VR (24.2MP).jpg" alt=""></div>
-            <div class="view-all-name">Nikon D3400 KIT 18-55 VR (24.2MP)</div>
-            <div class="view-all-price">9.400.000 VND</div>
-          </a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-        <div class="view-item product-item">
-          <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
-            <div class="thumbnail"><img src="./assets/images/Brands/Canon/EOS M50 + Kit 15-45mm (24.1MP) .jpg" alt=""></div>
-            <div class="view-all-name">EOS M50 + Kit 15-45mm (24.1MP) </div>
-            <div class="view-all-price">19.000.000 VND</div>
-          </a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
+        <div class="view-list-content">
+          {{#each (slice layoutVM.products 0 9)}}
+          <div class="view-item product-item">
+            <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
+              <div class="thumbnail"><img src="./assets/images/Products/{{productImg}}" alt=""></div>
+              <div class="view-all-name">{{productName}}</div>
+              <div class="view-all-price">{{numberFormat productPrice}} VND</div>
+            </a>
+            <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
+          </div>
+          {{/each}}
         </div>
       </div>
     </div>
