@@ -194,7 +194,7 @@
         <div class="pirate-intro-slider-item" style="background-image: url(./assets/images/slider/slider-3-bg.jpg);background-color: #c1b5a7;">
           <div class="pirate-slider-item-data">
             <h3>CAMERA HẢI TẶC ĂN HẠI</h3>
-            <p>Các mẫu máy ảnh cơ, máy kỹ thuật số, máy ảnh lấy liền vẫn được nhập về liên tục và ngày càng đa dạng hơn - nhờ sự hỗ trợ của Liên minh Hải Tặc trên toàn thế giới!</p>
+            <p>Các mẫu máy ảnh cơ, máy kỹ thuật số, máy ảnh lấy liền vẫn được nhập về liên tục và ngày càng đa dạng hơn - nhờ sự hỗ trợ của Liên minh Hải Tặc trên toàn thế giới!!</p>
           </div>
           <div class="slider-item-shape">
             <div class="triangle-bot-big">
@@ -218,10 +218,10 @@
     <div class="row">
       <div class="col-sm-9 best-list">
         <div class="best-slider">
-          {{#each layoutVM.products}}
+          {{#each layoutVM.best}}
           <div class="slider-item product-item">
             <div class="best-item">
-              <div class="thumbnail"><img src="./assets/images/Brands/{{productBrand}}/{{productImg}}" alt=""></div>
+              <div class="thumbnail"><img src="./assets/images/Products/{{productImg}}" alt=""></div>
               <div class="best-name">{{productName}}</div>
               <div class="best-price">
                 <span class="best-new">{{productPrice}} VND</span>
@@ -264,116 +264,19 @@
   </div>
   <div class="most-list">
     <div class="most-slider">
+      {{#each layoutVM.mostViews}}
       <div class="slider-item product-item">
         <div class="most-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Fujifilm/Fujifilm X-A3 + 16-50mm II.jpg" alt=""></div>
-          <div class="most-name">Fujifilm X-A3 + 16-50mm II</div>
-          <div class="most-price">10.490.000 VND</div>
+          <div class="thumbnail"><img src="./assets/images/Products/{{productImg}}" alt=""></div>
+          <div class="most-name">{{productName}}</div>
+          <div class="most-price">{{productPrice}} VND</div>
           <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
           <button class="add">
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
       </div>
-      <div class="slider-item product-item">
-        <div class="most-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Fujifilm/Fujifilm Instax Mini 90 Neo.jpg" alt=""></div>
-          <div class="most-name">Fujifilm Instax Mini 90 Neo</div>
-          <div class="most-price">4.000.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="most-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Máy Ảnh Canon Powershot G5X.jpg" alt=""></div>
-          <div class="most-name">Máy Ảnh Canon Powershot G5X</div>
-          <div class="most-price">13.990.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="most-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Máy Ảnh Canon EOS M100 KIT 15-45mm.jpg" alt=""></div>
-          <div class="most-name">Máy Ảnh Canon EOS M100 KIT 15-45mm</div>
-          <div class="most-price">12.690.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="most-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Máy Ảnh Canon 80D + Lens 18-55mm.jpg" alt=""></div>
-          <div class="most-name">Máy Ảnh Canon 80D + Lens 18-55mm</div>
-          <div class="most-price">23.690.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="most-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/EOS M50 + Kit 15-45mm (24.1MP) .jpg" alt=""></div>
-          <div class="most-name">EOS M50 + Kit 15-45mm (24.1MP)</div>
-          <div class="most-price">19.000.000 VND</div>
-          <a href="pages/DetailPages/singlepage-2.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="most-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/EOS 3000D + Lens EF-S 18 - 55mm III.jpg" alt=""></div>
-          <div class="most-name">EOS 3000D + Lens EF-S 18 - 55mm III</div>
-          <div class="most-price">23.690.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="most-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/EOS 6D + 24-105mm f4L.jpg" alt=""></div>
-          <div class="most-name">EOS 6D + 24-105mm f/4 - L</div>
-          <div class="most-price">37.000.000 VND</div>
-          <a href="pages/DetailPages/singlepage-2.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="most-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng.jpg" alt=""></div>
-          <div class="most-name">Canon Powershot G9X Mark II - Đen</div>
-          <div class="most-price">11.790.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
-      <div class="slider-item product-item">
-        <div class="most-item">
-          <div class="thumbnail"><img src="./assets/images/Brands/Canon/Canon M10 KIT 15-45mm .jpg" alt=""></div>
-          <div class="most-name">Canon M10 KIT 15-45mm</div>
-          <div class="most-price">6.950.000 VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add">
-            <i class="fa fa-shopping-cart"></i>
-          </button>
-        </div>
-      </div>
+        {{/each}}
     </div>
   </div>
 </div>
@@ -808,8 +711,6 @@
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
-
-
       </div>
     </div>
   </div>

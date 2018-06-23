@@ -3,12 +3,12 @@ var productRepo = require('../repos/productRepo');
 module.exports = (req, res, next) => {
 
     productRepo.loadAll().then(rows => {
-    	rows.sort((a,b)=>b.productSold - a.productSold);
-    	console.log(rows);
-
 
         res.locals.layoutVM = {
             products: rows,
+            best: rows.sort((a,b)=>b.productSold - a.productSold).slice(0,10),
+            mostViews: rows.sort((a,b)=>b.productViews - a.productViews).slice(0,10)
+
         }
 
         next();
