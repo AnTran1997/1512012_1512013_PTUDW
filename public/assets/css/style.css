@@ -1060,7 +1060,7 @@ footer .footer-right .address span i {
 
 .best .best-list .best-slider .slider-item {
   width: 8.333333%;
-  float: left;
+  display: grid;
   padding: 0 5px;
   position: relative;
 }
@@ -1154,6 +1154,7 @@ footer .footer-right .address span i {
   -webkit-background-clip: text;
   color: transparent;
   text-align: right;
+  width: 100%;
 }
 
 .best .best-title span {
@@ -1264,7 +1265,7 @@ footer .footer-right .address span i {
 
 .most .most-list .most-slider .slider-item {
   width: 10%;
-  float: left;
+  display: grid;
   padding: 0 5px;
   position: relative;
 }
@@ -1410,7 +1411,7 @@ footer .footer-right .address span i {
 
 .new .new-list .new-slider .slider-item {
   width: 10%;
-  float: left;
+  display: grid;
   padding: 0 5px;
   position: relative;
 }
@@ -1798,8 +1799,8 @@ footer .footer-right .address span i {
 
 .view-all .view-content .view-list .view-item {
   padding: 0 10px;
-  width: 33.3333333%;
-  float: left;
+  width: 32%;
+  display: inline-grid;
   margin: 10px 0;
   position: relative;
 }

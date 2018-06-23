@@ -13,7 +13,17 @@ var app = express();
 app.engine('hbs', exp_hbs({
     defaultLayout: 'main',
     helpers: {
-        section: exp_hbs_sections()
+        section: exp_hbs_sections(),
+        numberFormat: (number)=>{
+        	var rs = number.toString();
+console.log(rs);
+        	for(var i = rs.length-3; i>0; i-=3){
+        		rs = rs.slice(0,i)+'.'+rs.slice(i);
+        		console.log(rs);
+        	}
+        	console.log(rs);
+        	return rs;
+        }
     }
 }));
 

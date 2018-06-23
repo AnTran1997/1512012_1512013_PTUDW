@@ -224,7 +224,7 @@
               <div class="thumbnail"><img src="./assets/images/Products/{{productImg}}" alt=""></div>
               <div class="best-name">{{productName}}</div>
               <div class="best-price">
-                <span class="best-new">{{productPrice}} VND</span>
+                <span class="price-new">{{numberFormat productPrice}} VND</span>
               </div>
               <a href="pages/DetailPages/singlepage-2.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
               <button class="add">
@@ -269,7 +269,7 @@
         <div class="most-item">
           <div class="thumbnail"><img src="./assets/images/Products/{{productImg}}" alt=""></div>
           <div class="most-name">{{productName}}</div>
-          <div class="most-price">{{productPrice}} VND</div>
+          <div class="most-price">{{numberFormat productPrice}} VND</div>
           <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
           <button class="add">
             <i class="fa fa-shopping-cart"></i>
@@ -287,46 +287,46 @@
   </div>
   <div class="sale-view-content">
     <div class="sale-view-col sale-view-col-1">
-      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Brands/Fujifilm/Máy%20Ảnh%20Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%209%20-%20Cobalt%20Blue.jpg);">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.0.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2> Fujifilm Instax Mini 9 - Cobalt Blue</h2>
+            <h2>{{layoutVM.sale.0.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">1.690.000 VND</span>
-              <span class="price-old">2.500.000 VND</span>
+              <span class="price-new">{{numberFormat layoutVM.sale.0.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat layoutVM.sale.0.productPrice}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-2.html">Xem thêm</a>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Brands/Fujifilm/Máy%20Ảnh%20Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%209%20-%20Ice%20Blue.jpg);">
+      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.1.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>Fujifilm Instax Mini 9 - Ice Blue</h2>
+            <h2>{{layoutVM.sale.1.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">1.790.000 VND</span>
-              <span class="price-old">2.500.000 VND</span>
+              <span class="price-new">{{numberFormat layoutVM.sale.1.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat layoutVM.sale.1.productPrice}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-3 product-item" style="background-image: url(assets/images/Brands/Fujifilm/Máy%20Ảnh%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%208%20-%20Hello%20Kitty%20Đỏ.jpg);">
+      <div class="sale-view-cell-3 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.2.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>Fujifilm Instax Mini 8 - Hello Kitty Đỏ</h2>
+            <h2>{{layoutVM.sale.2.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">1.900.000 VND</span>
-              <span class="price-old">3.000.000VND</span>
+              <span class="price-new">{{numberFormat layoutVM.sale.2.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat layoutVM.sale.2.productPrice}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -334,31 +334,31 @@
       </div>
     </div>
     <div class="sale-view-col sale-view-col-2">
-      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Brands/Fujifilm/Máy%20Ảnh%20Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%209%20-%20Lime%20Green.jpg);">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.3.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>Fujifilm Instax Mini 9 - Lime GreenC</h2>
+            <h2>{{layoutVM.sale.3.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">1.790.000 VND</span>
-              <span class="price-old">2.500.000 VND</span>
+              <span class="price-new">{{numberFormat layoutVM.sale.3.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat layoutVM.sale.3.productPrice}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Brands/Fujifilm/Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%2070%20-%20Đỏ.jpg);">
+      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.4.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</h2>
+            <h2>{{layoutVM.sale.4.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">2.690.000 VND</span>
-              <span class="price-old">32.690.000 VND</span>
+              <span class="price-new">{{numberFormat layoutVM.sale.4.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat layoutVM.sale.4.productPrice}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -366,46 +366,46 @@
       </div>
     </div>
     <div class="sale-view-col sale-view-col-3">
-      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Brands/Fujifilm/Selfie%20Lấy%20Liền%20Fujifilm%20Instax%20Mini%2070%20-%20Vàng.jpg);">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.5.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng</h2>
+            <h2>{{layoutVM.sale.5.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">2.690.000 VND</span>
-              <span class="price-old">3.000.000 VND</span>
+              <span class="price-new">{{numberFormat layoutVM.sale.5.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat layoutVM.sale.5.productPrice}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Brands/Canon/EOS%203000D%20+%20Lens%20EF-S%2018%20-%2055mm%20III.jpg);">
+      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.6.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>EOS 3000D + Lens EF-S 18 - 55mm III</h2>
+            <h2>{{layoutVM.sale.6.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">9.600.000 VND</span>
-              <span class="price-old">11.000.000 VND</span>
+              <span class="price-new">{{numberFormat layoutVM.sale.6.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat layoutVM.sale.6.productPrice}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-3 product-item" style="background-image: url(assets/images/Brands/Canon/EOS%206D%20+%2024-105mm%20f4L.jpg);">
+      <div class="sale-view-cell-3 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.7.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>EOS 6D + 24-105mm f4L</h2>
+            <h2>{{layoutVM.sale.7.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">37.000.000 VND</span>
-              <span class="price-old">38.000.000 VND</span>
+              <span class="price-new">{{numberFormat layoutVM.sale.7.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat layoutVM.sale.7.productPrice}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -413,31 +413,31 @@
       </div>
     </div>
     <div class="sale-view-col sale-view-col-4">
-      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Brands/Sony/Sony%20Alpha%20A6000%20+%2016-50mm%20Trắng.jpg);">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.8.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>Sony Alpha A6000 + 16-50mm Trắng</h2>
+            <h2>{{layoutVM.sale.8.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">13.490.000 VND</span>
-              <span class="price-old">15.000.000 VND</span>
+              <span class="price-new">{{numberFormat layoutVM.sale.8.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat layoutVM.sale.8.productPrice}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Brands/Sony/Sony%20HX350%20-%2020.4%20Megapixel,%20Zoom%2050x.jpg);">
+      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.9.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>Sony HX350 - 20.4 Megapixel, Zoom 50x</h2>
+            <h2>{{layoutVM.sale.9.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">7.690.000 VND</span>
-              <span class="price-old">9.000.000 VND</span>
+              <span class="price-new">{{numberFormat layoutVM.sale.9.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat layoutVM.sale.9.productPrice}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
