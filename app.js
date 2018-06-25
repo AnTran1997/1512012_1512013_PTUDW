@@ -7,7 +7,8 @@ var path = require('path');
 var handleLayoutMDW = require('./middle-wares/handleLayout');
 
 var homeControllers = require('./controllers/homeController');
-var userController = require('./controllers/userController');
+
+var productControllers = require('./controllers/productController');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.engine('hbs', exp_hbs({
 	}
 }));
 
+
 app.set('view engine', 'hbs');
 
 app.use(express.static(path.resolve(__dirname, 'public')));
@@ -52,6 +54,7 @@ app.get('/', (req, res) => {
 	res.redirect('/home');
 });
 app.use('/home', homeControllers);
+app.use('/product', productControllers);
 
 //Routing using userController
 app.get('/userAccount', (req, res) => {
