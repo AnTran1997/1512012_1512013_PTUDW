@@ -70,7 +70,7 @@ function showHighestViewPro() {
 
 function bookingCamera() {
     alert("Đặt hàng thành công!");
-    window.location.href = "../Userpages/userHomePage.html";
+    window.location.href = "/home";
 }
 
 function convertStrToInt(str) {

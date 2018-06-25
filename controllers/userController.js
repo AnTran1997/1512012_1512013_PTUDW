@@ -18,7 +18,7 @@ router.get('/historyShopping', (req, res) => {
 });
 
 router.get('/account', (req, res) => {
-    res.render('users/account');
+    res.render('users/userAccount');
 });
 
 router.get('/admin', (req, res) => {
