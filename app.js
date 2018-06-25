@@ -10,6 +10,10 @@ var homeControllers = require('./controllers/homeController');
 
 var productControllers = require('./controllers/productController');
 
+var userControllers = require('./controllers/userController');
+
+var searchControllers = require('./controllers/searchController');
+
 var app = express();
 
 app.engine('hbs', exp_hbs({
@@ -55,12 +59,8 @@ app.get('/', (req, res) => {
 });
 app.use('/home', homeControllers);
 app.use('/product', productControllers);
-
-//Routing using userController
-app.get('/userAccount', (req, res) => {
-	res.redirect('/userAccount');
-});
-app.use('/userAccount', userController);
+app.use('/user', userControllers);
+app.use('/', searchControllers);
 
 
 app.listen(3000, () => {

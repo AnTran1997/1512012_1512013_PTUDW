@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./../../assets/css/styleAdmin/styleAdmin.css" />
+
+</head>
+<body>
+    <div class="dashboard">
+        <div class="row">
+            <div class="col-sm-3" style="background-color: #000033">
+                <h2 id="adminName">Admin</h2>
+                <h3 id="dashboardTitle"><a href="#" onclick="displayContent('charts')">
+                    <i class="fa fa-dashboard" style="color:#a6a6a6; text-align: left;"></i> Dashboard</a></h3>
+                    <div class=""></div>
+                    <li>
+                        <a href="#" class="adminFunctions" onclick="dropDown('productManagement')">
+                            <i class="fa fa-object-group" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Quản lý sản phẩm</a>
+                        <ul class="productManagement">
+                            <li><a href="#" onclick="dropDown('viewProOptions')">Xem danh sách sản phẩm</a>            
+                               <ul class="viewProOptions">
+                                    <li><a href="#" onclick="dropDown('productType')">Theo loại</a>
+                                        <ul class="productType">
+                                            <li><a href="#" onclick="displayContent('mayKyThuatSo')">Máy ảnh kỹ thuật số</a></li>
+                                            <li><a href="#" onclick="displayContent('mayCo')">Máy ảnh cơ</a></li>
+                                            <li><a href="#" onclick="displayContent('mayLayLien')">Máy ảnh lấy liền</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" onclick="dropDown('productBrand')">Theo nhà sản xuất</a>
+                                        <ul class="productBrand">
+                                            <li><a href="#" onclick="displayContent('canonProducts')">Canon</a></li>
+                                            <li><a href="#" onclick="displayContent('fujifilmProducts')">Fujifilm</a></li>
+                                            <li><a href="#" onclick="displayContent('nikonProducts')">Nikon</a></li>
+                                            <li><a href="#" onclick="displayContent('sonyProducts')">Sony</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" onclick="displayContent('showAllProducts')">Xem tất cả</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="productManagement" id="myForm" onclick="addNewProduct()">Thêm sản phẩm</a></li>
+                        </ul>
+                    </li>
+
+                <li><a href="#" class="adminFunctions" onclick="dropDown('orderManagement')">
+                    <i class="fa fa-file-text-o" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Quản lý đơn hàng</a>
+                    <ul class="orderManagement">
+                        <li><a href="#" onclick="dropDown('viewOrder')">Xem danh sách đơn hàng</a>
+                            <ul class="viewOrder">
+                                <li><a href="#" class="viewOrder" onclick="displayContent('listDateOrder')">Theo ngày</a></li>
+                                <li><a href="#" class="viewOrder" onclick="displayContent('listStatusOrder')">Theo trạng thái đơn hàng</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="./../../index.html" class="adminFunctions">
+                    <i class="fa fa-bank" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Đi đến trang chủ</a></li>
+                <li><a href="#" onclick="displayContent('showAccount')" class="adminFunctions">
+                        <i class="fa fa-cogs" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Xem tài khoản</a></li>
+                <li><a href="./../../index.html" class="adminFunctions">
+                    <i class="fa fa-hourglass-2" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Đăng xuất</a></li>
+            </div>
+
+
+            <div class="col-sm-9">
+                <div class="searchBar">
+                    <input type="text" class="searchProduct searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
+                    <button type="submit" name="search" class="searchProduct searchBtn" onclick="window.location.href='../searchResult.html'"><i class="fa fa-search"></i></button>
+                </div>
+
+
+                <!-- *******************   SHOW LIST OF PRODUCTS IN BRANDS   ********************* -->              
+                <div class="canonProducts isDisplayed">
+                    <div class="backgroundTitle" style="background-color:hotpink;">
+                        <h1>CANON</h1>
+                    </div>
+                    <div class="triangle-right" style="border-left: 50px solid hotpink;"></div>
+                    <div class="editDeletePro">
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='adminHomePage.html'">Chỉnh sửa</button>
+                        <button type="submit" name="delete" id="delete">Xóa</button>
+                    </div>
+                    <div class="container-quanLySanPham">
+                        <table>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Loại máy ảnh</th>
+                                <th>Giá nhập (VNĐ)</th>
+                                <th>Giá bán (VNĐ)</th>
+                                <th>Số lượng</th>
+                                <th>Hình ảnh</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>Canon 6D Body</td>
+                                <td>1</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>7.600.000</td>
+                                <td>9.600.000</td>
+                                <td>5</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Canon M6 KIT EF-M 15-45mm IS STM</td>
+                                <td>2</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>14.050.000</td>
+                                <td>16.050.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon M6 KIT EF-M 15-45mm IS STM.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Canon M10 KIT 15-45mm </td>
+                                <td>3</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>23.590.000</td>
+                                <td>26.590.000</td>
+                                <td>4</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon M10 KIT 15-45mm .jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng</td>
+                                <td>4</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>9.790.000</td>
+                                <td>11.790.000</td>
+                                <td>7</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>        
+                            <tr>
+                                <td>EOS 6D + 24-105mm f4L</td>
+                                <td>5</td>
+                                <td>Mãy cơ</td>
+                                <td>35.000.000</td>
+                                <td>37.000.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Canon/EOS 6D + 24-105mm f4L.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>EOS 3000D + Lens EF-S 18 - 55mm III</td>
+                                <td>6</td>
+                                <td>Máy cơ</td>
+                                <td>6.600.000</td>
+                                <td>9.600.000</td>
+                                <td>10</td>
+                                <td><img src="./../../assets/images/Brands/Canon/EOS 3000D + Lens EF-S 18 - 55mm III.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>EOS M50 + Kit 15-45mm (24.1MP)</td>
+                                <td>7</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>17.000.000</td>
+                                <td>19.000.000</td>
+                                <td>6</td>
+                                <td><img src="./../../assets/images/Brands/Canon/EOS M50 + Kit 15-45mm (24.1MP) .jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>Máy Ảnh Canon Powershot G5X</td>
+                                <td>8</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>11.000.000</td>
+                                <td>13.990.000</td>
+                                <td>4</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Máy Ảnh Canon Powershot G5X.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>        
+                            <tr>
+                                <td>Máy Ảnh Canon EOS M100 KIT 15-45mm</td>
+                                <td>9</td>
+                                <td>Kỹ thuật số</td>
+                                <td>10.000.000</td>
+                                <td>12.690.000</td>
+                                <td>13</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Máy Ảnh Canon EOS M100 KIT 15-45mm.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>Canon 5D MARK III +  EF 24 105mm F4 IS</td>
+                                <td>10</td>
+                                <td>Máy cơ</td>
+                                <td>55.000.000</td>
+                                <td>59.990.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon 5D MARK III +  EF 24 105mm F4 IS.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>Máy Ảnh Canon 80D + Lens 18-55mm</td>
+                                <td>11</td>
+                                <td>Máy cơ</td>
+                                <td>20.000.000</td>
+                                <td>23.690.000</td>
+                                <td>5</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Máy Ảnh Canon 80D + Lens 18-55mm.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+
+                        </table>  
+                    </div>
+                </div>
+
+                <div class="fujifilmProducts isDisplayed">
+                    <div class="backgroundTitle" style="background-color:#66ff66;">
+                        <h1>FUJIFILM</h1>
+                    </div>
+                    <div class="triangle-right" style="border-left: 50px solid #66ff66;"></div>
+                    <div class="editDeletePro">
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='adminHomePage.html'">Chỉnh sửa</button>
+                        <button type="submit" name="delete" id="delete">Xóa</button>
+                    </div>         
+                    <div class="container-quanLySanPham">
+                        <table>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Loại máy ảnh</th>
+                                <th>Giá nhập (VNĐ)</th>
+                                <th>Giá bán (VNĐ)</th>
+                                <th>Số lượng</th>
+                                <th>Hình ảnh</th>
+                                <th></th>
+                            </tr>      
+                            <tr>
+                                <td>Fujifilm Instax Mini 90 Neo</td>
+                                <td>8</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>2.000.000</td>
+                                <td>4.000.000</td>
+                                <td>11</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm Instax Mini 90 Neo.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr> 
+                            <tr>
+                                <td>Fujifilm X-A3 + 16-50mm II</td>
+                                <td>9</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>8.490.000</td>
+                                <td>10.490.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm X-A3 + 16-50mm II.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Lấy Liền Fujifilm Instax Mini 8 - Hello Kitty Đỏ</td>
+                                <td>10</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>900.000</td>
+                                <td>1.900.000</td>
+                                <td>15</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax Mini 8 - Hello Kitty Đỏ.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Fujifilm X-A5 + lens 15-45mm F3.5-5.6 OIS (24.2MP)</td>
+                                <td>11</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>12.590.000</td>
+                                <td>14.590.000</td>
+                                <td>1</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm X-A5 + lens 15-45mm F3.5-5.6 OIS (24.2MP).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Fujifilm X-A10 + 16-50mm II</td>
+                                <td>12</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>7.490.000</td>
+                                <td>9.490.000</td>
+                                <td>5</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm X-A10 + 16-50mm II.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Lấy Liền Fujifilm Instax SQUARE SQ10</td>
+                                <td>13</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>3.990.000</td>
+                                <td>5.990.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax SQUARE SQ10.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue</td>
+                                <td>14</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>500.000</td>
+                                <td>1.690.000</td>
+                                <td>7</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Ice Blue</td>
+                                <td>15</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>900.000</td>
+                                <td>1.790.000</td>
+                                <td>9</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Ice Blue.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Lime Green</td>
+                                <td>16</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>900.000</td>
+                                <td>1.790.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Lime Green.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Trắng</td>
+                                <td>17</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>999.999</td>
+                                <td>2.690.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Trắng.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</td>
+                                <td>18</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>999.999</td>
+                                <td>2.690.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng</td>
+                                <td>19</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>999.999</td>
+                                <td>2.690.000</td>
+                                <td>6</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>                                                                             
+                        </table>  
+                    </div>
+                </div>
+
+                <div class="nikonProducts isDisplayed">
+                    <div class="backgroundTitle" style="background-color:#ff6600;">
+                        <h1>NIKON</h1>
+                    </div>
+                    <div class="triangle-right" style="border-left: 50px solid #ff6600;"></div>
+                    <div class="editDeletePro">
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='adminHomePage.html'">Chỉnh sửa</button>
+                        <button type="submit" name="delete" id="delete">Xóa</button>
+                    </div>
+                    <div class="container-quanLySanPham">
+                        <table>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Loại máy ảnh</th>
+                                <th>Giá nhập (VNĐ)</th>
+                                <th>Giá bán (VNĐ)</th>
+                                <th>Số lượng</th>
+                                <th>Hình ảnh</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>Nikon D3400 KIT 18-55 VR (24.2MP)</td>
+                                <td>20</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>7.000.000</td>
+                                <td>9.400.000</td>
+                                <td>0</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D3400 KIT 18-55 VR (24.2MP).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Nikon D5300 KIT 18-55 VR (VIC Nikon)</td>
+                                <td>21</td>
+                                <td>Máy cơ</td>
+                                <td>10.390.000</td>
+                                <td>12.390.000</td>
+                                <td>10</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D5300 KIT 18-55 VR (VIC Nikon).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>       
+                            <tr>
+                                <td>Nikon D5600 KIT AF-P 18-55 VR</td>
+                                <td>22</td>
+                                <td>Máy cơ</td>
+                                <td>11.000.000</td>
+                                <td>14.990.000</td>
+                                <td>13</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D5600 KIT AF-P 18-55 VR.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Nikon D7200 Kit 18-140mm (VIC Nikon)</td>
+                                <td>23</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>21.000.000</td>
+                                <td>25.000.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D7200 Kit 18-140mm (VIC Nikon).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Nikon D7500 + Lens Nikon 18-140mm F3.5-5.6G ED VR (VIC Nikon)</td>
+                                <td>24</td>
+                                <td>Máy cơ</td>
+                                <td>28.000.000</td>
+                                <td>33.990.000</td>
+                                <td>4</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D7500 + Lens Nikon 18-140mm F3.5-5.6G ED VR (VIC Nikon).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>                                                                        
+                        </table>  
+                    </div>
+                </div>
+
+                <div class="sonyProducts isDisplayed">
+                    <div class="backgroundTitle" style="background-color:#66b3ff;">
+                        <h1>SONY</h1>
+                    </div>
+                    <div class="triangle-right" style="border-left: 50px solid #66b3ff;"></div>
+                    <div class="editDeletePro">
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='adminHomePage.html'">Chỉnh sửa</button>
+                        <button type="submit" name="delete" id="delete">Xóa</button>
+                    </div>
+                    <div class="container-quanLySanPham">
+                        <table>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Loại máy ảnh</th>
+                                <th>Giá nhập (VNĐ)</th>
+                                <th>Giá bán (VNĐ)</th>
+                                <th>Số lượng</th>
+                                <th>Hình ảnh</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>Sony Alpha A7 Mark II + Lens 28-70mm</td>
+                                <td>25</td>
+                                <td>Máy cơ</td>
+                                <td>27.000.000</td>
+                                <td>31.990.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony Alpha A7 Mark II + Lens 28-70mm.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony Alpha A6000 + 16-50mm (Trắng)</td>
+                                <td>26</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>10.000.000</td>
+                                <td>13.490.000</td>
+                                <td>11</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony Alpha A6000 + 16-50mm (Trắng).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony Alpha A6000 + 16-50mm</td>
+                                <td>27</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>11.500.000</td>
+                                <td>13.490.000</td>
+                                <td>8</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony Alpha A6000 + 16-50mm.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony DSC H400 - 20.1 Megapixel, Zoom 63x</td>
+                                <td>28</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>2.000.000</td>
+                                <td>4.990.000</td>
+                                <td>0</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony DSC H400 - 20.1 Megapixel, Zoom 63x.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>Sony Alpha A6300 + Kit 16-50mm - Bạc</td>
+                                <td>29</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>17.000.000</td>
+                                <td>20.490.000</td>
+                                <td>5</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony Alpha A6300 + Kit 16-50mm - Bạc.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony DSC W830 - 20.1 Megapixel, Zoom 8x</td>
+                                <td>30</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>900.000</td>
+                                <td>2.490.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony DSC W830 - 20.1 Megapixel, Zoom 8x.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony HX350 - 20.4 Megapixel, Zoom 50x</td>
+                                <td>31</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>5.000.000</td>
+                                <td>7.690.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony HX350 - 20.4 Megapixel, Zoom 50x.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony RX100 IV</td>
+                                <td>32</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>16.000.000</td>
+                                <td>19.670.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony RX100 IV.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>                                                                                   
+                        </table>  
+                    </div>
+                </div>
+
+
+                <!-- **************************  SHOW LIST OF PRODUCTS IN TYPES ******************* -->
+                <div class="mayKyThuatSo isDisplayed">
+                    <div class="backgroundTitle" style="background-color:#ffe6ff;">
+                            <h1>MÁY ẢNH KỸ THUẬT SỐ</h1>
+                        </div>
+                        <div class="triangle-right" style="border-left: 50px solid #ffe6ff;"></div>
+                    <div class="editDeletePro">
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='adminHomePage.html'">Chỉnh sửa</button>
+                        <button type="submit" name="delete" id="delete">Xóa</button>
+                    </div>
+                    <div class="container-quanLySanPham">
+                        <table>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Thương hiệu/Nhà sản xuất</th>
+                                <th>Giá nhập (VNĐ)</th>
+                                <th>Giá bán (VNĐ)</th>
+                                <th>Số lượng</th>
+                                <th>Hình ảnh</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>Canon 6D Body</td>
+                                <td>1</td>
+                                <td>Canon</td>
+                                <td>7.600.000</td>
+                                <td>9.600.000</td>
+                                <td>5</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Canon M6 KIT EF-M 15-45mm IS STM</td>
+                                <td>2</td>
+                                <td>Canon</td>
+                                <td>14.050.000</td>
+                                <td>16.050.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon M6 KIT EF-M 15-45mm IS STM.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Canon M10 KIT 15-45mm </td>
+                                <td>3</td>
+                                <td>Canon</td>
+                                <td>23.590.000</td>
+                                <td>26.590.000</td>
+                                <td>4</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon M10 KIT 15-45mm .jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng</td>
+                                <td>4</td>
+                                <td>Canon</td>
+                                <td>9.790.000</td>
+                                <td>11.790.000</td>
+                                <td>7</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr> 
+                            <tr>
+                                <td>EOS M50 + Kit 15-45mm (24.1MP)</td>
+                                <td>7</td>
+                                <td>Canon</td>
+                                <td>17.000.000</td>
+                                <td>19.000.000</td>
+                                <td>6</td>
+                                <td><img src="./../../assets/images/Brands/Canon/EOS M50 + Kit 15-45mm (24.1MP) .jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>         
+                            <tr>
+                                <td>Fujifilm Instax Mini 90 Neo</td>
+                                <td>8</td>
+                                <td>Fujifilm</td>
+                                <td>2.000.000</td>
+                                <td>4.000.000</td>
+                                <td>11</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm Instax Mini 90 Neo.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr> 
+                            <tr>
+                                <td>Fujifilm X-A3 + 16-50mm II</td>
+                                <td>9</td>
+                                <td>Fujifilm</td>
+                                <td>8.490.000</td>
+                                <td>10.490.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm X-A3 + 16-50mm II.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr> 
+                            <tr>
+                                <td>Fujifilm X-A5 + lens 15-45mm F3.5-5.6 OIS (24.2MP)</td>
+                                <td>11</td>
+                                <td>Fujifilm</td>
+                                <td>12.590.000</td>
+                                <td>14.590.000</td>
+                                <td>1</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm X-A5 + lens 15-45mm F3.5-5.6 OIS (24.2MP).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Fujifilm X-A10 + 16-50mm II</td>
+                                <td>12</td>
+                                <td>Fujifilm</td>
+                                <td>7.490.000</td>
+                                <td>9.490.000</td>
+                                <td>5</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm X-A10 + 16-50mm II.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>   
+                            <tr>
+                                <td>Nikon D3400 KIT 18-55 VR (24.2MP)</td>
+                                <td>20</td>
+                                <td>Nikon</td>
+                                <td>7.000.000</td>
+                                <td>9.400.000</td>
+                                <td>0</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D3400 KIT 18-55 VR (24.2MP).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>Nikon D7200 Kit 18-140mm (VIC Nikon)</td>
+                                <td>23</td>
+                                <td>Nikon</td>
+                                <td>21.000.000</td>
+                                <td>25.000.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D7200 Kit 18-140mm (VIC Nikon).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>Sony Alpha A6000 + 16-50mm (Trắng)</td>
+                                <td>26</td>
+                                <td>Sony</td>
+                                <td>10.000.000</td>
+                                <td>13.490.000</td>
+                                <td>11</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony Alpha A6000 + 16-50mm (Trắng).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony Alpha A6000 + 16-50mm</td>
+                                <td>27</td>
+                                <td>Sony</td>
+                                <td>11.500.000</td>
+                                <td>13.490.000</td>
+                                <td>8</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony Alpha A6000 + 16-50mm.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony DSC H400 - 20.1 Megapixel, Zoom 63x</td>
+                                <td>28</td>
+                                <td>Sony</td>
+                                <td>2.000.000</td>
+                                <td>4.990.000</td>
+                                <td>0</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony DSC H400 - 20.1 Megapixel, Zoom 63x.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>Sony Alpha A6300 + Kit 16-50mm - Bạc</td>
+                                <td>29</td>
+                                <td>Sony</td>
+                                <td>17.000.000</td>
+                                <td>20.490.000</td>
+                                <td>5</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony Alpha A6300 + Kit 16-50mm - Bạc.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony DSC W830 - 20.1 Megapixel, Zoom 8x</td>
+                                <td>30</td>
+                                <td>Sony</td>
+                                <td>900.000</td>
+                                <td>2.490.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony DSC W830 - 20.1 Megapixel, Zoom 8x.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony HX350 - 20.4 Megapixel, Zoom 50x</td>
+                                <td>31</td>
+                                <td>Sony</td>
+                                <td>5.000.000</td>
+                                <td>7.690.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony HX350 - 20.4 Megapixel, Zoom 50x.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony RX100 IV</td>
+                                <td>32</td>
+                                <td>Sony</td>
+                                <td>16.000.000</td>
+                                <td>19.670.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony RX100 IV.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>                                                                
+                        </table>  
+                    </div>
+                </div>
+
+                <div class="mayCo isDisplayed">
+                    <div class="backgroundTitle" style="background-color:#00ff55;">
+                        <h1>MÁY ẢNH CƠ</h1>
+                    </div>
+                    <div class="triangle-right" style="border-left: 50px solid #00ff55;"></div>
+                    <div class="editDeletePro">
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='adminHomePage.html'">Chỉnh sửa</button>
+                        <button type="submit" name="delete" id="delete">Xóa</button>
+                    </div>
+                    <div class="container-quanLySanPham">
+                        <table>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Thương hiệu/Nhà sản xuất</th>
+                                <th>Giá nhập (VNĐ)</th>
+                                <th>Giá bán (VNĐ)</th>
+                                <th>Số lượng</th>
+                                <th>Hình ảnh</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>EOS 6D + 24-105mm f4L</td>
+                                <td>5</td>
+                                <td>Canon</td>
+                                <td>35.000.000</td>
+                                <td>37.000.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Canon/EOS 6D + 24-105mm f4L.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>EOS 3000D + Lens EF-S 18 - 55mm III</td>
+                                <td>6</td>
+                                <td>Canon</td>
+                                <td>6.600.000</td>
+                                <td>9.600.000</td>
+                                <td>10</td>
+                                <td><img src="./../../assets/images/Brands/Canon/EOS 3000D + Lens EF-S 18 - 55mm III.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr> 
+                            <tr>
+                                <td>Nikon D5300 KIT 18-55 VR (VIC Nikon)</td>
+                                <td>21</td>
+                                <td>Nikon</td>
+                                <td>10.390.000</td>
+                                <td>12.390.000</td>
+                                <td>10</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D5300 KIT 18-55 VR (VIC Nikon).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>       
+                            <tr>
+                                <td>Nikon D5600 KIT AF-P 18-55 VR</td>
+                                <td>22</td>
+                                <td>Nikon</td>
+                                <td>11.000.000</td>
+                                <td>14.990.000</td>
+                                <td>13</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D5600 KIT AF-P 18-55 VR.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Nikon D7500 + Lens Nikon 18-140mm F3.5-5.6G ED VR (VIC Nikon)</td>
+                                <td>24</td>
+                                <td>Nikon</td>
+                                <td>28.000.000</td>
+                                <td>33.990.000</td>
+                                <td>4</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D7500 + Lens Nikon 18-140mm F3.5-5.6G ED VR (VIC Nikon).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony Alpha A7 Mark II + Lens 28-70mm</td>
+                                <td>25</td>
+                                <td>Sony</td>
+                                <td>27.000.000</td>
+                                <td>31.990.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony Alpha A7 Mark II + Lens 28-70mm.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="mayLayLien isDisplayed">
+                    <div class="backgroundTitle" style="background-color:#ffff00;">
+                        <h1>MÁY ẢNH LẤY LIỀN</h1>
+                    </div>
+                    <div class="triangle-right" style="border-left: 50px solid #ffff00;"></div>
+                    <div class="editDeletePro">
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='adminHomePage.html'">Chỉnh sửa</button>
+                        <button type="submit" name="delete" id="delete">Xóa</button>
+                    </div>
+                    <div class="container-quanLySanPham">
+                        <table>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Thương hiệu/Nhà sản xuất</th>
+                                <th>Giá nhập (VNĐ)</th>
+                                <th>Giá bán (VNĐ)</th>
+                                <th>Số lượng</th>
+                                <th>Hình ảnh</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Lấy Liền Fujifilm Instax Mini 8 - Hello Kitty Đỏ</td>
+                                <td>10</td>
+                                <td>Fujifilm</td>
+                                <td>900.000</td>
+                                <td>1.900.000</td>
+                                <td>15</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax Mini 8 - Hello Kitty Đỏ.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Lấy Liền Fujifilm Instax SQUARE SQ10</td>
+                                <td>13</td>
+                                <td>Fujifilm</td>
+                                <td>3.990.000</td>
+                                <td>5.990.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax SQUARE SQ10.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue</td>
+                                <td>14</td>
+                                <td>Fujifilm</td>
+                                <td>500.000</td>
+                                <td>1.690.000</td>
+                                <td>7</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Ice Blue</td>
+                                <td>15</td>
+                                <td>Fujifilm</td>
+                                <td>900.000</td>
+                                <td>1.790.000</td>
+                                <td>9</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Ice Blue.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Lime Green</td>
+                                <td>16</td>
+                                <td>Fujifilm</td>
+                                <td>900.000</td>
+                                <td>1.790.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Lime Green.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Trắng</td>
+                                <td>17</td>
+                                <td>Fujifilm</td>
+                                <td>999.999</td>
+                                <td>2.690.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Trắng.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</td>
+                                <td>18</td>
+                                <td>Fujifilm</td>
+                                <td>999.999</td>
+                                <td>2.690.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng</td>
+                                <td>19</td>
+                                <td>Fujifilm</td>
+                                <td>999.999</td>
+                                <td>2.690.000</td>
+                                <td>6</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                        </table>
+                    </div>
+                </div>
+
+                <!-- **************************  SHOW LIST OF ALL PRODUCTS ********************** -->
+                <div class="showAllProducts isDisplayed">
+                    <div class="backgroundTitle" style="background-color:#ffb366;">
+                        <h1>XEM TẤT CẢ SẢN PHẨM</h1>
+                    </div>
+                    <div class="triangle-right" style="border-left: 50px solid #ffb366;"></div>
+                    <div class="editDeletePro">
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='adminHomePage.html'">Chỉnh sửa</button>
+                        <button type="submit" name="delete" id="delete">Xóa</button>
+                    </div>
+                    <div class="container-quanLySanPham">
+                        <table>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Thương hiệu/nhà sản xuất</th>
+                                <th>Loại máy ảnh</th>
+                                <th>Giá nhập (VNĐ)</th>
+                                <th>Giá bán (VNĐ)</th>
+                                <th>Số lượng</th>
+                                <th>Hình ảnh</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>Canon 6D Body</td>
+                                <td>1</td>
+                                <td>Canon</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>7.600.000</td>
+                                <td>9.600.000</td>
+                                <td>5</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon 6D Body.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Canon M6 KIT EF-M 15-45mm IS STM</td>
+                                <td>2</td>
+                                <td>Canon</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>14.050.000</td>
+                                <td>16.050.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon M6 KIT EF-M 15-45mm IS STM.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Canon M10 KIT 15-45mm </td>
+                                <td>3</td>
+                                <td>Canon</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>23.590.000</td>
+                                <td>26.590.000</td>
+                                <td>4</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon M10 KIT 15-45mm .jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng</td>
+                                <td>4</td>
+                                <td>Canon</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>9.790.000</td>
+                                <td>11.790.000</td>
+                                <td>7</td>
+                                <td><img src="./../../assets/images/Brands/Canon/Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>        
+                            <tr>
+                                <td>EOS 6D + 24-105mm f4L</td>
+                                <td>5</td>
+                                <td>Canon</td>
+                                <td>Máy cơ</td>
+                                <td>35.000.000</td>
+                                <td>37.000.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Canon/EOS 6D + 24-105mm f4L.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>EOS 3000D + Lens EF-S 18 - 55mm III</td>
+                                <td>6</td>
+                                <td>Canon</td>
+                                <td>Máy cơ</td>
+                                <td>6.600.000</td>
+                                <td>9.600.000</td>
+                                <td>10</td>
+                                <td><img src="./../../assets/images/Brands/Canon/EOS 3000D + Lens EF-S 18 - 55mm III.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>EOS M50 + Kit 15-45mm (24.1MP)</td>
+                                <td>7</td>
+                                <td>Canon</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>17.000.000</td>
+                                <td>19.000.000</td>
+                                <td>6</td>
+                                <td><img src="./../../assets/images/Brands/Canon/EOS M50 + Kit 15-45mm (24.1MP) .jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>         
+                            <tr>
+                                <td>Fujifilm Instax Mini 90 Neo</td>
+                                <td>8</td>
+                                <td>Fujifilm</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>2.000.000</td>
+                                <td>4.000.000</td>
+                                <td>11</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm Instax Mini 90 Neo.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr> 
+                            <tr>
+                                <td>Fujifilm X-A3 + 16-50mm II</td>
+                                <td>9</td>
+                                <td>Fujifilm</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>8.490.000</td>
+                                <td>10.490.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm X-A3 + 16-50mm II.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Lấy Liền Fujifilm Instax Mini 8 - Hello Kitty Đỏ</td>
+                                <td>10</td>
+                                <td>Fujifilm</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>900.000</td>
+                                <td>1.900.000</td>
+                                <td>15</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax Mini 8 - Hello Kitty Đỏ.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Fujifilm X-A5 + lens 15-45mm F3.5-5.6 OIS (24.2MP)</td>
+                                <td>11</td>
+                                <td>Fujifilm</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>12.590.000</td>
+                                <td>14.590.000</td>
+                                <td>1</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm X-A5 + lens 15-45mm F3.5-5.6 OIS (24.2MP).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Fujifilm X-A10 + 16-50mm II</td>
+                                <td>12</td>
+                                <td>Fujifilm</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>7.490.000</td>
+                                <td>9.490.000</td>
+                                <td>5</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Fujifilm X-A10 + 16-50mm II.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Lấy Liền Fujifilm Instax SQUARE SQ10</td>
+                                <td>13</td>
+                                <td>Fujifilm</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>3.990.000</td>
+                                <td>5.990.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax SQUARE SQ10.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue</td>
+                                <td>14</td>
+                                <td>Fujifilm</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>500.000</td>
+                                <td>1.690.000</td>
+                                <td>7</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Ice Blue</td>
+                                <td>15</td>
+                                <td>Fujifilm</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>900.000</td>
+                                <td>1.790.000</td>
+                                <td>9</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Ice Blue.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Lime Green</td>
+                                <td>16</td>
+                                <td>Fujifilm</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>900.000</td>
+                                <td>1.790.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Lime Green.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Trắng</td>
+                                <td>17</td>
+                                <td>Fujifilm</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>999.999</td>
+                                <td>2.690.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Trắng.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</td>
+                                <td>18</td>
+                                <td>Fujifilm</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>999.999</td>
+                                <td>2.690.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng</td>
+                                <td>19</td>
+                                <td>Fujifilm</td>
+                                <td>Máy ảnh lấy liền</td>
+                                <td>999.999</td>
+                                <td>2.690.000</td>
+                                <td>6</td>
+                                <td><img src="./../../assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>       
+                            <tr>
+                                <td>Nikon D3400 KIT 18-55 VR (24.2MP)</td>
+                                <td>20</td>
+                                <td>Nikon</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>7.000.000</td>
+                                <td>9.400.000</td>
+                                <td>0</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D3400 KIT 18-55 VR (24.2MP).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Nikon D5300 KIT 18-55 VR (VIC Nikon)</td>
+                                <td>21</td>
+                                <td>Nikon</td>
+                                <td>Máy cơ</td>
+                                <td>10.390.000</td>
+                                <td>12.390.000</td>
+                                <td>10</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D5300 KIT 18-55 VR (VIC Nikon).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>       
+                            <tr>
+                                <td>Nikon D5600 KIT AF-P 18-55 VR</td>
+                                <td>22</td>
+                                <td>Nikon</td>
+                                <td>Máy cơ</td>
+                                <td>11.000.000</td>
+                                <td>14.990.000</td>
+                                <td>13</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D5600 KIT AF-P 18-55 VR.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Nikon D7200 Kit 18-140mm (VIC Nikon)</td>
+                                <td>23</td>
+                                <td>Nikon</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>21.000.000</td>
+                                <td>25.000.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D7200 Kit 18-140mm (VIC Nikon).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Nikon D7500 + Lens Nikon 18-140mm F3.5-5.6G ED VR (VIC Nikon)</td>
+                                <td>24</td>
+                                <td>Nikon</td>
+                                <td>Máy cơ</td>
+                                <td>28.000.000</td>
+                                <td>33.990.000</td>
+                                <td>4</td>
+                                <td><img src="./../../assets/images/Brands/Nikon/Nikon D7500 + Lens Nikon 18-140mm F3.5-5.6G ED VR (VIC Nikon).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony Alpha A7 Mark II + Lens 28-70mm</td>
+                                <td>25</td>
+                                <td>Sony</td>
+                                <td>Máy cơ</td>
+                                <td>27.000.000</td>
+                                <td>31.990.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony Alpha A7 Mark II + Lens 28-70mm.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony Alpha A6000 + 16-50mm (Trắng)</td>
+                                <td>26</td>
+                                <td>Sony</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>10.000.000</td>
+                                <td>13.490.000</td>
+                                <td>11</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony Alpha A6000 + 16-50mm (Trắng).jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony Alpha A6000 + 16-50mm</td>
+                                <td>27</td>
+                                <td>Sony</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>11.500.000</td>
+                                <td>13.490.000</td>
+                                <td>8</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony Alpha A6000 + 16-50mm.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony DSC H400 - 20.1 Megapixel, Zoom 63x</td>
+                                <td>28</td>
+                                <td>Sony</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>2.000.000</td>
+                                <td>4.990.000</td>
+                                <td>0</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony DSC H400 - 20.1 Megapixel, Zoom 63x.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>  
+                            <tr>
+                                <td>Sony Alpha A6300 + Kit 16-50mm - Bạc</td>
+                                <td>29</td>
+                                <td>Sony</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>17.000.000</td>
+                                <td>20.490.000</td>
+                                <td>5</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony Alpha A6300 + Kit 16-50mm - Bạc.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony DSC W830 - 20.1 Megapixel, Zoom 8x</td>
+                                <td>30</td>
+                                <td>Sony</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>900.000</td>
+                                <td>2.490.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony DSC W830 - 20.1 Megapixel, Zoom 8x.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony HX350 - 20.4 Megapixel, Zoom 50x</td>
+                                <td>31</td>
+                                <td>Sony</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>5.000.000</td>
+                                <td>7.690.000</td>
+                                <td>2</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony HX350 - 20.4 Megapixel, Zoom 50x.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            <tr>
+                                <td>Sony RX100 IV</td>
+                                <td>32</td>
+                                <td>Sony</td>
+                                <td>Máy kỹ thuật số</td>
+                                <td>16.000.000</td>
+                                <td>19.670.000</td>
+                                <td>3</td>
+                                <td><img src="./../../assets/images/Brands/Sony/Sony RX100 IV.jpg" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>                                                                     
+                        </table>  
+                    </div>
+                </div>
+
+                <!-- **************************  SHOW LIST OF ORDERS IN DATE ********************** -->
+                <div class="listDateOrder isDisplayed">
+                    <div class="date">
+                        <div class="backgroundTitle" style="background-color:#ff6699;">
+                            <h1>25/04/2018</h1>
+                        </div>
+                        <div class="triangle-right" style="border-left: 50px solid #ff6699;"></div>
+                        <table class="dateOrder">
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền (vnđ)</th>
+                                <th>User mua hàng</th>
+                                <th>Trạng thái đơn hàng</th>
+                            </tr>
+                            <tr>
+                                <td>dh100</td>
+                                <td>Sony Alpha A7 Mark II + Lens 28-70mm</td>                                </th>
+                                <td>1</td>
+                                <td>31.990.000</td>
+                                <td>doraemon_cuke</td>
+                                <td>Giao hàng thành công</td>
+                            </tr>
+                            <tr>
+                                <td>dh99</td>
+                                <td>Canon M10 KIT 15-45mm </td>
+                                <td>1</td>
+                                <td>6.950.000</td>
+                                <td>nhiep_anh_gia_97</td>
+                                <td>Đang giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh98</td>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue</td>
+                                <td>3</td>
+                                <td>5.070.000</td>
+                                <td>Studio_for_teenager</td>
+                                <td>Giao hàng thành công</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="date">
+                        <div class="backgroundTitle" style="background-color:#00e6ac;">
+                            <h1>24/04/2018</h1>
+                        </div>
+                        <div class="triangle-right" style="border-left: 50px solid #00e6ac;"></div>
+                        <table class="dateOrder">
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền (vnđ)</th>
+                                <th>User mua hàng</th>
+                                <th>Trạng thái đơn hàng</th>
+                            </tr>
+                            <tr>
+                                <td>dh97</td>
+                                <td>Nikon D5300 KIT 18-55 VR (VIC Nikon)</td>                               
+                                <td>1</td>
+                                <td>12.390.000</td>
+                                <td>KingOfPirate123</td>
+                                <td>Đang giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh96</td>
+                                <td>C Sony HX350 - 20.4 Megapixel, Zoom 50xnon M10 KIT 15-45mm </td>
+                                <td>1</td>
+                                <td>7.690.000</td>
+                                <td>zoro_OnePiece</td>
+                                <td>Chưa giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng</td>
+                                <td>1</td>
+                                <td>2.690.000</td>
+                                <td>ong_mat_troi</td>
+                                <td>Đang giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</td>
+                                <td>2</td>
+                                <td>5.380.000</td>
+                                <td>ong_mat_troi</td>
+                                <td>Đang giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Lime Green</td>
+                                <td>1</td>
+                                <td>2.690.000</td>
+                                <td>ong_mat_troi</td>
+                                <td>Đang giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue</td>
+                                <td>1</td>
+                                <td>3.690.000</td>
+                                <td>ong_mat_troi</td>
+                                <td>Đang giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh94</td>
+                                <td>Nikon D7500 + Lens Nikon 18-140mm F3.5-5.6G ED VR (VIC Nikon)</td>
+                                <td>1</td>
+                                <td>33.990.000</td>
+                                <td>blackPink_Jennie</td>
+                                <td>Giao hàng thành công</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="date">
+                        <div class="backgroundTitle" style="background-color:#ff751a;">
+                            <h1>04/04/2018</h1>
+                        </div>
+                        <div class="triangle-right" style="border-left: 50px solid #ff751a;"></div>
+                        <table class="dateOrder">
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền (vnđ)</th>
+                                <th>User mua hàng</th>
+                                <th>Trạng thái đơn hàng</th>
+                            </tr>
+                            <tr>
+                                <td>dh50</td>
+                                <td>EOS 6D + 24-105mm f/4L</td>
+                                <td>1</td>
+                                <td>37.000.000</td>
+                                <td>studio_chupHinhCuoi</td>
+                                <td>Giao hàng thành công</td>
+                            </tr>
+                            <tr>                               
+                                <td>dh50</td>
+                                <td>Nikon D5600 KIT AF-P 18-55 VR</td>
+                                <td>1</td>
+                                <td>14.990.000</td>
+                                <td>studio_chupHinhCuoi</td>
+                                <td>Giao hàng thành công</td>
+                            </tr>
+                            <tr>
+                                <td>dh49</td>
+                                <td>Sony Alpha A6000 + 16-50mm (Trắng)</td>
+                                <td>1</td>
+                                <td>2.490.000</td>
+                                <td>yeuMauTrang</td>
+                                <td>Chưa giao hàng</td>
+                            </tr>
+                            <tr>
+                                <td>dh48</td>
+                                <td>Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng</td>
+                                <td>1</td>
+                                <td>11.790.000</td>
+                                <td>helloWorld_python</td>
+                                <td>Đã hủy</td>
+                            </tr>
+                            <tr>
+                                <td>dh47</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</td>
+                                <td>1</td>
+                                <td>2.690.000</td>
+                                <td>park_bo_gum_fan</td>
+                                <td>Chưa giao hàng</td>
+                            </tr>
+                        </table>
+                    </div> 
+                </div>
+
+                <!-- **************************  SHOW LIST OF ORDERS IN DATE ********************** -->
+                <div class="listStatusOrder isDisplayed">
+                    <div class="status">
+                        <div class="backgroundTitle" style="background-color:#b3b3ff;">
+                            <h1>CHƯA GIAO HÀNG</h1>
+                        </div>
+                        <div class="triangle-right" style="border-left: 50px solid #b3b3ff;"></div>
+                        <table>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Ngày mua</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
+                                <th>User mua hàng</th>
+                            </tr>
+                            <tr>
+                                <td>dh96</td>
+                                <td>24/04/2018</td>
+                                <td>C Sony HX350 - 20.4 Megapixel, Zoom 50xnon M10 KIT 15-45mm </td>
+                                <td>1</td>
+                                <td>7.690.000</td>
+                                <td>zoro_OnePiece</td>
+                            </tr>
+                            <tr>
+                                <td>dh49</td>
+                                <td>04/04/2018</td>
+                                <td>Sony Alpha A6000 + 16-50mm (Trắng)</td>
+                                <td>1</td>
+                                <td>2.490.000</td>
+                                <td>yeuMauTrang</td>
+                            </tr>
+                            <tr>
+                                <td>dh47</td>
+                                <td>04/04/2018</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</td>
+                                <td>1</td>
+                                <td>2.690.000</td>
+                                <td>park_bo_gum_fan</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="status">
+                        <div class="backgroundTitle" style="background-color:#ff33ff;">
+                            <h1>ĐANG GIAO HÀNG</h1>
+                        </div>
+                        <div class="triangle-right" style="border-left: 50px solid #ff33ff;"></div>
+                        <table>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Ngày mua</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
+                                <th>User mua hàng</th>
+                            </tr>
+                            <tr>
+                                <td>dh99</td>
+                                <td>25/04/2018</td>
+                                <td>Canon M10 KIT 15-45mm </td>
+                                <td>1</td>
+                                <td>6.950.000</td>
+                                <td>nhiep_anh_gia_97</td>
+                            </tr>
+                            <tr>
+                                <td>dh97</td>
+                                <td>24/04/2018</td>
+                                <td>Nikon D5300 KIT 18-55 VR (VIC Nikon)</td>                                
+                                <td>1</td>
+                                <td>12.390.000</td>
+                                <td>KingOfPirate123</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>24/04/2018</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng</td>
+                                <td>1</td>
+                                <td>2.690.000</td>
+                                <td>ong_mat_troi</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>24/04/2018</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ</td>
+                                <td>2</td>
+                                <td>5.380.000</td>
+                                <td>ong_mat_troi</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>24/04/2018</td>
+                                <td>Selfie Lấy Liền Fujifilm Instax Mini 70 - Lime Green</td>
+                                <td>1</td>
+                                <td>2.690.000</td>
+                                <td>ong_mat_troi</td>
+                            </tr>
+                            <tr>
+                                <td>dh95</td>
+                                <td>24/04/2018</td>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue</td>
+                                <td>1</td>
+                                <td>3.690.000</td>
+                                <td>ong_mat_troi</td>
+                            </tr>  
+                        </table>
+                    </div>
+
+                    <div class="status">
+                        <div class="backgroundTitle" style="background-color: #ffff4d;">
+                            <h1>GIAO HÀNG THÀNH CÔNG</h1>
+                        </div>
+                        <div class="triangle-right" style="border-left: 50px solid  #ffff4d;"></div>
+                        <table>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Ngày mua</th>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
+                                <th>User mua hàng</th>
+                            </tr>
+                            <tr>
+                                <td>dh100</td>
+                                <td>25/04/2018</td>
+                                <td>Sony Alpha A7 Mark II + Lens 28-70mm</td>                                </th>
+                                <td>1</td>
+                                <td>31.990.000</td>
+                                <td>doraemon_cuke</td>
+                            </tr>
+                            <tr>
+                                <td>dh98</td>
+                                <td>25/04/2018</td>
+                                <td>Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue</td>
+                                <td>3</td>
+                                <td>5.070.000</td>
+                                <td>Studio_for_teenager</td>
+                            </tr>
+                            <tr>
+                                <td>dh94</td>
+                                <td>24/04/2018</td>
+                                <td>Nikon D7500 + Lens Nikon 18-140mm F3.5-5.6G ED VR (VIC Nikon)</td>
+                                <td>1</td>
+                                <td>33.990.000</td>
+                                <td>blackPink_Jennie</td>
+                            </tr>
+                            <tr>
+                                <td>dh50</td>
+                                <td>04/04/2018</td>
+                                <td>EOS 6D + 24-105mm f/4L</td>
+                                <td>1</td>
+                                <td>37.000.000</td>
+                                <td>studio_chupHinhCuoi</td>
+                            </tr>
+                            <tr>                               
+                                <td>dh50</td>
+                                <td>04/04/2018</td>
+                                <td>Nikon D5600 KIT AF-P 18-55 VR</td>
+                                <td>1</td>
+                                <td>14.990.000</td>
+                                <td>studio_chupHinhCuoi</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- **************************  ADD NEW PRODUCTS  ********************** -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <button id="closeFormBtn"><i class="fa fa-close"></i></button>
+                        <form action="#">
+                            <label for="namePro">Tên sản phẩm</label><br>
+                            <input type="text" name="namePro"><br><br>
+            
+                            <label for="idPro">Mã sản phẩm</label><br>
+                            <input type="text" name="idPro"><br><br>
+            
+                            <label for="nxs">Thương hiệu/Nhà sản xuất</label><br>
+                            <input type="text" name="nxs"><br><br>
+            
+                            <label for="typePro">Loại sản phẩm</label><br>
+                            <input type="text" name="typePro"><br><br>
+            
+                            <label for="price">Giá tiền (giá bán lẻ)</label><br>
+                            <input type="text" name="price"><br><br>
+                            
+            
+                            <label for="numberPro">Số lượng</label><br>
+                            <input type="combobox" name="numberPro"><br><br>
+            
+                            <label for="addImage">Thêm hình ảnh</label>
+                            <input type="file" id="productImage"><br><br>
+            
+                            <input type="submit" name="addNewBtn" value="Add new products" id="addBtn">
+                        </form>
+                    </div>
+                </div>
+
+
+                <!-- **************************  SHOW CHARTS  ********************** -->
+                <div class="charts isDisplayed">
+                    <div class="row">
+                        <div class="col-sm-6 brandChart">
+                            <canvas id="brandCanvas" width="480" height="290" style="border:4px double darkblue; background-color:#e6e6e6;"></canvas>
+                            <h3>Thống kê số lượng sản phẩm theo nhãn hiệu</h3>
+                        </div>
+                        <div class="col-sm-6 typeChart">
+                            <canvas id="typeCanvas" width="480" height="290" style="border:4px double darkblue; background-color:#e6e6e6;"></canvas>
+                            <h3>Thống kê số lượng sản phẩm theo loại</h3>
+                        </div>
+                    </div>
+                    <div class="orderChart">
+                        <canvas id="orderCanvas" width="970" height="350" style="border:4px double darkblue; background-color:#e6e6e6;"></canvas>
+                        <h3>Thống kê số lượng đơn hàng theo trạng thái</h3>
+                    </div>
+                    
+
+                    <script>
+                        var ele = document.getElementById("brandCanvas");
+                        var col = ele.getContext("2d");
+                        var x = 40, h = 240, distance = 40, y = 240 - h; //x, y are coordinates and h is height of collumn
+                        var w = 70 //width of a collumn
+                        var colorBrand = ["#00ff00", "#b30000", "#cc00cc", "#008ae6"];
+                        var heightBrand = [57.6, 36, 103.2, 43.2];
+                        var percentBrand = ["24%", "15%", "43%", "18%"];
+                        var nameBrand = ["Canon", "Nikon", "Fujifilm", "Sony"];
+
+                        for (var i = 0; i < 4; i++) {
+                            h = heightBrand[i];
+                            y = 240 - h;
+                            //Display collumn statistic
+                            col.beginPath();
+                            col.rect(x, y, w, h);
+                            col.stroke();
+                            col.fillStyle = colorBrand[i];
+                            col.fill();
+
+                            //Display name of its brand
+                            col.font = "20px Helvetica";
+                            col.fillStyle = "black";
+                            col.fillText(nameBrand[i], x, 270);
+
+                            col.beginPath();
+                            col.font = "25px Helvetica";
+                            col.fillText(percentBrand[i], x + 10, y - 10);  
+                            
+                            x += w + distance;
+                        }
+                        col.beginPath();
+                        col.moveTo(20, 240);
+                        col.lineTo(460, 240);
+                        col.stroke();
+
+                        col.beginPath();
+                        col.moveTo(20, 20);
+                        col.lineTo(20, 240);
+                        col.stroke();
+
+
+                        //*******************  STATISTIC OF NUMBER OF PRODUCTS IN TYPES ********************
+                        ele = document.getElementById("typeCanvas");
+                        col = ele.getContext("2d");
+                        x = 70, h = 240, distance = 70, y = 240 - h; //x, y are coordinates and h is height of collumn
+                        w = 70 //width of a collumn
+                        var colorType = ["#ff6600", "#0099ff", "#00b300"];
+                        var heightType = [57.6, 115.2, 67.2];
+                        var percentType = ["24%", "48%", "28%"];
+                        var nameType = ["Máy cơ", "Kỹ thuật số", "Máy lấy liền"];
+
+                        for (var i = 0; i < 3; i++) {
+                            h = heightType[i];
+                            y = 240 - h;
+                            col.beginPath();
+                            col.rect(x, y, w, h);
+                            col.stroke();
+                            col.fillStyle = colorType[i];
+                            col.fill();
+
+                        //Display name of its type
+                        col.font = "20px Helvetica";
+                            col.fillStyle = "black";
+                            col.fillText(nameType[i], x, 270);
+
+                            col.beginPath();
+                            col.font = "25px Helvetica";
+                            col.fillText(percentType[i], x + 10, y - 10);  
+                            x += w + distance;
+                        }      
+                        col.beginPath();
+                        col.moveTo(20, 240);
+                        col.lineTo(450, 240);
+                        col.stroke();
+
+                        col.beginPath();
+                        col.moveTo(20, 20);
+                        col.lineTo(20, 240);
+                        col.stroke();
+
+
+                        //*******************  STATISTIC OF NUMBER OF PRODUCTS IN TYPES ********************
+                        ele = document.getElementById("orderCanvas");
+                        col = ele.getContext("2d");
+                        x = 80, h = 240, distance = 100, y = 290 - h; //x, y are coordinates and h is height of collumn
+                        w = 200 //width of a collumn
+                        var colorOrder = ["#ff6600", "#0099ff", "#00b300"];
+                        var heightOder = [48, 94.8, 157.2];
+                        var percentOrder = ["16%", "31.6%", "52.4%"];
+                        var nameOrder = ["Chưa giao hàng", "Đang giao hàng", "Giao hàng thành công"];
+
+                        for (var i = 0; i < 3; i++) {
+                            h = heightOder[i];
+                            y = 290 - h;
+                            col.beginPath();
+                            col.rect(x, y, w, h);
+                            col.stroke();
+                            col.fillStyle = colorOrder[i];
+                            col.fill();
+
+                        //Display name of its type
+                        col.font = "20px Helvetica";
+                            col.fillStyle = "black";
+                            col.fillText(nameOrder[i], x + 20, 320);
+
+                            col.beginPath();
+                            col.font = "25px Helvetica";
+                            col.fillText(percentOrder[i], x + 70, y - 10);  
+                            x += w + distance;
+                        }      
+                        col.beginPath();
+                        col.moveTo(20, 290);
+                        col.lineTo(930, 290);
+                        col.stroke();
+
+                        col.beginPath();
+                        col.moveTo(20, 20);
+                        col.lineTo(20, 290);
+                        col.stroke(); 
+
+                    </script>
+                </div>
+
+                
+                <!-- **************************  SHOW ACCOUNT  ********************** -->
+                <div class="showAccount isDisplayed">
+                    <h1>Your profile!</h1>
+                    <form action="">
+                        <label for="fullName">Họ tên</label><br>
+                        <input type="text" value="Monkey D.Luffy" name="fullName"><br><br>
+            
+                        <label for="email">Email</label><br>
+                        <input type="text" name="email" value="luffy@gmail.com"><br><br>
+            
+                        <label for="numberPhone">Số điện thoại</label><br>
+                        <input type="text" name="numberPhone" value="0123456789"><br><br>
+            
+                        <label for="gender">Giới tính</label><br>
+                        <select name="gender">
+                            <option value="nam">Nam</option>
+                            <option value="nu">Nữ</option>
+                        </select><br><br>
+            
+                        <label for="uname">Username</label><br>
+                        <input type="text" name="uname" value="the_pirate_king"><br><br>
+            
+                        <label for="pass">Password</label><br>
+                        <input type="submit" name="pass" value="Change password"><br><br>
+                    </form>
+                </div>
+    
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./../../assets/js/javaScript_AdminPage.js"></script>
+    
+</body>
+</html>

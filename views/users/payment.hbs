@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Pirates - Chuyên cung cấp máy ảnh số chất lượng nhất</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/bootstrap-grid.min.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/jquery.fullpage.min.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styleUserPages.css" />
-</head>
-<body>
-    
-  <header id="header" class="header">
+{{#section 'css'}}
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/styleUserPages.css" />
+{{/section}}
+
+{{#section 'header'}}
+    <header id="header" class="header">
     <div class="container">
       <div class="row">
         <div class="header-left col-sm-6">
@@ -37,6 +28,84 @@
       </div>
     </div>
   </header>
+{{/section}}
+{{#section 'footer'}}
+  <script src="../../assets/js/javaScript_HomePage.js"></script>
+
+  <script>
+    jQuery(document).ready(function($) {
+      function transition(next){
+        $('.slider-control .slider-dot').removeClass('active');
+        $('.slider-dot').eq(next).addClass('active');
+        $('.pirate-intro-slider-item').removeClass('active');
+        $('.pirate-intro-slider-item').eq(next).addClass('active');
+      }
+      function autoSlide(){
+        var i = $('.slider-dot').index($('.slider-dot.active'));
+        if(i>=$('.slider-dot').length-1){
+          i=-1;
+        }
+        transition(i+1);
+      }
+      var repeat = setInterval(autoSlide,5000);
+      $('.slider-control .slider-dot').click(function(){
+        if(!$(this).is($('.slider-dot.active').eq(0)))
+        {
+          transition($('.slider-dot').index(this));
+          clearInterval(repeat);
+          setTimeout(()=>{
+            repeat = setInterval(autoSlide,5000);
+          },5000);
+        }
+      });
+      $('.product-cat-list li').click(function(){
+        var i =$('.product-cat-list li').index($(this));
+        $('.product-list-content').removeClass('active');
+        $('.product-list-content').eq(i).addClass('active');
+      });
+      var i_sale=0;
+      $('.sale-slider-control .sale-prev').click(function(){
+        if(!i_sale){
+          i_sale=2;
+        }
+        else{
+          i_sale--;
+        }
+        $('.sale-slider').css('transform',`translateX(-${33.333333*i_sale}%)`);
+      });
+      $('.sale-slider-control .sale-next').click(function(){
+        if(i_sale==2){
+          i_sale=0;
+        }
+        else{
+          i_sale++;
+        }
+        $('.sale-slider').css('transform',`translateX(-${33.333333*i_sale}%)`);
+      });
+      var i_new=0;
+      $('.new-slider-control .new-prev').click(function(){
+        if(!i_new){
+          i_new=1;
+        }
+        else{
+          i_new--;
+        }
+        $('.new-slider').css('transform',`translateX(-${50*i_new}%)`);
+      });
+      $('.new-slider-control .new-next').click(function(){
+        if(i_new==1){
+          i_new=0;
+        }
+        else{
+          i_new++;
+        }
+        $('.new-slider').css('transform',`translateX(-${50*i_new}%)`);
+      });
+
+    });
+  </script>
+{{/section}}
+
 
   <div class="payment">
       <div class="payment-process">
@@ -166,79 +235,6 @@
 
   </div>
 
-<script src="../../assets/js/javaScript_HomePage.js"></script>
 
-<script>
-  jQuery(document).ready(function($) {
-    function transition(next){
-      $('.slider-control .slider-dot').removeClass('active');
-      $('.slider-dot').eq(next).addClass('active');
-      $('.pirate-intro-slider-item').removeClass('active');
-      $('.pirate-intro-slider-item').eq(next).addClass('active');
-    }
-    function autoSlide(){
-      var i = $('.slider-dot').index($('.slider-dot.active'));
-      if(i>=$('.slider-dot').length-1){
-        i=-1;
-      }
-      transition(i+1);
-    }
-    var repeat = setInterval(autoSlide,5000);
-    $('.slider-control .slider-dot').click(function(){
-      if(!$(this).is($('.slider-dot.active').eq(0)))
-      {
-        transition($('.slider-dot').index(this));
-        clearInterval(repeat);
-        setTimeout(()=>{
-          repeat = setInterval(autoSlide,5000);
-        },5000);
-      }
-    });
-    $('.product-cat-list li').click(function(){
-      var i =$('.product-cat-list li').index($(this));
-      $('.product-list-content').removeClass('active');
-      $('.product-list-content').eq(i).addClass('active');
-    });
-    var i_sale=0;
-    $('.sale-slider-control .sale-prev').click(function(){
-      if(!i_sale){
-        i_sale=2;
-      }
-      else{
-        i_sale--;
-      }
-      $('.sale-slider').css('transform',`translateX(-${33.333333*i_sale}%)`);
-    });
-    $('.sale-slider-control .sale-next').click(function(){
-      if(i_sale==2){
-        i_sale=0;
-      }
-      else{
-        i_sale++;
-      }
-      $('.sale-slider').css('transform',`translateX(-${33.333333*i_sale}%)`);
-    });
-    var i_new=0;
-    $('.new-slider-control .new-prev').click(function(){
-      if(!i_new){
-        i_new=1;
-      }
-      else{
-        i_new--;
-      }
-      $('.new-slider').css('transform',`translateX(-${50*i_new}%)`);
-    });
-    $('.new-slider-control .new-next').click(function(){
-      if(i_new==1){
-        i_new=0;
-      }
-      else{
-        i_new++;
-      }
-      $('.new-slider').css('transform',`translateX(-${50*i_new}%)`);
-    });
-
-  });
-</script>
 </body>
 </html>
