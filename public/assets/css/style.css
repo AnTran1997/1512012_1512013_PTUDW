@@ -428,7 +428,7 @@ a:hover {
   height: 50px;
   border: 1px solid #F36F21;
   border-radius: 100px;
-  font: 25px 'OpensSan';
+  font: 20px 'OpensSan';
   color: #999;
   padding: 0 20px;
 }
@@ -1060,7 +1060,7 @@ footer .footer-right .address span i {
 
 .best .best-list .best-slider .slider-item {
   width: 8.333333%;
-  float: left;
+  display: grid;
   padding: 0 5px;
   position: relative;
 }
@@ -1154,6 +1154,7 @@ footer .footer-right .address span i {
   -webkit-background-clip: text;
   color: transparent;
   text-align: right;
+  width: 100%;
 }
 
 .best .best-title span {
@@ -1199,6 +1200,7 @@ footer .footer-right .address span i {
   font: 55.37px 'OpenSansBold';
   color: white;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .most h2.most-title span {
@@ -1264,7 +1266,7 @@ footer .footer-right .address span i {
 
 .most .most-list .most-slider .slider-item {
   width: 10%;
-  float: left;
+  display: grid;
   padding: 0 5px;
   position: relative;
 }
@@ -1345,6 +1347,7 @@ footer .footer-right .address span i {
   font: 55.37px 'OpenSansBold';
   color: white;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .new h2.new-title span {
@@ -1357,7 +1360,7 @@ footer .footer-right .address span i {
   position: absolute;
   top: 0;
   right: 0;
-  width: 75%;
+  width: 90%;
   height: 5px;
   background: white;
 }
@@ -1410,7 +1413,7 @@ footer .footer-right .address span i {
 
 .new .new-list .new-slider .slider-item {
   width: 10%;
-  float: left;
+  display: grid;
   padding: 0 5px;
   position: relative;
 }
@@ -1489,6 +1492,7 @@ footer .footer-right .address span i {
   font: 50px 'OpenSansBold';
   color: #F36F21;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .sale-view h2.sale-view-title span {
@@ -1501,7 +1505,7 @@ footer .footer-right .address span i {
   position: absolute;
   top: 0;
   right: 0;
-  width: 60%;
+  width: 75%;
   height: 5px;
   background: linear-gradient(to right, #F37021, #FBB040);
 }
@@ -1654,6 +1658,7 @@ footer .footer-right .address span i {
   font: 50px 'OpenSansBold';
   color: #F36F21;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .view-all h2.view-title span {
@@ -1666,7 +1671,7 @@ footer .footer-right .address span i {
   position: absolute;
   top: 0;
   right: 0;
-  width: 85%;
+  width: 90%;
   height: 5px;
   background: linear-gradient(to right, #F37021, #FBB040);
 }
@@ -1681,13 +1686,13 @@ footer .footer-right .address span i {
   cursor: pointer;
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item.active > h3 {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item.active  h3 {
   font-family: 'OpenSansBold';
   background: linear-gradient(to right, #F37021, #FBB040);
   color: white;
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item.active > h3 i {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item.active  h3 i {
   color: white;
 }
 
@@ -1704,7 +1709,7 @@ footer .footer-right .address span i {
   padding-bottom: 20px;
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item h3 {
   margin: 0;
   padding: 20px 0 20px 25px;
   font: 20px 'OpenSans';
@@ -1712,7 +1717,7 @@ footer .footer-right .address span i {
   position: relative;
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 .expand {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item h3 .expand {
   font: 40px 'OpenSansBold';
   background: linear-gradient(to right, #F37021, #FBB040);
   color: transparent;
@@ -1725,7 +1730,7 @@ footer .footer-right .address span i {
   transform: translateY(-50%);
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 .shrink {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item h3 .shrink {
   display: none;
   content: '-';
   font: 50px 'OpenSansBold';
@@ -1738,7 +1743,7 @@ footer .footer-right .address span i {
   transform: translateY(-50%);
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 i {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item h3 i {
   color: transparent;
   background: linear-gradient(to right, #F37021, #FBB040);
   background-clip: text;
@@ -1748,7 +1753,7 @@ footer .footer-right .address span i {
   vertical-align: middle;
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 span {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item h3 span {
   display: inline-block;
   vertical-align: middle;
   margin-left: 30px;
@@ -1760,7 +1765,7 @@ footer .footer-right .address span i {
   padding: 20px 0 0 70px;
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item .view-cat-sub-list .view-cat-sub-item {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item .view-cat-sub-list .view-cat-sub-item a{
   font: 14px 'OpenSansLight';
   line-height: 30px;
   color: #666666;
@@ -1796,10 +1801,14 @@ footer .footer-right .address span i {
   cursor: pointer;
 }
 
+.view-all .view-content .view-list .view-list-content{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
 .view-all .view-content .view-list .view-item {
   padding: 0 10px;
-  width: 33.3333333%;
-  float: left;
+  display: inline-grid;
   margin: 10px 0;
   position: relative;
 }
@@ -2602,9 +2611,9 @@ ul {
   height: 50ch;
   border: black solid 2px;
 }
-  .searchResult h1, h2 {
-    display: inline-block;
-  }
+.searchResult h1, h2 {
+  display: inline-block;
+}
 
 .result {
   width: 20%;
@@ -2637,7 +2646,7 @@ ul {
 }
 
 .result-hover {
-  
+
   background-color: #ff751a;
   color: white;
   height: 50px;

@@ -1,3 +1,349 @@
 {{#section 'title'}}
 Trang chủ
 {{/section}}
+
+<div class="best" id="best">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 best-list">
+        <div class="best-slider">
+          {{#each best}}
+          <div class="slider-item product-item">
+            <div class="best-item">
+              <div class="thumbnail"><img src="/assets/images/Products/{{productImg}}" alt=""></div>
+              <div class="best-name">{{productName}}</div>
+              <div class="best-price">
+                <span class="price-new">{{numberFormat productPrice}} VND</span>
+              </div>
+              <a href="pages/DetailPages/singlepage-2.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-sm-3 best-title">
+        <h2>Bán chạy nhất</h2>
+        <span>Nhanh tay mua ngay, số lượng có hạn. Tìm ngay cho mình chiếc máy ảnh phù hợp nhất với chất lượng tuyệt vời và giá cả phải chăng</span>
+        <div class="best-slider-control">
+          <div class="best-prev">
+            <i class="fa fa-arrow-left"></i>
+          </div>
+          <div class="best-next">
+            <i class="fa fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="most">
+ <div class="container">
+  <h2 class="most-title">Sản phẩm <span>xem nhiều nhất</span></h2>
+  <div class="most-slider-control">
+    <div class="most-prev">
+      <i class="fa fa-arrow-left"></i>
+    </div>
+    <div class="most-next">
+      <i class="fa fa-arrow-right"></i>
+    </div>
+  </div>
+  <div class="most-list">
+    <div class="most-slider">
+      {{#each mostViews}}
+      <div class="slider-item product-item">
+        <div class="most-item">
+          <div class="thumbnail"><img src="/assets/images/Products/{{productImg}}" alt=""></div>
+          <div class="most-name">{{productName}}</div>
+          <div class="most-price">{{numberFormat productPrice}} VND</div>
+          <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+          <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="sale-view" id="sale">
+  <div class="container">
+    <h2 class="sale-view-title">Sản phẩm <span>đang khuyến mãi</span></h2>
+  </div>
+  <div class="sale-view-content">
+    <div class="sale-view-col sale-view-col-1">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(/assets/images/Products/{{sale.0.productImg}});">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+        <div class="sale-view-hover">
+          <div class="sale-view-hover-content">
+            <h2>{{sale.0.productName}}</h2>
+            <div class="sale-view-price">
+              <span class="price-new">{{numberFormat sale.0.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.0.productPrice sale.2.productSale)}} VND</span>
+            </div>
+            <a href="pages/DetailPages/singlepage-2.html">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+      <div class="sale-view-cell-2 product-item" style="background-image: url(/assets/images/Products/{{sale.1.productImg}});">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+        <div class="sale-view-hover">
+          <div class="sale-view-hover-content">
+            <h2>{{sale.1.productName}}</h2>
+            <div class="sale-view-price">
+              <span class="price-new">{{numberFormat sale.1.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.1.productPrice sale.1.productSale)}} VND</span>
+            </div>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+      <div class="sale-view-cell-3 product-item" style="background-image: url(/assets/images/Products/{{sale.2.productImg}});">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+        <div class="sale-view-hover">
+          <div class="sale-view-hover-content">
+            <h2>{{sale.2.productName}}</h2>
+            <div class="sale-view-price">
+              <span class="price-new">{{numberFormat sale.2.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.2.productPrice sale.2.productSale)}} VND</span>
+            </div>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sale-view-col sale-view-col-2">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(/assets/images/Products/{{sale.3.productImg}});">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+        <div class="sale-view-hover">
+          <div class="sale-view-hover-content">
+            <h2>{{sale.3.productName}}</h2>
+            <div class="sale-view-price">
+              <span class="price-new">{{numberFormat sale.3.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.3.productPrice sale.3.productSale)}} VND</span>
+            </div>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+      <div class="sale-view-cell-2 product-item" style="background-image: url(/assets/images/Products/{{sale.4.productImg}});">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+        <div class="sale-view-hover">
+          <div class="sale-view-hover-content">
+            <h2>{{sale.4.productName}}</h2>
+            <div class="sale-view-price">
+              <span class="price-new">{{numberFormat sale.4.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.4.productPrice sale.4.productSale)}} VND</span>
+            </div>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sale-view-col sale-view-col-3">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(/assets/images/Products/{{sale.5.productImg}});">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+        <div class="sale-view-hover">
+          <div class="sale-view-hover-content">
+            <h2>{{sale.5.productName}}</h2>
+            <div class="sale-view-price">
+              <span class="price-new">{{numberFormat sale.5.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.5.productPrice sale.5.productSale)}} VND</span>
+            </div>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+      <div class="sale-view-cell-2 product-item" style="background-image: url(/assets/images/Products/{{sale.6.productImg}});">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+        <div class="sale-view-hover">
+          <div class="sale-view-hover-content">
+            <h2>{{sale.6.productName}}</h2>
+            <div class="sale-view-price">
+              <span class="price-new">{{numberFormat sale.6.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.6.productPrice sale.6.productSale)}} VND</span>
+            </div>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+      <div class="sale-view-cell-3 product-item" style="background-image: url(/assets/images/Products/{{sale.7.productImg}});">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+        <div class="sale-view-hover">
+          <div class="sale-view-hover-content">
+            <h2>{{sale.7.productName}}</h2>
+            <div class="sale-view-price">
+              <span class="price-new">{{numberFormat sale.7.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.7.productPrice sale.7.productSale)}} VND</span>
+            </div>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sale-view-col sale-view-col-4">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(/assets/images/Products/{{sale.8.productImg}});">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+        <div class="sale-view-hover">
+          <div class="sale-view-hover-content">
+            <h2>{{sale.8.productName}}</h2>
+            <div class="sale-view-price">
+              <span class="price-new">{{numberFormat sale.8.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.8.productPrice sale.8.productSale)}} VND</span>
+            </div>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+      <div class="sale-view-cell-2 product-item" style="background-image: url(/assets/images/Products/{{sale.9.productImg}});">
+        <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+        <div class="sale-view-hover">
+          <div class="sale-view-hover-content">
+            <h2>{{sale.9.productName}}</h2>
+            <div class="sale-view-price">
+              <span class="price-new">{{numberFormat sale.9.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.9.productPrice sale.9.productSale)}} VND</span>
+            </div>
+            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="new" id="new">
+ <div class="container">
+  <h2 class="new-title">Sản phẩm <span>mới</span></h2>
+  <div class="new-slider-control">
+    <div class="new-prev">
+      <i class="fa fa-arrow-left"></i>
+    </div>
+    <div class="new-next">
+      <i class="fa fa-arrow-right"></i>
+    </div>
+  </div>
+  <div class="new-list">
+    <div class="new-slider">
+      {{#each new}}
+      <div class="slider-item product-item">
+        <div class="new-item">
+          <div class="thumbnail"><img src="/assets/images/Products/{{productImg}}" alt=""></div>
+          <div class="new-name">{{productName}}</div>
+          <div class="new-price">{{numberFormat productPrice}} VND</div>
+          <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
+          <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="view-all" id="all">
+  <div class="container">
+    <h2 class="view-title">Xem <span>tất cả</span></h2>
+    <div class="view-content row">
+      <div class="col-sm-4 view-cat">
+        <ul class="view-cat-list">
+          <li class="view-cat-item cat">
+            <h3>
+              <i class="fa fa-camera-retro"></i>
+              <span>Loại Sản Phẩm</span>
+              <div class="expand">+</div>
+              <div class="shrink">-</div>
+            </h3>
+            <ul class="view-cat-sub-list">
+              {{#each cat}}
+                <li class="view-cat-sub-item"><input type="radio" name="type" class="{{catID}}"><a href="/home/cat/{{catID}}/{{../currentPage}}#all"><span>{{catName}}</span></a></li>
+              {{/each}}
+            </ul>
+          </li>
+          <li class="view-cat-item brand">
+            <h3>
+              <i class="fa fa-cogs"></i>
+              <span>Nhà Sản Xuất</span>
+              <div class="expand">+</div>
+              <div class="shrink">-</div>
+            </h3>
+            <ul class="view-cat-sub-list">
+              {{#each brand}}
+                <li class="view-cat-sub-item"><input type="radio" name="brand" class="{{brandID}}"><a href="/home/brand/{{brandID}}/{{../currentPage}}#all"><span>{{brandName}}</span></a></li>
+              {{/each}}
+            </ul>
+          </li>
+          <li class="view-cat-item all active">
+            <a href="/home/all/none/{{currentPage}}#all">
+              <h3>
+                <i class="fa fa-cubes"></i>
+                <span>Tất Cả</span>
+              </h3>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-8 view-list">
+        <div class="view-list-pagination">
+          {{#each (for page)}}
+          <a href="/home/{{../currentFilter}}/{{../currentFilterOption}}/{{math @index "+" 1}}#all"><div class="dot">{{math @index "+" 1}}</div></a>
+          {{/each}}
+        </div>
+        <div class="view-list-content">
+          {{#each currentAll}}
+          <div class="view-item product-item">
+            <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
+              <div class="thumbnail"><img src="/assets/images/Products/{{productImg}}" alt=""></div>
+              <div class="view-all-name">{{productName}}</div>
+              <div class="view-all-price">{{numberFormat productPrice}} VND</div>
+            </a>
+            <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+var curFil = '{{currentFilter}}';
+$('.view-cat-sub-item input').attr('checked', false);
+$('.view-cat-item').removeClass('active');
+$('.{{currentFilter}}').addClass('active');
+console.log(curFil);
+if(curFil!='all'){
+  $('.{{currentFilter}} input.{{currentFilterOption}}').prop('checked', true);
+}
+</script>
