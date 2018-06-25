@@ -2,6 +2,112 @@
 Trang chủ
 {{/section}}
 
+{{#section 'css'}}
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/home.css" />
+{{/section}}
+
+{{#section 'js'}}
+    <script src="/assets/js/home.js"></script>
+{{/section}}
+
+
+{{#section 'header'}}{{> header}}{{/section}}
+{{#section 'footer'}}{{> footer}}{{/section}}
+
+  <div class="intro" id="intro">
+    <div class="row">
+      <div class="col-sm-3 product-menu">
+        <div class="row">
+          <div class="col-sm-2 product-cat">
+           <ul class="product-cat-list">
+             <li><span>Loại Sản Phẩm</span></li>
+             <li><span>Nhà Sản Xuất</span></li>
+           </ul>
+         </div>
+         <div class="col-sm-10 product-cat-content">
+          <ul class="product-list-content active">
+              {{#each cat}}
+              <li class="product-item"><a href="/home/cat/{{catID}}/1#all">{{catName}}</a></li>
+              {{/each}}
+               <li class="product-item"><a href="/home/all/none/1#all">Tất cả</a></li>
+            </ul>
+            <ul class="product-list-content">
+              {{#each brand}}
+              <li class="product-item"><a href="/home/brand/{{brandID}}/1#all">{{brandName}}</a></li>
+              {{/each}}
+               <li class="product-item"><a href="/home/all/none/1#all">Tất cả</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9 slider-home">
+      <div class="slider-control">
+        <div class="slider-dot active"><span></span></div>
+        <div class="slider-dot"><span></span></div>
+        <div class="slider-dot"><span></span></div>
+      </div>
+      <div class="slider-outer">
+        <div class="pirate-intro-slider-item active" style="background-image: url(/assets/images/slider/slider-1-bg.jpg);background-color: rgba(29,45,59,0.8);background-size: cover">
+          <div class="pirate-slider-item-data">
+            <h3>CAMERA HẢI TẶC ĂN HẠI</h3>
+            <p>1512012 - Trần Thiên An</p>
+            <p>1512013 - Võ Thị Thúy An</p>
+          </div>
+          <div class="slider-item-shape">
+            <div class="triangle-bot-big">
+              <img src="/assets/images/slider/slider-1-bot-big.png" alt="">
+            </div>
+            <div class="triangle-bot-small">
+              <img src="/assets/images/slider/slider-1-bot-small.png" alt="">
+            </div>
+            <div class="triangle-top">
+              <img src="/assets/images/slider/slider-1-top-small.png" alt="">
+            </div>
+          </div>
+          <a href="#">Xem thêm</a>
+        </div>
+        <div class="pirate-intro-slider-item" style="background-image: url(/assets/images/slider/slider-2-bg.jpg);background-color: #dc6163;">
+          <div class="pirate-slider-item-data">
+            <h3>CAMERA HẢI TẶC ĂN HẠI</h3>
+            <p>Những mặt hàng mới nhất, đẹp nhất, độc đáo nhất với giá cực kỳ mềm dẻo do băng hải tặc Ăn Hại sau nhiều năm phiêu lưu trên biển đã thu thập được :D</p>
+          </div>
+          <div class="slider-item-shape">
+            <div class="triangle-bot-big">
+              <img src="/assets/images/slider/slider-2-bot-big.png" alt="">
+            </div>
+            <div class="triangle-bot-small">
+              <img src="/assets/images/slider/slider-2-bot-small.png" alt="">
+            </div>
+            <div class="triangle-top">
+              <img src="/assets/images/slider/slider-2-top-small.png" alt="">
+            </div>
+          </div>
+          <a href="#">Xem thêm</a>
+        </div>
+        <div class="pirate-intro-slider-item" style="background-image: url(/assets/images/slider/slider-3-bg.jpg);background-color: #c1b5a7;">
+          <div class="pirate-slider-item-data">
+            <h3>CAMERA HẢI TẶC ĂN HẠI</h3>
+            <p>Các mẫu máy ảnh cơ, máy kỹ thuật số, máy ảnh lấy liền vẫn được nhập về liên tục và ngày càng đa dạng hơn - nhờ sự hỗ trợ của Liên minh Hải Tặc trên toàn thế giới!!</p>
+          </div>
+          <div class="slider-item-shape">
+            <div class="triangle-bot-big">
+              <img src="/assets/images/slider/slider-3-bot-big.png" alt="">
+            </div>
+            <div class="triangle-bot-small">
+              <img src="/assets/images/slider/slider-3-bot-small.png" alt="">
+            </div>
+            <div class="triangle-top">
+              <img src="/assets/images/slider/slider-3-top-small.png" alt="">
+            </div>
+          </div>
+          <a href="#">Xem thêm</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="best" id="best">
   <div class="container">
     <div class="row">
@@ -15,7 +121,7 @@ Trang chủ
               <div class="best-price">
                 <span class="price-new">{{numberFormat productPrice}} VND</span>
               </div>
-              <a href="pages/DetailPages/singlepage-2.html" class="best-hover"><i class="fa fa-arrow-right"></i></a>
+              <a href="/product/detail/{{productID}}" class="best-hover"><i class="fa fa-arrow-right"></i></a>
               <button class="add">
                 <i class="fa fa-shopping-cart"></i>
               </button>
@@ -60,7 +166,7 @@ Trang chủ
           <div class="thumbnail"><img src="/assets/images/Products/{{productImg}}" alt=""></div>
           <div class="most-name">{{productName}}</div>
           <div class="most-price">{{numberFormat productPrice}} VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+          <a href="/product/detail/{{productID}}" class="most-hover"><i class="fa fa-arrow-right"></i></a>
           <button class="add">
             <i class="fa fa-shopping-cart"></i>
           </button>
@@ -90,7 +196,7 @@ Trang chủ
               <span class="price-new">{{numberFormat sale.0.productPrice}} VND</span>
               <span class="price-old">{{numberFormat (saleCal sale.0.productPrice sale.2.productSale)}} VND</span>
             </div>
-            <a href="pages/DetailPages/singlepage-2.html">Xem thêm</a>
+            <a href="/product/detail/{{productID}}">Xem thêm</a>
           </div>
         </div>
       </div>
@@ -105,7 +211,7 @@ Trang chủ
               <span class="price-new">{{numberFormat sale.1.productPrice}} VND</span>
               <span class="price-old">{{numberFormat (saleCal sale.1.productPrice sale.1.productSale)}} VND</span>
             </div>
-            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <a href="/product/detail/{{productID}}">Xem thêm</a>
           </div>
         </div>
       </div>
@@ -120,7 +226,7 @@ Trang chủ
               <span class="price-new">{{numberFormat sale.2.productPrice}} VND</span>
               <span class="price-old">{{numberFormat (saleCal sale.2.productPrice sale.2.productSale)}} VND</span>
             </div>
-            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <a href="/product/detail/{{productID}}">Xem thêm</a>
           </div>
         </div>
       </div>
@@ -137,7 +243,7 @@ Trang chủ
               <span class="price-new">{{numberFormat sale.3.productPrice}} VND</span>
               <span class="price-old">{{numberFormat (saleCal sale.3.productPrice sale.3.productSale)}} VND</span>
             </div>
-            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <a href="/product/detail/{{productID}}">Xem thêm</a>
           </div>
         </div>
       </div>
@@ -152,7 +258,7 @@ Trang chủ
               <span class="price-new">{{numberFormat sale.4.productPrice}} VND</span>
               <span class="price-old">{{numberFormat (saleCal sale.4.productPrice sale.4.productSale)}} VND</span>
             </div>
-            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <a href="/product/detail/{{productID}}">Xem thêm</a>
           </div>
         </div>
       </div>
@@ -169,7 +275,7 @@ Trang chủ
               <span class="price-new">{{numberFormat sale.5.productPrice}} VND</span>
               <span class="price-old">{{numberFormat (saleCal sale.5.productPrice sale.5.productSale)}} VND</span>
             </div>
-            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <a href="/product/detail/{{productID}}">Xem thêm</a>
           </div>
         </div>
       </div>
@@ -184,7 +290,7 @@ Trang chủ
               <span class="price-new">{{numberFormat sale.6.productPrice}} VND</span>
               <span class="price-old">{{numberFormat (saleCal sale.6.productPrice sale.6.productSale)}} VND</span>
             </div>
-            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <a href="/product/detail/{{productID}}">Xem thêm</a>
           </div>
         </div>
       </div>
@@ -199,7 +305,7 @@ Trang chủ
               <span class="price-new">{{numberFormat sale.7.productPrice}} VND</span>
               <span class="price-old">{{numberFormat (saleCal sale.7.productPrice sale.7.productSale)}} VND</span>
             </div>
-            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <a href="/product/detail/{{productID}}">Xem thêm</a>
           </div>
         </div>
       </div>
@@ -216,7 +322,7 @@ Trang chủ
               <span class="price-new">{{numberFormat sale.8.productPrice}} VND</span>
               <span class="price-old">{{numberFormat (saleCal sale.8.productPrice sale.8.productSale)}} VND</span>
             </div>
-            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <a href="/product/detail/{{productID}}">Xem thêm</a>
           </div>
         </div>
       </div>
@@ -231,7 +337,7 @@ Trang chủ
               <span class="price-new">{{numberFormat sale.9.productPrice}} VND</span>
               <span class="price-old">{{numberFormat (saleCal sale.9.productPrice sale.9.productSale)}} VND</span>
             </div>
-            <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
+            <a href="/product/detail/{{productID}}">Xem thêm</a>
           </div>
         </div>
       </div>
@@ -258,7 +364,7 @@ Trang chủ
           <div class="thumbnail"><img src="/assets/images/Products/{{productImg}}" alt=""></div>
           <div class="new-name">{{productName}}</div>
           <div class="new-price">{{numberFormat productPrice}} VND</div>
-          <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
+          <a href="/product/detail/{{productID}}" class="new-hover"><i class="fa fa-arrow-right"></i></a>
           <button class="add">
             <i class="fa fa-shopping-cart"></i>
           </button>
@@ -321,7 +427,7 @@ Trang chủ
         <div class="view-list-content">
           {{#each currentAll}}
           <div class="view-item product-item">
-            <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
+            <a href="/product/detail/{{productID}}" class="view-all-item">
               <div class="thumbnail"><img src="/assets/images/Products/{{productImg}}" alt=""></div>
               <div class="view-all-name">{{productName}}</div>
               <div class="view-all-price">{{numberFormat productPrice}} VND</div>

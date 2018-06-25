@@ -7,6 +7,7 @@ var path = require('path');
 var handleLayoutMDW = require('./middle-wares/handleLayout');
 
 var homeControllers = require('./controllers/homeController');
+var productControllers = require('./controllers/productController');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.engine('hbs', exp_hbs({
 	}
 }));
 
+
 app.set('view engine', 'hbs');
 
 app.use(express.static(path.resolve(__dirname, 'public')));
@@ -51,6 +53,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/home', homeControllers);
+app.use('/product', productControllers);
 
 app.listen(3000, () => {
 	console.log('Site running on port 3000')

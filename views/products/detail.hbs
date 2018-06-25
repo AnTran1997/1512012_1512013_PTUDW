@@ -1,0 +1,201 @@
+{{#section 'css'}}
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/home.css" />
+{{/section}}
+{{#section 'class'}}singlepage{{/section}}
+{{#section 'header'}}{{> header}}{{/section}}
+{{#section 'footer'}}{{> footer}}{{/section}}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 item-detail">
+        <div class="item-top">
+          <div class="thumbnail">
+            <img src="/assets/images/Products/{{product.productImg}}" alt="">
+          </div>
+          <div class="detail">
+            <div class="name">
+              {{product.productName}}
+           </div>
+           <div class="price">
+            <span class="title">
+              <i class="fa fa-tag"></i>
+              <span>Giá</span>
+            </span>
+            <span class="des-info">{{numberFormat product.productPrice}} VND</span>
+          </div>
+          <div class="view">
+            <span class="title">
+              <i class="fa fa-eye"></i>
+              <span>Lượt xem</span>
+            </span>
+            <span class="des-info">{{product.productViews}} lượt</span>
+          </div>
+          <div class="sale">
+            <span class="title">
+              <i class="fa fa-history"></i>
+              <span>Đã bán</span>
+            </span>
+            <span class="des-info">{{product.productSold}} chiếc</span>
+          </div>
+        </div>
+        <button class="checkout">Thêm vào giỏ hàng</button>
+      </div>
+      <div class="item-bottom">
+        <h2 class="detail-title">Chi tiết <span>sản phẩm</span></h2>
+        <div class="info">
+          <div class="des">
+            <span class="title">Mô tả</span>
+            <span class="des-info">{{product.productDes}}</span>
+          </div>
+          <div class="place">
+            <span class="title">Xuất xứ</span>
+            <span class="des-info">{{product.productOrigin}}</span>
+          </div>
+          <div class="type">
+            <span class="title">Loại</span>
+            <span class="des-info">{{cat.catName}}</span>
+          </div>
+          <div class="producer">
+            <span class="title">Nhà sản xuất</span>
+            <span class="des-info">{{brand.brandName}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="most">
+        <h2 class="detail-title">Sản phẩm <span>cùng loại</span></h2>
+        <div class="container">
+          <div class="most-list">
+            <div class="most-slider">
+              <div class="slider-item product-item">
+                <div class="most-item">
+                 <div class="thumbnail"><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Cobalt Blue.jpg" alt=""></div>
+                 <div class="most-name">Fujifilm Instax Mini 9 - Cobalt Blue</div>
+                 <div class="most-price">2.690.000 VND</div>
+                 <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+                 <button class="add">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="slider-item product-item">
+              <div class="most-item">
+                <div class="thumbnail"><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax Mini 8 - Hello Kitty Đỏ.jpg" alt=""></div>
+                <div class="most-name">Fujifilm Instax Mini 8 - Hello Kitty Đỏ</div>
+                <div class="most-price">1.900.000 VND</div>
+               <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+               <button class="add">
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+          <div class="slider-item product-item">
+            <div class="most-item">
+              <div class="thumbnail"><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng Đồng.jpg" alt=""></div>
+              <div class="most-name">Fujifilm Instax Mini 70 - Vàng Đồng</div>
+              <div class="most-price">2.960.000 VND</div>
+             <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+             <button class="add">
+              <i class="fa fa-shopping-cart"></i>
+            </button>
+          </div>
+        </div>
+        <div class="slider-item product-item">
+          <div class="most-item">
+            <div class="thumbnail"><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Đen.jpg" alt=""></div>
+            <div class="most-name">Fujifilm Instax Mini 70 Selfie - Đen</div>
+            <div class="most-price">2.960.000 VND</div>
+           <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+           <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
+      </div>
+      <div class="slider-item product-item">
+        <div class="most-item">
+          <div class="thumbnail"><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 9 - Smoky White.jpg" alt=""></div>
+          <div class="most-name">Fujifilm Instax Mini 9 - Smoky White</div>
+          <div class="most-price">2.900.000 VND</div>
+         <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+         <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="most producer">
+  <h2 class="detail-title">Sản phẩm <span>cùng nhà sản xuất</span></h2>
+  <div class="container">
+    <div class="most-list">
+      <div class="most-slider">
+        <div class="slider-item product-item">
+          <div class="most-item">
+            <div class="thumbnail"><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax 25.jpg" alt=""></div>
+            <div class="most-name">Selfie Fujifilm Instax 25</div>
+            <div class="most-price">2.600.000 VND</div>
+           <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+           <button class="add">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+        </div>
+      </div>
+      <div class="slider-item product-item">
+        <div class="most-item">
+          <div class="thumbnail"><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Lấy Liền Fujifilm Instax SQUARE SQ10.jpg" alt=""></div>
+          <div class="most-name">Fujifilm Instax SQUARE SQ10</div>
+          <div class="most-price">5.990.000 VND</div>
+         <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+         <button class="add">
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+      </div>
+    </div>
+    <div class="slider-item product-item">
+      <div class="most-item">
+        <div class="thumbnail"><img src="./../../assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Đỏ.jpg" alt=""></div>
+        <div class="most-name">Fujifilm Instax Mini 70 - Đỏ</div>
+        <div class="most-price">2.690.000 VND</div>
+       <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+       <button class="add">
+        <i class="fa fa-shopping-cart"></i>
+      </button>
+    </div>
+  </div>
+  <div class="slider-item product-item">
+    <div class="most-item">
+      <div class="thumbnail"><img src="./../../assets/images/Brands/Fujifilm/Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng.jpg" alt=""></div>
+      <div class="most-name">Fujifilm Instax Mini 70 - Vàng</div>
+      <div class="most-price">2.690.000 VND</div>
+     <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+     <button class="add">
+      <i class="fa fa-shopping-cart"></i>
+    </button>
+  </div>
+</div>
+<div class="slider-item product-item">
+  <div class="most-item">
+    <div class="thumbnail"><img src="./../../assets/images/Brands/Fujifilm/Máy Ảnh Selfie Lấy Liền Fujifilm Instax Mini 70 - Vàng Đồng.jpg" alt=""></div>
+    <div class="most-name">Fujifilm Instax Mini - Vàng Đồng</div>
+    <div class="most-price">2.690.000 VND</div>
+   <a href="" class="most-hover"><i class="fa fa-arrow-right"></i></a>
+   <button class="add">
+    <i class="fa fa-shopping-cart"></i>
+  </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-3 ads">
+  <img src="../../assets/images/ads/1.jpg" alt="">
+  <img src="../../assets/images/ads/2.jpg" alt="">
+  <img src="../../assets/images/ads/3.jpg" alt="">
+  <img src="../../assets/images/ads/4.jpg" alt="">
+</div>
+</div>
+
+</div>

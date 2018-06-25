@@ -19,3 +19,8 @@ exports.loadBrandByPage = (offset, brand)=>{
 	var sql = `select * from products where productBrandID = '${brand}' limit 9 offset ${offset}`;
 	return db.load(sql);
 }
+
+exports.loadSingle = (proID) =>{
+	var sql = `select * from products where productID = '${proID}'`;
+	return db.load(sql);
+}
