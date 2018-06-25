@@ -276,7 +276,7 @@ Trang chủ
     <div class="view-content row">
       <div class="col-sm-4 view-cat">
         <ul class="view-cat-list">
-          <li class="view-cat-item">
+          <li class="view-cat-item cat">
             <h3>
               <i class="fa fa-camera-retro"></i>
               <span>Loại Sản Phẩm</span>
@@ -284,12 +284,12 @@ Trang chủ
               <div class="shrink">-</div>
             </h3>
             <ul class="view-cat-sub-list">
-              <li class="view-cat-sub-item"><input type="checkbox"><a href="/home/type/physic/1"><span>Máy ảnh cơ</span></a></li>
-              <li class="view-cat-sub-item"><input type="checkbox"><a href="/home/type/digital/1"><span>Máy ảnh kĩ thuật số</span></a></li>
-              <li class="view-cat-sub-item"><input type="checkbox"><a href="/home/type/instant/1"><span>Máy ảnh lấy liền</span></a></li>
+              {{#each cat}}
+                <li class="view-cat-sub-item"><input type="radio" name="type" class="{{catID}}"><a href="/home/cat/{{catID}}/{{../currentPage}}#all"><span>{{catName}}</span></a></li>
+              {{/each}}
             </ul>
           </li>
-          <li class="view-cat-item">
+          <li class="view-cat-item brand">
             <h3>
               <i class="fa fa-cogs"></i>
               <span>Nhà Sản Xuất</span>
@@ -297,24 +297,25 @@ Trang chủ
               <div class="shrink">-</div>
             </h3>
             <ul class="view-cat-sub-list">
-              <li class="view-cat-sub-item"><input type="checkbox"><a href="/home/type//1"><span>Canon</span></a></li>
-              <li class="view-cat-sub-item"><input type="checkbox"><a href="/home/type//1"><span>Fujifilm</span></a></li>
-              <li class="view-cat-sub-item"><input type="checkbox"><a href="/home/type//1"><span>Sony</span></a></li>
-              <li class="view-cat-sub-item"><input type="checkbox"><a href="/home/type//1"><span>Nikon</span></a></li>
+              {{#each brand}}
+                <li class="view-cat-sub-item"><input type="radio" name="brand" class="{{brandID}}"><a href="/home/brand/{{brandID}}/{{../currentPage}}#all"><span>{{brandName}}</span></a></li>
+              {{/each}}
             </ul>
           </li>
-          <li class="view-cat-item active">
-            <h3>
-              <i class="fa fa-cubes"></i>
-              <span>Tất Cả</span>
-            </h3>
+          <li class="view-cat-item all active">
+            <a href="/home/all/none/{{currentPage}}#all">
+              <h3>
+                <i class="fa fa-cubes"></i>
+                <span>Tất Cả</span>
+              </h3>
+            </a>
           </li>
         </ul>
       </div>
       <div class="col-sm-8 view-list">
         <div class="view-list-pagination">
           {{#each (for page)}}
-          <div class="dot"><a href="/home/all/{{math @index "+" 1}}#all">{{math @index "+" 1}}</a></div>
+          <a href="/home/{{../currentFilter}}/{{../currentFilterOption}}/{{math @index "+" 1}}#all"><div class="dot">{{math @index "+" 1}}</div></a>
           {{/each}}
         </div>
         <div class="view-list-content">
@@ -335,3 +336,14 @@ Trang chủ
     </div>
   </div>
 </div>
+
+<script>
+var curFil = '{{currentFilter}}';
+$('.view-cat-sub-item input').attr('checked', false);
+$('.view-cat-item').removeClass('active');
+$('.{{currentFilter}}').addClass('active');
+console.log(curFil);
+if(curFil!='all'){
+  $('.{{currentFilter}} input.{{currentFilterOption}}').prop('checked', true);
+}
+</script>

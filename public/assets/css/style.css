@@ -1686,13 +1686,13 @@ footer .footer-right .address span i {
   cursor: pointer;
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item.active > h3 {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item.active  h3 {
   font-family: 'OpenSansBold';
   background: linear-gradient(to right, #F37021, #FBB040);
   color: white;
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item.active > h3 i {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item.active  h3 i {
   color: white;
 }
 
@@ -1709,7 +1709,7 @@ footer .footer-right .address span i {
   padding-bottom: 20px;
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item h3 {
   margin: 0;
   padding: 20px 0 20px 25px;
   font: 20px 'OpenSans';
@@ -1717,7 +1717,7 @@ footer .footer-right .address span i {
   position: relative;
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 .expand {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item h3 .expand {
   font: 40px 'OpenSansBold';
   background: linear-gradient(to right, #F37021, #FBB040);
   color: transparent;
@@ -1730,7 +1730,7 @@ footer .footer-right .address span i {
   transform: translateY(-50%);
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 .shrink {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item h3 .shrink {
   display: none;
   content: '-';
   font: 50px 'OpenSansBold';
@@ -1743,7 +1743,7 @@ footer .footer-right .address span i {
   transform: translateY(-50%);
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 i {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item h3 i {
   color: transparent;
   background: linear-gradient(to right, #F37021, #FBB040);
   background-clip: text;
@@ -1753,7 +1753,7 @@ footer .footer-right .address span i {
   vertical-align: middle;
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item > h3 span {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item h3 span {
   display: inline-block;
   vertical-align: middle;
   margin-left: 30px;
@@ -1765,7 +1765,7 @@ footer .footer-right .address span i {
   padding: 20px 0 0 70px;
 }
 
-.view-all .view-content .view-cat .view-cat-list .view-cat-item .view-cat-sub-list .view-cat-sub-item {
+.view-all .view-content .view-cat .view-cat-list .view-cat-item .view-cat-sub-list .view-cat-sub-item a{
   font: 14px 'OpenSansLight';
   line-height: 30px;
   color: #666666;
@@ -1800,6 +1800,7 @@ footer .footer-right .address span i {
   margin: 0 5px;
   cursor: pointer;
 }
+
 .view-all .view-content .view-list .view-list-content{
   display: grid;
   grid-template-columns: auto auto auto;
