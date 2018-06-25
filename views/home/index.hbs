@@ -7,10 +7,10 @@ Trang chủ
     <div class="row">
       <div class="col-sm-9 best-list">
         <div class="best-slider">
-          {{#each layoutVM.best}}
+          {{#each best}}
           <div class="slider-item product-item">
             <div class="best-item">
-              <div class="thumbnail"><img src="./assets/images/Products/{{productImg}}" alt=""></div>
+              <div class="thumbnail"><img src="http://localhost:3000/assets/images/Products/{{productImg}}" alt=""></div>
               <div class="best-name">{{productName}}</div>
               <div class="best-price">
                 <span class="price-new">{{numberFormat productPrice}} VND</span>
@@ -54,10 +54,10 @@ Trang chủ
   </div>
   <div class="most-list">
     <div class="most-slider">
-      {{#each layoutVM.mostViews}}
+      {{#each mostViews}}
       <div class="slider-item product-item">
         <div class="most-item">
-          <div class="thumbnail"><img src="./assets/images/Products/{{productImg}}" alt=""></div>
+          <div class="thumbnail"><img src="http://localhost:3000/assets/images/Products/{{productImg}}" alt=""></div>
           <div class="most-name">{{productName}}</div>
           <div class="most-price">{{numberFormat productPrice}} VND</div>
           <a href="pages/DetailPages/singlepage-1.html" class="most-hover"><i class="fa fa-arrow-right"></i></a>
@@ -79,46 +79,46 @@ Trang chủ
   </div>
   <div class="sale-view-content">
     <div class="sale-view-col sale-view-col-1">
-      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.0.productImg}});">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(http://localhost:3000/assets/images/Products/{{sale.0.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>{{layoutVM.sale.0.productName}}</h2>
+            <h2>{{sale.0.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">{{numberFormat layoutVM.sale.0.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.0.productPrice layoutVM.sale.2.productSale)}} VND</span>
+              <span class="price-new">{{numberFormat sale.0.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.0.productPrice sale.2.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-2.html">Xem thêm</a>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.1.productImg}});">
+      <div class="sale-view-cell-2 product-item" style="background-image: url(http://localhost:3000/assets/images/Products/{{sale.1.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>{{layoutVM.sale.1.productName}}</h2>
+            <h2>{{sale.1.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">{{numberFormat layoutVM.sale.1.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.1.productPrice layoutVM.sale.1.productSale)}} VND</span>
+              <span class="price-new">{{numberFormat sale.1.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.1.productPrice sale.1.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-3 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.2.productImg}});">
+      <div class="sale-view-cell-3 product-item" style="background-image: url(http://localhost:3000/assets/images/Products/{{sale.2.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>{{layoutVM.sale.2.productName}}</h2>
+            <h2>{{sale.2.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">{{numberFormat layoutVM.sale.2.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.2.productPrice layoutVM.sale.2.productSale)}} VND</span>
+              <span class="price-new">{{numberFormat sale.2.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.2.productPrice sale.2.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -126,31 +126,31 @@ Trang chủ
       </div>
     </div>
     <div class="sale-view-col sale-view-col-2">
-      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.3.productImg}});">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(http://localhost:3000/assets/images/Products/{{sale.3.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>{{layoutVM.sale.3.productName}}</h2>
+            <h2>{{sale.3.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">{{numberFormat layoutVM.sale.3.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.3.productPrice layoutVM.sale.3.productSale)}} VND</span>
+              <span class="price-new">{{numberFormat sale.3.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.3.productPrice sale.3.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.4.productImg}});">
+      <div class="sale-view-cell-2 product-item" style="background-image: url(http://localhost:3000/assets/images/Products/{{sale.4.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>{{layoutVM.sale.4.productName}}</h2>
+            <h2>{{sale.4.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">{{numberFormat layoutVM.sale.4.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.4.productPrice layoutVM.sale.4.productSale)}} VND</span>
+              <span class="price-new">{{numberFormat sale.4.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.4.productPrice sale.4.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -158,46 +158,46 @@ Trang chủ
       </div>
     </div>
     <div class="sale-view-col sale-view-col-3">
-      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.5.productImg}});">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(http://localhost:3000/assets/images/Products/{{sale.5.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>{{layoutVM.sale.5.productName}}</h2>
+            <h2>{{sale.5.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">{{numberFormat layoutVM.sale.5.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.5.productPrice layoutVM.sale.5.productSale)}} VND</span>
+              <span class="price-new">{{numberFormat sale.5.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.5.productPrice sale.5.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.6.productImg}});">
+      <div class="sale-view-cell-2 product-item" style="background-image: url(http://localhost:3000/assets/images/Products/{{sale.6.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>{{layoutVM.sale.6.productName}}</h2>
+            <h2>{{sale.6.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">{{numberFormat layoutVM.sale.6.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.6.productPrice layoutVM.sale.6.productSale)}} VND</span>
+              <span class="price-new">{{numberFormat sale.6.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.6.productPrice sale.6.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-3 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.7.productImg}});">
+      <div class="sale-view-cell-3 product-item" style="background-image: url(http://localhost:3000/assets/images/Products/{{sale.7.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>{{layoutVM.sale.7.productName}}</h2>
+            <h2>{{sale.7.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">{{numberFormat layoutVM.sale.7.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.7.productPrice layoutVM.sale.7.productSale)}} VND</span>
+              <span class="price-new">{{numberFormat sale.7.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.7.productPrice sale.7.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -205,31 +205,31 @@ Trang chủ
       </div>
     </div>
     <div class="sale-view-col sale-view-col-4">
-      <div class="sale-view-cell-1 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.8.productImg}});">
+      <div class="sale-view-cell-1 product-item" style="background-image: url(http://localhost:3000/assets/images/Products/{{sale.8.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>{{layoutVM.sale.8.productName}}</h2>
+            <h2>{{sale.8.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">{{numberFormat layoutVM.sale.8.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.8.productPrice layoutVM.sale.8.productSale)}} VND</span>
+              <span class="price-new">{{numberFormat sale.8.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.8.productPrice sale.8.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
         </div>
       </div>
-      <div class="sale-view-cell-2 product-item" style="background-image: url(assets/images/Products/{{layoutVM.sale.9.productImg}});">
+      <div class="sale-view-cell-2 product-item" style="background-image: url(http://localhost:3000/assets/images/Products/{{sale.9.productImg}});">
         <button class="add">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
           <div class="sale-view-hover-content">
-            <h2>{{layoutVM.sale.9.productName}}</h2>
+            <h2>{{sale.9.productName}}</h2>
             <div class="sale-view-price">
-              <span class="price-new">{{numberFormat layoutVM.sale.9.productPrice}} VND</span>
-              <span class="price-old">{{numberFormat (saleCal layoutVM.sale.9.productPrice layoutVM.sale.9.productSale)}} VND</span>
+              <span class="price-new">{{numberFormat sale.9.productPrice}} VND</span>
+              <span class="price-old">{{numberFormat (saleCal sale.9.productPrice sale.9.productSale)}} VND</span>
             </div>
             <a href="pages/DetailPages/singlepage-1.html">Xem thêm</a>
           </div>
@@ -252,10 +252,10 @@ Trang chủ
   </div>
   <div class="new-list">
     <div class="new-slider">
-      {{#each layoutVM.new}}
+      {{#each new}}
       <div class="slider-item product-item">
         <div class="new-item">
-          <div class="thumbnail"><img src="./assets/images/Products/{{productImg}}" alt=""></div>
+          <div class="thumbnail"><img src="http://localhost:3000/assets/images/Products/{{productImg}}" alt=""></div>
           <div class="new-name">{{productName}}</div>
           <div class="new-price">{{numberFormat productPrice}} VND</div>
           <a href="pages/DetailPages/singlepage-1.html" class="new-hover"><i class="fa fa-arrow-right"></i></a>
@@ -313,15 +313,15 @@ Trang chủ
       </div>
       <div class="col-sm-8 view-list">
         <div class="view-list-pagination">
-          {{#each (for layoutVM.page)}}
-          <div class="dot"><a href="home/all?page={{math @index "+" 1}}">{{math @index "+" 1}}</a></div>
+          {{#each (for page)}}
+          <div class="dot"><a href="http://localhost:3000/home/all/{{math @index "+" 1}}#all">{{math @index "+" 1}}</a></div>
           {{/each}}
         </div>
         <div class="view-list-content">
-          {{#each layoutVM.currentAll}}
+          {{#each currentAll}}
           <div class="view-item product-item">
             <a href="pages/DetailPages/singlepage-1.html" class="view-all-item">
-              <div class="thumbnail"><img src="./assets/images/Products/{{productImg}}" alt=""></div>
+              <div class="thumbnail"><img src="http://localhost:3000/assets/images/Products/{{productImg}}" alt=""></div>
               <div class="view-all-name">{{productName}}</div>
               <div class="view-all-price">{{numberFormat productPrice}} VND</div>
             </a>
