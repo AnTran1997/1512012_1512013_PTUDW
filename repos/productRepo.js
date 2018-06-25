@@ -24,3 +24,14 @@ exports.loadSingle = (proID) =>{
 	var sql = `select * from products where productID = '${proID}'`;
 	return db.load(sql);
 }
+
+
+exports.loadSimilarCat = (catID, productID)=>{
+	var sql = `select * from products where productCatID = '${catID}' and productID <> '${productID}' limit 5`;
+	return db.load(sql);
+}
+
+exports.loadSimilarBrand = (brandID, productID)=>{
+	var sql = `select * from products where productBrandID = '${brandID}' and productID <> '${productID}' limit 5`;
+	return db.load(sql);
+}

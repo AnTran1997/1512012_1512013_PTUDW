@@ -1351,6 +1351,7 @@ a:hover {
   color: #F36F21;
   margin-bottom: 30px;
   text-transform: capitalize;
+  width:100%;
 }
 
 .singlepage h2.detail-title span {
@@ -1363,7 +1364,7 @@ a:hover {
   position: absolute;
   top: 0;
   right: 50px;
-  width: 70%;
+  width: 75%;
   height: 5px;
   background: linear-gradient(to right, #F37021, #FBB040);
 }
@@ -1516,10 +1517,6 @@ a:hover {
 .singlepage .most .thumbnail {
   width: 130px !important;
   height: 130px !important;
-}
-
-.singlepage .producer .detail-title span:before {
-  width: 60%;
 }
 
 .user .main-content {

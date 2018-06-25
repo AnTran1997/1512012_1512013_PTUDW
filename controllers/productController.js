@@ -13,13 +13,21 @@ router.get('/detail/:productID', (req, res) => {
 
     productRepo.loadSingle(productID).then(row=>{
         console.log(row);
-        var cat = categoryRepo.loadSingle(row.productCatID);
-        var brand = brandRepo.loadSingle(row.productBrandID);
-        Promise.all([cat,brand]).then(([catRow,brandRow])=>{
+        var catAll = categoryRepo.loadAll();
+        var brandAll = brandRepo.loadAll();
+        var cat = categoryRepo.loadSingle(row[0].productCatID);
+        var brand = brandRepo.loadSingle(row[0].productBrandID);
+        var proCat = productRepo.loadSimilarCat(row[0].productCatID, row[0].productID);
+        var proBrand = productRepo.loadSimilarBrand(row[0].productBrandID, row[0].productID);
+        Promise.all([catAll, brandAll, cat,brand, proCat, proBrand]).then(([catRows, brandRows, catRow,brandRow, proCatRow, proBrandRow])=>{
             vm = {
-                cat: catRow,
-                brand: brandRow,
+                cat: catRows,
+                brand: brandRows,
+                catS: catRow[0],
+                brandS: brandRow[0],
                 product: row[0],
+                proCat: proCatRow,
+                proBrand: proBrandRow
             }
             res.render('products/detail', vm);
         });
