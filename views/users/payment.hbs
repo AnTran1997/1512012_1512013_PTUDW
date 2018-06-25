@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pirates - Chuyên cung cấp máy ảnh số chất lượng nhất</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/bootstrap-grid.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/jquery.fullpage.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styleUserPages.css" />
+</head>
+<body>
+    
+  <header id="header" class="header">
+    <div class="container">
+      <div class="row">
+        <div class="header-left col-sm-6">
+          <img src="../../assets/design/logo-first-ver.png" alt="">
+        </div>
+        <div class="header-right col-sm-6">
+          <div class="row">
+            <div class="col-sm-6 header-search">
+              <input type="text">
+              <input type="submit">
+              <i class="fa fa-search"></i>
+            </div>
+            <div class="col-sm-2 header-basket">
+              <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="col-sm-4 header-user">
+              <i class="fa fa-user"></i>
+              <div class="hello-user">Hello, <span>Bảo</span>!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="payment">
+      <div class="payment-process">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-7 orderDetail"> 
+              <h1>1. Hình thức giao hàng</h1>
+              <div class="typeDelivery">  
+                <input type="radio" name="delivery" value="normal" checked>Giao hàng tiêu chuẩn<br>
+                  <li>Dự kiến giao hàng vào Thứ 4, 25/04/2018</li>
+                  <li>Phí vận chuyển phụ thuộc vào địa chỉ người nhận.</li><br>
+                <input type="radio" name="delivery" value="fast">Giao hàng cấp tốc <br>
+                  <li>Giao hàng trước 17h hôm nay, 23/04/2018</li>
+                  <li>30.000 đ</li><br>
+                <input type="radio" name="delivery" value="slow">Giao hàng tiết kiệm<br>
+                  <li>Dự kiến giao hàng vào Thứ 6, 27/04/2018/li>
+                  <li>10.000đ với nội thành Tp Hồ Chí Minh, 15.000đ với ngoại thành.</li> 
+              </div>
+
+              <h1>2. Hình thức thanh toán</h1>
+              <div class="typePayment">
+                  <input type="radio" name="paymentType" value="direct" checked>Thanh toán tiền mặt khi nhận hàng<br>
+                  <input type="radio" name="paymentType" value="banking">Thanh toán bằng thẻ ATM nội địa/internet banking <br>
+                  <input type="radio" name="paymentType" value="creditCard">Thanh toán bằng thẻ tín dụng<br>
+              </div>
+
+              <input type="submit" name="buyPro" value="ĐẶT MUA" id="booking" onclick="bookingCamera()">
+            </div>
+
+            <div class="col-sm-3 orderInfo">
+              <div class="resumeOrder">
+                <div class="row">
+                  <div class="col-sm-12 address">
+                    <div class="title-orderInfo">
+                      <h4>Địa chỉ giao hàng</h4>
+                      <button id="editAddress">Sửa</button>
+                    </div>
+                    <div class="addrContent">
+                      <h3>Lương Thái Bảo</h3>
+                      <li>1a Hoàng Diệu, phường 1, huyện Dầu Giây, Đồng Nai</li>
+                      <li>SĐT: 0973967387</li>
+                      <li>Viet Nam</li>
+                     </div>
+                  </div>
+                </div>
+            
+                <div class="row">
+                  <div class="col-sm-12 info">
+                    <div class="title-orderInfo">
+                      <h4>Đơn hàng - 3 sản phẩm</h4>
+                      <button id="editInfoProduct">Sửa</button>
+                    </div>
+                    <div class="productsInfo">
+                      <div class="row">
+                        <div class="col-sm-7 nameProduct">
+                            <h5>1x</h5>
+                            <p><a href="../DetailPages/detailProduct1.html">Máy Ảnh Lấy Liền Fujifilm Instax 25</a></p>
+                        </div>
+                        <div class="col-sm-5 priceProduct">
+                          <p>2.600.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="productsInfo">
+                      <div class="row">
+                        <div class="col-sm-7 nameProduct">
+                            <h5>1x</h5>
+                            <p><a href="../DetailPages/detailProduct1.html">Nikon D3400 KIT 18-55 VR (24.2MP)</a></p>
+                        </div>
+                        <div class="col-sm-5 priceProduct">
+                          <p>9.400.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="productsInfo">
+                      <div class="row">
+                        <div class="col-sm-7 nameProduct">
+                            <h5>1x</h5>
+                            <p><a href="../DetailPages/detailProduct1.html">Canon M10 KIT 15-45mm </a></p>
+                        </div>
+                        <div class="col-sm-5 priceProduct">
+                          <p>6.950.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="productsInfo">
+                      <div class="row">
+                        <div class="col-sm-7 nameProduct">
+                            <p>Tạm tính</p>
+                        </div>
+                        <div class="col-sm-5 priceProduct">
+                          <p>18.950.000 đ</p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-7 nameProduct">
+                            <p>Phí vận chuyển</p>
+                        </div>
+                        <div class="col-sm-5 priceProduct">
+                          <p>0 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="totalPay">
+                      <div class="row">
+                        <div class="col-sm-7">
+                            <p style="font-weight: bold;">Thành tiền</p>
+                        </div>
+                        <div class="col-sm-5 totalPrice">
+                          <p style="font-size: 20px; color: red; font-weight: bold;">18.950.000 đ</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+              
+                    
+                    
+
+                  
+                 
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+      </div>
+
+  </div>
+
+<script src="../../assets/js/javaScript_HomePage.js"></script>
+
+<script>
+  jQuery(document).ready(function($) {
+    function transition(next){
+      $('.slider-control .slider-dot').removeClass('active');
+      $('.slider-dot').eq(next).addClass('active');
+      $('.pirate-intro-slider-item').removeClass('active');
+      $('.pirate-intro-slider-item').eq(next).addClass('active');
+    }
+    function autoSlide(){
+      var i = $('.slider-dot').index($('.slider-dot.active'));
+      if(i>=$('.slider-dot').length-1){
+        i=-1;
+      }
+      transition(i+1);
+    }
+    var repeat = setInterval(autoSlide,5000);
+    $('.slider-control .slider-dot').click(function(){
+      if(!$(this).is($('.slider-dot.active').eq(0)))
+      {
+        transition($('.slider-dot').index(this));
+        clearInterval(repeat);
+        setTimeout(()=>{
+          repeat = setInterval(autoSlide,5000);
+        },5000);
+      }
+    });
+    $('.product-cat-list li').click(function(){
+      var i =$('.product-cat-list li').index($(this));
+      $('.product-list-content').removeClass('active');
+      $('.product-list-content').eq(i).addClass('active');
+    });
+    var i_sale=0;
+    $('.sale-slider-control .sale-prev').click(function(){
+      if(!i_sale){
+        i_sale=2;
+      }
+      else{
+        i_sale--;
+      }
+      $('.sale-slider').css('transform',`translateX(-${33.333333*i_sale}%)`);
+    });
+    $('.sale-slider-control .sale-next').click(function(){
+      if(i_sale==2){
+        i_sale=0;
+      }
+      else{
+        i_sale++;
+      }
+      $('.sale-slider').css('transform',`translateX(-${33.333333*i_sale}%)`);
+    });
+    var i_new=0;
+    $('.new-slider-control .new-prev').click(function(){
+      if(!i_new){
+        i_new=1;
+      }
+      else{
+        i_new--;
+      }
+      $('.new-slider').css('transform',`translateX(-${50*i_new}%)`);
+    });
+    $('.new-slider-control .new-next').click(function(){
+      if(i_new==1){
+        i_new=0;
+      }
+      else{
+        i_new++;
+      }
+      $('.new-slider').css('transform',`translateX(-${50*i_new}%)`);
+    });
+
+  });
+</script>
+</body>
+</html>

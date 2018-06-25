@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pirates - Chuyên cung cấp máy ảnh số chất lượng nhất</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="../../assets/images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/bootstrap-grid.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/jquery.fullpage.min.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/styleUserPages.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../assets/css/style.css" />
+</head>
+<body class="user">
+
+  <header id="header" class="header header-small">
+    <div class="container header-top">
+      <div class="row">
+        <div class="header-left col-sm-6">
+         <a href="../../index.html"><img src="../../assets/images/logo.png" alt=""></a>
+         <a href="../../index.html" style="width: max-content;"><p>Hải Tặc</p></a>
+       </div>
+       <div class="header-right col-sm-6">
+        <div class="row">
+          <div class="col-sm-6 header-search">
+            <input type="text">
+            <input type="submit" onclick="window.location.href='../searchResult.html'">
+            <i class="fa fa-search"></i>
+          </div>
+          <div class="col-sm-2 header-basket">
+            <i class="fa fa-shopping-cart">
+              <div class="buying-items"></div>
+            </i>
+          </div>
+          <div class="col-sm-4 header-user">
+            <i class="fa fa-user"></i>
+            <div class="hello-user">Hello, <span>User</span>!</div>
+            <ul class="sub-menu-user active">
+              <li><a href="./userAccount.html">Cập nhật thông tin</a></li>
+              <li><a href="./editOrder.html">Điều chỉnh đơn hàng</a></li>
+              <li><a href="./historyShopping.html">Lịch sử mua hàng</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-bottom row">
+    <div class="col-sm-3">
+      <div class="product-menu-title">Danh mục sản phẩm
+        <div class="row sub-menu">
+          <div class="col-sm-2 product-cat">
+           <ul class="product-cat-list">
+             <li><span>Loại Sản Phẩm</span></li>
+             <li><span>Nhà Sản Xuất</span></li>
+           </ul>
+         </div>
+         <div class="col-sm-10 product-cat-content">
+          <ul class="product-list-content active">
+            <li class="product-item"><a href="../../index.html#all">máy ảnh cơ</a></li>
+            <li class="product-item"><a href="../../index.html#all">máy ảnh kĩ thuật số</a></li>
+            <li class="product-item"><a href="../../index.html#all">máy ảnh lấy liền</a></li>
+            <li class="product-item"><a href="../../index.html#all">tất cả</a></li>
+          </ul>
+          <ul class="product-list-content">
+            <li class="product-item"><a href="../../index.html#all">Canon</a></li>
+            <li class="product-item"><a href="../../index.html#all">Fujifilm</a></li>
+            <li class="product-item"><a href="../../index.html#all">Sony</a></li>
+            <li class="product-item"><a href="../../index.html#all">Nikon</a></li>
+            <li class="product-item"><a href="../../index.html#all">tất cả</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+<div class="main-content">
+  <div class="container">
+    <h2 class="detail-title">Thông Tin <span>Người Dùng</span></h2>
+    <div class="row">
+      <div class="col-sm-8 user-info">
+        <form class="userAccount">
+          <div>
+            <label for="name">Họ và tên</label>
+            <input type="text" name="name" value="Nguyễn Văn A">
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" value="nva@gmail.com">
+          </div>
+          <div>
+            <label for="gender">Giới tính</label>
+            <input type="radio" name="gender" value="Nam" checked><span>Nam</span>
+            <input type="radio" name="gender" value="Nữ"><span>Nữ</span>
+          </div>
+          <div>
+            <label for="birthDay">Ngày sinh</label>
+            <input type="date" name="birthDay" max="2018-04-29">
+          </div>
+          <div>
+            <label for="numberPhone">Số điện thoại</label>
+            <input type="text" name="numberPhone" value="0123456789">
+          </div>
+          <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" value="nva1234">
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-4 user-avatar">
+        <img src="../../assets/images/user.png" alt="">
+      </div>
+    </div>
+    <button class="done">Cập Nhật</button>
+  </div>
+</div>
+<footer>
+  <div class="row" style="margin:0;">
+    <div class="footer-left col-sm-8">
+      <div class="row" style="margin:0;">
+        <div class="col-sm-6 footer-menu">
+          <ul>
+            <li><a href="../../index.html#intro">Home</a></li>
+            <li><a href="../../index.html#sale">Khuyến mãi</a></li>
+            <li><a href="../../index.html#new">Hàng mới về</a></li>
+            <li><a href="../../index.html#best">Bán chạy nhất</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 footer-contact">
+          <div class="phone">
+            <span><i class="fa fa-phone"></i>028 3835 3193</span>
+          </div>
+          <ul class="contact-company">
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa fa-youtube"></i></a></li>
+            <li><a href=""><i class="fa fa-skype"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-right col-sm-4">
+      <div class="address">
+        <span><i class="fa fa-map-marker"></i>227 Đường Nguyễn Văn Cừ, Phường 4, Quận 5, Hồ Chí Minh</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../../assets/js/javaScript_HomePage.js"></script>
+<script>
+  $('.done').click(function(){
+    alert('Đã cập nhật!');
+  });
+</script>
+</body>
+</html>
