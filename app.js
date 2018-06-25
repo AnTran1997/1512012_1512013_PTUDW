@@ -7,7 +7,12 @@ var path = require('path');
 var handleLayoutMDW = require('./middle-wares/handleLayout');
 
 var homeControllers = require('./controllers/homeController');
+
 var productControllers = require('./controllers/productController');
+
+var userControllers = require('./controllers/userController');
+
+var searchControllers = require('./controllers/searchController');
 
 var app = express();
 
@@ -48,12 +53,14 @@ app.use(bodyParse.urlencoded({
 
 app.use(handleLayoutMDW);
 
+//Routing using homeControllers
 app.get('/', (req, res) => {
 	res.redirect('/home');
 });
-
 app.use('/home', homeControllers);
 app.use('/product', productControllers);
+app.use('/user', userControllers);
+app.use('/', searchControllers);
 
 
 app.listen(3000, () => {

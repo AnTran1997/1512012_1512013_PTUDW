@@ -5,6 +5,7 @@ var brandRepo = require('../repos/brandRepo');
 
 
 
+
 var router = express.Router();
 var vm;
 
@@ -71,5 +72,6 @@ router.get('/:filter/:filterOption/:pageID', (req, res) => {
     }
     
 });
+
 
 module.exports = router;
