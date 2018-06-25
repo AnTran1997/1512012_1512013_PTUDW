@@ -8,6 +8,16 @@ Trang chủ
 
 {{#section 'js'}}
     <script src="/assets/js/home.js"></script>
+    <script>
+var curFil = '{{currentFilter}}';
+$('.view-cat-sub-item input').attr('checked', false);
+$('.view-cat-item').removeClass('active');
+$('.{{currentFilter}}').addClass('active');
+console.log(curFil);
+if(curFil!='all'){
+  $('.{{currentFilter}} input.{{currentFilterOption}}').prop('checked', true);
+}
+</script>
 {{/section}}
 
 
@@ -443,13 +453,3 @@ Trang chủ
   </div>
 </div>
 
-<script>
-var curFil = '{{currentFilter}}';
-$('.view-cat-sub-item input').attr('checked', false);
-$('.view-cat-item').removeClass('active');
-$('.{{currentFilter}}').addClass('active');
-console.log(curFil);
-if(curFil!='all'){
-  $('.{{currentFilter}} input.{{currentFilterOption}}').prop('checked', true);
-}
-</script>
