@@ -6,6 +6,6 @@ exports.loadAll = () => {
 }
 
 exports.loadSingle = (brandID) =>{
-	var sql = `select * from products where productBrandID = '${brandID}'`;
+	var sql = `select * from brand where brandID = '${brandID}'`;
 	return db.load(sql);
 }
