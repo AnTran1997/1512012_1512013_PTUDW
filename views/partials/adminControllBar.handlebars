@@ -1,0 +1,50 @@
+
+<h2 id="adminName">Admin</h2>
+<h3 id="dashboardTitle"><a href="#" onclick="displayContent('charts')">
+    <i class="fa fa-dashboard" style="color:#a6a6a6; text-align: left;"></i> Dashboard</a></h3>
+    <div class=""></div>
+    <li>
+        <a href="#" class="adminFunctions" onclick="dropDown('productManagement')">
+            <i class="fa fa-object-group" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Quản lý sản phẩm</a>
+        <ul class="productManagement">
+            <li><a href="#" onclick="dropDown('viewProOptions')">Xem danh sách sản phẩm</a>            
+                <ul class="viewProOptions">
+                    <li><a href="#" onclick="dropDown('productType')">Theo loại</a>
+                        <ul class="productType">
+                            <li><a href="#" onclick="displayContent('mayKyThuatSo')">Máy ảnh kỹ thuật số</a></li>
+                            <li><a href="#" onclick="displayContent('mayCo')">Máy ảnh cơ</a></li>
+                            <li><a href="#" onclick="displayContent('mayLayLien')">Máy ảnh lấy liền</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" onclick="dropDown('productBrand')">Theo nhà sản xuất</a>
+                        <ul class="productBrand">
+                            <li><a href="#" onclick="displayContent('canon')">Canon</a></li>
+                            <li><a href="#" onclick="displayContent('fujifilmProducts')">Fujifilm</a></li>
+                            <li><a href="#" onclick="displayContent('nikonProducts')">Nikon</a></li>
+                            <li><a href="#" onclick="displayContent('sonyProducts')">Sony</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" onclick="displayContent('showAllProducts')">Xem tất cả</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="productManagement" id="myForm" onclick="addNewProduct()">Thêm sản phẩm</a></li>
+        </ul>
+    </li>
+
+<li><a href="#" class="adminFunctions" onclick="dropDown('orderManagement')">
+    <i class="fa fa-file-text-o" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Quản lý đơn hàng</a>
+    <ul class="orderManagement">
+        <li><a href="#" onclick="dropDown('viewOrder')">Xem danh sách đơn hàng</a>
+            <ul class="viewOrder">
+                <li><a href="#" class="viewOrder" onclick="displayContent('listDateOrder')">Theo ngày</a></li>
+                <li><a href="#" class="viewOrder" onclick="displayContent('listStatusOrder')">Theo trạng thái đơn hàng</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<li><a href="/home" class="adminFunctions">
+    <i class="fa fa-bank" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Đi đến trang chủ</a></li>
+<li><a href="#" onclick="displayContent('showAccount')" class="adminFunctions">
+        <i class="fa fa-cogs" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Xem tài khoản</a></li>
+<li><a href="/home" class="adminFunctions">
+    <i class="fa fa-hourglass-2" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Đăng xuất</a></li>

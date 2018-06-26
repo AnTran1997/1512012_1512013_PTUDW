@@ -11,75 +11,142 @@ Trang chủ
     <script src="/assets/js/javaScript_AdminPage.js"></script>
 {{/section}}
 
-{{#section 'adminControlBar'}}
-
-{{/section}}
+{{#section 'controlBar'}}{{> adminControllBar}}{{/section}}
+{{#section 'searchBar'}}{{> adminHeader}}{{/section}}
 
     <div class="dashboard">
         <div class="row">
             <div class="col-sm-3" style="background-color: #000033">
-                <h2 id="adminName">Admin</h2>
-                <h3 id="dashboardTitle"><a href="#" onclick="displayContent('charts')">
-                    <i class="fa fa-dashboard" style="color:#a6a6a6; text-align: left;"></i> Dashboard</a></h3>
-                    <div class=""></div>
-                    <li>
-                        <a href="#" class="adminFunctions" onclick="dropDown('productManagement')">
-                            <i class="fa fa-object-group" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Quản lý sản phẩm</a>
-                        <ul class="productManagement">
-                            <li><a href="#" onclick="dropDown('viewProOptions')">Xem danh sách sản phẩm</a>            
-                               <ul class="viewProOptions">
-                                    <li><a href="#" onclick="dropDown('productType')">Theo loại</a>
-                                        <ul class="productType">
-                                            <li><a href="#" onclick="displayContent('mayKyThuatSo')">Máy ảnh kỹ thuật số</a></li>
-                                            <li><a href="#" onclick="displayContent('mayCo')">Máy ảnh cơ</a></li>
-                                            <li><a href="#" onclick="displayContent('mayLayLien')">Máy ảnh lấy liền</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#" onclick="dropDown('productBrand')">Theo nhà sản xuất</a>
-                                        <ul class="productBrand">
-                                            <li><a href="/admin/showProduct/canon">Canon</a></li>
-                                            <li><a href="/admin/showProduct/fujifilm">Fujifilm</a></li>
-                                            <li><a href="/admin/showProduct/nikon">Nikon</a></li>
-                                            <li><a href="/admin/showProduct/sony">Sony</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#" onclick="displayContent('showAllProducts')">Xem tất cả</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#" class="productManagement" id="myForm" onclick="addNewProduct()">Thêm sản phẩm</a></li>
-                        </ul>
-                    </li>
-
-                <li><a href="#" class="adminFunctions" onclick="dropDown('orderManagement')">
-                    <i class="fa fa-file-text-o" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Quản lý đơn hàng</a>
-                    <ul class="orderManagement">
-                        <li><a href="#" onclick="dropDown('viewOrder')">Xem danh sách đơn hàng</a>
-                            <ul class="viewOrder">
-                                <li><a href="#" class="viewOrder" onclick="displayContent('listDateOrder')">Theo ngày</a></li>
-                                <li><a href="#" class="viewOrder" onclick="displayContent('listStatusOrder')">Theo trạng thái đơn hàng</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="/home" class="adminFunctions">
-                    <i class="fa fa-bank" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Đi đến trang chủ</a></li>
-                <li><a href="#" onclick="displayContent('showAccount')" class="adminFunctions">
-                        <i class="fa fa-cogs" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Xem tài khoản</a></li>
-                <li><a href="/home" class="adminFunctions">
-                    <i class="fa fa-hourglass-2" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Đăng xuất</a></li>
+              {{{_sections.controlBar}}}
             </div>
-
-
+           
             <div class="col-sm-9">
-                <div class="searchBar">
-                    <input type="text" class="searchProduct searchInput" placeholder="Tìm sản phẩm, loại sản phẩm hoặc nhà sản xuất mong muốn">
-                    <button type="submit" name="search" class="searchProduct searchBtn" onclick="window.location.href='/search1'"><i class="fa fa-search"></i></button>
+               {{{_sections.searchBar}}}
+
+
+                <!-- *******************   SHOW LIST OF PRODUCTS IN BRANDS   ********************* -->                    
+                <div class="canon isDisplayed">
+                   
                 </div>
 
+                <div class="fujifilmProducts isDisplayed">
+                    <div class="backgroundTitle" style="background-color:#66ff66;">
+                        <h1>FUJIFILM</h1>
+                    </div>
+                    <div class="triangle-right" style="border-left: 50px solid #66ff66;"></div>
+                    <div class="editDeletePro">
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
+                        <button type="submit" name="delete" id="delete">Xóa</button>
+                    </div>         
+                    <div class="container-quanLySanPham">
+                         <table>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Loại máy ảnh</th>
+                                <th>Giá bán (VNĐ)</th>
+                                <th>Số lượng</th>
+                                <th>Lượt xem</th>
+                                <th>Ngày nhập hàng</th>
+                                <th>Hình ảnh</th>
+                                <th></th>
+                            </tr>
+                            {{#each products}}
+                            <tr>
+                                <td>{{productName}}</td>
+                                <td>{{productID}}</td>
+                                <td>{{productCatID}}</td>
+                                <td>{{productPrice}}</td>
+                                <td>{{productStock}}</td>
+                                <td>{{productViews}}</td>
+                                <td>{{productDate}}</td>
+                                <td><img src="/assets/images/Products/{{productImg}}" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            {{/each}}
+                        </table>
+                    </div>
+                </div>
 
-                <!-- *******************   SHOW LIST OF PRODUCTS IN BRANDS   ********************* -->              
-                <div class="canonProducts isDisplayed">
-                    <!--<div class="backgroundTitle" style="background-color:hotpink;">
+                <div class="nikonProducts isDisplayed">
+                    <div class="backgroundTitle" style="background-color:#ff6600;">
+                        <h1>NIKON</h1>
+                    </div>
+                    <div class="triangle-right" style="border-left: 50px solid #ff6600;"></div>
+                    <div class="editDeletePro">
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
+                        <button type="submit" name="delete" id="delete">Xóa</button>
+                    </div>
+                    <div class="container-quanLySanPham">
+                         <table>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Loại máy ảnh</th>
+                                <th>Giá bán (VNĐ)</th>
+                                <th>Số lượng</th>
+                                <th>Lượt xem</th>
+                                <th>Ngày nhập hàng</th>
+                                <th>Hình ảnh</th>
+                                <th></th>
+                            </tr>
+                            {{#each products}}
+                            <tr>
+                                <td>{{productName}}</td>
+                                <td>{{productID}}</td>
+                                <td>{{productCatID}}</td>
+                                <td>{{productPrice}}</td>
+                                <td>{{productStock}}</td>
+                                <td>{{productViews}}</td>
+                                <td>{{productDate}}</td>
+                                <td><img src="/assets/images/Products/{{productImg}}" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            {{/each}}
+                        </table>
+                    </div>
+                </div>
+
+                <div class="sonyProducts isDisplayed">
+                    <div class="backgroundTitle" style="background-color:#66b3ff;">
+                        <h1>SONY</h1>
+                    </div>
+                    <div class="triangle-right" style="border-left: 50px solid #66b3ff;"></div>
+                    <div class="editDeletePro">
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
+                        <button type="submit" name="delete" id="delete">Xóa</button>
+                    </div>
+                    <div class="container-quanLySanPham">
+                         <table>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Loại máy ảnh</th>
+                                <th>Giá bán (VNĐ)</th>
+                                <th>Số lượng</th>
+                                <th>Lượt xem</th>
+                                <th>Ngày nhập hàng</th>
+                                <th>Hình ảnh</th>
+                                <th></th>
+                            </tr>
+                            {{#each products}}
+                            <tr>
+                                <td>{{productName}}</td>
+                                <td>{{productID}}</td>
+                                <td>{{productCatID}}</td>
+                                <td>{{productPrice}}</td>
+                                <td>{{productStock}}</td>
+                                <td>{{productViews}}</td>
+                                <td>{{productDate}}</td>
+                                <td><img src="/assets/images/Products/{{productImg}}" class="imgInTable"></td>
+                                <td><input type="checkbox" class="checkProduct"></td>
+                            </tr>
+                            {{/each}}
+                        </table>
+                    </div>
+                </div>
+                <!--<div class="canonProducts isDisplayed">
+                    <div class="backgroundTitle" style="background-color:hotpink;">
                         <h1>CANON</h1>
                     </div>
                     <div class="triangle-right" style="border-left: 50px solid hotpink;"></div>
@@ -114,7 +181,7 @@ Trang chủ
                             </tr>
                             {{/each}}
                         </table>
-                    </div>-->
+                    </div>
                 </div>
 
                 <div class="fujifilmProducts isDisplayed">
@@ -440,7 +507,8 @@ Trang chủ
                             </tr>                                                                                   
                         </table>  
                     </div>
-                </div>
+                </div>-->
+
 
 
                 <!-- **************************  SHOW LIST OF PRODUCTS IN TYPES ******************* -->

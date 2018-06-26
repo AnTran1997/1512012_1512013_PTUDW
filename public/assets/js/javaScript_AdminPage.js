@@ -1,6 +1,6 @@
-$('input[type="checkbox"]').on('change', function(){
+/*$('input[type="checkbox"]').on('change', function(){
     $('input[type="checkbox"]').not(this).prop('checked', false);
-})
+});*/
 
 function dropDown(nameClass) {
     var item = document.getElementsByClassName(nameClass);
