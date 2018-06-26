@@ -3,13 +3,13 @@ Trang chủ
 {{/section}}
 
 {{#section 'css'}}
-        <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/styleAdmin/styleAdmin.css" />
+     <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/styleAdmin/styleAdmin.css" />
 {{/section}}
 
-{{#section 'js'}}
+
+{{#section 'footer'}}
     <script src="/assets/js/javaScript_AdminPage.js"></script>
 {{/section}}
-
 
     <div class="dashboard">
         <div class="row">
@@ -59,7 +59,7 @@ Trang chủ
                 </li>
                 <li><a href="/home" class="adminFunctions">
                     <i class="fa fa-bank" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Đi đến trang chủ</a></li>
-                <li><a href="/user/account" onclick="displayContent('showAccount')" class="adminFunctions">
+                <li><a href="#" onclick="displayContent('showAccount')" class="adminFunctions">
                         <i class="fa fa-cogs" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Xem tài khoản</a></li>
                 <li><a href="/home" class="adminFunctions">
                     <i class="fa fa-hourglass-2" style="color:#a6a6a6; text-align: left;margin-right:5ch;"></i>Đăng xuất</a></li>
@@ -80,7 +80,7 @@ Trang chủ
                     </div>
                     <div class="triangle-right" style="border-left: 50px solid hotpink;"></div>
                     <div class="editDeletePro">
-                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/user/admin'">Chỉnh sửa</button>
                         <button type="submit" name="delete" id="delete">Xóa</button>
                     </div>
                     <div class="container-quanLySanPham">
@@ -89,124 +89,27 @@ Trang chủ
                                 <th>Tên sản phẩm</th>
                                 <th>Mã sản phẩm</th>
                                 <th>Loại máy ảnh</th>
-                                <th>Giá nhập (VNĐ)</th>
                                 <th>Giá bán (VNĐ)</th>
                                 <th>Số lượng</th>
+                                <th>Lượt xem</th>
+                                <th>Ngày nhập hàng</th>
                                 <th>Hình ảnh</th>
                                 <th></th>
                             </tr>
+                            {{#each layoutVM.products}}
                             <tr>
-                                <td>Canon 6D Body</td>
-                                <td>1</td>
-                                <td>Máy kỹ thuật số</td>
-                                <td>7.600.000</td>
-                                <td>9.600.000</td>
-                                <td>5</td>
-                                <td><img src="/assets/images/Brands/Canon/Canon 6D Body.jpg" class="imgInTable"></td>
+                                <td>{{productName}}</td>
+                                <td>{{productID}}</td>
+                                <td>{{productCatID}}</td>
+                                <td>{{productPrice}}</td>
+                                <td>{{productStock}}</td>
+                                <td>{{productViews}}</td>
+                                <td>{{productDate}}</td>
+                                <td><img src="/assets/images/Products/{{productImg}}" class="imgInTable"></td>
                                 <td><input type="checkbox" class="checkProduct"></td>
                             </tr>
-                            <tr>
-                                <td>Canon M6 KIT EF-M 15-45mm IS STM</td>
-                                <td>2</td>
-                                <td>Máy kỹ thuật số</td>
-                                <td>14.050.000</td>
-                                <td>16.050.000</td>
-                                <td>3</td>
-                                <td><img src="/assets/images/Brands/Canon/Canon M6 KIT EF-M 15-45mm IS STM.jpg" class="imgInTable"></td>
-                                <td><input type="checkbox" class="checkProduct"></td>
-                            </tr>
-                            <tr>
-                                <td>Canon M10 KIT 15-45mm </td>
-                                <td>3</td>
-                                <td>Máy kỹ thuật số</td>
-                                <td>23.590.000</td>
-                                <td>26.590.000</td>
-                                <td>4</td>
-                                <td><img src="/assets/images/Brands/Canon/Canon M10 KIT 15-45mm .jpg" class="imgInTable"></td>
-                                <td><input type="checkbox" class="checkProduct"></td>
-                            </tr>
-                            <tr>
-                                <td>Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng</td>
-                                <td>4</td>
-                                <td>Máy kỹ thuật số</td>
-                                <td>9.790.000</td>
-                                <td>11.790.000</td>
-                                <td>7</td>
-                                <td><img src="/assets/images/Brands/Canon/Canon Powershot G9X Mark II - Đen - Hàng Chính Hãng.jpg" class="imgInTable"></td>
-                                <td><input type="checkbox" class="checkProduct"></td>
-                            </tr>        
-                            <tr>
-                                <td>EOS 6D + 24-105mm f4L</td>
-                                <td>5</td>
-                                <td>Mãy cơ</td>
-                                <td>35.000.000</td>
-                                <td>37.000.000</td>
-                                <td>2</td>
-                                <td><img src="/assets/images/Brands/Canon/EOS 6D + 24-105mm f4L.jpg" class="imgInTable"></td>
-                                <td><input type="checkbox" class="checkProduct"></td>
-                            </tr>  
-                            <tr>
-                                <td>EOS 3000D + Lens EF-S 18 - 55mm III</td>
-                                <td>6</td>
-                                <td>Máy cơ</td>
-                                <td>6.600.000</td>
-                                <td>9.600.000</td>
-                                <td>10</td>
-                                <td><img src="/assets/images/Brands/Canon/EOS 3000D + Lens EF-S 18 - 55mm III.jpg" class="imgInTable"></td>
-                                <td><input type="checkbox" class="checkProduct"></td>
-                            </tr>  
-                            <tr>
-                                <td>EOS M50 + Kit 15-45mm (24.1MP)</td>
-                                <td>7</td>
-                                <td>Máy kỹ thuật số</td>
-                                <td>17.000.000</td>
-                                <td>19.000.000</td>
-                                <td>6</td>
-                                <td><img src="/assets/images/Brands/Canon/EOS M50 + Kit 15-45mm (24.1MP) .jpg" class="imgInTable"></td>
-                                <td><input type="checkbox" class="checkProduct"></td>
-                            </tr>  
-                            <tr>
-                                <td>Máy Ảnh Canon Powershot G5X</td>
-                                <td>8</td>
-                                <td>Máy kỹ thuật số</td>
-                                <td>11.000.000</td>
-                                <td>13.990.000</td>
-                                <td>4</td>
-                                <td><img src="/assets/images/Brands/Canon/Máy Ảnh Canon Powershot G5X.jpg" class="imgInTable"></td>
-                                <td><input type="checkbox" class="checkProduct"></td>
-                            </tr>        
-                            <tr>
-                                <td>Máy Ảnh Canon EOS M100 KIT 15-45mm</td>
-                                <td>9</td>
-                                <td>Kỹ thuật số</td>
-                                <td>10.000.000</td>
-                                <td>12.690.000</td>
-                                <td>13</td>
-                                <td><img src="/assets/images/Brands/Canon/Máy Ảnh Canon EOS M100 KIT 15-45mm.jpg" class="imgInTable"></td>
-                                <td><input type="checkbox" class="checkProduct"></td>
-                            </tr>  
-                            <tr>
-                                <td>Canon 5D MARK III +  EF 24 105mm F4 IS</td>
-                                <td>10</td>
-                                <td>Máy cơ</td>
-                                <td>55.000.000</td>
-                                <td>59.990.000</td>
-                                <td>3</td>
-                                <td><img src="/assets/images/Brands/Canon/Canon 5D MARK III +  EF 24 105mm F4 IS.jpg" class="imgInTable"></td>
-                                <td><input type="checkbox" class="checkProduct"></td>
-                            </tr>  
-                            <tr>
-                                <td>Máy Ảnh Canon 80D + Lens 18-55mm</td>
-                                <td>11</td>
-                                <td>Máy cơ</td>
-                                <td>20.000.000</td>
-                                <td>23.690.000</td>
-                                <td>5</td>
-                                <td><img src="/assets/images/Brands/Canon/Máy Ảnh Canon 80D + Lens 18-55mm.jpg" class="imgInTable"></td>
-                                <td><input type="checkbox" class="checkProduct"></td>
-                            </tr>  
-
-                        </table>  
+                            {{/each}}
+                        </table>
                     </div>
                 </div>
 
@@ -216,7 +119,7 @@ Trang chủ
                     </div>
                     <div class="triangle-right" style="border-left: 50px solid #66ff66;"></div>
                     <div class="editDeletePro">
-                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/user/admin'">Chỉnh sửa</button>
                         <button type="submit" name="delete" id="delete">Xóa</button>
                     </div>         
                     <div class="container-quanLySanPham">
@@ -361,7 +264,7 @@ Trang chủ
                     </div>
                     <div class="triangle-right" style="border-left: 50px solid #ff6600;"></div>
                     <div class="editDeletePro">
-                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/user/admin'">Chỉnh sửa</button>
                         <button type="submit" name="delete" id="delete">Xóa</button>
                     </div>
                     <div class="container-quanLySanPham">
@@ -436,7 +339,7 @@ Trang chủ
                     </div>
                     <div class="triangle-right" style="border-left: 50px solid #66b3ff;"></div>
                     <div class="editDeletePro">
-                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/user/admin'">Chỉnh sửa</button>
                         <button type="submit" name="delete" id="delete">Xóa</button>
                     </div>
                     <div class="container-quanLySanPham">
@@ -543,7 +446,7 @@ Trang chủ
                         </div>
                         <div class="triangle-right" style="border-left: 50px solid #ffe6ff;"></div>
                     <div class="editDeletePro">
-                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/user/admin'">Chỉnh sửa</button>
                         <button type="submit" name="delete" id="delete">Xóa</button>
                     </div>
                     <div class="container-quanLySanPham">
@@ -748,7 +651,7 @@ Trang chủ
                     </div>
                     <div class="triangle-right" style="border-left: 50px solid #00ff55;"></div>
                     <div class="editDeletePro">
-                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/user/admin'">Chỉnh sửa</button>
                         <button type="submit" name="delete" id="delete">Xóa</button>
                     </div>
                     <div class="container-quanLySanPham">
@@ -833,7 +736,7 @@ Trang chủ
                     </div>
                     <div class="triangle-right" style="border-left: 50px solid #ffff00;"></div>
                     <div class="editDeletePro">
-                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/user/admin'">Chỉnh sửa</button>
                         <button type="submit" name="delete" id="delete">Xóa</button>
                     </div>
                     <div class="container-quanLySanPham">
@@ -939,7 +842,7 @@ Trang chủ
                     </div>
                     <div class="triangle-right" style="border-left: 50px solid #ffb366;"></div>
                     <div class="editDeletePro">
-                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
+                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/user/admin'">Chỉnh sửa</button>
                         <button type="submit" name="delete" id="delete">Xóa</button>
                     </div>
                     <div class="container-quanLySanPham">

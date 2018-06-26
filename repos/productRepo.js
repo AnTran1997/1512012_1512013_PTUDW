@@ -35,3 +35,16 @@ exports.loadSimilarBrand = (brandID, productID)=>{
 	var sql = `select * from products where productBrandID = '${brandID}' and productID <> '${productID}' limit 5`;
 	return db.load(sql);
 }
+
+exports.loadAllByBrand = (brandID) => {
+	var sql = `select * from products where productBrandID = '${brandID}'`;
+	return db.load(sql);
+}
+
+exports.loadAllByCat = (catID) => {
+	var sql = `select * from products wjere productCatID = '${catID}'`;
+	return db.load(sql);
+}
+
+
+

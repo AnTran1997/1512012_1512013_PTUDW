@@ -14,6 +14,8 @@ var userControllers = require('./controllers/userController');
 
 var searchControllers = require('./controllers/searchController');
 
+var adminControllers = require('./controllers/adminController');
+
 var app = express();
 
 app.engine('hbs', exp_hbs({
@@ -61,6 +63,7 @@ app.use('/home', homeControllers);
 app.use('/product', productControllers);
 app.use('/user', userControllers);
 app.use('/search', searchControllers);
+app.use('/admin', adminControllers);
 
 
 app.listen(3000, () => {
