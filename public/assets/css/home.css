@@ -1128,8 +1128,10 @@ a:hover {
 
 .view-all .view-content .view-list .view-list-content{
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
 }
+
+
 
 .view-all .view-content .view-list .view-item {
   padding: 0 10px;
