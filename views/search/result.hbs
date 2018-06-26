@@ -5,8 +5,16 @@
 {{/section}}
 {{#section 'js'}}
 <script>
+	var searchName = '{{searchName}}';
+	if(searchName=='all'){
+		searchName='';
+	}
+	$('input[name="search-name"]').val(searchName);
+	$("select#cat").val("{{searchCat}}");
+	$("select#brand").val("{{searchBrand}}");
+	$("select#price").val("{{searchPriceID}}");
 	$('input[name="advanced-search-submit"]').click(()=>{
-		var searchName = $('input[name="search-name"]').val();
+		searchName = $('input[name="search-name"]').val();
 		if(!searchName.length){
 			searchName='all';
 		}

@@ -42,6 +42,7 @@ function initVM(callback){
 }
 
 function getResult(searchName, searchCat, searchBrand, searchPrice, pageID, callback){
+     vm.searchPriceID = searchPrice;
     if(searchPrice!='-1'){
         searchPrice = vm.priceOption[searchPrice];
         console.log(searchPrice);
