@@ -42,11 +42,26 @@ exports.loadAllByBrand = (brandID) => {
 }
 
 exports.loadAllByCat = (catID) => {
-	var sql = `select * from products wjere productCatID = '${catID}'`;
+	var sql = `select * from products where productCatID = '${catID}'`;
 	return db.load(sql);
 }
 
+exports.loadByKey = (name, cat, brand, price) =>{
+	var para =[];
+	if(name!='all') para.push(`UPPER(productName) like UPPER('%${name}%')`);
+	if(cat!='all') para.push(`productCatID='${cat}'`);
+	if(brand!='all') para.push(`productBrandID='${brand}'`);
+	if(price!='-1') para.push(`productPrice>='${price.min}' and productPrice<='${price.max}'`);
+	para = para.join(' and ');
+	if(para.length>0){
+		para= 'where ' + para;
+	}
+	console.log(para);
+	var sql = `select * from products ${para}`;
+	return db.load(sql);
+}
 
-
-
-
+exports.loadPrice = ()=>{
+	var sql = `select distinct productPrice from products`;
+	return db.load(sql);
+}

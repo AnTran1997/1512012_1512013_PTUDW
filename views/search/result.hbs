@@ -1,0 +1,99 @@
+
+{{#section 'css'}}
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/css/home.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/css/search.css" />
+{{/section}}
+{{#section 'js'}}
+<script>
+	var searchName = '{{searchName}}';
+	if(searchName=='all'){
+		searchName='';
+	}
+	$('input[name="search-name"]').val(searchName);
+	$("select#cat").val("{{searchCat}}");
+	$("select#brand").val("{{searchBrand}}");
+	$("select#price").val("{{searchPriceID}}");
+	$('input[name="advanced-search-submit"]').click(()=>{
+		searchName = $('input[name="search-name"]').val();
+		if(!searchName.length){
+			searchName='all';
+		}
+		var searchCat = $('select#cat').val();
+		var searchBrand = $('select#brand').val();
+		var searchPrice =$('select#price').val();
+		console.log('/search/'+searchName+'/' + searchCat + '/' + searchBrand  + '/' + searchPrice +'/1');
+		window.location.href='/search/'+searchName+'/' + searchCat + '/' + searchBrand  + '/' + searchPrice +'/1';
+	});
+</script>
+{{/section}}
+{{#section 'header'}}{{> header}}{{/section}}
+{{#section 'footer'}}{{> footer}}{{/section}}
+
+
+
+<div class="search-option">
+	<div>
+		<label for="">Tên sản phẩm</label>
+		<input type="text" value='{{searchName}}' name="search-name">
+	</div>
+	<div>
+		<label for="">Loại sản phẩm</label>
+		<select name="cat" id="cat">
+			<option value="all">Tất cả</option>
+			{{#each cat}}
+			<option value="{{catID}}">{{catName}}</option>
+			{{/each}}
+		</select>
+	</div>
+	<div>
+		<label for="">Nhà sản xuất</label>
+		<select name="brand" id="brand">
+			<option value="all">Tất cả</option>
+			{{#each brand}}
+			<option value="{{brandID}}">{{brandName}}</option>
+			{{/each}}
+		</select>
+	</div>
+	<div>
+		<label for="">Giá sản phẩm</label>
+		<select name="price" id="price">
+			<option value="-1">Tất cả</option>
+			{{#each priceOption}}
+			<option value='{{@index}}'>{{text}}</option>
+			{{/each}}
+		</select>
+	</div>
+	<input type="submit" name="advanced-search-submit" value="Tìm Kiếm">
+</div>
+
+
+
+
+<div class="view-all search-result" id="all">
+	<div class="container">
+		<h2 class="view-title">Kết quả tìm kiếm<span>{{total}} kết quả</span></h2>
+		<div class="view-content">
+			<div class="view-list">
+				<div class="view-list-pagination">
+					{{#each (for page)}}
+					<a href="/search/{{../searchName}}/{{../searchCat}}/{{../searchBrand}}/{{../searchPrice}}/{{math @index "+" 1}}"><div class="dot">{{math @index "+" 1}}</div></a>
+					{{/each}}
+				</div>
+				<div class="view-list-content">
+					{{#each result}}
+					<div class="view-item product-item">
+						<a href="/product/detail/{{productID}}" class="view-all-item">
+							<div class="thumbnail"><img src="/assets/images/Products/{{productImg}}" alt=""></div>
+							<div class="view-all-name">{{productName}}</div>
+							<div class="view-all-price">{{numberFormat productPrice}} VND</div>
+						</a>
+						<button class="add">
+							<i class="fa fa-shopping-cart"></i>
+						</button>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

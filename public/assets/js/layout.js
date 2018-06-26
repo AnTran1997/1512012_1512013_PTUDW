@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
   $('input[name="search-submit"]').click(()=>{
      var formKey = $('input[name="search-field"]').val();
-    $(this).load('/search/name/'+formKey);
+    window.location.href='/search/'+formKey+'/all/all/-1/1';
   });
   $('.header .product-cat-list li').click(function(){
     var i =$('.header .product-cat-list li').index($(this));
