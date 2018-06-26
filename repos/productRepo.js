@@ -41,7 +41,7 @@ exports.loadAllByBrand = (brandID) => {
 	return db.load(sql);
 }
 
-exports.loadAllByCate = (catID) => {
+exports.loadAllByCat = (catID) => {
 	var sql = `select * from products wjere productCatID = '${catID}'`;
 	return db.load(sql);
 }
