@@ -27,7 +27,8 @@ router.get('/detail/:productID', (req, res) => {
                 brandS: brandRow[0],
                 product: row[0],
                 proCat: proCatRow,
-                proBrand: proBrandRow
+                proBrand: proBrandRow,
+                currentPage:1
             }
             res.render('products/detail', vm);
         });

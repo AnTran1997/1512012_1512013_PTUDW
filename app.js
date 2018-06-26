@@ -60,7 +60,7 @@ app.get('/', (req, res) => {
 app.use('/home', homeControllers);
 app.use('/product', productControllers);
 app.use('/user', userControllers);
-app.use('/', searchControllers);
+app.use('/search', searchControllers);
 
 
 app.listen(3000, () => {

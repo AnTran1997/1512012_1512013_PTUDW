@@ -8,7 +8,8 @@ var brandRepo = require('../repos/brandRepo');
 var router = express.Router();
 var vm;
 
-router.get('/', (req, res) => {
+
+function initVM(callback){
     var cat = categoryRepo.loadAll();
     var brand = brandRepo.loadAll();
     var pro = productRepo.loadAll();
@@ -28,18 +29,11 @@ router.get('/', (req, res) => {
             currentFilter: 'all',
             currentFilterOption: 'none'
         }
-        res.render('home/index', vm);
+        callback();
     });
+}
 
-});
-
-router.get('/:filter/:filterOption/:pageID', (req, res) => {
-    var pageID = req.params.pageID;
-    var filter = req.params.filter;
-    var filterOption = req.params.filterOption;
-    console.log(pageID);
-    console.log(filter);
-    console.log(filterOption);
+function getFilterResult(pageID, filter, filterOption, callback){
     if(pageID!=vm.currentPage || filter!=vm.currentFilter || filterOption != vm.currentFilterOption){
         vm.currentPage = pageID;
         vm.currentFilter = filter;
@@ -49,27 +43,54 @@ router.get('/:filter/:filterOption/:pageID', (req, res) => {
             productRepo.loadCatByPage((pageID-1)*9,filterOption).then(rows => {
                 vm.currentAll = rows;
                 vm.page =  Math.ceil(rows.length/9);
-                res.render('home/index',vm);
+
             });
             break;
             case 'brand':
             productRepo.loadBrandByPage((pageID-1)*9,filterOption).then(rows => {
                 vm.currentAll = rows;
                 vm.page =  Math.ceil(rows.length/9);
-                res.render('home/index',vm);
+
             });
             break;
             default:
             productRepo.loadAllByPage((pageID-1)*9).then(rows => {
                 vm.currentAll = rows;
-                res.render('home/index',vm);
+
             });
         }
     }
+    callback();
+}
+
+router.get('/', (req, res) => {
+    initVM(()=>{
+        res.render('home/index', vm);
+    });
+});
+
+router.get('/:filter/:filterOption/:pageID', (req, res) => {
+    var pageID = req.params.pageID;
+    var filter = req.params.filter;
+    var filterOption = req.params.filterOption;
+    console.log(pageID);
+    console.log(filter);
+    console.log(filterOption);
+    var cat = categoryRepo.loadAll();
+    var brand = brandRepo.loadAll();
+    var pro = productRepo.loadAll();
+    if(!vm){
+        initVM(()=>{
+            getFilterResult(pageID, filter, filterOption, ()=>{
+                res.render('home/index', vm);
+            });
+        });
+    } 
     else{
-        res.render('home/index',vm);
-    }
-    
+        getFilterResult(pageID, filter, filterOption, ()=>{
+            res.render('home/index', vm);
+        });
+    }   
 });
 
 
