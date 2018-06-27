@@ -35,7 +35,6 @@ router.get('/', (req, res) =>{
 
 router.get('/showBrand/:brandID', (req, res) => {
     var brandID = req.params.brandID;
-    console.log(brandID);
     productRepo.loadAllByBrand(brandID).then(rows => {
         var vm = {
             products: rows,
@@ -47,12 +46,20 @@ router.get('/showBrand/:brandID', (req, res) => {
 
 router.get('/showCat/:catID', (req, res) => {
     var catID = req.params.catID;
-    console.log(catID);
     productRepo.loadAllByCat(catID).then(rows => {
         var vm = {
             products: rows
         }
         res.render('admin/showProductsByCat', vm);
+    });
+});
+
+router.get('/showAll', (req, res) => {
+    productRepo.loadAll().then(rows => {
+        var vm = {
+            products: rows
+        }
+        res.render('admin/showAll', vm);
     });
 });
 
