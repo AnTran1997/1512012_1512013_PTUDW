@@ -2,6 +2,7 @@ var express = require('express');
 var productRepo = require('../repos/productRepo');
 var categoryRepo = require('../repos/categoryRepo');
 var brandRepo = require('../repos/brandRepo');
+var orderRepo = require('../repos/orderRepo');
 var bodyParser = require('body-parser');
 
 var router = express.Router();
@@ -63,5 +64,18 @@ router.get('/showAll', (req, res) => {
     });
 });
 
+router.get('/showOrderStatus', (req, res) => {
+    var deliveredOrder = orderRepo.loadAllDelivered();
+    var inStockOrder = orderRepo.loadAllInStock();
+    var deliveryingOrder = orderRepo.loadAllInDeliverying();
+    Promise.all([deliveredOrder, inStockOrder, deliveryingOrder]).then(([deliveredRows, inStockRows, deliveringRows])=>{
+        vm = {
+            delivered: deliveredRows,
+            inStock: inStockRows,
+            delivering: deliveringRows
+        }
+        res.render('admin/showOrderByStatus', vm);
+    });
+});
 
 module.exports = router;
