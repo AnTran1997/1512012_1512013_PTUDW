@@ -2,6 +2,13 @@
     $('input[type="checkbox"]').not(this).prop('checked', false);
 });*/
 
+var expandArray = [];
+if(expandArray.length == 0) {
+    {{isExpanded: 0}};
+} else{
+    {{isExpanded: 1}};
+}
+
 function dropDown(nameClass) {
     var item = document.getElementsByClassName(nameClass);
     for (var i = 0; i < item.length; i++) {
@@ -19,6 +26,7 @@ function displayContent(nameClass) {
     for (var i = 0; i < items.length; i++) {
         if (items[i].className == nameClass + " isDisplayed") {
             items[i].style.display = "block";
+            expandArray.push(nameClass);
         } else {
             items[i].style.display = "none";
         }
