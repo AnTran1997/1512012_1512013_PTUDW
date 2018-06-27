@@ -29,22 +29,11 @@ function showProductByBrand(brandID, callback) {
     }); 
 }
 
-/*function initVM(branchID, callback){
-    productRepo.loadAllByBrand(branchID).then(rows => {
-        vm = {
-            products: rows
-        }
-        callback();
-    });
-}*/
-
 router.get('/', (req, res) =>{
-    initVM(() => {
-        res.render('admin/adminHome');
-    });       
+        res.render('admin/adminHome');       
 });
 
-router.get('/showProduct/:brandID', (req, res) => {
+router.get('/showBrand/:brandID', (req, res) => {
     var brandID = req.params.brandID;
     console.log(brandID);
     productRepo.loadAllByBrand(brandID).then(rows => {
@@ -52,17 +41,20 @@ router.get('/showProduct/:brandID', (req, res) => {
             products: rows,
             isExpanded: 1
         }
-        res.render('admin/showProducts', vm);
+        res.render('admin/showProductsByBrand', vm);
     });
-    /*if(!vm) {
-        initVM(() => {
-            showProductByBrand(brandID, () => {
-                res.render('admin/showProducts');
-            })
-        });
-    }*/
 });
 
+router.get('/showCat/:catID', (req, res) => {
+    var catID = req.params.catID;
+    console.log(catID);
+    productRepo.loadAllByCat(catID).then(rows => {
+        var vm = {
+            products: rows
+        }
+        res.render('admin/showProductsByCat', vm);
+    });
+});
 
 
 module.exports = router;
