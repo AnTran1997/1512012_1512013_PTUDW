@@ -55,7 +55,7 @@ app.use(bodyParse.urlencoded({
 
 app.use(handleLayoutMDW);
 
-//Routing using homeControllers
+
 app.get('/', (req, res) => {
 	res.redirect('/home');
 });
