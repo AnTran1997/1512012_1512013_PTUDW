@@ -203,16 +203,35 @@ router.get('/add', (req,res) => {
     res.render('admin/addNewProduct', vm);    
 });
 
-router.get('/delete', (req, res) => {
+/*router.get('/delete', (req, res) => {
+    console.log("gethere");
+    console.log(req.query.id);
     var vm = {
-        productID: req.query.id,
+        productID: req.query.productID,
         showAlert: 0
     }
-    res.render('products/hbs', vm);
-})
+    res.render('admin/showAll', vm);
+})*/
+
+router.post('/delete', (req, res) => {
+    productRepo.delete(req.body.productID).then(value => {;
+        res.redirect(req.get('referer'));
+    }).catch(err => {
+        console.log("Query failed");
+    })
+});
 
 
-
-
+router.post('/add', (req, res) => {
+    productRepo.add(req.body.namePro, req.body.idPro, req.body.nxs, req.body.catPro, req.body.price, req.body.numberPro, req.body.proImg).then(value => {  
+        console.log("Success");
+        var vm = {
+            showAlert: true
+        };
+        res.render('admin/addNewProduct', vm);
+    }).catch(err => {
+        res.end("Query failed");
+    });
+});
 
 module.exports = router;

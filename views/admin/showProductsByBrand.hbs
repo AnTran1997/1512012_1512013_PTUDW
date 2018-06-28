@@ -96,21 +96,16 @@ Trang chủ
                                 <td>{{productViews}}</td>
                                 <td>{{productDate}}</td>
                                 <td><img src="/assets/images/Products/{{productImg}}" class="imgInTable"></td>
-                                <!--<td><form action="" method="GET" role="form">
-                                        <input type="hidden" id="" name="CatId" value="{{productId}}">	
-                                        <button type="submit" class="btn btn-danger">
-                                            <span class="glyphicon glyphicon-remove"></span>
-                                        </button>
+                                <td><form action="/admin/delete" method="POST" role="form">	
+                                    <input type="hidden" id="" name="productID" value="{{productID}}">
+                                    <button type="submit" class="btn btnRemove" >
+                                        <i class="fa fa-close"></i>
+                                    </button>
                                     </form>
                                 </td>
-                                <td><button type="submit" class="btn btn-warning">
-                                        <span class="glyphicon glyphicon-edit"></span>
-                                    </button>
-                                </td>
-                                <td><input type="checkbox" class="checkProduct"></td>-->
                                 <td><form action="" method="GET" role="form">	
-                                        <button type="submit" class="btnRemove" >
-                                            <i class="fa fa-close"></i>
+                                        <button type="submit" class="btn btnEdit" >
+                                            <i class="fa fa-edit"></i>
                                         </button>
                                     </form>
                                 </td>

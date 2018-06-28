@@ -453,5 +453,32 @@ canvas {
   width: 22px;
 }
 
+.btn {
+  margin: 3px;
+  padding: 1px;
+  width: 22px;
+  height: 22px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+  .btnRemove {
+    background-color: #b30000;
+  }
+  .btnRemove:hover {
+    background-color: #ff0000;
+  }
+
+  .btnEdit {
+    background-color: #008000;
+  }
+  .btnEdit:hover {
+    background-color: #00e600;
+  }
+
+
 
 
