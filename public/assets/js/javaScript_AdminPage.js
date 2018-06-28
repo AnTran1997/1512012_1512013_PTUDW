@@ -58,6 +58,167 @@ function addNewProduct() {
     //get input values
 }
 
+function randomColor(lengthArr) {
+    var arrColor = [];
+    for(var i = 0; i < lengthArr; i++) {
+        arrColor.push("#"+((1<<24)*Math.random()|0).toString(16));
+    }
+    return arrColor;
+}
+
+function getChartOfBrand(nameBrand, percentBrand) {
+    var totalBrand = nameBrand.length;
+    var ele = document.getElementById("brandCanvas");
+    var col = ele.getContext("2d");
+    var x = 20 + 910 / (totalBrand*8), h, y = 290 - h; //x, y are coordinates and h is height of collumn
+    var w = (3*910) / (4*totalBrand) //width of a collumn
+    var distance =  910 / (totalBrand*4);                    //(440 - w*totalBrand) / (totalBrand + 1);
+    //var colorBrand = ["#00ff00", "#b30000", "#cc00cc", "#008ae6", "#008ae6"];
+    var colorBrand = randomColor(totalBrand);
+    var percentStr = [];
+    for (var i = 0; i < totalBrand; i++) {
+        percentStr.push(percentBrand[i] + "%");
+    }
+
+    for (var i = 0; i < totalBrand; i++) {
+        h = 290 * percentBrand[i] /100;
+        //h = heightBrand[i];
+        y = 290 - h;
+        //Display collumn statistic
+        col.beginPath();
+        col.rect(x, y, w, h);
+        col.stroke();
+        col.fillStyle = colorBrand[i];
+        col.fill();
+
+        //Display name of its brand
+        col.font = "20px Helvetica";
+        col.fillStyle = "black";
+        col.fillText(nameBrand[i], x + w/4, 320);
+
+        //Display percentage of its brand
+        col.beginPath();
+        col.font = "25px Helvetica";
+        col.fillText(percentStr[i], x + w/4, y - 10);  
+
+        x += w + distance;
+    }
+
+
+
+    col.beginPath();
+    col.moveTo(20, 290);
+    col.lineTo(930, 290);
+    col.stroke();
+
+    col.beginPath();
+    col.moveTo(20, 20);
+    col.lineTo(20, 290);
+    col.stroke();
+
+    //rangeWidth: 910, rangeHeight: 270
+}
+//getChartOfBrand(4, ["Canon", "Nikon", "Fujifilm", "Sony"], [24, 15, 43, 18]);
+//getChartOfBrand({{totalBrand}}, {{allBrands}}, {{percentBrand}});
+
+//*******************  STATISTIC OF NUMBER OF PRODUCTS IN TYPES ********************
+function getChartOfType(nameType, percentType) {
+    var totalType = nameType.length;
+    var ele = document.getElementById("typeCanvas");
+    var col = ele.getContext("2d");
+    var x = 20 + 440 / (totalType*8), h, y = 240 - h; //x, y are coordinates and h is height of collumn
+    var w = (3*440) / (4*totalType) //width of a collumn
+    var distance =  440 / (totalType*4);   //distance between two columns
+    //var colorType = ["#ff6600", "#0099ff", "#00b300"];
+    var colorType = randomColor(totalType);
+    var percentStr = [];
+    for (var i = 0; i < totalType; i++) {
+        percentStr.push(percentType[i] + "%");
+    }
+
+    for (var i = 0; i < 3; i++) {
+        h = 240 * percentType[i] /100;
+        y = 240 - h;
+        col.beginPath();
+        col.rect(x, y, w, h);
+        col.stroke();
+        col.fillStyle = colorType[i];
+        col.fill();
+
+        //Display name of its type
+        col.font = "20px Helvetica";
+        col.fillStyle = "black";
+        col.fillText(nameType[i], x, 270);
+
+        col.beginPath();
+        col.font = "25px Helvetica";
+        col.fillText(percentStr[i], x + w/3, y - 10);  
+        x += w + distance;
+    }      
+    col.beginPath();
+    col.moveTo(20, 240);
+    col.lineTo(450, 240);
+    col.stroke();
+
+    col.beginPath();
+    col.moveTo(20, 20);
+    col.lineTo(20, 240);
+    col.stroke();
+
+    //rangeWidth: 440, rangeHeight: 220
+}
+//getChartOfType(3, ["Máy cơ", "Kỹ thuật số", "Máy lấy liền"], [24, 48, 28]);
+
+
+/*******************  STATISTIC OF NUMBER OF PRODUCTS IN ORDERS ********************/
+function getChartOfOrders(nameOrder, percentOrder) { 
+    var numTypeOrder = nameOrder.length;
+    ele = document.getElementById("orderCanvas");
+    col = ele.getContext("2d");
+    var x = 20 + 440 / (numTypeOrder*8), h, y = 240 - h; //x, y are coordinates and h is height of collumn
+    var w = (3*440) / (4*numTypeOrder) //width of a collumn
+    var distance =  440 / (numTypeOrder*4);   //distance between two columns
+    //var colorOrder = ["#ff6600", "#0099ff", "#00b300"];
+    var colorOrder = randomColor(numTypeOrder);
+    var percentStr = [];
+    for (var i = 0; i < numTypeOrder; i++) {
+        percentStr.push(percentOrder[i] + "%");
+    }
+
+    for (var i = 0; i < 3; i++) {
+        h = 240 * percentOrder[i] /100;
+        y = 240 - h;
+        col.beginPath();
+        col.rect(x, y, w, h);
+        col.stroke();
+        col.fillStyle = colorOrder[i];
+        col.fill();
+
+        //Display name of its order 
+        col.font = "20px Helvetica";
+        col.fillStyle = "black";
+        col.fillText(nameOrder[i], x, 270);
+
+        col.beginPath();
+        col.font = "25px Helvetica";
+        col.fillText(percentStr[i], x + w/4, y - 10);  
+        x += w + distance;
+    }      
+    //Đường hoành độ
+    col.beginPath();
+    col.moveTo(20, 240);
+    col.lineTo(460, 240);
+    col.stroke();
+
+    //Đường tung độ
+    col.beginPath();
+    col.moveTo(20, 20);
+    col.lineTo(20, 240);
+    col.stroke();
+
+    //rangeWidth: 440, rangeHeight: 220
+}
+//getChartOfOrders(3, ["Delivered", "Delivering", "In Stock"], [16, 31.6, 52.4]);
 
 function getCharts() {
     var ele = document.getElementById("brandCanvas");
@@ -181,3 +342,8 @@ function getCharts() {
     col.stroke(); 
 }
 
+//getCharts();
+
+function call() {
+    alert("success");
+}

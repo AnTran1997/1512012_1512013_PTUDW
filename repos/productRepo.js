@@ -91,7 +91,18 @@ exports.add = (proName, proID, proBrandID, proCatID, proPrice, proStock, proImg,
 }
 
 exports.loadNumberByBrand = (brandID) => {
-	var sql = `select COUNT(*) from products where productBrandID = '${brandID}'`;
+	var sql = `select COUNT(*) as Total_Brand from products where productBrandID = '${brandID}'`;
 	return db.load(sql);
 }
+
+exports.loadNumberByCat = (catID) => {
+	var sql = `select COUNT(*) as Total_Cat from products where productCatID = '${catID}'`;
+	return db.load(sql);
+}
+
+exports.delete = (id) => {
+	var sql = `delete from products where productID = '${id}'`;
+	return db.save(sql);
+}
+
 

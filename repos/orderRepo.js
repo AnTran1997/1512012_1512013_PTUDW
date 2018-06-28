@@ -44,3 +44,8 @@ exports.loadTest = (orderID) => {
     var sql = `select * from orders where orderID = '${orderID}'`;
     return db.load(sql);
 }
+
+exports.loadNumberOrderByStatus = (statusID) => {
+    var sql = `select COUNT(*) as numOrders from orders where orderStatusID = '${statusID}'`;
+    return db.load(sql);
+}

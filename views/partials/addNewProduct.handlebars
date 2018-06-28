@@ -1,0 +1,35 @@
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <button id="closeFormBtn"><i class="fa fa-close"></i></button>
+        <form action="" method="GET" role="form">
+            <label for="namePro">Tên sản phẩm</label><br>
+            <input type="text" name="namePro" value="{{proName}}"><br><br>
+
+            <label for="idPro">Mã sản phẩm</label><br>
+            <input type="text" name="idPro" value="{{proID}}"><br><br>
+
+            <label for="nxs">Thương hiệu/Nhà sản xuất</label><br>
+            <input type="text" name="nxs" value="{{proBrandID}}"><br><br>
+
+            <label for="typePro">Loại sản phẩm</label><br>
+            <select>
+                <option value="physic" value="{{proCatID}}">Máy ảnh cơ</option>
+                <option value="digital" value="{{proCatID}}">Máy ảnh kỹ thuật số</option>
+                <option value="instant" value="{{proCatID}}">Máy ảnh chụp lấy liền</option>
+            </select><br><br>
+
+            <label for="price">Giá tiền (giá bán lẻ)</label><br>
+            <input type="text" name="price" value="{{proPrice}}"><br><br>
+            
+            
+
+            <label for="numberPro">Số lượng</label><br>
+            <input type="combobox" name="numberPro"><br><br>
+
+            <label for="addImage">Thêm hình ảnh</label>
+            <input type="file" id="productImage"><br><br>
+
+            <input type="submit" name="addNewBtn" value="Add new products" id="addBtn">
+        </form>
+    </div>
+</div>

@@ -3,27 +3,97 @@ var productRepo = require('../repos/productRepo');
 var categoryRepo = require('../repos/categoryRepo');
 var brandRepo = require('../repos/brandRepo');
 var orderRepo = require('../repos/orderRepo');
+var statusRepo = require('../repos/orderStatusRepo');
 var bodyParser = require('body-parser');
+
 
 var router = express.Router();
 var vm;
 
 function initVM(callback) {
+    //To show chart of brands
     var numberCanon = productRepo.loadNumberByBrand('canon');
     var numberFujifilm = productRepo.loadNumberByBrand('fujifilm');
     var numberNikon = productRepo.loadNumberByBrand('nikon');
     var numberSony = productRepo.loadNumberByBrand('sony');
     var totalBrand = brandRepo.loadNumberBrand();
-    var totalCat = categoryRepo.loadNumberCat();
-    Promise.all([numberCanon, numberFujifilm, numberNikon, numberSony, totalBrand, totalCat]).then(([canonRows,
-        fujifilmRows,nikonRows,sonyRows, totalBrandRows, totalCatRows]) => {
+    var allBrands = brandRepo.loadAllBrand();
+    var allProducts = productRepo.loadAll();
+
+    //To show chart of types
+    var numberPhysic = productRepo.loadNumberByCat('physic');
+    var numberDigital = productRepo.loadNumberByCat('digital');
+    var numberInstant = productRepo.loadNumberByCat('instant');
+    var totalNumberCat = categoryRepo.loadNumberCat();
+    var allCats = categoryRepo.loadCatName();
+    var totalNumberCat = categoryRepo.loadNumberCat();
+
+    //To show chart of orders
+    var numDelivered = orderRepo.loadNumberOrderByStatus('delivered');
+    var numDelivering = orderRepo.loadNumberOrderByStatus('deliverying');
+    var numInStock = orderRepo.loadNumberOrderByStatus('inStock');
+    var numAllStatus = statusRepo.loadNumStatus();
+    var allStatus = statusRepo.loadAll();
+    
+
+    Promise.all([numberCanon, numberFujifilm, numberNikon, numberSony,allProducts, totalBrand, totalNumberCat, allBrands,
+    numberPhysic, numberDigital, numberInstant, totalNumberCat, allCats, numDelivered, numDelivering, numInStock,
+    numAllStatus, allStatus]).then(([canonRows, fujifilmRows,nikonRows, sonyRows, allProRows, totalBrandRows, totalCatRows, 
+    allBrandsRows, physicRows, digitalRows, instantRows, numberCatRows, allCatRows, numDeliveredRows, numDeliveringRows, numInStockRows,
+    numAllStatusRows, allStatusRows]) => {
+        // **** BRANDS
+        //Hoac dung allProRows.length
+        var totalProByBrand = canonRows[0].Total_Brand + fujifilmRows[0].Total_Brand + nikonRows[0].Total_Brand + sonyRows[0].Total_Brand;  //Tong tat ca san pham
+        //--- get percentage by brands ---
+        var brandPercentage = [];  //array to store percentafe of each brand
+        brandPercentage.push(canonRows[0].Total_Brand*100/totalProByBrand);
+        brandPercentage.push(fujifilmRows[0].Total_Brand * 100 / totalProByBrand)
+        brandPercentage.push(nikonRows[0].Total_Brand * 100 / totalProByBrand);
+        brandPercentage.push(sonyRows[0].Total_Brand * 100 / totalProByBrand);
+        //--- get name of all brands ---
+        var listBrand = [];
+        for(var i = 0; i < allBrandsRows.length; i++) {
+            listBrand.push(allBrandsRows[i].brandName);
+        }
+
+        // *** CATEGORIES
+        var totalProByCat = allProRows.length;  //get total numbers of products
+        //-- get percentage by categories
+        var catPercentage = [];
+        catPercentage.push(physicRows[0].Total_Cat * 100 / totalProByCat);
+        catPercentage.push(digitalRows[0].Total_Cat * 100 / totalProByCat);
+        catPercentage.push(instantRows[0].Total_Cat * 100 / totalProByCat);
+        //--- get name of all categories
+        var listCat = [];
+        for (var i = 0; i < allCatRows.length;i++) {
+            listCat.push(allCatRows[i].catName);
+        }
+
+        // *** ORDERS 
+        var totalOrders = numDeliveredRows[0].numOrders + numDeliveringRows[0].numOrders + numInStockRows[0].numOrders;
+        //-- get percentage by orders
+        var orderPercentage = [];
+        orderPercentage.push(numDeliveredRows[0].numOrders * 100 / totalOrders);
+        orderPercentage.push(numDeliveredRows[0].numOrders * 100 / totalOrders);
+        orderPercentage.push(numInStockRows[0].numOrders * 100 / totalOrders);
+        //-- get name of all status
+        var listStatus = [];
+        for (var i = 0; i< allStatusRows.length; i++) {
+            listStatus.push(allStatusRows[i].orderStatusName);
+        }
+
         vm = {
-            numCanon: canonRows,
-            numFujifilm: fujifilmRows,
-            numNikon: nikonRows,
-            numSony: sonyRows,
-            totalBrand: totalBrandRows,
-            totalCat: totalCatRows
+            totalBrand: totalBrandRows[0].Total,
+            percentBrands: brandPercentage,
+            allBrands: listBrand,
+
+            totalCat: totalCatRows[0].Total,
+            percentCats: catPercentage,
+            allCats: listCat,
+
+            totalStatus: numAllStatusRows[0].numverStatus,
+            percentStatus: orderPercentage,
+            allstatus: listStatus
         }
         callback();
     });
@@ -89,10 +159,6 @@ router.get('/showOrderStatus', (req, res) => {
     });
 });
 
-function convertISOToLocal(isoDate) {
-    
-}
-
 router.get('/showOrderDate', (req, res) => {
     var dateStr = [];
     var allOrders = orderRepo.loadAll();
@@ -130,13 +196,20 @@ router.get('/showOrderDate', (req, res) => {
     Promise.all([orderDates, allOrders]).catch(console.error.bind(console));
 });
 
-
 router.get('/add', (req,res) => {
     vm = {
         showAlert:true
     }
     res.render('admin/addNewProduct', vm);    
 });
+
+router.get('/delete', (req, res) => {
+    var vm = {
+        productID: req.query.id,
+        showAlert: 0
+    }
+    res.render('products/hbs', vm);
+})
 
 
 

@@ -16,7 +16,6 @@ exports.load = sql => {
             if (error) {
             	reject(error);
             } else {
-                //console.log('DB Connected!');
             	resolve(rows);
             }
 

@@ -3,7 +3,8 @@ Trang chủ
 {{/section}}
 
 {{#section 'css'}}
-     <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/styleAdmin/styleAdmin.css" />
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/styleAdmin/styleAdmin.css" />
 {{/section}}
 
 {{#section 'js'}}
@@ -19,6 +20,9 @@ Trang chủ
         }
 }
     </script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 {{/section}}
 
 {{#section 'footer'}}
@@ -80,6 +84,7 @@ Trang chủ
                                 <th>Ngày nhập hàng</th>
                                 <th>Hình ảnh</th>
                                 <th></th>
+                                <th></th>
                             </tr>
                             {{#each products}}
                             <tr>
@@ -91,7 +96,25 @@ Trang chủ
                                 <td>{{productViews}}</td>
                                 <td>{{productDate}}</td>
                                 <td><img src="/assets/images/Products/{{productImg}}" class="imgInTable"></td>
-                                <td><input type="checkbox" class="checkProduct"></td>
+                                <!--<td><form action="" method="GET" role="form">
+                                        <input type="hidden" id="" name="CatId" value="{{productId}}">	
+                                        <button type="submit" class="btn btn-danger">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                    </form>
+                                </td>
+                                <td><button type="submit" class="btn btn-warning">
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                    </button>
+                                </td>
+                                <td><input type="checkbox" class="checkProduct"></td>-->
+                                <td><form action="" method="GET" role="form">	
+                                        <button type="submit" class="btnRemove" >
+                                            <i class="fa fa-close"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            
                             </tr>
                             {{/each}}
                         </table>

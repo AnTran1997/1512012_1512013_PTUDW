@@ -190,8 +190,7 @@ li {
     background-color: darkblue;
     color: white;
   }
-  .search
-   {
+  .searchInput {
     width: 94%;
     border: none;
     margin-left: 10px;
@@ -442,6 +441,16 @@ canvas {
 
 .orderChart {
   margin-top: 50px;
+}
+
+.glyphicon-remove {
+  font-size: 10px;
+}
+
+.btn-danger, .btn-warning {
+  margin: 3px;
+  padding: 1px;
+  width: 22px;
 }
 
 

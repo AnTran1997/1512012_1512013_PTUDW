@@ -11,6 +11,11 @@ exports.loadSingle = (brandID) =>{
 }
 
 exports.loadNumberBrand = () => {
-	var sql = `select COUNT(*) from brand`;
+	var sql = `select COUNT(*) as Total from brand`;
+	return db.load(sql);
+}
+
+exports.loadAllBrand = () => {
+	var sql = `select brandName from brand`;
 	return db.load(sql);
 }

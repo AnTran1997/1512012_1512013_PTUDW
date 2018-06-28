@@ -12,6 +12,11 @@ exports.loadSingle = (catID) =>{
 }
 
 exports.loadNumberCat = () => {
-	var sql = `select COUNT(*) from category`;
+	var sql = `select COUNT(*) as Total from category`;
+	return db.load(sql);
+}
+
+exports.loadCatName = () => {
+	var sql = `select catName from category`;
 	return db.load(sql);
 }
