@@ -3,6 +3,7 @@ var exp_hbs = require('express-handlebars');
 var exp_hbs_sections = require('express-handlebars-sections');
 var bodyParse = require('body-parser');
 var path = require('path');
+var session = require('express-session');
 
 var handleLayoutMDW = require('./middle-wares/handleLayout');
 
@@ -15,6 +16,8 @@ var userControllers = require('./controllers/userController');
 var searchControllers = require('./controllers/searchController');
 
 var adminControllers = require('./controllers/adminController');
+
+var accountController = require('./controllers/accountController');
 
 var app = express();
 
@@ -64,6 +67,7 @@ app.use('/product', productControllers);
 app.use('/user', userControllers);
 app.use('/search', searchControllers);
 app.use('/admin', adminControllers);
+app.use('/account', accountController);
 
 
 app.listen(3000, () => {

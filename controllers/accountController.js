@@ -12,20 +12,20 @@ router.get('/register', (req, res) => {
 });
 
 router.post('/register', (req, res) => {
-    var dob = moment(req.body.dob, 'D/M/YYYY')
-        .format('YYYY-MM-DDTHH:mm');
 
     var user = {
         username: req.body.username,
-        password: sha256(req.body.rawPWD).toString(),
-        name: req.body.name,
+        password: sha256(req.body.password).toString(),
+        name: req.body.fullname,
         email: req.body.email,
-        dob: dob,
+        dob: req.body.dob,
         permisson: 0
     };
 
+    
+
     accountRepo.add(user).then(value => {
-        res.render('account/register');
+        res.render('users/userAccount', user);
     });
 });
 
