@@ -23,6 +23,7 @@
     "express-handlebars": "^3.0.0",
     "express-handlebars-sections": "^1.0.1",
     "mysql": "^2.15.0",
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "npm": "^6.1.0"
   }
 }
