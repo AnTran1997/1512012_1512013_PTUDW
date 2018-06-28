@@ -45,7 +45,8 @@ function addNewProduct() {
     addbtn.onclick = function() {
         alert("Adding new product successfully");
         modal.style.display = "none";
-        location.href = "https://www.google.com/";
+        //location.href = "http://localhost:3000/admin";
+        window.location.href = "http://localhost:3000/admin";
     }
 
     window.onclick = function(event) {
@@ -53,11 +54,10 @@ function addNewProduct() {
             modal.style.display = "none";
         }
     }
+
+    //get input values
 }
 
-function editProduct(nameClass) {
-
-}
 
 function getCharts() {
     var ele = document.getElementById("brandCanvas");

@@ -31,7 +31,7 @@ exports.save = sql => {
             host: 'localhost',
             port: 3306,
             user: 'root',
-            password: 'root',
+            password: '',
             database: 'pirate_camera_store'
         });
 

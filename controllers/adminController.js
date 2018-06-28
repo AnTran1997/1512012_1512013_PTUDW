@@ -9,16 +9,24 @@ var router = express.Router();
 var vm;
 
 function initVM(callback) {
-    var cat = categoryRepo.loadAll();
-    var brand = brandRepo.loadAll();
-    Promise.all([cat,brand]).then(([carRows,brandRows]) => {
+    var numberCanon = productRepo.loadNumberByBrand('canon');
+    var numberFujifilm = productRepo.loadNumberByBrand('fujifilm');
+    var numberNikon = productRepo.loadNumberByBrand('nikon');
+    var numberSony = productRepo.loadNumberByBrand('sony');
+    var totalBrand = brandRepo.loadNumberBrand();
+    var totalCat = categoryRepo.loadNumberCat();
+    Promise.all([numberCanon, numberFujifilm, numberNikon, numberSony, totalBrand, totalCat]).then(([canonRows,
+        fujifilmRows,nikonRows,sonyRows, totalBrandRows, totalCatRows]) => {
         vm = {
-            cat: catRows,
-            brand: brandRows,
-            currentPage: 1,
+            numCanon: canonRows,
+            numFujifilm: fujifilmRows,
+            numNikon: nikonRows,
+            numSony: sonyRows,
+            totalBrand: totalBrandRows,
+            totalCat: totalCatRows
         }
-    })
-    callback();
+        callback();
+    });
 }
 
 function showProductByBrand(brandID, callback) {
@@ -31,7 +39,10 @@ function showProductByBrand(brandID, callback) {
 }
 
 router.get('/', (req, res) =>{
-        res.render('admin/adminHome');       
+       // res.render('admin/adminHome'); 
+    initVM(() => {
+        res.render('admin/adminHome'); 
+    });    
 });
 
 router.get('/showBrand/:brandID', (req, res) => {
@@ -118,6 +129,17 @@ router.get('/showOrderDate', (req, res) => {
 
     Promise.all([orderDates, allOrders]).catch(console.error.bind(console));
 });
+
+
+router.get('/add', (req,res) => {
+    vm = {
+        showAlert:true
+    }
+    res.render('admin/addNewProduct', vm);    
+});
+
+
+
 
 
 module.exports = router;

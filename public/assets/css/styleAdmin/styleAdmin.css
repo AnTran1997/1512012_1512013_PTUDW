@@ -190,7 +190,8 @@ li {
     background-color: darkblue;
     color: white;
   }
-  .searchInput {
+  .search
+   {
     width: 94%;
     border: none;
     margin-left: 10px;
@@ -330,7 +331,7 @@ li {
       color: white;
       position: 0;
     }
-    .modal-content input, .modal-content label {
+    .modal-content input, .modal-content label, .modal-content select {
       height: 3ch;
       font-size: 20px;
       position: relative;

@@ -65,3 +65,33 @@ exports.loadPrice = ()=>{
 	var sql = `select distinct productPrice from products`;
 	return db.load(sql);
 }
+
+
+exports.insertNewProduct = (proName, proID, proBrandID, proCatID, proPrice, proStock, proImg, proDate) => {
+	var latestID = `SELECT MAX(productID) FROM products`;
+	var newProID = latestID + 1;
+	var sql = `insert products(productID, productName, productPrice, productViews, productSold, 
+	productDes, productOrigin, productCatID, productBrandID, productStock, productImg, 
+	productSale, productDate) VALUES ('${proID}','${proName}','${proPrice}','0','0','',
+	'Japan','${proCatID}','${proBrandID}','${proStock}','${proImg}','0','${proDate}')`;
+	return db.save(sql);
+}
+
+exports.addNewProduct = (proName, proID, proBrandID, proCatID, proPrice, proStock, proImg, proDate) => {
+	var latestID = `SELECT MAX(productID) FROM products`;
+	var newProID = latestID + 1;
+	var sql = `insert into products(productID, productName, productPrice, productViews, productSold, productDes, productOrigin, productCatID, productBrandID, productStock, productImg, productSale, productDate) VALUES ('${proID}','${proName}','${proPrice}','0','0','','Japan','${proCatID}','${proBrandID}','${proStock}','${proImg}','0','${proDate}')`;
+	return db.save(sql);
+}
+
+
+exports.add = (proName, proID, proBrandID, proCatID, proPrice, proStock, proImg, proDate) => {
+	var sql = `insert into products(productID, productName, productPrice, productViews, productSold, productDes, productOrigin, productCatID, productBrandID, productStock, productImg, productSale, productDate) VALUES ('${proID}','${proName}','${proPrice}','0','0','','Japan','${proCatID}','${proBrandID}','${proStock}','${proImg}','0','${proDate}')`;
+	return db.save(sql);
+}
+
+exports.loadNumberByBrand = (brandID) => {
+	var sql = `select COUNT(*) from products where productBrandID = '${brandID}'`;
+	return db.load(sql);
+}
+

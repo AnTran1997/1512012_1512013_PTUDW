@@ -9,3 +9,8 @@ exports.loadSingle = (brandID) =>{
 	var sql = `select * from brand where brandID = '${brandID}'`;
 	return db.load(sql);
 }
+
+exports.loadNumberBrand = () => {
+	var sql = `select COUNT(*) from brand`;
+	return db.load(sql);
+}
