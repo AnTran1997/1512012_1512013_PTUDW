@@ -8,7 +8,15 @@ User information
 {{/section}}
 
 {{#section 'js'}}
-<script src="/assets/js/style.css"></script>
+<script>
+  $('#user-info-button').click(function(){
+    $('form.userAccount input').attr('readonly',false);
+    $('form.userAccount input[type=radio]').attr('disabled',false);
+    $('#user-update-button').css("visibility","visible");
+    $(this).css("visibility","hidden");
+  });
+
+</script>
 {{/section}}
 
 
@@ -20,10 +28,10 @@ User information
   <h2 class="detail-title">Thông Tin <span>Người Dùng</span></h2>
   <div class="row">
     <div class="col-sm-8 user-info">
-      <form class="userAccount">
+      <form class="userAccount" action="/user/update" method="POST" role="form">
         <div>
           <label for="name">Họ và tên</label>
-          <input type="text" name="name" value="{{name}}" readonly>
+          <input type="text" name="fullname" value="{{name}}" readonly>
         </div>
 
         <div>
@@ -32,17 +40,23 @@ User information
         </div>
         <div>
           <label for="gender">Giới tính</label>
-          <input type="radio" name="gender" value="Nam" checked disabled><span>Nam</span>
-          <input type="radio" name="gender" value="Nữ" disabled><span>Nữ</span>
+          {{#if gender}}
+          <input type="radio" name="gender" value="0" checked disabled><span>Nam</span>
+          <input type="radio" name="gender" value="1" disabled><span>Nữ</span>
+          {{else}}
+          <input type="radio" name="gender" value="0" disabled><span>Nam</span>
+          <input type="radio" name="gender" value="1" checked disabled><span>Nữ</span>
+          {{/if}}
         </div>
         <div>
           <label for="birthDay">Ngày sinh</label>
-          <input type="date" name="birthDay" value="{{dob}}" readonly>
+          <input type="date" name="dob" value="{{dob}}" readonly>
         </div>
         <div>
           <label for="numberPhone">Số điện thoại</label>
-          <input type="text" name="numberPhone" value="" readonly>
+          <input type="text" name="phone" value="{{phone}}" readonly>
         </div>
+        <button class="done" id="user-update-button" style="visibility: hidden;">Cập Nhật</button>
       </form>
     </div>
     <div class="col-sm-4 user-avatar">
@@ -50,5 +64,5 @@ User information
       <p class="username">{{username}}</p>
     </div>
   </div>
-  <button class="done">Chỉnh Sửa</button>
+  <button class="done" id="user-info-button">Chỉnh Sửa</button>
 </div>

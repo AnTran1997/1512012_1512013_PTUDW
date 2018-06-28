@@ -35,17 +35,17 @@ app.engine('hbs', exp_hbs({
 		saleCal: (number, percent)=> Math.round(number*100/percent),
 		slice: (array,start,end)=>array.slice(start,end),
 		for: (pageNum)=> new Array(pageNum).fill(0),
-		math: (lvalue, operator, rvalue, options) => {
-			return {
-				"+": lvalue + rvalue,
-				"-": lvalue - rvalue,
-				"*": lvalue * rvalue,
-				"/": lvalue / rvalue,
-				"%": lvalue % rvalue
-			}[operator];
+			math: (lvalue, operator, rvalue, options) => {
+				return {
+					"+": lvalue + rvalue,
+					"-": lvalue - rvalue,
+					"*": lvalue * rvalue,
+					"/": lvalue / rvalue,
+					"%": lvalue % rvalue
+				}[operator];
+			}
 		}
-	}
-}));
+	}));
 
 
 app.set('view engine', 'hbs');
@@ -55,6 +55,15 @@ app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({
 	extended: false
 }));
+
+app.use(session({
+	secret: 'keyboard cat',
+	resave: false,
+	saveUninitialized: true,
+    // cookie: {
+    //     secure: true
+    // }
+}))
 
 app.use(handleLayoutMDW);
 

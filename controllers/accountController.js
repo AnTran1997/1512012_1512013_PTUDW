@@ -1,6 +1,6 @@
 var express = require('express'),
-    sha256 = require('crypto-js/sha256'),
-    moment = require('moment');
+sha256 = require('crypto-js/sha256'),
+moment = require('moment');
 
 var restrict = require('../middle-wares/restrict');
 var accountRepo = require('../repos/accountRepo');
@@ -19,12 +19,14 @@ router.post('/register', (req, res) => {
         name: req.body.fullname,
         email: req.body.email,
         dob: req.body.dob,
-        permisson: 0
+        permisson: 0,
+        gender: 0
     };
 
-    
-
     accountRepo.add(user).then(value => {
+        req.session.isLogged = true;
+        req.session.curUser = user;
+        req.session.cart = [];
         res.render('users/userAccount', user);
     });
 });

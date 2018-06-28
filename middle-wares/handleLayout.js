@@ -3,6 +3,12 @@ var categoryRepo = require('../repos/categoryRepo');
 var brandRepo = require('../repos/brandRepo');
 
 module.exports = (req, res, next) => {
+
+	if (req.session.isLogged === undefined) {
+        req.session.isLogged = false;
+    }
+
+
 	var cat = categoryRepo.loadAll();
 	var brand = brandRepo.loadAll();
 	var pro = productRepo.loadAll();
