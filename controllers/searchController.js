@@ -42,9 +42,9 @@ function initVM(callback){
 }
 
 function getResult(searchName, searchCat, searchBrand, searchPrice, pageID, callback){
-   vm.searchPriceID = searchPrice;
-   if(searchPrice!='-1')
-   {
+ vm.searchPriceID = searchPrice;
+ if(searchPrice!='-1')
+ {
     searchPrice = vm.priceOption[searchPrice];
     console.log(searchPrice);
 }
@@ -68,6 +68,8 @@ router.get('/:name/:cat/:brand/:price/:pageID', (req, res) => {
     var searchPrice = req.params.price;
     initVM(()=>{
         getResult(searchName, searchCat, searchBrand, searchPrice, pageID, ()=>{
+            vm.curUser = req.session.curUser;
+            vm.isLogged = req.session.isLogged;
             res.render('search/result',vm);
         });
     });

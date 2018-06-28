@@ -65,6 +65,8 @@ function getFilterResult(pageID, filter, filterOption, callback){
 
 router.get('/', (req, res) => {
     initVM(()=>{
+        vm.curUser = req.session.curUser;
+        vm.isLogged = req.session.isLogged;
         res.render('home/index', vm);
     });
 });
@@ -81,8 +83,10 @@ router.get('/:filter/:filterOption/:pageID', (req, res) => {
     var pro = productRepo.loadAll();
     initVM(()=>{
         getFilterResult(pageID, filter, filterOption, ()=>{
-            res.render('home/index', vm);
-        });
+         vm.curUser = req.session.curUser;
+         vm.isLogged = req.session.isLogged;
+         res.render('home/index', vm);
+     });
     });  
 });
 

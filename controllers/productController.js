@@ -28,7 +28,9 @@ router.get('/detail/:productID', (req, res) => {
                 product: row[0],
                 proCat: proCatRow,
                 proBrand: proBrandRow,
-                currentPage:1
+                currentPage:1,
+                curUser: req.session.curUser,
+                isLogged: req.session.isLogged
             }
             res.render('products/detail', vm);
         });
