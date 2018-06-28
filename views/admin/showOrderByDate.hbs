@@ -1,0 +1,61 @@
+{{#section 'title'}}
+Trang chủ
+{{/section}}
+
+{{#section 'css'}}
+     <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/styleAdmin/styleAdmin.css" />
+{{/section}}
+
+
+{{#section 'footer'}}
+    <script src="/assets/js/javaScript_AdminPage.js"></script>
+{{/section}}
+
+
+{{#section 'controlBar'}}{{> adminShowProductControllBar}}{{/section}}
+{{#section 'searchBar'}}{{> adminHeader}}{{/section}}
+
+    <div class="dashboard">
+        <div class="row">
+            <div class="col-sm-3" style="background-color: #000033">
+              {{{_sections.controlBar}}}
+            </div>
+           
+            <div class="col-sm-9">
+               {{{_sections.searchBar}}}
+
+                <!-- **************************  SHOW LIST OF ORDERS IN DATE ********************** -->
+                <div class="listDateOrder isDisplayed">
+                    {{#each orderDate}}
+                    <div class="date">
+                        <div class="backgroundTitle" style="background-color:#ff6699;">
+                            <h1>{{date}}</h1>
+                        </div>
+                        <div class="triangle-right" style="border-left: 50px solid #ff6699;"></div>
+                        <table class="dateOrder">
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Tổng số lượng sản phẩm</th>
+                                <th>Tổng tiền (vnđ)</th>
+                                <th>User mua hàng</th>
+                                <th>Trạng thái đơn hàng</th>
+                                <th>Phí vận chuyển</th>
+                            </tr>
+                            {{#each orders}}
+                            <tr>
+                                <td>{{orderID}}</td>
+                                <td>{{totalProduct}}</td>
+                                <td>{{totalPrice}}</td>
+                                <td>{{username}}</td>
+                                <td>{{orderStatusID}}</td>
+                                <td>{{deliveryPrice}}</td>
+                            </tr>
+                            {{/each}}
+                        </table>
+                    </div>
+                    {{/each}} 
+                </div>
+            </div>
+        </div>
+    </div>
+

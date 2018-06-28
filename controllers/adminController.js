@@ -78,4 +78,46 @@ router.get('/showOrderStatus', (req, res) => {
     });
 });
 
+function convertISOToLocal(isoDate) {
+    
+}
+
+router.get('/showOrderDate', (req, res) => {
+    var dateStr = [];
+    var allOrders = orderRepo.loadAll();
+    var orderDates = orderRepo.loadDate();
+    Promise.all([orderDates, allOrders]).then(([dateRows, orderByDateRows]) => {
+        var dates = [];
+        //Get array of order date
+        for (var i = 0; i < dateRows.length; i++) {
+            //Get dates from rows
+            var temp = dateRows[i].orderDate;
+
+            //consert ISO date into local date
+            dateStr.push(temp.getFullYear() + '/' + (temp.getMonth()+1) + '/' + temp.getDate());           
+        }
+
+        var orders = [];
+        for (var i = 0; i < dateStr.length; i++) {
+            console.log(dates.length);
+            var temp = orderByDateRows.filter((singleOrder)=>{
+                var firstTime = singleOrder.orderDate.getFullYear() + '/' + (singleOrder.orderDate.getMonth()+1) + '/' + singleOrder.orderDate.getDate();
+                return firstTime == dateStr[i];
+            }); 
+            orders.push(temp);
+
+            //Adding objects dateStr and orders by that date into array 'dates'
+            dates.push({date: dateStr[i], orders: orders[i]});
+        }  
+         
+        vm = {
+          orderDate: dates,
+        }
+        res.render('admin/showOrderByDate', vm);
+    });
+
+    Promise.all([orderDates, allOrders]).catch(console.error.bind(console));
+});
+
+
 module.exports = router;

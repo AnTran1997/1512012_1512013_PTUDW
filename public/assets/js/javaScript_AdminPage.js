@@ -55,6 +55,10 @@ function addNewProduct() {
     }
 }
 
+function editProduct(nameClass) {
+
+}
+
 function getCharts() {
     var ele = document.getElementById("brandCanvas");
     var col = ele.getContext("2d");
