@@ -104,6 +104,26 @@ function addNewProduct() {
     
 }
 
+function editSingle() {
+
+    var modal = document.getElementById('editModal');
+    var icon = document.getElementsByClassName("editClose")[0];
+    var editBtn = document.getElementById('editBtn');
+    modal.style.display = "block";
+    icon.onclick = function() {
+        modal.style.display = "none";
+    }
+    editBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
 function randomColor(lengthArr) {
     var arrColor = [];
     for(var i = 0; i < lengthArr; i++) {
@@ -382,4 +402,9 @@ function getCharts() {
     col.lineTo(20, 290);
     col.stroke(); 
 }
+
+function call() {
+    alert("here");
+}
+
 

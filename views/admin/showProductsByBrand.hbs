@@ -3,26 +3,31 @@ Trang chủ
 {{/section}}
 
 {{#section 'css'}}
-    
     <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/styleAdmin/styleAdmin.css" />
 {{/section}}
 
 {{#section 'js'}}
-    <script>
-    function displayContent(nameClass) {
-        var items = document.getElementsByClassName("isDisplayed");
-        for (var i = 0; i < items.length; i++) {
-            if (items[i].className == nameClass + " isDisplayed") {
-                items[i].style.display = "block";
-            } else {
-                items[i].style.display = "none";
+ <script>
+     function editProduct() {
+        alert("Here");
+        var modal = document.getElementById('editModal');
+        var icon = document.getElementsByClassName("editClose")[0];
+        var editBtn = document.getElementById('editBtn');
+        modal.style.display = "block";
+        icon.onclick = function() {
+            modal.style.display = "none";
+        }
+        editBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
         }
-}
-    </script>
-
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    }
+ </script>
 {{/section}}
 
 {{#section 'footer'}}
@@ -51,6 +56,7 @@ Trang chủ
 
 {{#section 'controlBar'}}{{> adminControllBar}}{{/section}}
 {{#section 'searchBar'}}{{> adminHeader}}{{/section}}
+{{#section 'formEdit'}}{{> editForm}}{{/section}}
 
     <div class="dashboard">
         <div class="row">
@@ -81,6 +87,9 @@ Trang chủ
                                 <th>Giá bán (VNĐ)</th>
                                 <th>Số lượng</th>
                                 <th>Lượt xem</th>
+                                <th>Đã bán</th>
+                                <th>% khuyến mãi</th>
+                                <th>Xuất xứ</th>
                                 <th>Ngày nhập hàng</th>
                                 <th>Hình ảnh</th>
                                 <th></th>
@@ -94,6 +103,9 @@ Trang chủ
                                 <td>{{productPrice}}</td>
                                 <td>{{productStock}}</td>
                                 <td>{{productViews}}</td>
+                                <td>{{productSold}}</td>
+                                <td>{{productSale}}</td>
+                                <td>{{productOrigin}}</td>
                                 <td>{{productDate}}</td>
                                 <td><img src="/assets/images/Products/{{productImg}}" class="imgInTable"></td>
                                 <td><form action="/admin/delete" method="POST" role="form">	
@@ -103,11 +115,10 @@ Trang chủ
                                     </button>
                                     </form>
                                 </td>
-                                <td><form action="" method="GET" role="form">	
-                                        <button type="submit" class="btn btnEdit" >
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </form>
+                                <td>
+                                    <button class="btn btnEdit" onclick="editSingle()">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
                                 </td>
                             
                             </tr>
@@ -115,6 +126,9 @@ Trang chủ
                         </table>
                     </div>
                 </div>
+
+                <!-- ********************** EDIT PRODUCT *************************-->
+                {{{_sections.formEdit}}}
             </div>
         </div>
     </div>

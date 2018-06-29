@@ -202,15 +202,6 @@ router.get('/add', (req,res) => {
     res.render('admin/addNewProduct', vm);    
 });
 
-/*router.get('/delete', (req, res) => {
-    console.log("gethere");
-    console.log(req.query.id);
-    var vm = {
-        productID: req.query.productID,
-        showAlert: 0
-    }
-    res.render('admin/showAll', vm);
-})*/
 
 router.post('/delete', (req, res) => {
     productRepo.delete(req.body.productID).then(value => {;
@@ -223,14 +214,36 @@ router.post('/delete', (req, res) => {
 
 router.post('/add', (req, res) => {
     productRepo.add(req.body.namePro, req.body.idPro, req.body.nxs, req.body.catPro, req.body.price, req.body.numberPro, req.body.proImg).then(value => {  
-        console.log("Success");
         var vm = {
             showAlert: true
         };
-        res.render('admin/addNewProduct', vm);
+        res.render('admin/adminHome', vm);
     }).catch(err => {
         res.end("Query failed");
     });
 });
 
+router.post('/edit', (req, res) => {
+    /*console.log(req.body.namePro);
+    console.log(req.body.idPro);
+    console.log(req.body.brand);
+    console.log(req.body.cat);
+    console.log(req.body.price);
+    console.log(req.body.stock);
+    console.log(req.body.sold);
+    console.log(req.body.view);
+    console.log(req.body.origin);
+    console.log(req.body.sale);
+    console.log(req.body.date);
+    console.log(req.body.proImg);*/
+
+    productRepo.update(req.body).then(value => {
+        var vm = {
+            showAlert: true
+        };
+        res.redirect(req.get('referer'));
+    }).catch(err => {
+        res.end("Error occurred!");
+    });
+});
 module.exports = router;

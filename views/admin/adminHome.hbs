@@ -12,8 +12,8 @@ Admin Homepage
          getChartOfType(["Máy cơ", "Kỹ thuật số", "Máy lấy liền"], [24, 48, 28]);
          getChartOfOrders(["Delivered", "Delivering", "In Stock"], [16, 31.6, 52.4]);
     </script>
-{{/section}}
 
+{{/section}}
 
 {{#section 'footer'}}
     <script src="/assets/js/javaScript_AdminPage.js"></script>
@@ -24,6 +24,13 @@ Admin Homepage
 {{#section 'searchBar'}}{{> adminHeader}}{{/section}}
 {{#section 'showCharts'}}{{> adminShowCharts}}{{/section}}
 {{#section 'addProduct'}}{{> addNewProduct}}{{/section}}
+{{#section 'editProduct'}}{{> editForm}}{{/section}}
+
+{{#if showAlert}}
+    <script>
+        alert("Adding new product successfully!");
+    </script>
+{{/if}}
 
     <div class="dashboard">
         <div class="row">
