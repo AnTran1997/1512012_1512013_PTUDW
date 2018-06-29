@@ -28,6 +28,7 @@ Trang chủ
 
 {{#section 'controlBar'}}{{> adminControllBar}}{{/section}}
 {{#section 'searchBar'}}{{> adminHeader}}{{/section}}
+{{#section 'formEdit'}}{{> editForm}}{{/section}}
 
     <div class="dashboard">
         <div class="row">
@@ -41,22 +42,25 @@ Trang chủ
                 <!-- **************************  SHOW LIST OF PRODUCTS IN CATEGORIES ******************* -->
                 <div class='{{catID}}' + " isDisplayed">
                     <div class="backgroundTitle" style="background-color:#ffe6ff;">
-                            <h1>MÁY ẢNH KỸ THUẬT SỐ</h1>
+                            <h1>{{catID}}</h1>
                         </div>
                         <div class="triangle-right" style="border-left: 50px solid #ffe6ff;"></div>
-                    <div class="editDeletePro">
+                   <!-- <div class="editDeletePro">
                         <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
                         <button type="submit" name="delete" id="delete">Xóa</button>
-                    </div>
+                    </div>-->
                     <div class="container-quanLySanPham">
                         <table>
                             <tr>
                                 <th>Tên sản phẩm</th>
                                 <th>Mã sản phẩm</th>
-                                <th>Thương hiệu/Nhà sản xuất</th>
+                                <th>Nhà sản xuất</th>
                                 <th>Giá bán (VNĐ)</th>
                                 <th>Số lượng</th>
                                 <th>Lượt xem</th>
+                                <th>Đã bán</th>
+                                <th>% khuyến mãi</th>
+                                <th>Xuất xứ</th>
                                 <th>Ngày nhập hàng</th>
                                 <th>Hình ảnh</th>
                                 <th></th>
@@ -64,13 +68,17 @@ Trang chủ
                             </tr>
                             {{#each products}}
                             <tr>
-                               <td>{{productName}}</td>
+                                <td>{{productName}}</td>
                                 <td>{{productID}}</td>
                                 <td>{{productBrandID}}</td>
                                 <td>{{productPrice}}</td>
                                 <td>{{productStock}}</td>
                                 <td>{{productViews}}</td>
+                                <td>{{productSold}}</td>
+                                <td>{{productSale}}</td>
+                                <td>{{productOrigin}}</td>
                                 <td>{{productDate}}</td>
+                                <td><img src="/assets/images/Products/{{productImg}}" class="imgInTable"></td>
                                 <td><form action="/admin/delete" method="POST" role="form">	
                                     <input type="hidden" id="" name="productID" value="{{productID}}">
                                     <button type="submit" class="btn btnRemove" >
@@ -78,15 +86,19 @@ Trang chủ
                                     </button>
                                     </form>
                                 </td>
-                                <td><form action="" method="GET" role="form">	
-                                        <button type="submit" class="btn btnEdit" >
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                            
+                                <td>
+                                    <button class="btn btnEdit" onclick="editSingle()">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </td>      
                             </tr>
                             {{/each}}
                          </table>  
                     </div>
                 </div>
+                <!-- ********************** EDIT PRODUCT *************************-->
+                {{{_sections.formEdit}}}
+            </div>
+        </div>
+    </div>
+                

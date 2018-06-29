@@ -118,6 +118,7 @@ router.get('/showBrand/:brandID', (req, res) => {
     var brandID = req.params.brandID;
     productRepo.loadAllByBrand(brandID).then(rows => {
         var vm = {
+            brandID: rows[0].productBrandID,
             products: rows,
             isExpanded: 1
         }
@@ -129,6 +130,7 @@ router.get('/showCat/:catID', (req, res) => {
     var catID = req.params.catID;
     productRepo.loadAllByCat(catID).then(rows => {
         var vm = {
+            catID: rows[0].productCatID,
             products: rows
         }
         res.render('admin/showProductsByCat', vm);

@@ -44,7 +44,7 @@ Trang chủ
 {{#section 'nameBrand'}}
     {{#if 'canon'}}
     <script>
-        document.write('<h1>CANON</h1>');
+        document.getElementById('brand').innerHTML = `'${brandID}'`
     </script>    
     {{/if}}
     {{#if 'fujifilm'}}
@@ -71,13 +71,13 @@ Trang chủ
                 <!-- *******************   SHOW LIST OF PRODUCTS IN BRANDS   ********************* -->                    
                  <div class='{{brandID}}' + " isDisplayed">
                     <div class="backgroundTitle" style="background-color:pink;">
-                        <h1>BRAND</h1>
+                        <h1>{{brandID}}</h1>
                     </div>
                     <div class="triangle-right" style="border-left: 50px solid pink;"></div>
-                    <div class="editDeletePro">
+                    <!--<div class="editDeletePro">
                         <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
                         <button type="submit" name="delete" id="delete">Xóa</button>
-                    </div>         
+                    </div>     -->    
                     <div class="container-quanLySanPham">
                          <table>
                             <tr>
@@ -119,8 +119,7 @@ Trang chủ
                                     <button class="btn btnEdit" onclick="editSingle()">
                                         <i class="fa fa-edit"></i>
                                     </button>
-                                </td>
-                            
+                                </td>      
                             </tr>
                             {{/each}}
                         </table>
