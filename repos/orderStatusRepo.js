@@ -9,3 +9,8 @@ exports.loadAll = () => {
     var sql = `select orderStatusName from orderstatus`;
     return db.load(sql);
 }
+
+exports.loadAllSt = () => {
+    var sql = `select * from orderstatus`;
+    return db.load(sql);
+}    

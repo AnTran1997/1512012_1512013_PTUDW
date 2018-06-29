@@ -101,7 +101,6 @@ function initVM(callback) {
 
 function showProductByBrand(brandID, callback) {
     vm.brand = brandID;
-    console.log(brandID);
     productRepo.loadAllByBrand(brandID).then(rows =>{
         vm.brandID = brandID
         callback();
@@ -150,8 +149,11 @@ router.get('/showOrderStatus', (req, res) => {
     var deliveredOrder = orderRepo.loadAllDelivered();
     var inStockOrder = orderRepo.loadAllInStock();
     var deliveryingOrder = orderRepo.loadAllInDeliverying();
-    Promise.all([deliveredOrder, inStockOrder, deliveryingOrder]).then(([deliveredRows, inStockRows, deliveringRows])=>{
+    var statusName = statusRepo.loadAll();
+    var allStatus = statusRepo.loadAllSt();
+    Promise.all([deliveredOrder, inStockOrder, deliveryingOrder, statusName, allStatus]).then(([deliveredRows, inStockRows, deliveringRows, statusRows, allStatusRows])=>{
         vm = {
+            statusName: statusRows,
             delivered: deliveredRows,
             inStock: inStockRows,
             delivering: deliveringRows
@@ -177,7 +179,6 @@ router.get('/showOrderDate', (req, res) => {
 
         var orders = [];
         for (var i = 0; i < dateStr.length; i++) {
-            console.log(dates.length);
             var temp = orderByDateRows.filter((singleOrder)=>{
                 var firstTime = singleOrder.orderDate.getFullYear() + '/' + (singleOrder.orderDate.getMonth()+1) + '/' + singleOrder.orderDate.getDate();
                 return firstTime == dateStr[i];
@@ -226,19 +227,6 @@ router.post('/add', (req, res) => {
 });
 
 router.post('/edit', (req, res) => {
-    /*console.log(req.body.namePro);
-    console.log(req.body.idPro);
-    console.log(req.body.brand);
-    console.log(req.body.cat);
-    console.log(req.body.price);
-    console.log(req.body.stock);
-    console.log(req.body.sold);
-    console.log(req.body.view);
-    console.log(req.body.origin);
-    console.log(req.body.sale);
-    console.log(req.body.date);
-    console.log(req.body.proImg);*/
-
     productRepo.update(req.body).then(value => {
         var vm = {
             showAlert: true
