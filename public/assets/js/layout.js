@@ -1,8 +1,8 @@
 jQuery(document).ready(function($) {
   $('input[name="search-submit"]').click(()=>{
-     var formKey = $('input[name="search-field"]').val();
-    window.location.href='/search/'+formKey+'/all/all/-1/1';
-  });
+   var formKey = $('input[name="search-field"]').val();
+   window.location.href='/search/'+formKey+'/all/all/-1/1';
+ });
   $('.header .product-cat-list li').click(function(){
     var i =$('.header .product-cat-list li').index($(this));
     $('.header .product-list-content').removeClass('active');
@@ -36,13 +36,34 @@ jQuery(document).ready(function($) {
   $('.close').click(function(){
     $('.form').removeClass('active');
   });
-  $('.done').click(function(){
-    $('.sub-menu-none').removeClass('active');
-    $('.sub-menu-user').addClass('active');
-    $('.form').removeClass('active');
-    alert('Chuyển qua chế độ user');
-    $('.hello-user span').text('User');
-    $('.product-item').addClass('user-add');
-  });
+  // $('.done').click(function(){
+  //   $('.sub-menu-none').removeClass('active');
+  //   $('.sub-menu-user').addClass('active');
+  //   $('.form').removeClass('active');
+  //   $('.hello-user span').text('User');
+  //   $('.product-item').addClass('user-add');
+  // });
   var n_item=0;
+  
 });
+
+
+function validateSignUp(){
+  if($('input[name="re-password"]').val()!=$('input[name="password"]').val()){
+    alert("Mật khẩu không khớp!");
+    return false;
+  }
+  else{
+    if($('form#sign-up input[name="username"]').val()==""
+      || $('form#sign-up input[name="fullname"]').val()==""
+      || $('form#sign-up input[name="password"]').val()==""
+      || $('form#sign-up input[name="re-password"]').val()==""
+      || $('form#sign-up input[name="dob"]').val()==""
+      || $('form#sign-up input[name="email"]').val()=="")
+    {
+      alert("Chưa điền đủ thông tin");
+      return false;
+    }
+    return true;
+  }
+}

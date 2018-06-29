@@ -2,6 +2,7 @@ var express = require('express');
 var productRepo = require('../repos/productRepo');
 var categoryRepo = require('../repos/categoryRepo');
 var brandRepo = require('../repos/brandRepo');
+var userRepo = require('../repos/userRepo');
 
 var vm;
 
@@ -21,6 +22,20 @@ router.get('/historyShopping', (req, res) => {
 
 router.get('/account', (req, res) => {
     res.render('users/userAccount');
+});
+
+router.post('/update', (req, res) => {
+    var user = {
+        name: req.body.fullname,
+        email: req.body.email,
+        dob: req.body.dob,
+        gender: req.body.gender,
+        phone: req.body.phone
+    };
+    userRepo.update(user,req.session.curUser.username).then((value)=>{
+        res.render('users/userAccount',user);
+    })
+    
 });
 
 /*router.get('/admin', (req, res) => {  

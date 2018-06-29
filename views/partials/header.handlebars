@@ -1,106 +1,116 @@
 <div class="form">
-    <div class="login active">
-      <button class="close">
-        <i class="fa fa-close"></i>
-      </button>
-      <h2>Đăng nhập</h2>
-      <div>
-        <label>Tên đăng nhập</label>
-        <input type="text">
-      </div>
-      <div>
-        <label>Mật khẩu</label>
-        <input type="password">
-      </div>
-      <button class="done">Đăng nhập</button>
+  <div class="login active">
+    <button class="close">
+      <i class="fa fa-close"></i>
+    </button>
+    <h2>Đăng nhập</h2>
+    <div>
+      <label>Tên đăng nhập</label>
+      <input type="text">
     </div>
-    <div class="signup">
-      <button class="close">
-        <i class="fa fa-close"></i>
-      </button>
-      <h2>Đăng kí</h2>
-      <div>
-        <label>Tên tài khoản</label>
-        <input type="text">
+    <div>
+      <label>Mật khẩu</label>
+      <input type="password">
+    </div>
+    <button class="done">Đăng nhập</button>
+  </div>
+  <div class="signup">
+    <button class="close">
+      <i class="fa fa-close"></i>
+    </button>
+    <h2>Đăng kí</h2>
+    <form id="sign-up" action="/account/register" method="POST" role="form" onsubmit="return validateSignUp()">
+      <div class="form-section">
+        <label for="txtUsername">Tên tài khoản</label>
+        <input type="text" name="username" id="txtUsername">
       </div>
-      <div>
-        <label>Mật khẩu</label>
-        <input type="password">
+      <div class="form-section">
+        <label for="txtPW">Mật khẩu</label>
+        <input type="text" name="password" id="txtPW">
       </div>
-      <div>
-        <label>Nhập lại mật khẩu</label>
-        <input type="password">
+      <div class="form-section">
+        <label for="txtRPW">Nhập lại mật khẩu</label>
+        <input type="text" name="re-password" id="txtRPW">
       </div>
-      <div>
-        <label>Email</label>
-        <input type="text">
+      <div class="form-section">
+        <label for="txtEmail">Email</label>
+        <input type="text" name="email" id="txtEmail">
+      </div>
+      <div class="form-section">
+        <label for="txtName">Họ tên</label>
+        <input type="text" name="fullname" id="txtName">
+      </div>
+      <div class="form-section">
+        <label for="txtDOB">Ngày sinh</label>
+        <input type="date" name="dob" id="txtDOB">
       </div>
       <button class="done">Đăng kí</button>
-    </div>
+    </form>
   </div>
-  <header id="header" class="header">
-    <div class="container header-top">
-      <div class="row">
-        <div class="header-left col-sm-6">
-          <a href="/home"><img src="/assets/images/logo.png" alt=""></a>
-          <a href="/home" style="width: max-content;"><p>Hải Tặc</p></a>
-        </div>
-        <div class="header-right col-sm-6">
-          <div class="row">
-            <div class="col-sm-6 header-search">
-              <input type="text" name="search-field" placeholder="Tìm tên sản phẩm...">
-              <input type="submit" name="search-submit">
-              <i class="fa fa-search"></i>
-            </div>
-            <div class="col-sm-2 header-basket">
-              <i class="fa fa-shopping-cart">
-                <div class="buying-items"></div>
-              </i>
+</div>
+<header id="header" class="header">
+  <div class="container header-top">
+    <div class="row">
+      <div class="header-left col-sm-6">
+        <a href="/home"><img src="/assets/images/logo.png" alt=""></a>
+        <a href="/home" style="width: max-content;"><p>Hải Tặc</p></a>
+      </div>
+      <div class="header-right col-sm-6">
+        <div class="row">
+          <div class="col-sm-6 header-search">
+            <input type="text" name="search-field" placeholder="Tìm tên sản phẩm...">
+            <input type="submit" name="search-submit">
+            <i class="fa fa-search"></i>
+          </div>
+          <div class="col-sm-2 header-basket">
+            <i class="fa fa-shopping-cart">
+              <div class="buying-items"></div>
+            </i>
 
-            </div>
-            <div class="col-sm-4 header-user">
-              <i class="fa fa-user"></i>
-              <div class="hello-user">Hello, <span>Guest</span>!</div>
-              <ul class="sub-menu-none active">
-                <li><a id="login">Đăng nhập</a></li>
-                <li><a id="signup">Đăng kí</a></li>
-              </ul>
-              <ul class="sub-menu-user">
-                <li><a href="./pages/UserPages/userAccount.html">Cập nhật thông tin</a></li>
-                <li><a href="./pages/UserPages/editOrder.html">Điều chỉnh đơn hàng</a></li>
-                <li><a href="./pages/UserPages/historyShopping.html">Lịch sử mua hàng</a></li>
-              </ul>
-            </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="header-bottom row">
-      <div class="col-sm-3">
-        <div class="product-menu-title">Danh mục sản phẩm
-          <div class="row sub-menu">
-            <div class="col-sm-2 product-cat">
-             <ul class="product-cat-list">
-               <li><span>Loại Sản Phẩm</span></li>
-               <li><span>Nhà Sản Xuất</span></li>
-             </ul>
-           </div>
-           <div class="col-sm-10 product-cat-content">
-            <ul class="product-list-content active">
-              {{#each cat}}
-              <li class="product-item"><a href="/home/cat/{{catID}}/1#all">{{catName}}</a></li>
-              {{/each}}
-              <li class="product-item"><a href="/home/all/none/1#all">Tất cả</a></li>
+          <div class="col-sm-4 header-user">
+            <i class="fa fa-user"></i>
+            <div class="hello-user">Hello, <span>Guest</span>!</div>
+            <ul class="sub-menu-none active">
+              <li><a id="login">Đăng nhập</a></li>
+              <li><a id="signup">Đăng kí</a></li>
             </ul>
-            <ul class="product-list-content">
-              {{#each brand}}
-              <li class="product-item"><a href="/home/brand/{{brandID}}/1#all">{{brandName}}</a></li>
-              {{/each}}
-               <li class="product-item"><a href="/home/all/none/1#all">Tất cả</a></li>
+            <ul class="sub-menu-user">
+              <li><a href="./pages/UserPages/userAccount.html">Cập nhật thông tin</a></li>
+              <li><a href="./pages/UserPages/editOrder.html">Điều chỉnh đơn hàng</a></li>
+              <li><a href="./pages/UserPages/historyShopping.html">Lịch sử mua hàng</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="header-bottom row">
+    <div class="col-sm-3">
+      <div class="product-menu-title">Danh mục sản phẩm
+        <div class="row sub-menu">
+          <div class="col-sm-2 product-cat">
+           <ul class="product-cat-list">
+             <li><span>Loại Sản Phẩm</span></li>
+             <li><span>Nhà Sản Xuất</span></li>
+           </ul>
+         </div>
+         <div class="col-sm-10 product-cat-content">
+          <ul class="product-list-content active">
+            {{#each cat}}
+            <li class="product-item"><a href="/home/cat/{{catID}}/1#all">{{catName}}</a></li>
+            {{/each}}
+            <li class="product-item"><a href="/home/all/none/1#all">Tất cả</a></li>
+          </ul>
+          <ul class="product-list-content">
+            {{#each brand}}
+            <li class="product-item"><a href="/home/brand/{{brandID}}/1#all">{{brandName}}</a></li>
+            {{/each}}
+            <li class="product-item"><a href="/home/all/none/1#all">Tất cả</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </header>

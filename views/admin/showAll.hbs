@@ -3,7 +3,6 @@ Trang chủ
 {{/section}}
 
 {{#section 'css'}}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
      <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/styleAdmin/styleAdmin.css" />
 {{/section}}
 
@@ -66,16 +65,18 @@ Trang chủ
                                 <td>{{productSale}}</td>
                                 <td>{{productDate}}</td>
                                 <td><img src="/assets/images/products/{{productImg}}" class="imgInTable"></td>
-                                <td><form action="/delete" method="GET" role="form">
-                                        <input type="hidden" id="" name="CatId" value="{{productId}}">	
-                                        <button type="submit" class="btn btn-danger">
-                                            <span class="glyphicon glyphicon-remove"></span>
+                                 <td><form action="/admin/delete" method="POST" role="form">	
+                                        <input type="hidden" id="" name="productID" value="{{productID}}">
+                                        <button type="submit" class="btn btnRemove" >
+                                            <i class="fa fa-close"></i>
                                         </button>
                                     </form>
                                 </td>
-                                <td><button type="submit" class="btn btn-warning">
-                                        <span class="glyphicon glyphicon-edit"></span>
-                                    </button>
+                                <td><form action="/admin/showAll/delete" method="GET" role="form">	
+                                        <button type="submit" class="btn btnEdit" >
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                             {{/each}}

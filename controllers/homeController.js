@@ -79,18 +79,11 @@ router.get('/:filter/:filterOption/:pageID', (req, res) => {
     var cat = categoryRepo.loadAll();
     var brand = brandRepo.loadAll();
     var pro = productRepo.loadAll();
-    if(!vm){
-        initVM(()=>{
-            getFilterResult(pageID, filter, filterOption, ()=>{
-                res.render('home/index', vm);
-            });
-        });
-    } 
-    else{
+    initVM(()=>{
         getFilterResult(pageID, filter, filterOption, ()=>{
             res.render('home/index', vm);
         });
-    }   
+    });  
 });
 
 

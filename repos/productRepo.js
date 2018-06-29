@@ -1,3 +1,6 @@
+//import { resolve } from 'url';
+//import { rejects } from 'assert';
+
 var db = require('../fn/db');
 
 exports.loadAll = () => {
@@ -85,7 +88,20 @@ exports.addNewProduct = (proName, proID, proBrandID, proCatID, proPrice, proStoc
 }
 
 
-exports.add = (proName, proID, proBrandID, proCatID, proPrice, proStock, proImg, proDate) => {
+exports.add = (proName, proID, proBrandID, proCatID, proPrice, proStock, proImg) => {
+	//Get current date
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth() + 1;
+	var yyyy = today.getFullYear();
+	if (dd < 10) {
+		dd = '0' + dd;
+	}
+	if (mm < 10) {
+		mm = '0' + mm;
+	}
+	var proDate = yyyy + '-' + mm + '-' + dd;
+
 	var sql = `insert into products(productID, productName, productPrice, productViews, productSold, productDes, productOrigin, productCatID, productBrandID, productStock, productImg, productSale, productDate) VALUES ('${proID}','${proName}','${proPrice}','0','0','','Japan','${proCatID}','${proBrandID}','${proStock}','${proImg}','0','${proDate}')`;
 	return db.save(sql);
 }
@@ -104,5 +120,20 @@ exports.delete = (id) => {
 	var sql = `delete from products where productID = '${id}'`;
 	return db.save(sql);
 }
+
+/*exports.single = (id) => {
+	return new Promise((resolve, reject) => {
+		var sql = `select * from vategories where productID = '${id}'`;
+		db.load(sql).then(rows => {
+			if(rows.length === 0) {
+				resolve(null);
+			} else {
+				resolve(rows[0]);
+			}
+		}).catch(err => {
+			reject(err);
+		});
+	});
+}*/
 
 

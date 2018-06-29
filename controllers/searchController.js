@@ -42,21 +42,22 @@ function initVM(callback){
 }
 
 function getResult(searchName, searchCat, searchBrand, searchPrice, pageID, callback){
-     vm.searchPriceID = searchPrice;
-    if(searchPrice!='-1'){
-        searchPrice = vm.priceOption[searchPrice];
-        console.log(searchPrice);
-    }
-    productRepo.loadByKey(searchName, searchCat, searchBrand, searchPrice).then(rows=>{
-        vm.searchName = searchName;
-        vm.searchCat= searchCat;
-        vm.searchBrand= searchBrand;
-        vm.searchPrice= searchPrice;
-        vm.result= rows.slice((pageID-1)*10, (pageID-1)*10 + 10);
-        vm.total = rows.length;
-        vm.page = Math.ceil(rows.length/10);
-        callback();
-    });
+   vm.searchPriceID = searchPrice;
+   if(searchPrice!='-1')
+   {
+    searchPrice = vm.priceOption[searchPrice];
+    console.log(searchPrice);
+}
+productRepo.loadByKey(searchName, searchCat, searchBrand, searchPrice).then(rows=>{
+    vm.searchName = searchName;
+    vm.searchCat= searchCat;
+    vm.searchBrand= searchBrand;
+    vm.searchPrice= searchPrice;
+    vm.result= rows.slice((pageID-1)*10, (pageID-1)*10 + 10);
+    vm.total = rows.length;
+    vm.page = Math.ceil(rows.length/10);
+    callback();
+});
 }
 
 router.get('/:name/:cat/:brand/:price/:pageID', (req, res) => {
@@ -65,18 +66,11 @@ router.get('/:name/:cat/:brand/:price/:pageID', (req, res) => {
     var searchCat = req.params.cat;
     var searchBrand = req.params.brand;
     var searchPrice = req.params.price;
-    if(!vm){
-        initVM(()=>{
-            getResult(searchName, searchCat, searchBrand, searchPrice, pageID, ()=>{
-                res.render('search/result',vm);
-            });
-        })
-    }
-    else{
+    initVM(()=>{
         getResult(searchName, searchCat, searchBrand, searchPrice, pageID, ()=>{
             res.render('search/result',vm);
         });
-    }
+    });
     
 });
 
