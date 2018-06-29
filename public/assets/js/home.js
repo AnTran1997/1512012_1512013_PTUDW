@@ -122,10 +122,25 @@ function adjustSession(proID, quantity, callback){
   }});
 }
 
+function removeSession(proID, callback){
+  $.post({url: `/cart/remove/${proID}`, success: function(result){
+    callback(result);
+  }});
+}
+
 function displayCartQuantity(n_item){
   if(n_item>0){
     $('.buying-items').css('display','block');
     $('.buying-items').text(n_item);
   }
+  else{
+    $('.buying-items').css('display','none');
+  }
   
+}
+
+function getSumPrice(callback){
+  $.post({url: `/cart/cartSum`, success: function(result){
+    callback(result);
+  }});
 }

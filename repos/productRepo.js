@@ -136,4 +136,9 @@ exports.delete = (id) => {
 	});
 }*/
 
+exports.checkoutProduct = (id, stock,sold) =>{
+	var sql = `UPDATE products SET productStock = '${stock}', productSold = '${sold}' WHERE productID = '${id}'`;
+	return db.save(sql);
+}
+
 
