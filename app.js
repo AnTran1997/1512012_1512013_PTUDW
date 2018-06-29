@@ -19,6 +19,8 @@ var adminControllers = require('./controllers/adminController');
 
 var accountController = require('./controllers/accountController');
 
+var cartController = require('./controllers/cartController');
+
 var app = express();
 
 app.engine('hbs', exp_hbs({
@@ -77,6 +79,7 @@ app.use('/user', userControllers);
 app.use('/search', searchControllers);
 app.use('/admin', adminControllers);
 app.use('/account', accountController);
+app.use('/cart', cartController);
 
 
 app.listen(3000, () => {

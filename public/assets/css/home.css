@@ -1281,14 +1281,13 @@ a:hover {
 }
 
 .singlepage .row .item-detail .item-top .checkout {
-  display: none;
   padding: 10px 50px;
   font: 20px 'OpenSansLight';
   color: white;
   background: linear-gradient(to right, #F37021, #FBB040);
   position: absolute;
   bottom: 50px;
-  left: 50%;
+  left: 60%;
   border: 1px solid transparent;
 }
 
@@ -1896,4 +1895,12 @@ ul {
   width: 80%;
   position: relative;
   left: 15ch;
+}
+
+input[name="addAmount"]{
+  width: 50px;
+  height: 50px;
+  margin: 40px 0;
+  padding-left: 18px;
+  font: 18px 'OpenSans';
 }
