@@ -1,6 +1,24 @@
 {{#section 'css'}}
 <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/home.css" />
 {{/section}}
+{{#section 'js'}}
+<script src="/assets/js/home.js"></script>
+<script>
+var isLogged = {{isLogged}};
+if(isLogged){
+$('input[name="addAmount"]').removeClass('hide');
+  $('button.add').removeClass('hide');
+  $('button.checkout').removeClass('hide');
+   $('button.checkout').click(function(){
+    var quantity = $('input[name="addAmount"]').val();
+    var proID = '{{product.productID}}';
+    adjustSession(proID,quantity, (result)=>{
+      displayCartQuantity(parseInt(result));
+    });
+   });
+}
+</script>
+{{/section}}
 {{#section 'class'}}singlepage{{/section}}
 {{#section 'header'}}{{> header}}{{/section}}
 {{#section 'footer'}}{{> footer}}{{/section}}
@@ -38,7 +56,8 @@
             <span class="des-info">{{product.productSold}} chiếc</span>
           </div>
         </div>
-        <button class="checkout">Thêm vào giỏ hàng</button>
+        <input type="number" name="addAmount" min="0" value="0" class="hide">
+        <button class="checkout hide">Thêm vào giỏ hàng</button>
       </div>
       <div class="item-bottom">
         <h2 class="detail-title">Chi tiết <span>sản phẩm</span></h2>
@@ -73,7 +92,7 @@
                 <div class="most-name">{{productName}}</div>
                 <div class="most-price">{{numberFormat productPrice}} VND</div>
                 <a href="/product/detail/{{productID}}" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-                <button class="add">
+                <button class="add hide add-cart" data-id="{{productID}}">
                   <i class="fa fa-shopping-cart"></i>
                 </button>
               </div>
@@ -95,7 +114,7 @@
                 <div class="most-name">{{productName}}</div>
                 <div class="most-price">{{numberFormat productPrice}} VND</div>
                 <a href="/product/detail/{{productID}}" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-                <button class="add">
+                <button class="add hide add-cart" data-id="{{productID}}">
                   <i class="fa fa-shopping-cart"></i>
                 </button>
               </div>

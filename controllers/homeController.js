@@ -2,7 +2,7 @@ var express = require('express');
 var productRepo = require('../repos/productRepo');
 var categoryRepo = require('../repos/categoryRepo');
 var brandRepo = require('../repos/brandRepo');
-
+var cartRepo = require('../repos/cartRepo');
 
 
 var router = express.Router();
@@ -43,28 +43,30 @@ function getFilterResult(pageID, filter, filterOption, callback){
             productRepo.loadCatByPage((pageID-1)*9,filterOption).then(rows => {
                 vm.currentAll = rows;
                 vm.page =  Math.ceil(rows.length/9);
-
+                callback();
             });
             break;
             case 'brand':
             productRepo.loadBrandByPage((pageID-1)*9,filterOption).then(rows => {
                 vm.currentAll = rows;
                 vm.page =  Math.ceil(rows.length/9);
-
+                callback();
             });
             break;
             default:
             productRepo.loadAllByPage((pageID-1)*9).then(rows => {
                 vm.currentAll = rows;
-
+                callback();
             });
         }
     }
-    callback();
+    
 }
 
 router.get('/', (req, res) => {
     initVM(()=>{
+        vm.curUser = req.session.curUser;
+        vm.isLogged = req.session.isLogged;
         res.render('home/index', vm);
     });
 });
@@ -81,8 +83,10 @@ router.get('/:filter/:filterOption/:pageID', (req, res) => {
     var pro = productRepo.loadAll();
     initVM(()=>{
         getFilterResult(pageID, filter, filterOption, ()=>{
-            res.render('home/index', vm);
-        });
+           vm.curUser = req.session.curUser;
+           vm.isLogged = req.session.isLogged;
+           res.render('home/index', vm);
+       });
     });  
 });
 

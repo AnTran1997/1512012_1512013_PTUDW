@@ -27,42 +27,39 @@ router.post('/register', (req, res) => {
         req.session.isLogged = true;
         req.session.curUser = user;
         req.session.cart = [];
-        res.render('users/userAccount', user);
+        var vm = {
+            curUser: user,
+            isLogged: true
+        }
+        res.render('users/userAccount', vm);
     });
 });
 
-router.get('/login', (req, res) => {
-    res.render('account/login');
-});
 
 router.post('/login', (req, res) => {
     var user = {
-        username: req.body.username,
-        password: sha256(req.body.rawPWD).toString()
+        username: req.body.username_login,
+        password: sha256(req.body.password_login).toString()
     };
 
     accountRepo.login(user).then(rows => {
         if (rows.length > 0) {
             req.session.isLogged = true;
             req.session.curUser = rows[0];
+            req.session.curUser.dob = rows[0].dob.toISOString().split('T')[0];
             req.session.cart = [];
-
             var url = '/';
             if (req.query.retUrl) {
                 url = req.query.retUrl;
             }
             res.redirect(url);
         } else {
-            var vm = {
-                showError: true,
-                errorMsg: 'Login failed'
-            };
-            res.render('account/login', vm);
+           
         }
     });
 });
 
-router.post('/logout', restrict, (req, res) => {
+router.get('/logout', restrict, (req, res) => {
     req.session.isLogged = false;
     req.session.curUser = null;
     req.session.cart = [];

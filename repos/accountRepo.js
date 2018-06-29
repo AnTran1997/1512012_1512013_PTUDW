@@ -6,6 +6,6 @@ exports.add = user => {
 }
 
 exports.login = user => {
-	var sql = `select * from users where f_Username = '${user.username}' and f_Password = '${user.password}'`;
+	var sql = `select * from users where username = '${user.username}' and password = '${user.password}'`;
 	return db.load(sql);
 }

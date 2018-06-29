@@ -1880,8 +1880,8 @@ footer .footer-right .address span i {
 
 
 
-.user-add:hover .add {
-  opacity: 1;
+.hide {
+  visibility: hidden;
 }
 
 .add {
@@ -1889,7 +1889,7 @@ footer .footer-right .address span i {
   position: absolute;
   top: 10px;
   right: 10px;
-  opacity: 0;
+  z-index: 9999;
 }
 
 .add i {

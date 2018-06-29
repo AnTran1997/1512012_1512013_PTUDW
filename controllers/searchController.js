@@ -2,7 +2,7 @@ var express = require('express');
 var productRepo = require('../repos/productRepo');
 var categoryRepo = require('../repos/categoryRepo');
 var brandRepo = require('../repos/brandRepo');
-
+var cartRepo = require('../repos/cartRepo');
 
 
 
@@ -42,9 +42,9 @@ function initVM(callback){
 }
 
 function getResult(searchName, searchCat, searchBrand, searchPrice, pageID, callback){
-   vm.searchPriceID = searchPrice;
-   if(searchPrice!='-1')
-   {
+ vm.searchPriceID = searchPrice;
+ if(searchPrice!='-1')
+ {
     searchPrice = vm.priceOption[searchPrice];
     console.log(searchPrice);
 }
@@ -68,6 +68,9 @@ router.get('/:name/:cat/:brand/:price/:pageID', (req, res) => {
     var searchPrice = req.params.price;
     initVM(()=>{
         getResult(searchName, searchCat, searchBrand, searchPrice, pageID, ()=>{
+            vm.curUser = req.session.curUser;
+            vm.isLogged = req.session.isLogged;
+            vm.cartItem = cartRepo.getNumberOfItems(req.session.cart);
             res.render('search/result',vm);
         });
     });

@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/search.css" />
 {{/section}}
 {{#section 'js'}}
+<script src="/assets/js/home.js"></script>
 <script>
 	var searchName = '{{searchName}}';
 	if(searchName=='all'){
@@ -24,6 +25,10 @@
 		console.log('/search/'+searchName+'/' + searchCat + '/' + searchBrand  + '/' + searchPrice +'/1');
 		window.location.href='/search/'+searchName+'/' + searchCat + '/' + searchBrand  + '/' + searchPrice +'/1';
 	});
+	var isLogged = {{isLogged}};
+if(isLogged){
+  $('button.add').removeClass('hide');
+  }
 </script>
 {{/section}}
 {{#section 'header'}}{{> header}}{{/section}}
@@ -87,7 +92,7 @@
 							<div class="view-all-name">{{productName}}</div>
 							<div class="view-all-price">{{numberFormat productPrice}} VND</div>
 						</a>
-						<button class="add">
+						<button class="add hide add-cart" data-id="{{productID}}">
 							<i class="fa fa-shopping-cart"></i>
 						</button>
 					</div>

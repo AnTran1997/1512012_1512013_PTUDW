@@ -2,7 +2,7 @@ var express = require('express');
 var productRepo = require('../repos/productRepo');
 var categoryRepo = require('../repos/categoryRepo');
 var brandRepo = require('../repos/brandRepo');
-
+var cartRepo = require('../repos/cartRepo');
 
 
 var router = express.Router();
@@ -12,7 +12,6 @@ router.get('/detail/:productID', (req, res) => {
     var productID = req.params.productID;
 
     productRepo.loadSingle(productID).then(row=>{
-        console.log(row);
         var catAll = categoryRepo.loadAll();
         var brandAll = brandRepo.loadAll();
         var cat = categoryRepo.loadSingle(row[0].productCatID);
@@ -28,7 +27,9 @@ router.get('/detail/:productID', (req, res) => {
                 product: row[0],
                 proCat: proCatRow,
                 proBrand: proBrandRow,
-                currentPage:1
+                currentPage:1,
+                curUser: req.session.curUser,
+                isLogged: req.session.isLogged
             }
             res.render('products/detail', vm);
         });
