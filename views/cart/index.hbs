@@ -145,12 +145,14 @@
                 <button id="editAddress">Sửa</button>
               </div>
               <div class="addrContent">
+              <form method="post" id="submit-form" action="/cart/checkout">
                 <label>Tên người nhận</label>
                 <input type="text" name="customer_name" value="{{curUser.name}}" readonly>
                 <label>Địa chỉ</label>
                 <input type="text" name="customer_addr" value="{{curUser.addr}}" readonly>
                 <label>Điện thoại</label>
-                <input type="text" name="customer_phone" value={{curUser.phone}} readonly>
+                <input type="text" name="customer_phone" value="{{curUser.phone}}" readonly>
+                </form>
               </div>
             </div>
           </div>
@@ -194,5 +196,5 @@
   </div>
 
 </div>
-<form method="post" action="/cart/checkout"><button id="final-checkout">Thanh toán</button></form>
+<button id="final-checkout" form="submit-form">Thanh toán</button>
 

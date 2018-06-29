@@ -3,6 +3,7 @@ var productRepo = require('../repos/productRepo'),
 cartRepo = require('../repos/cartRepo');
 var categoryRepo = require('../repos/categoryRepo');
 var brandRepo = require('../repos/brandRepo');
+var orderRepo = require('../repos/orderRepo');
 
 var router = express.Router();
 var vm;
@@ -65,21 +66,43 @@ router.post('/remove/:proID', (req, res) => {
 });
 
 router.post('/checkout', (req, res) => {
+
+    console.log(req.session.curUser);
     var user = {
         id: req.session.curUser.username,
         name: req.body.customer_name,
         addr: req.body.customer_addr,
         phone: req.body.customer_phone
     }
+    console.log(user);
 
     var cart = req.session.cart;
-    var stock, sold;
-    for(var i =0;i<cart.length;i++){
-        stock = parseInt(cart[i].product.productStock)-parseInt(cart[i].quantity);
-        sold = parseInt(cart[i].product.productSold)+parseInt(cart[i].quantity);
-        productRepo.checkoutProduct(cart[i].product.productID, stock, sold);
-    }
-    cart = [];
+
+    var totalAmount = cartRepo.getNumberOfItems(cart);
+    var totalPrice = cartRepo.sumPrice(cart);
+    orderRepo.loadAll().then(rows=>{
+        var orderID = 'dh' + rows.length;
+
+        var stock, sold;
+        for(var i =0;i<cart.length;i++){
+            stock = parseInt(cart[i].product.productStock)-parseInt(cart[i].quantity);
+            sold = parseInt(cart[i].product.productSold)+parseInt(cart[i].quantity);
+            productRepo.checkoutProduct(cart[i].product.productID, stock, sold);
+        }
+
+        orderRepo.saveOrder(orderID, user, totalAmount, totalPrice);
+        req.session.cart = [];
+        var cat = categoryRepo.loadAll();
+        var brand = brandRepo.loadAll();
+        var pro = productRepo.loadAll();
+        vm = {
+            cat: cat,
+            brand: brand,
+            currentPage: 1
+        }
+        res.render('cart/payment', vm);
+    })
+    
 });
 
 module.exports = router;

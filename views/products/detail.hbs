@@ -95,6 +95,7 @@ $('input[name="addAmount"]').removeClass('hide');
                 <button class="add hide add-cart" data-id="{{productID}}">
                   <i class="fa fa-shopping-cart"></i>
                 </button>
+                <div class="sold-out hide" data-out={{productStock}}>Hết hàng</div>
               </div>
             </div>
             {{/each}}
@@ -117,6 +118,7 @@ $('input[name="addAmount"]').removeClass('hide');
                 <button class="add hide add-cart" data-id="{{productID}}">
                   <i class="fa fa-shopping-cart"></i>
                 </button>
+                <div class="sold-out hide" data-out={{productStock}}>Hết hàng</div>
               </div>
             </div>
             {{/each}}

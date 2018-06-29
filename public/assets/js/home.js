@@ -113,6 +113,12 @@ jQuery(document).ready(function($) {
       displayCartQuantity(n_item);
     });
   });
+  $('.sold-out').each(function(){
+    if($(this).attr("data-out")=="0"){
+      $(this).removeClass('hide');
+      $(this).prev().addClass('hide');
+    }
+  })
 });
 
 
@@ -136,7 +142,7 @@ function displayCartQuantity(n_item){
   else{
     $('.buying-items').css('display','none');
   }
-  
+
 }
 
 function getSumPrice(callback){

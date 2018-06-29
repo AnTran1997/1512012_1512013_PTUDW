@@ -1910,3 +1910,25 @@ input[name="addAmount"]{
   display: block;
   border: 1px solid transparent;
 }
+
+.back-home{
+  padding: 20px 50px;
+  font: 30px 'OpenSansLight';
+  color: white;
+  background: linear-gradient(to right, #F37021, #FBB040);
+  margin: 30px auto;
+  width: max-content;
+  display: block;
+  border: 1px solid transparent;
+}
+
+.done-title{
+  font: 35px 'UTMGodWordR';
+  margin: 30px 0;
+  color: transparent;
+  background: linear-gradient(to right, #0191C4, #2CDBB0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  text-align: center;
+}
