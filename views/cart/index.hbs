@@ -1,0 +1,200 @@
+{{#section 'js'}}
+<script src="/assets/js/home.js"></script>
+
+<script>
+
+  function formatNumber(number){
+    var rs = number.toString();
+    for(var i = rs.length-3; i>0; i-=3){
+      rs = rs.slice(0,i)+'.'+rs.slice(i);
+    }
+    return rs;
+  }
+  var state = false;
+  $('#editAddress').click(function(){
+    if(!state){
+      $(this).text("Ok");
+    }
+    else{
+      $(this).text("Sửa");
+    }
+    $('.addrContent input').attr('readonly',state);
+    $('.addrContent input').attr('disabled',state);
+    state=!state;
+  })
+  $('input#subtract').click(function(){
+    var value = $(this).parent().find('input.numProduct');
+    if(parseInt(value.val())>0){
+      var price = parseInt($(this).parent().find('.hidden-info').attr("data-price"));
+      value.val(parseInt(value.val())-1);
+      var sum = $(this).parent().parent().find('.price').text(formatNumber(price*parseInt(value.val()))+" VNĐ");
+      var currentID = $(this).parent().find('.hidden-info').attr("data-id");
+      var currentSum = $(`.productsInfo#${currentID}`);
+      currentSum.find('#quantity-sum').text('x'+value.val());
+      currentSum.find('#price-sum').text($(this).parent().parent().find('.price').text()+" VNĐ");
+      adjustSession(currentID,-1, (result)=>{
+        displayCartQuantity(parseInt(result));
+        $('#cart-nItem span').text(result);
+        getSumPrice((result)=>{
+          $('.totalPrice p span').text(formatNumber(parseInt(result)));
+        });
+      });
+
+    }
+    else{
+      $('.totalPrice p span').text("0");
+    }
+  });
+  $('input#add').click(function(){
+    var value = $(this).parent().find('input.numProduct');
+    if(parseInt(value.val())<parseInt($(this).parent().find('.hidden-info').attr("data-stock"))){
+      var price = parseInt($(this).parent().find('.hidden-info').attr("data-price"));
+      value.val(parseInt(value.val())+1);
+      var sum = $(this).parent().parent().find('.price').text(formatNumber(price*parseInt(value.val()))+" VNĐ");
+      var currentID = $(this).parent().find('.hidden-info').attr("data-id");
+      var currentSum = $(`.productsInfo#${currentID}`);
+      currentSum.find('#quantity-sum').text('x'+value.val());
+      currentSum.find('#price-sum').text($(this).parent().parent().find('.price').text()+" VNĐ");
+      adjustSession(currentID,1, (result)=>{
+        displayCartQuantity(parseInt(result));
+        $('#cart-nItem span').text(result);
+        getSumPrice((result)=>{
+          $('.totalPrice p span').text(formatNumber(parseInt(result)));
+        });
+      });
+
+    }
+  });
+  $('button#deleteBtn').click(function(){
+    $(this).parent().parent().parent().parent().remove();
+    var currentID = $(this).parent().parent().parent().find('.hidden-info').attr("data-id");
+    console.log(currentID);
+    var currentSum = $(`.productsInfo#${currentID}`).remove();
+    removeSession(currentID,(result)=>{
+      displayCartQuantity(parseInt(result));
+      $('#cart-nItem span').text(result);
+      getSumPrice((result)=>{
+        $('.totalPrice p span').text(formatNumber(parseInt(result)));
+      });
+    })
+    if(!$('.editOrder').length){
+      $('.row.orders').text("Ối, không còn món hàng nào trong giỏ nữa rồi");
+      $('.row.orders').css("font","20px 'OpenSans'");
+    }
+    
+  })
+</script>
+{{/section}}
+
+{{#section 'class'}}order{{/section}}
+
+{{#section 'css'}}
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/css/styleUserPages.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/css/home.css" />
+{{/section}}
+
+
+{{#section 'header'}}{{> header}}{{/section}}
+{{#section 'footer'}}{{> footer}}{{/section}}
+
+
+<div class="payment">
+  <div class="container payment-process">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-7 orderDetail"> 
+        <h2 class="detail-title">Thông tin <span>đơn hàng</span></h2>
+        <div class="row orders">
+          {{#each items}}
+          <div class="col-sm-12 editOrder">
+            <h3>{{product.productBrand}}</h3>
+            <div class="row productDetail">
+              <div class="col-sm-3 item">
+                <img src="/assets/images/Products/{{product.productImg}}" alt="">
+              </div>
+              <div class="col-sm-5 item">
+                <div class="infoDelete">
+                  <p>{{product.productName}}</p><br>
+                  <button id="deleteBtn"><i class="fa fa-trash-o"></i> </button>
+                </div>
+              </div>
+              <div class="col-sm-2 item">
+                <div class="infoDelete"></div>   
+              </div>
+              <div class="col-sm-2 item">
+                <div class="infoDelete">
+                  <input type="submit" class="changeNumber" id="subtract" value="-">
+                  <input type="text" class="changeNumber numProduct" value="{{quantity}}" readonly>
+                  <input type="submit" class="changeNumber" id="add" value="+">
+                  <div class="hidden-info" data-id='{{product.productID}}'
+                  data-price='{{product.productPrice}}' data-stock='{{product.productStock}}' hidden></div>
+                </div>
+                <p class="price">{{numberFormat price}} VNĐ</p>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-sm-3 orderInfo">
+        <div class="resumeOrder">
+          <div class="row">
+            <div class="col-sm-12 address">
+              <div class="title-orderInfo">
+                <h4>Địa chỉ giao hàng</h4>
+                <button id="editAddress">Sửa</button>
+              </div>
+              <div class="addrContent">
+              <form method="post" id="submit-form" action="/cart/checkout">
+                <label>Tên người nhận</label>
+                <input type="text" name="customer_name" value="{{curUser.name}}" readonly>
+                <label>Địa chỉ</label>
+                <input type="text" name="customer_addr" value="{{curUser.addr}}" readonly>
+                <label>Điện thoại</label>
+                <input type="text" name="customer_phone" value="{{curUser.phone}}" readonly>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 info">
+              <div class="title-orderInfo">
+                <h4 id="cart-nItem">Đơn hàng - <span>{{nItem}}</span> sản phẩm</h4>
+              </div>
+              {{#each items}}
+              <div class="productsInfo" id='{{product.productID}}'>
+                <div class="row">
+                  <div class="col-sm-7 nameProduct">
+                    <h5 id="quantity-sum">{{quantity}}x</h5>
+                    <p><a href="/product/detail/{{product.productID}}">{{product.productName}}</a></p>
+                  </div>
+                  <div class="col-sm-5 priceProduct">
+                    <p id="price-sum">{{numberFormat price}} VNĐ</p>
+                  </div>
+                </div>
+              </div>
+              {{/each}}
+              <div class="productsInfo">
+                <div class="totalPay">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <p style="font-weight: bold;">Thành tiền</p>
+                    </div>
+                    <div class="col-sm-6 totalPrice">
+                      <p style="font-size: 20px; color: red; font-weight: bold;"><span>{{numberFormat nSum}}</span> VNĐ</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>  
+      </div>
+      <div class="col-sm-1"></div>
+    </div>
+  </div>
+
+</div>
+<button id="final-checkout" form="submit-form">Thanh toán</button>
+

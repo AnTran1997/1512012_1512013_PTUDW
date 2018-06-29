@@ -12,7 +12,7 @@
         </div>
         <div class="form-section">
           <label for="txtLGPW">Mật khẩu</label>
-          <input type="text" name="password_login" id="txtLGPW">
+          <input type="password" name="password_login" id="txtLGPW">
         </div>
       </div>
       <button class="done">Đăng nhập</button>
@@ -30,11 +30,11 @@
       </div>
       <div class="form-section">
         <label for="txtPW">Mật khẩu</label>
-        <input type="text" name="password" id="txtPW">
+        <input type="password" name="password" id="txtPW">
       </div>
       <div class="form-section">
         <label for="txtRPW">Nhập lại mật khẩu</label>
-        <input type="text" name="re-password" id="txtRPW">
+        <input type="password" name="re-password" id="txtRPW">
       </div>
       <div class="form-section">
         <label for="txtEmail">Email</label>
@@ -78,7 +78,7 @@
             <div class="hello-user">Hello, <span>{{curUser.username}}</span>!</div>
             <ul class="sub-menu-user active">
               <li><a href="/user/account">Cập nhật thông tin</a></li>
-              <li><a href="./pages/UserPages/editOrder.html">Điều chỉnh đơn hàng</a></li>
+              <li><a href="/cart">Điều chỉnh đơn hàng</a></li>
               <li><a href="/account/logout">Đăng xuất</a></li>
             </ul>
             {{else}}

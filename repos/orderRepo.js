@@ -49,3 +49,10 @@ exports.loadNumberOrderByStatus = (statusID) => {
     var sql = `select COUNT(*) as numOrders from orders where orderStatusID = '${statusID}'`;
     return db.load(sql);
 }
+
+
+exports.saveOrder =(orderID, user,totalAmount, totalPrice)=>{
+
+    var sql = `INSERT INTO orders (orderID, totalProduct, totalPrice, username, orderStatusID, orderDate, deliveryPrice, deliveryAddress, receivedCustomer) VALUES ('${orderID}', '${totalAmount}', '${totalPrice}', '${user.id}', 'delivered', '2018-06-29', '0', '${user.addr}', '${user.name}')`;
+    return db.load(sql);
+}

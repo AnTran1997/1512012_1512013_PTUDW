@@ -9,21 +9,41 @@ var vm;
 
 var router = express.Router();
 
+function initVM(callback){
+    var cat = categoryRepo.loadAll();
+    var brand = brandRepo.loadAll();
+    var pro = productRepo.loadAll();
+    Promise.all([cat,brand,pro]).then(([catRows,brandRows, proRows])=>{
+        vm = {
+            cat: catRows,
+            brand: brandRows,
+            currentPage: 1
+        }
+        callback();
+    });
+}
+
+
 router.get('/payment', (req, res) => {
     res.render('users/payment');
 });
 
 router.get('/editOrder', (req, res) => {
-    res.render('users/editOrder');
+    initVM(()=>{
+        vm.curUser= req.session.curUser,
+        vm.isLogged= true;
+        res.render('users/editOrder', vm);
+    });
 });
 
 
 router.get('/account', (req, res) => {
-    var vm = {
-        curUser: req.session.curUser,
-        isLogged: true
-    }
+   initVM(()=>{
+    vm.curUser= req.session.curUser,
+    vm.isLogged= true;
     res.render('users/userAccount', vm);
+});
+
 });
 
 router.post('/update', (req, res) => {
@@ -32,7 +52,8 @@ router.post('/update', (req, res) => {
         email: req.body.email,
         dob: req.body.dob,
         gender: req.body.gender,
-        phone: req.body.phone
+        phone: req.body.phone,
+        addr: req.body.address
     };
     user.username = req.session.curUser.username;
     req.session.curUser.name = user.name;
@@ -40,12 +61,13 @@ router.post('/update', (req, res) => {
     req.session.curUser.dob = user.dob;
     req.session.curUser.gender = user.gender;
     req.session.curUser.phone = user.phone;
+    req.session.curUser.addr = user.addr;
     userRepo.update(user,req.session.curUser.username).then((value)=>{
-        var vm = {
-            curUser: user,
-            isLogged: true
-        }
-        res.render('users/userAccount',vm);
+        initVM(()=>{
+            vm.curUser= req.session.curUser,
+            vm.isLogged= true;
+            res.render('users/userAccount', vm);
+        });
     })
     
 });

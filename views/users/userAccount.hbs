@@ -8,6 +8,7 @@ User information
 {{/section}}
 
 {{#section 'js'}}
+<script src="/assets/js/home.js"></script>
 <script>
   $('#user-info-button').click(function(){
     $('form.userAccount input').attr('readonly',false);
@@ -51,6 +52,10 @@ User information
         <div>
           <label for="numberPhone">Số điện thoại</label>
           <input type="text" name="phone" value="{{curUser.phone}}" readonly>
+        </div>
+        <div>
+          <label for="address">Địa chỉ</label>
+          <input type="text" name="address" value="{{curUser.addr}}" readonly>
         </div>
         <button class="done" id="user-update-button" style="visibility: hidden;">Cập Nhật</button>
       </form>
