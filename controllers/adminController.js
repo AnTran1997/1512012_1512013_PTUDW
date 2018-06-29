@@ -115,7 +115,7 @@ router.get('/', (req, res) =>{
                 res.render('admin/adminHome'); 
             }
             else{
-                res.redirect(req.headers.referer);
+                res.redirect('/');
             }
         }
         
