@@ -15,6 +15,7 @@ User information
     $('#user-update-button').css("visibility","visible");
     $(this).css("visibility","hidden");
   });
+  $('input.user-gender[value="{{curUser.gender}}"]').attr('checked',true);
 
 </script>
 {{/section}}
@@ -31,37 +32,32 @@ User information
       <form class="userAccount" action="/user/update" method="POST" role="form">
         <div>
           <label for="name">Họ và tên</label>
-          <input type="text" name="fullname" value="{{name}}" readonly>
+          <input type="text" name="fullname" value="{{curUser.name}}" readonly>
         </div>
 
         <div>
           <label for="email">Email</label>
-          <input type="text" name="email" value="{{email}}" readonly>
+          <input type="text" name="email" value="{{curUser.email}}" readonly>
         </div>
         <div>
           <label for="gender">Giới tính</label>
-          {{#if gender}}
-          <input type="radio" name="gender" value="0" checked disabled><span>Nam</span>
-          <input type="radio" name="gender" value="1" disabled><span>Nữ</span>
-          {{else}}
-          <input type="radio" name="gender" value="0" disabled><span>Nam</span>
-          <input type="radio" name="gender" value="1" checked disabled><span>Nữ</span>
-          {{/if}}
+          <input type="radio" name="gender" value="0" disabled class="user-gender"><span>Nam</span>
+          <input type="radio" name="gender" value="1" disabled class="user-gender"><span>Nữ</span>
         </div>
         <div>
           <label for="birthDay">Ngày sinh</label>
-          <input type="date" name="dob" value="{{dob}}" readonly>
+          <input type="date" name="dob" value="{{curUser.dob}}" readonly>
         </div>
         <div>
           <label for="numberPhone">Số điện thoại</label>
-          <input type="text" name="phone" value="{{phone}}" readonly>
+          <input type="text" name="phone" value="{{curUser.phone}}" readonly>
         </div>
         <button class="done" id="user-update-button" style="visibility: hidden;">Cập Nhật</button>
       </form>
     </div>
     <div class="col-sm-4 user-avatar">
       <img src="/assets/images/user.png" alt="">
-      <p class="username">{{username}}</p>
+      <p class="username">{{curUser.username}}</p>
     </div>
   </div>
   <button class="done" id="user-info-button">Chỉnh Sửa</button>

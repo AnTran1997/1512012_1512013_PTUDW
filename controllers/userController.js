@@ -3,6 +3,7 @@ var productRepo = require('../repos/productRepo');
 var categoryRepo = require('../repos/categoryRepo');
 var brandRepo = require('../repos/brandRepo');
 var userRepo = require('../repos/userRepo');
+var accountRepo = require('../repos/accountRepo');
 
 var vm;
 
@@ -21,7 +22,11 @@ router.get('/historyShopping', (req, res) => {
 });
 
 router.get('/account', (req, res) => {
-    res.render('users/userAccount');
+    var vm = {
+        curUser: req.session.curUser,
+        isLogged: true
+    }
+    res.render('users/userAccount', vm);
 });
 
 router.post('/update', (req, res) => {
@@ -32,8 +37,18 @@ router.post('/update', (req, res) => {
         gender: req.body.gender,
         phone: req.body.phone
     };
+    user.username = req.session.curUser.username;
+    req.session.curUser.name = user.name;
+    req.session.curUser.email = user.email;
+    req.session.curUser.dob = user.dob;
+    req.session.curUser.gender = user.gender;
+    req.session.curUser.phone = user.phone;
     userRepo.update(user,req.session.curUser.username).then((value)=>{
-        res.render('users/userAccount',user);
+        var vm = {
+            curUser: user,
+            isLogged: true
+        }
+        res.render('users/userAccount',vm);
     })
     
 });

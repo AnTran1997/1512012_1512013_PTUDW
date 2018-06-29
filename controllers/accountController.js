@@ -27,7 +27,11 @@ router.post('/register', (req, res) => {
         req.session.isLogged = true;
         req.session.curUser = user;
         req.session.cart = [];
-        res.render('users/userAccount', user);
+        var vm = {
+            curUser: user,
+            isLogged: true
+        }
+        res.render('users/userAccount', vm);
     });
 });
 
@@ -42,8 +46,8 @@ router.post('/login', (req, res) => {
         if (rows.length > 0) {
             req.session.isLogged = true;
             req.session.curUser = rows[0];
+            req.session.curUser.dob = rows[0].dob.toISOString().split('T')[0];
             req.session.cart = [];
-
             var url = '/';
             if (req.query.retUrl) {
                 url = req.query.retUrl;
