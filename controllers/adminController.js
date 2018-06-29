@@ -109,7 +109,6 @@ function showProductByBrand(brandID, callback) {
 }
 
 router.get('/', (req, res) =>{
-       // res.render('admin/adminHome'); 
     initVM(() => {
         res.render('admin/adminHome'); 
     });    
