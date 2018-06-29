@@ -33,6 +33,55 @@ function displayContent(nameClass) {
     }
 }
 
+function returnToPreviousPage() {
+    var modal = document.getElementById('myModal');
+    modal.style.display = "block";
+}
+
+function validateForm() {
+    var name = document.getElementById('_name').value;
+    var id = document.getElementById('_id').value;
+    var brand = document.getElementById('_brandID').value;
+    var cat = document.getElementById('_cat').value;
+    var price = document.getElementById('_price').value;
+    var stock = document.getElementById('_stock').value;
+    var img = document.getElementById('proImg').value;
+    var intFields = document.getElementsByClassName('isNumber');
+
+    var existNaN = false;
+    var existEmpty = false;
+
+    for (var i = 0; i < intFields.length; i++) {
+        if (isNaN(intFields[i].value)){
+            existNaN = true;
+            break;
+        }
+    }
+    
+    if (name === null || id === null || brand === null || cat === null || price === null || stock === null){
+        existEmpty = true           
+    }   
+        
+    if(existEmpty && existNaN==false) {
+        alert("There is empty fields. Please fulfill all requires");
+        returnToPreviousPage();
+        return false;
+    } else if (existEmpty==false && existNaN) {
+        alert("All these fields - Product Price, Product Stock - must be number. Please refill the right format");
+        returnToPreviousPage();
+        return false;
+    } else if (existEmpty && existNaN) {
+        alert("Invalid input!\nThere is empty fields, and  Product Price, Product Stock are number fields.");
+        returnToPreviousPage();
+        return false;
+    } else{
+        modal.style.display = "none";
+        return true;
+    } 
+
+    
+}
+
 function addNewProduct() {
     var modal = document.getElementById('myModal');
     var icon = document.getElementsByClassName("fa-close")[0];
@@ -43,10 +92,7 @@ function addNewProduct() {
     }
 
     addbtn.onclick = function() {
-        alert("Adding new product successfully");
         modal.style.display = "none";
-        //location.href = "http://localhost:3000/admin";
-        window.location.href = "http://localhost:3000/admin";
     }
 
     window.onclick = function(event) {
@@ -55,7 +101,7 @@ function addNewProduct() {
         }
     }
 
-    //get input values
+    
 }
 
 function randomColor(lengthArr) {
@@ -118,8 +164,6 @@ function getChartOfBrand(nameBrand, percentBrand) {
 
     //rangeWidth: 910, rangeHeight: 270
 }
-//getChartOfBrand(4, ["Canon", "Nikon", "Fujifilm", "Sony"], [24, 15, 43, 18]);
-//getChartOfBrand({{totalBrand}}, {{allBrands}}, {{percentBrand}});
 
 //*******************  STATISTIC OF NUMBER OF PRODUCTS IN TYPES ********************
 function getChartOfType(nameType, percentType) {
@@ -167,7 +211,6 @@ function getChartOfType(nameType, percentType) {
 
     //rangeWidth: 440, rangeHeight: 220
 }
-//getChartOfType(3, ["Máy cơ", "Kỹ thuật số", "Máy lấy liền"], [24, 48, 28]);
 
 
 /*******************  STATISTIC OF NUMBER OF PRODUCTS IN ORDERS ********************/
@@ -178,7 +221,6 @@ function getChartOfOrders(nameOrder, percentOrder) {
     var x = 20 + 440 / (numTypeOrder*8), h, y = 240 - h; //x, y are coordinates and h is height of collumn
     var w = (3*440) / (4*numTypeOrder) //width of a collumn
     var distance =  440 / (numTypeOrder*4);   //distance between two columns
-    //var colorOrder = ["#ff6600", "#0099ff", "#00b300"];
     var colorOrder = randomColor(numTypeOrder);
     var percentStr = [];
     for (var i = 0; i < numTypeOrder; i++) {
@@ -218,7 +260,6 @@ function getChartOfOrders(nameOrder, percentOrder) {
 
     //rangeWidth: 440, rangeHeight: 220
 }
-//getChartOfOrders(3, ["Delivered", "Delivering", "In Stock"], [16, 31.6, 52.4]);
 
 function getCharts() {
     var ele = document.getElementById("brandCanvas");
@@ -342,8 +383,3 @@ function getCharts() {
     col.stroke(); 
 }
 
-//getCharts();
-
-function call() {
-    alert("success");
-}

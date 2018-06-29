@@ -60,6 +60,7 @@ Trang chủ
                                 <th>Ngày nhập hàng</th>
                                 <th>Hình ảnh</th>
                                 <th></th>
+                                <th></th>
                             </tr>
                             {{#each products}}
                             <tr>
@@ -70,8 +71,20 @@ Trang chủ
                                 <td>{{productStock}}</td>
                                 <td>{{productViews}}</td>
                                 <td>{{productDate}}</td>
-                                <td><img src="/assets/images/Products/{{productImg}}" class="imgInTable"></td>
-                                <td><input type="checkbox" class="checkProduct"></td>
+                                <td><form action="/admin/delete" method="POST" role="form">	
+                                    <input type="hidden" id="" name="productID" value="{{productID}}">
+                                    <button type="submit" class="btn btnRemove" >
+                                        <i class="fa fa-close"></i>
+                                    </button>
+                                    </form>
+                                </td>
+                                <td><form action="" method="GET" role="form">	
+                                        <button type="submit" class="btn btnEdit" >
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            
                             </tr>
                             {{/each}}
                          </table>  
