@@ -84,10 +84,17 @@ function validateForm() {
 
 function addNewProduct() {
     var modal = document.getElementById('myModal');
-    var icon = document.getElementsByClassName("fa-close")[0];
+    //var icon = document.getElementsByClassName("fa-close");
+    var icon = document.getElementById("closeForm");
+    var closeBtn = document.getElementById("closeFormBtn");
     var addbtn = document.getElementById("addBtn");
     modal.style.display = "block";
+
     icon.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    closeBtn.onclick = function() {
         modal.style.display = "none";
     }
 

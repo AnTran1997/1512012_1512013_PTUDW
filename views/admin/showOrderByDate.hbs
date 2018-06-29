@@ -6,6 +6,14 @@ Trang chủ
      <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/styleAdmin/styleAdmin.css" />
 {{/section}}
 
+{{#section 'js'}}
+    <script>
+         getChartOfBrand(["Canon", "Nikon", "Fujifilm", "Sony"], [24, 15, 43, 18]);
+         getChartOfType(["Máy cơ", "Kỹ thuật số", "Máy lấy liền"], [24, 48, 28]);
+         getChartOfOrders(["Delivered", "Delivering", "In Stock"], [16, 31.6, 52.4]);
+    </script>
+{{/section}}
+
 
 {{#section 'footer'}}
     <script src="/assets/js/javaScript_AdminPage.js"></script>
@@ -14,6 +22,9 @@ Trang chủ
 
 {{#section 'controlBar'}}{{> adminShowProductControllBar}}{{/section}}
 {{#section 'searchBar'}}{{> adminHeader}}{{/section}}
+{{#section 'showCharts'}}{{> adminShowCharts}}{{/section}}
+{{#section 'addProduct'}}{{> addNewProduct}}{{/section}}
+{{#section 'editProduct'}}{{> editForm}}{{/section}}
 
     <div class="dashboard">
         <div class="row">
@@ -55,6 +66,40 @@ Trang chủ
                     </div>
                     {{/each}} 
                 </div>
+
+                <!-- **************************  ADD NEW PRODUCTS  ********************** -->
+                {{{_sections.addProduct}}}
+
+                <!-- **************************  SHOW CHARTS  *********************** -->
+                {{{_sections.showCharts}}}
+                
+                <!-- **************************  SHOW ACCOUNT  ********************** -->
+                <div class="showAccount isDisplayed">
+                    <h1>Your profile!</h1>
+                    <form action="">
+                        <label for="fullName">Họ tên</label><br>
+                        <input type="text" value="Monkey D.Luffy" name="fullName"><br><br>
+            
+                        <label for="email">Email</label><br>
+                        <input type="text" name="email" value="luffy@gmail.com"><br><br>
+            
+                        <label for="numberPhone">Số điện thoại</label><br>
+                        <input type="text" name="numberPhone" value="0123456789"><br><br>
+            
+                        <label for="gender">Giới tính</label><br>
+                        <select name="gender">
+                            <option value="nam">Nam</option>
+                            <option value="nu">Nữ</option>
+                        </select><br><br>
+            
+                        <label for="uname">Username</label><br>
+                        <input type="text" name="uname" value="the_pirate_king"><br><br>
+            
+                        <label for="pass">Password</label><br>
+                        <input type="submit" name="pass" value="Change password"><br><br>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>

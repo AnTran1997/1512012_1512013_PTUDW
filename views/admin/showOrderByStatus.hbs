@@ -17,10 +17,9 @@ Trang chủ
          getChartOfType(["Máy cơ", "Kỹ thuật số", "Máy lấy liền"], [24, 48, 28]);
          getChartOfOrders(["Delivered", "Delivering", "In Stock"], [16, 31.6, 52.4]);
     </script>
-
 {{/section}}
 
-{{#section 'controlBar'}}{{> adminControllBar}}{{/section}}
+{{#section 'controlBar'}}{{> adminShowProductControllBar}}{{/section}}
 {{#section 'searchBar'}}{{> adminHeader}}{{/section}}
 {{#section 'showCharts'}}{{> adminShowCharts}}{{/section}}
 {{#section 'addProduct'}}{{> addNewProduct}}{{/section}}
@@ -50,6 +49,8 @@ Trang chủ
                                 <th>Tổng tiền</th>
                                 <th>User mua hàng</th>
                                 <th>Phí vận chuyển</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                             {{#each inStock}}
                             <tr>
@@ -59,6 +60,18 @@ Trang chủ
                                 <td>{{totalPrice}}</td>
                                 <td>{{username}}</td>
                                 <td>{{deliveryPrice}}</td>
+                                <td><form action="/admin/delete" method="POST" role="form">	
+                                    <input type="hidden" id="" name="productID" value="{{productID}}">
+                                    <button type="submit" class="btn btnRemove" >
+                                        <i class="fa fa-close"></i>
+                                    </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <button class="btn btnEdit" onclick="editSingle()">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </td>    
                             </tr>           
                             {{/each}}
                         </table>
@@ -77,6 +90,8 @@ Trang chủ
                                 <th>Tổng tiền</th>
                                 <th>User mua hàng</th>
                                 <th>Phí vận chuyển</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                             {{#each delivering}}
                             <tr>
@@ -86,6 +101,18 @@ Trang chủ
                                 <td>{{totalPrice}}</td>
                                 <td>{{username}}</td>
                                 <td>{{deliveryPrice}}</td>
+                                <td><form action="/admin/delete" method="POST" role="form">	
+                                    <input type="hidden" id="" name="productID" value="{{productID}}">
+                                    <button type="submit" class="btn btnRemove" >
+                                        <i class="fa fa-close"></i>
+                                    </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <button class="btn btnEdit" onclick="editSingle()">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </td>  
                             </tr>
                             {{/each}}
                         </table>
@@ -104,6 +131,8 @@ Trang chủ
                                 <th>Tổng tiền</th>
                                 <th>User mua hàng</th>
                                 <th>Phí vận chuyển</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                             {{#each delivered}}
                             <tr>
@@ -113,6 +142,18 @@ Trang chủ
                                 <td>{{totalPrice}}</td>
                                 <td>{{username}}</td>
                                 <td>{{deliveryPrice}}</td>
+                                <td><form action="/admin/delete" method="POST" role="form">	
+                                    <input type="hidden" id="" name="productID" value="{{productID}}">
+                                    <button type="submit" class="btn btnRemove" >
+                                        <i class="fa fa-close"></i>
+                                    </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <button class="btn btnEdit" onclick="editSingle()">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </td>  
                             </tr>      
                             {{/each}}
                         </table>
@@ -121,38 +162,13 @@ Trang chủ
 
                 <!-- **************************  ADD NEW PRODUCTS  ********************** -->
                 {{{_sections.addProduct}}}
+                <!-- **************************  ADD NEW PRODUCTS  ********************** -->
+                {{{_sections.addProduct}}}
 
                 <!-- **************************  SHOW CHARTS  *********************** -->
                 {{{_sections.showCharts}}}
-                
-                <!-- **************************  SHOW ACCOUNT  ********************** -->
-                <div class="showAccount isDisplayed">
-                    <h1>Your profile!</h1>
-                    <form action="">
-                        <label for="fullName">Họ tên</label><br>
-                        <input type="text" value="Monkey D.Luffy" name="fullName"><br><br>
-            
-                        <label for="email">Email</label><br>
-                        <input type="text" name="email" value="luffy@gmail.com"><br><br>
-            
-                        <label for="numberPhone">Số điện thoại</label><br>
-                        <input type="text" name="numberPhone" value="0123456789"><br><br>
-            
-                        <label for="gender">Giới tính</label><br>
-                        <select name="gender">
-                            <option value="nam">Nam</option>
-                            <option value="nu">Nữ</option>
-                        </select><br><br>
-            
-                        <label for="uname">Username</label><br>
-                        <input type="text" name="uname" value="the_pirate_king"><br><br>
-            
-                        <label for="pass">Password</label><br>
-                        <input type="submit" name="pass" value="Change password"><br><br>
-                    </form>
-                </div>
 
-                </div>
             </div>
         </div>
+    </div>
 

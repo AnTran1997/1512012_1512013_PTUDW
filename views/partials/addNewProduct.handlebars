@@ -2,7 +2,7 @@
 
 <div id="myModal" class="modal">
     <div class="modal-content">
-        <button id="closeFormBtn"><i class="fa fa-close"></i></button>
+        <button id="closeFormBtn"><i class="fa fa-close" id = "closeForm"></i></button>
         <form action="/admin/add" name="addProduct" method="POST" role="form" onsubmit="validateForm();">
             <label for="namePro">Tên sản phẩm</label><br>
             <input type="text" id="_name" name="namePro" value="{{proName}}"><br><br>

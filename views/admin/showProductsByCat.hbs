@@ -29,6 +29,8 @@ Trang chủ
 {{#section 'controlBar'}}{{> adminControllBar}}{{/section}}
 {{#section 'searchBar'}}{{> adminHeader}}{{/section}}
 {{#section 'formEdit'}}{{> editForm}}{{/section}}
+{{#section 'showCharts'}}{{> adminShowCharts}}{{/section}}
+{{#section 'addProduct'}}{{> addNewProduct}}{{/section}}
 
     <div class="dashboard">
         <div class="row">
@@ -45,10 +47,6 @@ Trang chủ
                             <h1>{{catID}}</h1>
                         </div>
                         <div class="triangle-right" style="border-left: 50px solid #ffe6ff;"></div>
-                   <!-- <div class="editDeletePro">
-                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
-                        <button type="submit" name="delete" id="delete">Xóa</button>
-                    </div>-->
                     <div class="container-quanLySanPham">
                         <table>
                             <tr>
@@ -98,6 +96,10 @@ Trang chủ
                 </div>
                 <!-- ********************** EDIT PRODUCT *************************-->
                 {{{_sections.formEdit}}}
+
+                <!-- **************************  ADD NEW PRODUCTS  ********************** -->
+                {{{_sections.addProduct}}}
+                
             </div>
         </div>
     </div>
