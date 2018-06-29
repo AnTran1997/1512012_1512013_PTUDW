@@ -2,7 +2,7 @@ var express = require('express');
 var productRepo = require('../repos/productRepo');
 var categoryRepo = require('../repos/categoryRepo');
 var brandRepo = require('../repos/brandRepo');
-
+var cartRepo = require('../repos/cartRepo');
 
 
 
@@ -70,6 +70,7 @@ router.get('/:name/:cat/:brand/:price/:pageID', (req, res) => {
         getResult(searchName, searchCat, searchBrand, searchPrice, pageID, ()=>{
             vm.curUser = req.session.curUser;
             vm.isLogged = req.session.isLogged;
+            vm.cartItem = cartRepo.getNumberOfItems(req.session.cart);
             res.render('search/result',vm);
         });
     });

@@ -137,7 +137,7 @@ if(isLogged){
                 <span class="price-new">{{numberFormat productPrice}} VND</span>
               </div>
               <a href="/product/detail/{{productID}}" class="best-hover"><i class="fa fa-arrow-right"></i></a>
-              <button class="add hide">
+              <button class="add hide add-cart" data-id="{{productID}}">
                 <i class="fa fa-shopping-cart"></i>
               </button>
             </div>
@@ -182,7 +182,7 @@ if(isLogged){
           <div class="most-name">{{productName}}</div>
           <div class="most-price">{{numberFormat productPrice}} VND</div>
           <a href="/product/detail/{{productID}}" class="most-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add hide">
+          <button class="add hide add-cart" data-id="{{productID}}">
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
@@ -201,7 +201,7 @@ if(isLogged){
   <div class="sale-view-content">
     <div class="sale-view-col sale-view-col-1">
       <div class="sale-view-cell-1 product-item" style="background-image: url(/assets/images/Products/{{sale.0.productImg}});">
-        <button class="add hide">
+        <button class="add hide add-cart" data-id="{{productID}}">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
@@ -216,7 +216,7 @@ if(isLogged){
         </div>
       </div>
       <div class="sale-view-cell-2 product-item" style="background-image: url(/assets/images/Products/{{sale.1.productImg}});">
-        <button class="add hide">
+        <button class="add hide add-cart" data-id="{{productID}}">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
@@ -231,7 +231,7 @@ if(isLogged){
         </div>
       </div>
       <div class="sale-view-cell-3 product-item" style="background-image: url(/assets/images/Products/{{sale.2.productImg}});">
-        <button class="add hide">
+        <button class="add hide add-cart" data-id="{{productID}}">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
@@ -248,7 +248,7 @@ if(isLogged){
     </div>
     <div class="sale-view-col sale-view-col-2">
       <div class="sale-view-cell-1 product-item" style="background-image: url(/assets/images/Products/{{sale.3.productImg}});">
-        <button class="add hide">
+        <button class="add hide add-cart" data-id="{{productID}}">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
@@ -263,7 +263,7 @@ if(isLogged){
         </div>
       </div>
       <div class="sale-view-cell-2 product-item" style="background-image: url(/assets/images/Products/{{sale.4.productImg}});">
-        <button class="add hide">
+        <button class="add hide add-cart" data-id="{{productID}}">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
@@ -280,7 +280,7 @@ if(isLogged){
     </div>
     <div class="sale-view-col sale-view-col-3">
       <div class="sale-view-cell-1 product-item" style="background-image: url(/assets/images/Products/{{sale.5.productImg}});">
-        <button class="add hide">
+        <button class="add hide add-cart" data-id="{{productID}}">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
@@ -295,7 +295,7 @@ if(isLogged){
         </div>
       </div>
       <div class="sale-view-cell-2 product-item" style="background-image: url(/assets/images/Products/{{sale.6.productImg}});">
-        <button class="add hide">
+        <button class="add hide add-cart" data-id="{{productID}}">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
@@ -310,7 +310,7 @@ if(isLogged){
         </div>
       </div>
       <div class="sale-view-cell-3 product-item" style="background-image: url(/assets/images/Products/{{sale.7.productImg}});">
-        <button class="add hide">
+        <button class="add hide add-cart" data-id="{{productID}}">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
@@ -327,7 +327,7 @@ if(isLogged){
     </div>
     <div class="sale-view-col sale-view-col-4">
       <div class="sale-view-cell-1 product-item" style="background-image: url(/assets/images/Products/{{sale.8.productImg}});">
-        <button class="add hide">
+        <button class="add hide add-cart" data-id="{{productID}}">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
@@ -342,7 +342,7 @@ if(isLogged){
         </div>
       </div>
       <div class="sale-view-cell-2 product-item" style="background-image: url(/assets/images/Products/{{sale.9.productImg}});">
-        <button class="add hide">
+        <button class="add hide add-cart" data-id="{{productID}}">
           <i class="fa fa-shopping-cart"></i>
         </button>
         <div class="sale-view-hover">
@@ -380,7 +380,7 @@ if(isLogged){
           <div class="new-name">{{productName}}</div>
           <div class="new-price">{{numberFormat productPrice}} VND</div>
           <a href="/product/detail/{{productID}}" class="new-hover"><i class="fa fa-arrow-right"></i></a>
-          <button class="add hide">
+          <button class="add hide add-cart" data-id="{{productID}}">
             <i class="fa fa-shopping-cart"></i>
           </button>
         </div>
@@ -447,7 +447,7 @@ if(isLogged){
               <div class="view-all-name">{{productName}}</div>
               <div class="view-all-price">{{numberFormat productPrice}} VND</div>
             </a>
-            <button class="add hide">
+            <button class="add hide add-cart" data-id="{{productID}}">
               <i class="fa fa-shopping-cart"></i>
             </button>
           </div>

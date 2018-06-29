@@ -17,9 +17,6 @@ router.get('/editOrder', (req, res) => {
     res.render('users/editOrder');
 });
 
-router.get('/historyShopping', (req, res) => {
-    res.render('users/historyShopping');
-});
 
 router.get('/account', (req, res) => {
     var vm = {
