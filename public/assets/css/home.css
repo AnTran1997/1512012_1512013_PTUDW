@@ -1577,10 +1577,6 @@ a:hover {
   color: #666;
 }
 
-.order .item {
-  height: 18ch;
-}
-
 .order .editOrder img {
   width: 100%;
   height: auto;
@@ -1903,4 +1899,14 @@ input[name="addAmount"]{
   margin: 40px 0;
   padding-left: 18px;
   font: 18px 'OpenSans';
+}
+#final-checkout{
+  padding: 20px 50px;
+  font: 30px 'OpenSansLight';
+  color: white;
+  background: linear-gradient(to right, #F37021, #FBB040);
+  margin: 30px auto;
+  width: max-content;
+  display: block;
+  border: 1px solid transparent;
 }

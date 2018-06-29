@@ -136,9 +136,13 @@ exports.delete = (id) => {
 	});
 }*/
 
+
 exports.update = (c) => {
 	//var sql = `update products set productName='${c.proName}', productBrandID='${c.proBrandID}', productCatID='${c.proCatID}', productViews='${c.proView}', productStock='${c.proStock}', productSold='${c.proSold}', productPrice='${c.proPrice}', productOrigin='${c.proOrigin}', productSale='${c.proSale}', productDate='${c.proDate}' where productID='${c.proID}'`;
 	var sql = `update products set productName='${c.namePro}', productBrandID='${c.brand}', productCatID='${c.cat}', productViews='${c.view}', productStock='${c.stock}', productSold='${c.sold}', productPrice='${c.price}', productOrigin='${c.origin}', productSale='${c.sale}', productDate='${c.date}', productImg='${c.proImg}' where productID='${c.idPro}'`;
+
+exports.checkoutProduct = (id, stock,sold) =>{
+	var sql = `UPDATE products SET productStock = '${stock}', productSold = '${sold}' WHERE productID = '${id}'`;
 	return db.save(sql);
 }
 

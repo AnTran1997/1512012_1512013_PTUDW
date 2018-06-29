@@ -1,17 +1,13 @@
 
 
 .payment {
-    margin-top: 130px;
+    margin-top: 250px;
 }
   .payment .orderDetail {
     margin-right: 10px;
-    height: 100ch;
     border: rgba(0, 0, 0, 0.6) solid 2px;
     border-radius: 10px;
     padding-left: 20px;
-  }
-  .payment .orderInfo {
-    height: 50ch;
   }
 
 .resumeOrder {
@@ -143,9 +139,7 @@
 
 
 /***************************************   Style for page editOrder.html *************************/
-orderDetail {
-  background-color: violet;
-}
+
 
 .orders {
   margin: 10px 10px 0 0;
@@ -181,9 +175,6 @@ orderDetail {
     margin-bottom: 20px;
   }
 
-.item {
-  height: 20ch;
-}
   .item button {
     width: 50px;
     height: 50px;
@@ -343,4 +334,18 @@ td#sum-numberPanel {
   text-transform: uppercase;
   width: 100%;
   display: block;
+}
+.addrContent label{
+  display: block;
+  font: 15px 'OpenSansBold';
+  color: #F36F21;
+  margin-bottom: 10px;
+}
+
+.addrContent input{
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #F37021;
+  margin-bottom: 10px;
 }
