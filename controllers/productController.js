@@ -31,7 +31,13 @@ router.get('/detail/:productID', (req, res) => {
                 curUser: req.session.curUser,
                 isLogged: req.session.isLogged
             }
-            res.render('products/detail', vm);
+            var newView = parseInt(row[0].productViews) + 1;
+            console.log(newView);
+            productRepo.updateView(productID,newView).then(rows=>{
+                vm.product.productViews = newView;
+                res.render('products/detail', vm);
+
+            })
         });
     })
 

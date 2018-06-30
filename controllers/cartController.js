@@ -81,14 +81,20 @@ router.post('/checkout', (req, res) => {
     var totalAmount = cartRepo.getNumberOfItems(cart);
     var totalPrice = cartRepo.sumPrice(cart);
     orderRepo.loadAll().then(rows=>{
-        var orderID = 'dh' + rows.length;
+        var orderID = 'dh' + (rows.length + 1);
 
         var stock, sold;
         for(var i =0;i<cart.length;i++){
             stock = parseInt(cart[i].product.productStock)-parseInt(cart[i].quantity);
             sold = parseInt(cart[i].product.productSold)+parseInt(cart[i].quantity);
             productRepo.checkoutProduct(cart[i].product.productID, stock, sold);
+            orderRepo.saveSingleOrderProduct(cart[i].product.productID, orderID, cart[i].quantity);
         }
+
+
+
+
+
 
         orderRepo.saveOrder(orderID, user, totalAmount, totalPrice);
         req.session.cart = [];

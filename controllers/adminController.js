@@ -117,6 +117,9 @@ router.get('/', (req, res) =>{
                 res.redirect('/');
             }
         }
+        else{
+            res.redirect('/');
+        }
         
     });    
 });
