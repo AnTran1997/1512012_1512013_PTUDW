@@ -13,10 +13,8 @@ Show all products
 
 {{#section 'js'}}
     <script>
-         getChartOfBrand(["Canon", "Nikon", "Fujifilm", "Sony"], [24, 15, 43, 18]);
-         getChartOfType(["Máy cơ", "Kỹ thuật số", "Máy lấy liền"], [24, 48, 28]);
-         getChartOfOrders(["Delivered", "Delivering", "In Stock"], [16, 31.6, 52.4]);
-        function editSingle() {
+        
+        function editThui() {
             var modal = document.getElementById('editModal');
             var icon = document.getElementsByClassName("editClose")[0];
             var editBtn = document.getElementById('editBtn');
@@ -99,7 +97,7 @@ Show all products
                                     </form>
                                 </td>
                                 <td>
-                                    <button class="btn btnEdit" onclick="editSingle()">
+                                    <button class="btn btnEdit" onclick="editThui()">
                                         <i class="fa fa-edit"></i>
                                     </button>
                                 </td>     

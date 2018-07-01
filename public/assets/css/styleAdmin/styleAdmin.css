@@ -313,7 +313,7 @@ li {
     margin: auto;
     border: 1px solid #888;
     width: 80ch;
-    height: 70ch;
+    height: 111ch;
     position: relative;
     left:20ch;
     bottom: 40px;
@@ -351,6 +351,10 @@ li {
       background-color: darkblue;
       color: white;
       cursor: pointer;
+    }
+
+    .modal-content #editModal {
+      height: 100ch;
     }
 
 
