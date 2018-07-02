@@ -109,7 +109,18 @@ function showProductByBrand(brandID, callback) {
 
 router.get('/', (req, res) =>{
     initVM(() => {
-        res.render('admin/adminHome'); 
+        if(req.session.isLogged){
+            if(req.session.curUser.permission){
+                res.render('admin/adminHome'); 
+            }
+            else{
+                res.redirect('/');
+            }
+        }
+        else{
+            res.redirect('/');
+        }
+        
     });    
 });
 

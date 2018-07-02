@@ -2,7 +2,13 @@
 <script src="/assets/js/home.js"></script>
 
 <script>
-
+  function validateCheckout(){
+    if($('.totalPrice p span').text()=="0"){
+    alert("Đơn trống!");
+    return false;
+    }
+    return true;
+  }
   function formatNumber(number){
     var rs = number.toString();
     for(var i = rs.length-3; i>0; i-=3){

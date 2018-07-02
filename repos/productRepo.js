@@ -130,3 +130,9 @@ exports.checkoutProduct = (id, stock,sold) =>{
 	return db.save(sql);
 }
 
+
+exports.updateView = (id, newView)=>{
+	console.log("hrere");
+	var sql = `update products set productViews = '${newView}' where productID='${id}'`;
+	return db.save(sql);
+}

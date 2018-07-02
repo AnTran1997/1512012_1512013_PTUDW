@@ -34,7 +34,7 @@ function initVM(callback){
 }
 
 function getFilterResult(pageID, filter, filterOption, callback){
-    if(pageID!=vm.currentPage || filter!=vm.currentFilter || filterOption != vm.currentFilterOption){
+    // if(pageID!=vm.currentPage || filter!=vm.currentFilter || filterOption != vm.currentFilterOption){
         vm.currentPage = pageID;
         vm.currentFilter = filter;
         vm.currentFilterOption = filterOption;
@@ -59,7 +59,7 @@ function getFilterResult(pageID, filter, filterOption, callback){
                 callback();
             });
         }
-    }
+    
     
 }
 
