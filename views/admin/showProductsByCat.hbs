@@ -30,7 +30,7 @@ Trang chủ
 {{#section 'searchBar'}}{{> adminHeader}}{{/section}}
 {{#section 'formEdit'}}{{> editForm}}{{/section}}
 {{#section 'showCharts'}}{{> adminShowCharts}}{{/section}}
-{{#section 'addProduct'}}{{> addNewProduct}}{{/section}}
+{{#section 'addProduct'}}{{> addNewProductByCat}}{{/section}}
 
     <div class="dashboard">
         <div class="row">
@@ -45,8 +45,11 @@ Trang chủ
                 <div class='{{catID}}' + " isDisplayed">
                     <div class="backgroundTitle" style="background-color:#ffe6ff;">
                             <h1>{{catID}}</h1>
-                        </div>
-                        <div class="triangle-right" style="border-left: 50px solid #ffe6ff;"></div>
+                    </div>
+                    <div class="triangle-right" style="border-left: 50px solid #ffe6ff;"></div>
+                     <div class="editDeletePro">
+                        <button type="submit" name="Add new product" id="edit" onclick="addProductByCat()">Thêm sản phẩm mới</button>
+                    </div>   
                     <div class="container-quanLySanPham">
                         <table>
                             <tr>

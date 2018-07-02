@@ -203,7 +203,7 @@ li {
 }
   .editDeletePro button {
     height: 40px;
-    width: 100px;
+    width: 180px;
     position: relative;
     left: 80ch;
     border-radius: 5px;
@@ -313,7 +313,7 @@ li {
     margin: auto;
     border: 1px solid #888;
     width: 80ch;
-    height: 111ch;
+    height: 110ch;
     position: relative;
     left:20ch;
     bottom: 40px;

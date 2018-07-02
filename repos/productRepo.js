@@ -87,7 +87,6 @@ exports.addNewProduct = (proName, proID, proBrandID, proCatID, proPrice, proStoc
 	return db.save(sql);
 }
 
-
 exports.add = (proName, proID, proBrandID, proCatID, proPrice, proStock, proImg) => {
 	//Get current date
 	var today = new Date();
@@ -121,25 +120,10 @@ exports.delete = (id) => {
 	return db.save(sql);
 }
 
-/*exports.single = (id) => {
-	return new Promise((resolve, reject) => {
-		var sql = `select * from vategories where productID = '${id}'`;
-		db.load(sql).then(rows => {
-			if(rows.length === 0) {
-				resolve(null);
-			} else {
-				resolve(rows[0]);
-			}
-		}).catch(err => {
-			reject(err);
-		});
-	});
-}*/
-
-
 exports.update = (c) => {
 	//var sql = `update products set productName='${c.proName}', productBrandID='${c.proBrandID}', productCatID='${c.proCatID}', productViews='${c.proView}', productStock='${c.proStock}', productSold='${c.proSold}', productPrice='${c.proPrice}', productOrigin='${c.proOrigin}', productSale='${c.proSale}', productDate='${c.proDate}' where productID='${c.proID}'`;
 	var sql = `update products set productName='${c.namePro}', productBrandID='${c.brand}', productCatID='${c.cat}', productViews='${c.view}', productStock='${c.stock}', productSold='${c.sold}', productPrice='${c.price}', productOrigin='${c.origin}', productSale='${c.sale}', productDate='${c.date}', productImg='${c.proImg}' where productID='${c.idPro}'`;
+	return db.save(sql);
 }
 exports.checkoutProduct = (id, stock,sold) =>{
 	var sql = `UPDATE products SET productStock = '${stock}', productSold = '${sold}' WHERE productID = '${id}'`;

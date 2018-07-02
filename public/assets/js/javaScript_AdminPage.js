@@ -239,7 +239,6 @@ function getChartOfType(nameType, percentType) {
     //rangeWidth: 440, rangeHeight: 220
 }
 
-
 /*******************  STATISTIC OF NUMBER OF PRODUCTS IN ORDERS ********************/
 function getChartOfOrders(nameOrder, percentOrder) { 
     var numTypeOrder = nameOrder.length;
@@ -413,5 +412,61 @@ function getCharts() {
 function call() {
     alert("here");
 }
+
+function addProductByBrand() {
+    var modal = document.getElementById('addBrand');
+    //var icon = document.getElementsByClassName("fa-close");
+    var icon = document.getElementById("closeForm");
+    var closeBtn = document.getElementById("closeFormBtn");
+    var addbtn = document.getElementById("addBtn");
+    modal.style.display = "block";
+
+    icon.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    addbtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+function addProductByCat() {
+    var modal = document.getElementById('addCat');
+    //var icon = document.getElementsByClassName("fa-close");
+    var icon = document.getElementById("closeForm");
+    var closeBtn = document.getElementById("closeFormBtn");
+    var addbtn = document.getElementById("addBtn");
+    modal.style.display = "block";
+
+    icon.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    addbtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+
 
 

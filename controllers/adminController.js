@@ -81,7 +81,7 @@ function initVM(callback) {
         for (var i = 0; i< allStatusRows.length; i++) {
             listStatus.push(allStatusRows[i].orderStatusName);
         }
-        console.log(percentBrands);
+
         vm = {
             totalBrand: totalBrandRows[0].Total,
             percentBrands: brandPercentage,
@@ -237,3 +237,4 @@ router.post('/edit', (req, res) => {
     });
 });
 module.exports = router;
+

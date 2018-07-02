@@ -1,4 +1,4 @@
-<div id="myModal" class="modal">
+<div id="addCat" class="modal">
     <div class="modal-content">
         <button id="closeFormBtn"><i class="fa fa-close" id = "closeForm"></i></button>
         <form action="/admin/add" name="addProduct" method="POST" role="form" onsubmit="validateForm();">
@@ -10,13 +10,6 @@
 
             <label for="nxs">Thương hiệu/Nhà sản xuất</label><br>
             <input type="text" id="_brandID" name="nxs" value="{{proBrandID}}"><br><br>
-
-            <label for="typePro">Loại sản phẩm</label><br>
-            <select name="catPro" id="_cat" value="{{proCatID}}">
-                <option value="physic">Máy ảnh cơ</option>
-                <option value="digital">Máy ảnh kỹ thuật số</option>
-                <option value="instant">Máy ảnh chụp lấy liền</option>
-            </select><br><br>
 
             <label for="price">Giá tiền (giá bán lẻ)</label><br>
             <input type="text" class="isNumber" id="_price" name="price" value="{{proPrice}}"><br><br>

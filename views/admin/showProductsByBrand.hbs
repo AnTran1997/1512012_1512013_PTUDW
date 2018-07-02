@@ -43,7 +43,7 @@ Show products by brands
 {{#section 'searchBar'}}{{> adminHeader}}{{/section}}
 {{#section 'formEdit'}}{{> editForm}}{{/section}}
 {{#section 'showCharts'}}{{> adminShowCharts}}{{/section}}
-{{#section 'addProduct'}}{{> addNewProduct}}{{/section}}
+{{#section 'addProduct'}}{{> addNewProductByBrand}}{{/section}}
 {{#section 'editProduct'}}{{> editForm}}{{/section}}
 
     <div class="dashboard">
@@ -62,10 +62,10 @@ Show products by brands
                         <h1>{{brandID}}</h1>
                     </div>
                     <div class="triangle-right" style="border-left: 50px solid pink;"></div>
-                    <!--<div class="editDeletePro">
-                        <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
-                        <button type="submit" name="delete" id="delete">Xóa</button>
-                    </div>     -->    
+                    <div class="editDeletePro">
+                        <button type="submit" name="Add new product" id="edit" onclick="addProductByBrand()">Thêm sản phẩm mới</button>
+                        <!--<button type="submit" name="delete" id="delete">Xóa</button>-->
+                    </div>    
                     <div class="container-quanLySanPham">
                          <table>
                             <tr>

@@ -1,0 +1,56 @@
+{{#section 'title'}}
+Trang chủ
+{{/section}}
+
+{{#section 'css'}}
+     <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/styleAdmin/styleAdmin.css" />
+{{/section}}
+
+
+{{#section 'footer'}}
+    <script src="/assets/js/javaScript_AdminPage.js"></script>
+{{/section}}
+
+{{_section.constrolBarm }}
+
+{{#section 'showBrand'}}
+    <!-- *******************   SHOW LIST OF PRODUCTS IN BRANDS   ********************* -->              
+    <div class="canonProducts isDisplayed">
+        <div class="backgroundTitle" style="background-color:hotpink;">
+            <h1>{{brandID}}</h1>
+        </div>
+        <div class="triangle-right" style="border-left: 50px solid hotpink;"></div>
+        <div class="editDeletePro">
+            <button type="submit" name="edit" id="edit" onclick="window.location.href='/admin'">Chỉnh sửa</button>
+            <button type="submit" name="delete" id="delete">Xóa</button>
+        </div>
+        <div class="container-quanLySanPham">
+            <table>
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Loại máy ảnh</th>
+                    <th>Giá bán (VNĐ)</th>
+                    <th>Số lượng</th>
+                    <th>Lượt xem</th>
+                    <th>Ngày nhập hàng</th>
+                    <th>Hình ảnh</th>
+                    <th></th>
+                </tr>
+                {{#each products}}
+                <tr>
+                    <td>{{productName}}</td>
+                    <td>{{productID}}</td>
+                    <td>{{productCatID}}</td>
+                    <td>{{productPrice}}</td>
+                    <td>{{productStock}}</td>
+                    <td>{{productViews}}</td>
+                    <td>{{productDate}}</td>
+                    <td><img src="/assets/images/Products/{{productImg}}" class="imgInTable"></td>
+                    <td><input type="checkbox" class="checkProduct"></td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+{{/section}}

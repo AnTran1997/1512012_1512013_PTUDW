@@ -1,5 +1,7 @@
-<div id="myModal" class="modal">
-    <div class="modal-content">
+
+
+<div id="addBrand" class="modal">
+    <div class="modal-content" style="height: 100ch;">
         <button id="closeFormBtn"><i class="fa fa-close" id = "closeForm"></i></button>
         <form action="/admin/add" name="addProduct" method="POST" role="form" onsubmit="validateForm();">
             <label for="namePro">Tên sản phẩm</label><br>
@@ -7,9 +9,6 @@
 
             <label for="idPro">Mã sản phẩm</label><br>
             <input type="text" id="_id" name="idPro" value="{{proID}}"><br><br>
-
-            <label for="nxs">Thương hiệu/Nhà sản xuất</label><br>
-            <input type="text" id="_brandID" name="nxs" value="{{proBrandID}}"><br><br>
 
             <label for="typePro">Loại sản phẩm</label><br>
             <select name="catPro" id="_cat" value="{{proCatID}}">

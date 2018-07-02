@@ -59,6 +59,10 @@ Show all products
                         <h1>XEM TẤT CẢ SẢN PHẨM</h1>
                     </div>
                     <div class="triangle-right" style="border-left: 50px solid #ffb366;"></div>
+                    <div class="editDeletePro">
+                        <button type="submit" name="Add new product" id="edit" onclick="window.location.href='/admin'">Thêm sản phẩm mới</button>
+                        <!--<button type="submit" name="delete" id="delete">Xóa</button>-->
+                    </div>    
                     <div class="container-quanLySanPham">
                         <table>
                             <tr>
@@ -97,7 +101,7 @@ Show all products
                                     </form>
                                 </td>
                                 <td>
-                                    <button class="btn btnEdit" onclick="editThui()">
+                                    <button class="btn btnEdit" onclick="editSingle()">
                                         <i class="fa fa-edit"></i>
                                     </button>
                                 </td>     
